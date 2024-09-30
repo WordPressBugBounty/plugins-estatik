@@ -1,6 +1,6 @@
 <div class="es-wrap" id="es-data-manager">
 	<?php do_action( 'es_admin_page_bar' ); ?>
-	<div class="js-es-notifications"><?php echo es_notification_admin(); ?></div>
+	<div class="js-es-notifications"></div>
 
     <div class="es-page">
         <div class="es-sidebar">
@@ -17,6 +17,7 @@
             </div>
         </div>
         <div class="es-content">
+	        <?php do_action( 'es_logo' ); ?>
 	        <?php foreach ( $nav_items as $nav_id => $nav ) : ?>
                 <div id="<?php echo $nav_id; ?>" class="es-content__inner js-es-data-manager__inner es-hidden">
                     <?php do_action( 'es_data_manager_content', $nav_id ); ?>

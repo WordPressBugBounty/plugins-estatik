@@ -571,21 +571,3 @@ body .es-search {
     padding: 0;
   }
 }
-
-@media only screen and (max-width: 740px) {
-  .es-search--main.es-search--collapsed .es-search-nav.es-search-nav-mobile--show {
-    display: block;
-  }
-
-  .es-search--simple.es-search--collapsed .es-search-nav.es-search-nav-mobile--show {
-    display: block;
-  }
-
-  .es-search--main.es-search--collapsed .es-search__collapse-link.es-search-nav-mobile--show {
-    display: none;
-  }
-
-  .es-search--simple.es-search--collapsed .es-search__collapse-link.es-search-nav-mobile--show {
-    display: none;
-  }
-}

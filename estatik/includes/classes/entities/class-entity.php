@@ -257,6 +257,10 @@ abstract class Es_Entity {
 		$value = es_clean( $value );
 		$value = apply_filters( "es_{$entity}_save_field_value", $value, $field, $this );
 
+		if ( is_array( $value ) && ! empty( $value['{#index}'] ) ) {
+			unset( $value['{#index}'] );
+		}
+
 		do_action( "es_{$entity}_before_save_field_value", $value, $field, $this );
 
 		if ( ! empty( $f_info['is_single_meta'] ) || ! isset( $f_info['is_single_meta'] ) ) {

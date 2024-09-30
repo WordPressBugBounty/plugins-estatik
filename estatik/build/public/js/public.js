@@ -86,7 +86,6 @@
                                         if ( breakpoints[desktop_layout].min <= container_width ) {
                                             $container.removeClass( 'es-listings--list-sm' ).removeClass( current_layout ).addClass( desktop_layout );
                                         } else if ( breakpoints[ className ].min < container_width && breakpoints[desktop_layout].min > container_width ) {
-                                            $container.removeClass( 'es-listings--list-sm' ).removeClass( current_layout ).addClass( className );
                                             if ( current_layout != 'es-listings--list' ) {
                                                 $container.removeClass( 'es-listings--list-sm' ).removeClass( current_layout ).addClass( className );
                                             }

@@ -18,7 +18,8 @@ class Es_Estatik_Logo {
 	 * @return void
 	 */
 	public static function render() {
-		echo sprintf( "<img class='es-logo' src='%s'><span>%s</span>", static::get_url(), sprintf( __( 'Version %s', 'es' ), Estatik::get_version() ) );
+		echo sprintf( "<div class='es-logo-wrap'><img class='es-logo' alt='%s' src='%s'><span>%s</span></div>",
+			__( 'Estatik', 'es' ), static::get_url(), sprintf( __( 'Version %s', 'es' ), Estatik::get_version() ) );
 	}
 
 	/**

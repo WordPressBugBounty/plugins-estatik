@@ -1,6 +1,5 @@
 <div class="es-wrap es-dashboard">
     <div class="wrap">
-        <div class="js-es-notifications"><?php echo es_notification_admin(); ?></div>
         <div class="es-head">
             <h1><?php _e( 'Migration from Estatik 3', 'es' ); ?></h1>
             <div class="es-head__logo">

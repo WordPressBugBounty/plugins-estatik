@@ -11,8 +11,6 @@ class Es_My_Listing_Shortcode extends Es_My_Entities_Shortcode {
     public function get_content() {
 	    ob_start();
 
-	    $attr = $this->get_attributes();
-
 	    if ( es_is_property_taxonomy() ) {
             global $wp_query;
 		    $queried_object = get_queried_object();
@@ -26,6 +24,8 @@ class Es_My_Listing_Shortcode extends Es_My_Entities_Shortcode {
 	    $query = $this->get_query();
 	    $query_args  = $this->get_query_args();
 	    $map_query_args = $query_args;
+
+	    $attr = $this->get_attributes();
 
         // Set template when load listings via ajax.
 	    $template = $attr['_ajax_mode'] ? 'front/property/listings.php' : 'front/shortcodes/my-listings.php';

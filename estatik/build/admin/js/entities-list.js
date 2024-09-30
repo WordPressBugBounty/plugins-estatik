@@ -22,14 +22,14 @@
 
         if ( $checkboxes.length ) {
             $container.removeClass( 'es-hidden' );
-            $('.es-entities-archive .wp-list-table .type-properties input').each(function() {
+            $('.es-entities-archive .wp-list-table .es-post-entity input').each(function() {
                 if ($(this).attr('type') === 'checkbox') {
                     $(this).prop('checked', true);
                 }
             });
         } else {
             $container.addClass( 'es-hidden' );
-            $('.es-entities-archive .wp-list-table .type-properties input').each(function() {
+            $('.es-entities-archive .wp-list-table .es-post-entity input').each(function() {
                 if ($(this).attr('type') === 'checkbox') {
                     $(this).prop('checked', false);
                 }
@@ -43,14 +43,14 @@
         var $checkboxes = $( '.es-entities-archive .wp-list-table tbody .active .check-column input[type=checkbox]' );
         var $container = $( '.es-actions__container' );
         
-            $('.es-entities-archive .wp-list-table .type-properties input').change(function() {
+            $('.es-entities-archive .wp-list-table .es-post-entity input').change(function() {
                 
                 if ($(this).attr('type') === 'checkbox') {
                     $(this).prop('checked', true);
                 }
             });
         
-            $('.es-entities-archive .wp-list-table .active.type-properties input').change(function() {
+            $('.es-entities-archive .wp-list-table .active.es-post-entity input').change(function() {
                 if ($(this).attr('type') === 'checkbox') {
                     $(this).prop('checked', false);
                 }

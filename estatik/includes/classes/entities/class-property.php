@@ -1028,7 +1028,7 @@ class Es_Property extends Es_Post {
 
 	    if ( 'address_components' == $field && $value ) {
             $repo = es_get_address_components_container();
-            $components = is_array( $value ) ? $value : json_decode( stripslashes( $value ) );
+            $components = is_array( $value ) ? $value : json_decode( es_clean_string( $value ) );
             $repo::save_property_components( $components, $this->get_id() );
         }
 
@@ -1074,7 +1074,8 @@ class Es_Property extends Es_Post {
 
 				if ( $gallery_json_value && is_array( $gallery_json_value ) ) {
 					$gallery_json_string = $gallery_json_value[0];
-					$decoded_value = json_decode( $gallery_json_string, true );
+					$decoded_value = is_array( $gallery_json_string ) ?
+                        $gallery_json_string : json_decode( $gallery_json_string, true );
 
 					if ( json_last_error() === JSON_ERROR_NONE ) {
 						$value = array_values( $decoded_value );
@@ -1140,7 +1141,7 @@ class Es_Property extends Es_Post {
             }
             $data['address_components'] = json_encode( $components, JSON_UNESCAPED_UNICODE );
         } else {
-			$address_components = json_decode( stripslashes( $data['address_components'] ) );
+			$address_components = json_decode( es_clean_string( $data['address_components'] ) );
 			$property = es_get_property( $this->get_id() );
 
 			foreach ( $address_components_fields as $location_field ) {

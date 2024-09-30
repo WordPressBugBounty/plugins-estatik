@@ -73,7 +73,7 @@ abstract class Es_Email {
 	public function generate_message() {
 		ob_start();
 		$tokens = apply_filters( 'es_email_tokens', $this->get_tokens(), $this );
-		$content = stripslashes( strtr( $this->get_content(), $tokens ) );
+		$content = es_clean_string( strtr( $this->get_content(), $tokens ) );
 		$content = apply_filters( 'es_email_message_content', wpautop( $content, false ), $content, $this );
 		es_load_template( 'common/emails/template.php', array( 'content' => $content ) );
 		$final_content = ob_get_clean();
@@ -118,7 +118,7 @@ abstract class Es_Email {
 		do_action( 'es_email_before_send', $this );
 		$to = $to ? $to : $this->_to;
 		$to = apply_filters( 'es_email_to', $to, $this );
-		$subject = stripslashes( $subject );
+		$subject = es_clean_string( $subject );
 		return wp_mail( $to, $subject, $this->generate_message(), $this->get_headers() );
 	}
 

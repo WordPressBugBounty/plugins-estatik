@@ -2411,23 +2411,6 @@ body .es-field .select2-container .select2-selection .select2-selection__arrow .
   padding: 0;
 }
 
-@media only screen and (max-width: 740px) {
-  .es-search--main.es-search--collapsed .es-search-nav.es-search-nav-mobile--show {
-    display: block;
-  }
-
-  .es-search--simple.es-search--collapsed .es-search-nav.es-search-nav-mobile--show {
-    display: block;
-  }
-
-  .es-search--main.es-search--collapsed .es-search__collapse-link.es-search-nav-mobile--show {
-    display: none;
-  }
-
-  .es-search--simple.es-search--collapsed .es-search__collapse-link.es-search-nav-mobile--show {
-    display: none;
-  }
-}
 .es-hfm {
   width: 100%;
   font-size: 10px;

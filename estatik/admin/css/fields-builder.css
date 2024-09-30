@@ -19,9 +19,6 @@ body[class*=_es_fields_builder] .es-tabs.es-tabs__fields-builder .es-tabs__wrapp
   display: flex;
   flex-wrap: wrap;
 }
-body[class*=_es_fields_builder] .es-tabs.es-tabs__fields-builder .es-tabs__wrapper .es-logo {
-  right: 30px;
-}
 body[class*=_es_fields_builder] .es-tabs.es-tabs__fields-builder .es-tabs__wrapper .es-field-builder__form, body[class*=_es_fields_builder] .es-tabs.es-tabs__fields-builder .es-tabs__wrapper .es-tabs__content {
   flex: 1;
   padding: 40px 30px 40px;

@@ -574,7 +574,7 @@ function es_render_dynamic_content() {
     if ( ests( 'is_dynamic_content_enabled' ) && ests( 'dynamic_content' ) ) {
         do_action( 'es_before_dynamic_content' ); ?>
         <div class='es-dymanic-content content-font'>
-        <?php echo do_shortcode( strtr( stripslashes( ests( 'dynamic_content' ) ), array(
+        <?php echo do_shortcode( strtr( es_clean_string( ests( 'dynamic_content' ) ), array(
             '{blog_name}' => get_bloginfo( 'name' )
         ) ) );
         ?>
@@ -1040,10 +1040,6 @@ add_filter( 'es_property_default_fields', 'es_handle_alt_description' );
  */
 function es_activation_handler() {
 	update_option( 'es_flush_executed', 0 );
-	$install_timestamp = get_option('es_plugin_install_date');
-	if ( empty( $install_timestamp ) ) {
-		update_option('es_plugin_install_date', time());
-	}
 }
 add_action( 'es_activation', 'es_activation_handler' );
 

@@ -465,6 +465,38 @@ class Es_Settings_Container
 					'default_value' => 'es_label',
 				),
 
+				'amenity_slug' => array(
+					'default_value' => 'es_amenity',
+				),
+
+				'basement_slug' => array(
+					'default_value' => 'es_basement',
+				),
+
+				'rent_period_slug' => array(
+					'default_value' => 'rent-period',
+				),
+
+				'parking_slug' => array(
+					'default_value' => 'parking',
+				),
+
+				'roof_slug' => array(
+					'default_value' => 'roof',
+				),
+
+				'exterior_material_slug' => array(
+					'default_value' => 'exterior-material',
+				),
+
+				'feature_slug' => array(
+					'default_value' => 'es_feature',
+				),
+
+				'floor_covering_slug' => array(
+					'default_value' => 'floor-covering',
+				),
+
 				'status_slug' => array(
 					'default_value' => 'es_status',
 				),
@@ -991,10 +1023,6 @@ class Es_Settings_Container
 
 				'is_date_added_enabled' => array(
 					'default_value' => 1,
-				),
-
-				'is_open_collapsed_filter_mobile_enabled' => array(
-					'default_value' => 0,
 				),
 
 				'excerpt_length' => array(

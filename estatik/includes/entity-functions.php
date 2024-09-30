@@ -88,11 +88,11 @@ if ( ! function_exists( 'es_get_the_section_fields_html' ) ) {
  *
  * @return string
  */
-function es_create_slug_transliterator ($str) {
-	if (preg_match('/^[a-zA-Z0-9_\-!?+\-]*$/', $str)) {
+function es_create_slug_transliterator( $str ) {
+	if ( preg_match('/^[a-zA-Z0-9_\-!?+\-]*$/', $str ) ) {
         return $str; 
     } else {
-        $string = transliterator_transliterate("Any-Latin; NFD; [:Nonspacing Mark:] Remove; NFC; [:Punctuation:] Remove; Lower();", $str);
-  		return $string; 
+		return function_exists('transliterator_transliterate' ) ?
+			transliterator_transliterate( "Any-Latin; NFD; [:Nonspacing Mark:] Remove; NFC; [:Punctuation:] Remove; Lower();", $str ) : $str;
     }
 }

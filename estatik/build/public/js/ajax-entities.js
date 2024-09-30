@@ -1057,12 +1057,9 @@
             var $btn = $( this );
             $btn.addClass( 'es-btn--preload' ).attr( 'disabled', 'disabled' ).prop( 'disabled', 'disabled' );
             var $wrapper = $( this ).closest( '.js-es-entities-wrap' );
-            if ($wrapper.length === 0) {
-                $wrapper = $(this).closest('.es-search-nav--dropdowns');
-            }
             $wrapper.find( '.js-es-address' ).val( '' );
             // $wrapper.find( '.js-es-search-nav__reset' ).trigger( 'click' );
-            
+
             $wrapper.find( '.js-es-search-nav__item' ).find( 'input[type!="reset"][type!="button"][type!="submit"],select' ).each( function() {
                 var $field = $( this );
                 var type = $( this ).prop( 'type' );

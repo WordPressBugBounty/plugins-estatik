@@ -21,6 +21,12 @@ abstract class Elementor_Es_Query_Widget extends Elementor_Es_Base_Widget {
 			'query_content', array( 'label' => _x( 'Query filter', 'Elementor widget section', 'es' ), )
 		);
 
+		$this->add_custom_control( 'strict_address', array(
+			'label' => __( 'Search in address string', 'es' ),
+			'type' => Controls_Manager::SWITCHER,
+			'default' => $attributes['strict_address'] ? 'yes' : $attributes['strict_address'],
+		) );
+
 		$this->add_custom_control( 'posts_per_page', array(
 			'label' => __( 'Properties per page', 'es' ),
 			'type' => Controls_Manager::NUMBER,

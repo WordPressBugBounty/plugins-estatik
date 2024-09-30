@@ -36,13 +36,12 @@ class Es_Framework {
 	}
 
 	public function load_styles() {
-        $url = $this->_config['url'] . 'assets' . DS;
         wp_enqueue_style( 'jqueryui', '//ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css', false, null );
-        wp_enqueue_style( 'es-framework', $url . 'css' . DS . 'framework.css' );
+        wp_enqueue_style( 'es-framework', $this->_config['url'] . 'assets/css/framework.css' );
     }
 
     public function load_scripts() {
-        $url = $this->_config['url'] . 'assets' . DS;
+        $url = $this->_config['url'] . 'assets/';
 	    $common = $this->_config['common_url'];
 
 	    // Select2

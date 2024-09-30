@@ -185,10 +185,5 @@ es_settings_field_render( 'is_properties_sharing_enabled', array(
 es_settings_field_render( 'is_date_added_enabled', array(
 	'label' => __( 'Show date added', 'es' ),
 	'type' => 'switcher',
-) );
-
-es_settings_field_render( 'is_open_collapsed_filter_mobile_enabled', array(
-	'label' => __( 'Open collapsed filters on mobile devices', 'es' ),
-	'type' => 'switcher',
 ) ); ?>
 </div>

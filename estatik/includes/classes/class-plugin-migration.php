@@ -337,6 +337,12 @@ class Es_Plugin_Migration {
 			}
 		}
 
+		$video = get_post_meta( $listing_id, 'es_property_video', true );
+
+		if ( ! empty( $video ) ) {
+			update_post_meta( $listing_id, 'es_property_video', array( 'video_iframe' => $video ) );
+		}
+
 		$labels = get_terms( array( 'taxonomy' => 'es_label', 'hide_empty' => false ) );
 
 		if ( $labels && ! is_wp_error( $labels ) ) {

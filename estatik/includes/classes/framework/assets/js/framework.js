@@ -307,8 +307,12 @@
                         }
                     } );
 
-                    if ( ! replaced && tel_code.length ) {
+                    if ( ! replaced && tel_code !== undefined && tel_code.length ) {
                         $tel.val( tel_code );
+                    }
+
+                    if (typeof tel_code === "undefined") {
+                        $tel.val( '' );
                     }
                 } ).trigger( 'change' );
 

@@ -35,11 +35,12 @@ class Es_Framework_Images_Field extends Es_Framework_Media_Field {
 
 		$file_input = sprintf( "<input %s/>", $this->build_attributes_string() );
 		$caption = wp_get_attachment_caption( $attachment_id );
+		$file = get_attached_file( $attachment_id );
 
 		return strtr( $config['media_item'], array(
 			'{attachment_id}' => $attachment_id,
 			'{url}' => wp_get_attachment_image_url( $attachment_id, $config['image_size'] ),
-			'{filename}' => basename ( get_attached_file( $attachment_id ) ),
+			'{filename}' => basename ( $file ),
 			'{delete}' => strtr( $config['delete_link'], array(
 				'{attachment_id}' => $attachment_id,
 			) ),
@@ -47,7 +48,7 @@ class Es_Framework_Images_Field extends Es_Framework_Media_Field {
 			'{caption}' => ! $caption ? __( 'Add caption', 'es' ) : $caption,
 			'{input_caption}' => $caption,
 			'{no_caption}' => empty( $caption ) ? 'no-caption' : '',
-			'{filesize}' => size_format( filesize( get_attached_file( $attachment_id ) ), 2 )
+			'{filesize}' => file_exists( $file ) ? size_format( filesize( $file ), 2 ) : 0
 		) );
 	}
 }

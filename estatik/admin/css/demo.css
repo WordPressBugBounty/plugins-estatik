@@ -69,11 +69,11 @@ body[class*=_es_demo] .es-price-table {
   font-family: "Heebo", sans-serif;
   padding: 0 20px;
 }
-.es-demo__header .es-coupon-wrapper {
-  margin: 25px 0;
-}
 .es-demo__header .es-logo {
   margin: 55px 0 0;
+}
+.es-demo__header .es-coupon-wrapper {
+  margin: 25px 0;
 }
 
 .es-price-table__wrapper {

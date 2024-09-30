@@ -53,7 +53,7 @@ if ( $collapsed_fields_active || $main_fields_active || ! empty( $attributes['is
         <?php endif; ?>
 
         <?php if ( $collapsed_fields_active || $main_fields_active ) : ?>
-            <ul class="es-search-nav js-es-search-nav <?php echo empty ( ests( 'is_open_collapsed_filter_mobile_enabled') ) ? '' : 'es-search-nav-mobile--show'; ?> <?php echo empty ( $attributes['is_address_search_enabled'] ) ? 'es-search-nav--dropdowns' : ''; ?>">
+            <ul class="es-search-nav js-es-search-nav <?php echo empty( $attributes['is_address_search_enabled'] ) ? 'es-search-nav--dropdowns' : ''; ?>">
                 <?php if ( $main_fields_active ) : ?>
                     <?php foreach ( $attributes['main_fields'] as $field ) :
                         $field_config = es_search_get_field_config( $field );
@@ -102,7 +102,7 @@ if ( $collapsed_fields_active || $main_fields_active || ! empty( $attributes['is
                     </li>
                 <?php endif; ?>
             </ul>
-            <a href="#" data-toggle-label="<?php _e( 'Less filters', 'es' ); ?><?php echo esc_attr( '<span class="es-icon es-icon_chevron-top"></span>' ); ?>" class="js-es-search__collapse-link es-search__collapse-link es-secondary-color <?php echo empty ( ests( 'is_open_collapsed_filter_mobile_enabled') ) ? '' : 'es-search-nav-mobile--show'; ?>">
+            <a href="#" data-toggle-label="<?php _e( 'Less filters', 'es' ); ?><?php echo esc_attr( '<span class="es-icon es-icon_chevron-top"></span>' ); ?>" class="js-es-search__collapse-link es-search__collapse-link es-secondary-color">
 		        <?php _e( 'Filters', 'es' ); ?><span class="es-icon es-icon_chevron-bottom"></span>
             </a>
         <?php endif; ?>

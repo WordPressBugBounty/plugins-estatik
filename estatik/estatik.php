@@ -4,7 +4,7 @@
  * Plugin Name:       Estatik
  * Plugin URI:        http://estatik.net
  * Description:       A simple version of Estatik Real Estate plugin for Wordpress.
- * Version:           4.1.6
+ * Version:           4.1.7
  * Author:            Estatik
  * Author URI:        http://estatik.net
  * Text Domain:       es

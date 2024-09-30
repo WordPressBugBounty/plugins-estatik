@@ -37,8 +37,57 @@ class Es_Dashboard_Page {
 	 */
 	public static function get_changelog() {
 		return array(
+			'4.1.7' => array(
+				'date' => _x( 'September, 26, 2024', 'changelog', 'es' ),
+				'changes' => array(
+					array(
+						'text' => _x( 'New settings for taxonomies slugs added', 'changelog', 'es' ),
+						'label' => 'new',
+					),
+					array(
+						'text' => _x( 'Price styles in property PDF fix added', 'changelog', 'es' ),
+						'label' => 'bugfix',
+					),
+					array(
+						'text' => _x( 'Checkboxes for bulk actions in admin panel fix added (All versions)', 'changelog', 'es' ),
+						'label' => 'bugfix',
+					),
+					array(
+						'text' => _x( 'MLS logger refactored (Premium)', 'changelog', 'es' ),
+						'label' => 'bugfix',
+					),
+					array(
+						'text' => _x( 'PHP warnings fixed (ALl versions)', 'changelog', 'es' ),
+						'label' => 'bugfix',
+					),
+					array(
+						'text' => _x( 'et_builder_is_enabled function conflict fixed', 'changelog', 'es' ),
+						'label' => 'bugfix',
+					),
+					array(
+						'text' => _x( 'Strict address option for elementor listings widget added', 'changelog', 'es' ),
+						'label' => 'bugfix',
+					),
+					array(
+						'text' => _x( 'MLS open-house deletion fix added', 'changelog', 'es' ),
+						'label' => 'bugfix',
+					),
+					array(
+						'text' => _x( 'MLS terms import with alt-label fix added', 'changelog', 'es' ),
+						'label' => 'bugfix',
+					),
+					array(
+						'text' => _x( 'SABOR mls connection fix added', 'changelog', 'es' ),
+						'label' => 'bugfix',
+					),
+					array(
+						'text' => _x( 'Minor fixes', 'changelog', 'es' ),
+						'label' => 'bugfix',
+					),
+				),
+			),
 			'4.1.6' => array(
-				'date' => _x( 'August, 12, 2024', 'changelog', 'es' ),
+				'date' => _x( 'August, 19, 2024', 'changelog', 'es' ),
 				'changes' => array(
 					array(
 						'text' => _x( 'New field "Field Description" added (PRO & Premium)', 'changelog', 'es' ),
@@ -56,7 +105,6 @@ class Es_Dashboard_Page {
 						'text' => _x( 'New option "Open collapsed filters" added (All versions)', 'changelog', 'es' ),
 						'label' => 'new',
 					),
-
 					array(
 						'text' => _x( 'Display of archive page "tags" fixed (All versions)', 'changelog', 'es' ),
 						'label' => 'bugfix',
@@ -83,6 +131,14 @@ class Es_Dashboard_Page {
 					),
 					array(
 						'text' => _x( 'Problem with loading elementor for shortcode [‘es-property-map’] fixed', 'changelog', 'es' ),
+						'label' => 'bugfix',
+					),
+					array(
+						'text' => _x( 'PHP stripshashes func warning fix added', 'changelog', 'es' ),
+						'label' => 'bugfix',
+					),
+					array(
+						'text' => _x( 'Minor fixes', 'changelog', 'es' ),
 						'label' => 'bugfix',
 					),
 				),
@@ -167,43 +223,43 @@ class Es_Dashboard_Page {
 
 					array(
 						'text' => _x( 'Agent Logout link fixed  (PRO & Premium)', 'changelog', 'es' ),
-						'label' => 'fix',
+						'label' => 'bugfix',
 					),
 					array(
 						'text' => _x( 'Automatic data input during authorization fixed  (All versions)', 'changelog', 'es' ),
-						'label' => 'fix',
+						'label' => 'bugfix',
 					),
 					array(
 						'text' => _x( 'Saving address (Google Maps) issue fixed  (All versions)', 'changelog', 'es' ),
-						'label' => 'fix',
+						'label' => 'bugfix',
 					),
 					array(
 						'text' => _x( '"Call for price" option cancellation upon saving listing fixed  (All versions)', 'changelog', 'es' ),
-						'label' => 'fix',
+						'label' => 'bugfix',
 					),
 					array(
 						'text' => _x( 'Number-type filter values reset functionality improved  (All versions)', 'changelog', 'es' ),
-						'label' => 'fix',
+						'label' => 'bugfix',
 					),
 					array(
 						'text' => _x( 'Bulk selection issue in admin panel fixed  (All versions)', 'changelog', 'es' ),
-						'label' => 'fix',
+						'label' => 'bugfix',
 					),
 					array(
 						'text' => _x( 'Filter functionality for resetting categories fixed  (All versions)', 'changelog', 'es' ),
-						'label' => 'fix',
+						'label' => 'bugfix',
 					),
 					array(
 						'text' => _x( 'MLS URL modification for existing profiles blocked (Premium)', 'changelog', 'es' ),
-						'label' => 'fix',
+						'label' => 'bugfix',
 					),
 					array(
 						'text' => _x( 'Pause functionality for hidden automatic import fixed (Premium)', 'changelog', 'es' ),
-						'label' => 'fix',
+						'label' => 'bugfix',
 					),
 					array(
 						'text' => _x( 'WEB API access token regeneration issue fixed (Premium)', 'changelog', 'es' ),
-						'label' => 'fix',
+						'label' => 'bugfix',
 					),
 				),
 			),
@@ -224,27 +280,27 @@ class Es_Dashboard_Page {
 					),
 					array(
 						'text' => _x( 'For subscription agents, the functionality for adding and removing listings corrected.', 'changelog', 'es' ),
-						'label' => 'fix',
+						'label' => 'bugfix',
 					),
 					array(
 						'text' => _x( 'Logic for sorting listings refactored.', 'changelog', 'es' ),
-						'label' => 'fix',
+						'label' => 'bugfix',
 					),
 					array(
 						'text' => _x( '“Number” type filter issue fixed.', 'changelog', 'es' ),
-						'label' => 'fix',
+						'label' => 'bugfix',
 					),
 					array(
 						'text' => _x( 'Agent saving issue fixed.', 'changelog', 'es' ),
-						'label' => 'fix',
+						'label' => 'bugfix',
 					),
 					array(
 						'text' => _x( 'Agent profile links issue fixed.', 'changelog', 'es' ),
-						'label' => 'fix',
+						'label' => 'bugfix',
 					),
 					array(
 						'text' => _x( 'The issue with incorrect translations has been fixed.', 'changelog', 'es' ),
-						'label' => 'fix',
+						'label' => 'bugfix',
 					),
 				),
 			),
@@ -281,27 +337,27 @@ class Es_Dashboard_Page {
 					),
 					array(
 						'text' => _x( 'Duplicated taxonomies in admin property form fix added', 'changelog', 'es' ),
-						'label' => 'fix',
+						'label' => 'bugfix',
 					),
 					array(
 						'text' => _x( 'MLS multiple values saving fix added', 'changelog', 'es' ),
-						'label' => 'fix',
+						'label' => 'bugfix',
 					),
 					array(
 						'text' => _x( 'MLS Grid requests issue fix added', 'changelog', 'es' ),
-						'label' => 'fix',
+						'label' => 'bugfix',
 					),
 					array(
 						'text' => _x( 'Optimized locations saving', 'changelog', 'es' ),
-						'label' => 'fix',
+						'label' => 'bugfix',
 					),
 					array(
 						'text' => _x( 'Switcher field in search form fix added', 'changelog', 'es' ),
-						'label' => 'fix',
+						'label' => 'bugfix',
 					),
 					array(
 						'text' => _x( 'Minor fixes', 'changelog', 'es' ),
-						'label' => 'fix',
+						'label' => 'bugfix',
 					),
 				),
 			),

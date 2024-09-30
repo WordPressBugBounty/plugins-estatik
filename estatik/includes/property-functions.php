@@ -725,10 +725,14 @@ if ( ! function_exists( 'es_get_properties_query_args' ) ) {
                 $range_field = str_replace( 'from_', '', $range_field );
                 if ( in_array( $range_field, $range_fields ) || in_array( $range_field, $range_fields ) ) continue;
 
+	            if ( $field == 'keywords' && is_string( $value ) ) {
+		            $value = explode( $args['settings']['fields_delimiter'], $value );
+	            }
+
                 if ( 'authors' == $field ) {
                     $query_args['author'] = $value;
                 }
-                
+
                 $finfo = es_property_get_field_info( $field );
                 if ( ! $finfo ) continue;
 

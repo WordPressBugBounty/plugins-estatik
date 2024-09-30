@@ -212,7 +212,7 @@ class Es_Properties_Archive_Page extends Es_Entities_Archive_Page {
             if ( ! empty( $filter['s'] ) ) {
                 $meta_query['keywords'] = array(
                     'key' => 'es_property_keywords',
-                    'value' => stripslashes( $filter['s'] ),
+                    'value' => es_clean_string( $filter['s'] ),
                     'compare' => 'LIKE'
                 );
             }

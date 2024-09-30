@@ -3,7 +3,7 @@ Contributors: Estatik
 Donate link: http://estatik.net/
 Tags: real estate, idx, MLS, listings, RETS, webAPI, property, realtor
 Requires at least: 5.4
-Tested up to: 6.5.5
+Tested up to: 6.6
 Requires PHP: 5.6
 Stable tag: trunk
 License: GPLv2 or later
@@ -179,19 +179,38 @@ Your listings and plugin configuration will be safe.
 == Changelog ==
 
 
-= 4.1.6 (August 19th, 2024) = 
+= 4.1.7 (September 30, 2024) =
 
-* Display of archive page "tags" fixed
-* Issues with taxonomy pages fixed
-* Issue with disappearing images in gallery when duplicating fixed
-* User geolocation in contact form fetching fixed
-* Ability to add logical operator to checkboxes added
-* Pagination on archives has been fixed
-* The problem with displaying images on mobile devices has been fixed
-* New option 'Open collapsed filters' added
-* Problem with loading Elementor for shortcode [‘es-property-map’] fixed
-* Display of 'Rent Period' field has been corrected for agents
-* New field 'Field Description' added
+
+* NEW: New settings for taxonomies slugs added
+
+* FIXED: Price styles in property PDF fix added
+* FIXED: Checkboxes for bulk actions in admin panel fix added (All versions)
+* FIXED: MLS logger refactored (Premium)
+* FIXED: PHP warnings fixed (ALl versions)
+* FIXED: et_builder_is_enabled function conflict fixed
+* FIXED: Strict address option for elementor listings widget added
+* FIXED: MLS open-house deletion fix added
+* FIXED: MLS terms import with alt-label fix added
+* FIXED: SABOR mls connection fix added
+* FIXED: Minor fixes
+
+
+= 4.1.6 (August 12, 2024) =
+
+
+* NEW: Ability to add logical operator to checkboxes added
+* NEW: New option 'Open collapsed filters' added
+* NEW: Display of 'Rent Period' field has been corrected for agents
+* NEW: New field 'Field Description' added
+
+* FIXED: Display of archive page "tags" fixed 
+* FIXED: Issues with taxonomy pages fixed
+* FIXED: Issue with disappearing images in gallery when duplicating fixed
+* FIXED: User geolocation in contact form fetching fixed
+* FIXED: Pagination on archives has been fixed
+* FIXED: The problem with displaying images on mobile devices has been fixed
+* FIXED: Problem with loading elementor for shortcode [‘es-property-map’] fixed
 
 
 = 4.1.5 (July 04, 2024) =

@@ -1939,6 +1939,7 @@ function es_is_decimal( $val ) {
 /**
  * @param $string
  *
+ * @return string|void
  */
 function es_mulultilingual_translate_string($string) {
     // Checking the presence and activation of Polylang
@@ -1946,68 +1947,18 @@ function es_mulultilingual_translate_string($string) {
         $string = pll__($string);
 	// Checking the presence and activation of WPML
     } elseif (function_exists('icl_t')) {
-		
-        $string = icl_t('Estatik', $string, $string);
+        $string = icl_t('Estatik', $string, '');
     } else {
 		$string = __($string, 'es');
 	}
     return $string;
 }
 
-function es_notification_admin() {
-	$install_timestamp = get_option('es_plugin_install_date');
-	if ( ! empty( $install_timestamp ) ) {
-		$current_timestamp = time();
-		$end_timestamp = strtotime('+5 days', $install_timestamp);
-		$end_date_iso = date('c', $end_timestamp);
-		
-		if ($current_timestamp < $end_timestamp) : ?>
-			<div class="es-banner--easter" style="display: flex; margin: 20px 0; width: 100%; background: #dcedc8; padding: 20px 30px; position: relative;">
-				<div class="es-banner-easter--content" style="padding-left: 20px; font-size: 14px; font-weight: 500;"> <span style="color: red; font-size:16px;">&#8252;</span> <?php _e( 'Limited Time Offer: Become PRO now!', 'es' ); ?>  <?php _e( 'Here is your coupon code with 15% off discount - ', 'es' ); ?>
-					<span style="font-weight: 700;">"summeralert"</span>
-					<span style="margin-left: 10px" id="countdown"></span>
-				</div>
-			</div>
-			<div id="es-banner-easter--close" style="position: absolute; right: 15px; top: 15px; cursor: pointer;">
-				<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<path d="M7.54994 6.99984L10.9046 10.3545C11.0565 10.5064 11.0565 10.7526 10.9046 10.9045C10.7527 11.0563 10.5065 11.0563 10.3546 10.9045L6.99996 7.54981L3.64532 10.9045C3.49345 11.0563 3.24722 11.0563 3.09535 10.9045C2.94348 10.7526 2.94348 10.5064 3.09535 10.3545L6.44999 6.99984L3.09535 3.6452C2.94348 3.49333 2.94348 3.2471 3.09535 3.09523C3.24722 2.94336 3.49345 2.94336 3.64532 3.09523L6.99996 6.44987L10.3546 3.09523C10.5065 2.94336 10.7527 2.94336 10.9046 3.09523C11.0565 3.2471 11.0565 3.49333 10.9046 3.6452L7.54994 6.99984Z" fill="#4F4F4F"/>
-				</svg>
-			</div>     
-
-			<script>
-				const endDate = new Date('<?php echo $end_date_iso; ?>');
-				
-				function updateCountdown() {
-                const now = new Date();
-                const timeRemaining = endDate - now;
-
-                if (timeRemaining <= 0) {
-                    document.getElementById('countdown').innerText = 'Expired';
-                    clearInterval(countdownInterval);
-                    return;
-                }
-
-                const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
-
-                document.getElementById('countdown').innerText = `( ${days} d ${hours} h ${minutes} m ${seconds} s )`;
-            }
-
-            const countdownInterval = setInterval(updateCountdown, 1000);
-
-            document.addEventListener('DOMContentLoaded', function() {
-                var closeButton = document.querySelector('#es-banner-easter--close');
-                var bannerElement = document.querySelector('.es-banner--easter');
-
-                if (closeButton && bannerElement) {
-                    closeButton.addEventListener('click', function() {
-                        bannerElement.style.display = 'none';
-                    });
-                }
-            });
-        </script>
-		<?php endif;
-	} 
+/**
+ * @param $string
+ *
+ * @return string
+ */
+function es_clean_string( $string ) {
+	return ! is_null( $string ) ? stripslashes( $string ) : '';
 }

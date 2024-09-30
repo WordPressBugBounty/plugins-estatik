@@ -44,7 +44,7 @@ if ( $collapsed_fields_active || $main_fields_active || ! empty( $attributes['is
 			<?php endif; ?>
 
 			<?php if ( $collapsed_fields_active || $main_fields_active ) : ?>
-                <a href="" class="js-es-search__collapse-link es-search__collapse-link es-leave-border <?php echo empty ( ests( 'is_open_collapsed_filter_mobile_enabled') ) ? '' : 'es-search-nav-mobile--show'; ?> " >
+                <a href="" class="js-es-search__collapse-link es-search__collapse-link es-leave-border">
 					<?php _e( 'Filters', 'es' ); ?><span class="es-icon es-icon_chevron-bottom"></span>
                 </a>
 
@@ -61,7 +61,7 @@ if ( $collapsed_fields_active || $main_fields_active || ! empty( $attributes['is
                     </button>
 				<?php endif; ?>
                 <div class="es-search-nav-wrap">
-                    <ul class="es-search-nav es-search-nav--dropdowns js-es-search-nav <?php echo empty ( ests( 'is_open_collapsed_filter_mobile_enabled') ) ? '' : 'es-search-nav-mobile--show'; ?> <?php echo empty( $attributes['is_address_search_enabled'] ) ? 'es-search-nav--dropdowns' : ''; ?>">
+                    <ul class="es-search-nav es-search-nav--dropdowns js-es-search-nav <?php echo empty( $attributes['is_address_search_enabled'] ) ? 'es-search-nav--dropdowns' : ''; ?>">
 						<?php if ( $main_fields_active ) : ?>
 							<?php foreach ( $attributes['main_fields'] as $field ) :
 								$field_config = es_search_get_field_config( $field );

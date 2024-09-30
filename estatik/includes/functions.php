@@ -57,9 +57,9 @@ if ( ! function_exists( 'es_format_value' ) ) {
             case 'price':
             case 'price-area':
                 if ( $value ) {
-                    $dec = stripslashes( ests( 'currency_dec' ) );
-                    $dec_num = stripslashes( ests( 'currency_dec_num' ) );
-                    $sup = stripslashes( ests( 'currency_sup' ) );
+                    $dec = es_clean_string( ests( 'currency_dec' ) );
+                    $dec_num = es_clean_string( ests( 'currency_dec_num' ) );
+                    $sup = es_clean_string( ests( 'currency_sup' ) );
                     $price_format = $sup . $dec;
                     $position = ests( 'currency_position' );
                     $sign = ests_label( 'currency_sign' );
@@ -703,7 +703,7 @@ function et_builder_es_get_property_layout( $post_id ) {
  *
  * @return bool
  */
-function et_builder_is_enabled( $post_id ) {
+function es_et_builder_is_enabled( $post_id ) {
 	return get_post_meta( $post_id, '_et_pb_use_builder', true ) == 'on';
 }
 

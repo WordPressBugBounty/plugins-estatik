@@ -108,7 +108,7 @@ class Es_Assets {
 		$public = ES_PLUGIN_URL . 'public';
 		$common = ES_PLUGIN_URL . 'common';
 
-		wp_register_script( 'es-share-script', 'https://static.addtoany.com/menu/page.js', array(), null, true );
+		wp_register_script( 'es-share-script', 'https://static.addtoany.com/menu/page.js' );
 		wp_register_script( 'es-magnific', $common . '/magnific-popup/jquery.magnific-popup.min.js', array( 'jquery' ), Estatik::get_version() );
 		wp_register_style( 'es-magnific', $common . '/magnific-popup/magnific-popup.min.css', array(), Estatik::get_version() );
 
@@ -117,6 +117,7 @@ class Es_Assets {
 			$public_deps[] = 'es-googlemap-api';
 		}
 
+		$public_deps[] = 'es-share-script';
 		$public_deps[] = 'es-magnific';
 		$public_deps[] = 'es-select2';
 		$public_deps[] = 'es-slick';
@@ -134,7 +135,6 @@ class Es_Assets {
 
 		wp_register_script( 'es-properties', ES_PLUGIN_URL . 'public/js/ajax-entities.min.js', array( 'es-frontend' ), Estatik::get_version() );
 		wp_enqueue_script( 'es-properties' );
-		wp_enqueue_script( 'es-share-script' );
 
 		$localize = array(
 			'tr' => es_js_get_translations(),
@@ -190,9 +190,20 @@ class Es_Assets {
 			if (! empty( $_SERVER["REMOTE_ADDR"] ) ) {
 				$ip = $_SERVER["REMOTE_ADDR"];
 				if (! empty( $ip ) ) {
-					$xml = simplexml_load_file("http://www.geoplugin.net/xml.gp?ip=".$ip);
-					if (! empty ( $xml->geoplugin_countryCode ) ) {
-						$localize['settings']['country'] = $xml->geoplugin_countryCode;
+					$url = "http://www.geoplugin.net/xml.gp?ip=" . $ip;
+					$response = wp_safe_remote_get( $url );
+					
+					if ( is_wp_error( $response ) ) {
+						$error_message = $response->get_error_message();
+					} else {
+						$body = wp_remote_retrieve_body( $response );
+						$xml = simplexml_load_string( $body );
+						
+						if ( $xml !== false ) {
+							if ( ! empty( $xml->geoplugin_countryCode ) ) {
+								$localize['settings']['country'] = (string) $xml->geoplugin_countryCode;
+							}
+						}
 					}
 				}
 			}

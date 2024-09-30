@@ -83,7 +83,9 @@ class Es_Tabs_View extends Es_Framework_View {
 			</div>
 			<div class="js-es-tabs__wrapper <?php echo $config['wrapper_tabs_class']; ?>">
 
-				<?php if ( $config['show_logo'] ) do_action( 'es_logo' ); ?>
+				<?php if ( $config['show_logo'] ) : ?>
+                    <?php do_action( 'es_logo' ); ?>
+                <?php endif; ?>
                 <?php if ( ! empty( $config['before_content_tabs'] ) ) : ?>
                     <?php echo $config['before_content_tabs']; ?>
                 <?php endif; ?>

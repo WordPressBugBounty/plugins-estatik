@@ -1,6 +1,6 @@
 <div class="es-wrap" id="es-settings">
     <form method="post" class="js-es-settings-form">
-        <div class="js-es-notifications"><?php echo es_notification_admin(); ?></div>
+        <div class="js-es-notifications"></div>
 
         <?php
 

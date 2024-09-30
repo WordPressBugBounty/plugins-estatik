@@ -85,7 +85,7 @@ class Es_Template_Loader {
 		$entity = es_get_entity_by_id( get_the_ID() );
 
 		if ( static::$single_divi_template ) {
-			if ( et_builder_is_enabled( get_the_ID() ) ) {
+			if ( es_et_builder_is_enabled( get_the_ID() ) ) {
 				return $content;
 			} else {
 				if ( $entity ) {

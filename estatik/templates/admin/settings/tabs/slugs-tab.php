@@ -26,6 +26,41 @@
         'type' => 'text',
     ) );
 
+    es_settings_field_render( 'amenity_slug', array(
+        'label' => __( 'Property amenity slug', 'es' ),
+        'type' => 'text',
+    ) );
+
+    es_settings_field_render( 'feature_slug', array(
+        'label' => __( 'Property feature slug', 'es' ),
+        'type' => 'text',
+    ) );
+
+    es_settings_field_render( 'floor_covering_slug', array(
+        'label' => __( 'Property floor covering slug', 'es' ),
+        'type' => 'text',
+    ) );
+
+    es_settings_field_render( 'exterior_material_slug', array(
+        'label' => __( 'Property exterior material slug', 'es' ),
+        'type' => 'text',
+    ) );
+
+    es_settings_field_render( 'parking_slug', array(
+        'label' => __( 'Property parking slug', 'es' ),
+        'type' => 'text',
+    ) );
+
+    es_settings_field_render( 'roof_slug', array(
+        'label' => __( 'Property roof slug', 'es' ),
+        'type' => 'text',
+    ) );
+
+    es_settings_field_render( 'rent_period_slug', array(
+        'label' => __( 'Property rent period slug', 'es' ),
+        'type' => 'text',
+    ) );
+
     es_settings_field_render( 'tag_slug', array(
         'label' => __( 'Property tag slug', 'es' ),
         'type' => 'text',

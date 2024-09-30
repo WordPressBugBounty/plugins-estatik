@@ -1,5 +1,4 @@
 <div class="es-wrap">
-    <div class="js-es-notifications"><?php echo es_notification_admin(); ?></div>
     <div class="es-head">
         <h1><?php _e( 'My listings', 'es' ); ?></h1>
         <?php if ( Es_Property::count() ) : ?>
