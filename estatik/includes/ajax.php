@@ -106,8 +106,8 @@ function es_ajax_get_property_item() {
         ) );
 
 	    // Generate back to search link.
-	    if ( ! empty( $_SERVER['HTTP_REFERER'] ) ) {
-		    $GLOBALS['search_url'] = $_SERVER['HTTP_REFERER'];
+	    if ( $search_url = wp_get_raw_referer() ) {
+		    $GLOBALS['search_url'] = $search_url;
 	    }
 
         if ( $query->have_posts() ) {
@@ -269,8 +269,8 @@ function es_ajax_get_listings() {
     $attributes['_ignore_coordinates'] = ! $need_reload_map;
 
     // Generate back to search link.
-	if ( ! empty( $_SERVER['HTTP_REFERER'] ) ) {
-		$GLOBALS['search_url'] = $_SERVER['HTTP_REFERER'];
+	if ( $search_url = wp_get_raw_referer() ) {
+		$GLOBALS['search_url'] = $search_url;
 	}
 
     /** @var Es_My_Listing_Shortcode $shortcode */

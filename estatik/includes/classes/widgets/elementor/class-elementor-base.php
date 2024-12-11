@@ -73,10 +73,6 @@ abstract class Elementor_Es_Base_Widget extends Widget_Base {
 					if ( 'no' == $value ) {
 						$settings[ $setting ] = false;
 					}
-
-					if ( '' == $value ) {
-						unset( $settings[ $setting ] );
-					}
 				}
 
 				if ( is_array( $value ) ) {

@@ -13,7 +13,7 @@ class Estatik {
 	 * @var Estatik
 	 */
 	protected static $_instance;
-	const VERSION = '4.1.7';
+	const VERSION = '4.1.8';
 	const TYPE = 'simple';
 
 	/**

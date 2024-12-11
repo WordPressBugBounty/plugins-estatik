@@ -112,9 +112,10 @@ if ( ! function_exists( 'es_get_the_field' ) ) {
 	 * @return mixed
 	 */
 	function es_get_the_field( $field, $post = 0 ) {
-		$property = es_get_entity_by_id( $post );
+		$entity = es_get_entity_by_id( $post );
+		$value = $entity instanceof Es_Entity ? $entity->{$field} : null;
 
-		return apply_filters( 'es_get_the_field', $property->{$field}, $field, $post );
+		return apply_filters( 'es_get_the_field', $value, $field, $post );
 	}
 }
 

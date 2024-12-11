@@ -136,7 +136,7 @@ class Es_Auth {
 							es_set_flash( 'authenticate', __( 'The email address you use has already been registered. Please log in.', 'es' ), 'error' );
 						}
 
-						wp_safe_redirect( es_get_auth_page_uri( 'buyer-register-form', $_SERVER['HTTP_REFERER'], $is_popup ) );
+						wp_safe_redirect( es_get_auth_page_uri( 'buyer-register-form', wp_get_raw_referer(), $is_popup ) );
 						die;
 					}
 				} else {
@@ -154,7 +154,7 @@ class Es_Auth {
 					} else if ( is_wp_error( $user_id ) ) {
 						es_set_wp_error_flash( 'authenticate', $user_id );
 
-						wp_safe_redirect( es_get_auth_page_uri( "{$type}-register-form", $_SERVER['HTTP_REFERER'], $is_popup ) );
+						wp_safe_redirect( es_get_auth_page_uri( "{$type}-register-form", wp_get_raw_referer(), $is_popup ) );
 						die;
 					} else {
 						add_filter( 'wp_new_user_notification_email_admin', array( 'Es_Auth', 'wrap_email' ) );
@@ -182,7 +182,7 @@ class Es_Auth {
 			} else {
 				es_set_flash( 'authenticate', __( 'Invalid reCAPTCHA. Please, reload the page and try again.', 'es' ), 'error' );
 
-				wp_safe_redirect( es_get_auth_page_uri( "{$type}-register-form", $_SERVER['HTTP_REFERER'], $is_popup ) );
+				wp_safe_redirect( es_get_auth_page_uri( "{$type}-register-form", wp_get_raw_referer(), $is_popup ) );
 				die;
 			}
 		}
@@ -210,7 +210,7 @@ class Es_Auth {
 
 				if ( is_wp_error( $user ) ) {
 					es_set_wp_error_flash( 'authenticate', $user );
-					wp_safe_redirect( es_get_auth_page_uri( 'login-form', $_SERVER['HTTP_REFERER'], $is_popup ) );
+					wp_safe_redirect( es_get_auth_page_uri( 'login-form', wp_get_raw_referer(), $is_popup ) );
 					die;
 				} else {
 					wp_safe_redirect( $redirect_url ? add_query_arg( 'redirect_action', 'sign-in', $redirect_url ) : es_get_success_auth_redirect_url() );
@@ -218,7 +218,7 @@ class Es_Auth {
 				}
 			} else {
 				es_set_flash( 'authenticate', __( 'Invalid reCAPTCHA. Please, reload the page and try again.', 'es' ), 'error' );
-				wp_safe_redirect( es_get_auth_page_uri( 'login-form', $_SERVER['HTTP_REFERER'], $is_popup ) );
+				wp_safe_redirect( es_get_auth_page_uri( 'login-form', wp_get_raw_referer(), $is_popup ) );
 				die;
 			}
 		}

@@ -103,8 +103,12 @@ class Es_Fields_Builder extends Es_Fields_Builder_Item {
 						$fields[ $entity ][ $key ]['formatter'] = $field['type'];
 					}
 
-					if ( 'media' == $field['type'] && empty( $fields[ $entity ][ $key ]['formatter'] ) ) {
-						$fields[ $entity ][ $key ]['formatter'] = 'document';
+					if ( 'media' == $field['type'] ) {
+						if ( empty( $fields[ $entity ][ $key ]['formatter'] ) ) {
+							$fields[ $entity ][ $key ]['formatter'] = 'document';
+						}
+
+						$fields[ $entity ][ $key ]['enable_hidden_input'] = true;
 					}
 
 					if ( in_array( $field['type'], array( 'date', 'date-time' ) ) ) {

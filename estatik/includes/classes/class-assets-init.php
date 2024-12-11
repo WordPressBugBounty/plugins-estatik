@@ -186,25 +186,36 @@ class Es_Assets {
 			}
 		}
 
-		if (! empty( ests( 'is_request_form_geolocation_enabled' ) ) ) {
-			if (! empty( $_SERVER["REMOTE_ADDR"] ) ) {
-				$ip = $_SERVER["REMOTE_ADDR"];
-				if (! empty( $ip ) ) {
-					$url = "http://www.geoplugin.net/xml.gp?ip=" . $ip;
+		if ( ! empty( ests( 'is_request_form_geolocation_enabled' ) ) ) {
+			$ip = es_get_ip_address();
+
+			if ( ! empty( $ip ) ) {
+				$c_code = get_transient( 'countryCode_' . $ip );
+
+				if ( ! $c_code ) {
+					$url = sprintf( "http://www.geoplugin.net/xml.gp?ip=%s", $ip );
 					$response = wp_safe_remote_get( $url );
-					
+
 					if ( is_wp_error( $response ) ) {
 						$error_message = $response->get_error_message();
 					} else {
 						$body = wp_remote_retrieve_body( $response );
-						$xml = simplexml_load_string( $body );
-						
-						if ( $xml !== false ) {
-							if ( ! empty( $xml->geoplugin_countryCode ) ) {
-								$localize['settings']['country'] = (string) $xml->geoplugin_countryCode;
+
+						if ( ! empty( $body ) ) {
+							$xml = simplexml_load_string( $body );
+
+							if ( $xml !== false ) {
+								if ( ! empty( $xml->geoplugin_countryCode ) ) {
+									$c_code = (string) $xml->geoplugin_countryCode;
+									set_transient( 'countryCode_' . $ip, $c_code, 300 );
+								}
 							}
 						}
 					}
+				}
+
+				if ( ! empty( $c_code ) ) {
+					$localize['settings']['country'] = $c_code;
 				}
 			}
 		}

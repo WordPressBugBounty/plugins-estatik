@@ -184,6 +184,14 @@ abstract class Es_Entity {
 					$value = $field['default_value'];
 				}
 
+				if ( ! empty( $field['type'] ) && 'media' == $field['type'] ) {
+					if ( $to_delete = es_array_diff( $this->{$key}, $value ) ) {
+						foreach ( $to_delete as $attachment_id ) {
+							es_entity_delete_attachment( $attachment_id, $key, $this );
+						}
+					}
+				}
+
 				if ( isset( $data[ $key ] ) && ! $value && ! isset( $field['default_value'] ) ) {
 					$this->delete_field_value( $key );
 				}

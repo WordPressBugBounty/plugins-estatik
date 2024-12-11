@@ -870,15 +870,16 @@ add_filter( 'es_get_the_formatted_field', 'es_get_the_formatter_post_content', 1
  */
 function es_property_delete_attachments( $post_id ) {
     if ( es_is_property( $post_id ) ) {
-        $attachments = get_children( array(
-            'post_type' => 'attachment',
-            'post_parent' => $post_id,
-            'fields' => 'ids',
-        ) );
+        $property = es_get_property( $post_id );
+	    $media_fields = wp_list_filter( es_get_entity_fields( $property::get_entity_name() ), array( 'type' => 'media' ) );
 
-        if ( ! empty( $attachments ) ) {
-            foreach ( $attachments as $attachment_id ) {
-                wp_delete_attachment( $attachment_id, true );
+        if ( ! empty( $media_fields ) ) {
+            foreach ( $media_fields as $field => $config ) {
+	            if ( $attachment_ids = $property->{$field} ) {
+		            foreach ( $attachment_ids as $attachment_id ) {
+			            es_entity_delete_attachment( $attachment_id, $field, $property );
+		            }
+	            }
             }
         }
     }

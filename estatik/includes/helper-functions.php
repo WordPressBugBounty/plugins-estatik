@@ -239,6 +239,48 @@ function es_entities_filter_field_render( $field_key, $field_config ) {
 	es_framework_field_render( $field_key, $field_config );
 }
 
+/**
+ * @return mixed|void
+ */
+function es_get_locations_priority_config() {
+	$country = es_property_get_field_info( 'country' );
+	$state = es_property_get_field_info( 'state' );
+	$city = es_property_get_field_info( 'city' );
+	$province = es_property_get_field_info( 'province' );
+
+	$fields = apply_filters( 'es_before_get_locations_priority_config', array(
+		'country' => array(
+			'components' => array( $country['address_component'] ),
+			'dependencies' => array( 'state', 'province' ),
+		),
+		'state' => array(
+			'components' => array( $state['address_component'] ),
+			'dependencies' => array( 'province', 'city' ),
+		),
+		'province' => array(
+			'components' => array( $province['address_component'] ),
+			'dependencies' => array( 'city' ),
+		),
+		'city' => array(
+			'components' => array( $city['address_component'] ),
+			'taxonomy' => 'es_location',
+		),
+	) );
+
+	foreach ( $fields as $field => $config ) {
+		if ( ! es_is_property_field_active( $field ) ) {
+			unset( $fields[ $field ] );
+		}
+	}
+
+	if ( ! empty( $fields ) ) {
+		$firstKey = array_key_first( $fields );
+		$fields[ $firstKey ]['initial'] = true;
+	}
+
+	return apply_filters( 'es_get_locations_priority_config', $fields );
+}
+
 if ( ! function_exists( 'es_property_field_render' ) ) {
 
 	/**
@@ -323,6 +365,25 @@ if ( ! function_exists( 'es_property_field_render' ) ) {
 				$field_config['disable_hidden_input'] = false;
 				$field_config['attributes']['name']       = $name;
 				$field_config['attributes']['data-value'] = $field_config['value'];
+
+				$location_fields = es_get_locations_priority_config();
+
+                if ( ! empty( $location_fields[ $field_key ] ) ) {
+	                $parent_id = '';
+	                $location_field = $location_fields[ $field_key ];
+
+                    if ( empty( $location_field['initial'] ) ) {
+                        foreach ( $location_fields as $parent_key => $parent_field ) {
+                            if ( ! empty( $parent_field['dependencies'] ) && in_array( $field_key, $parent_field['dependencies'] ) ) {
+                                $parent_id = ! empty( $property->{$parent_key} ) ? $property->{$parent_key} : $parent_id;
+                            }
+                        }
+                    }
+
+                    $address_components = es_get_address_components_container();
+                    $components = $address_components::get_locations( $location_field['components'], $parent_id );
+                    $field_config['options'] = $components;
+                }
 
 				es_framework_field_render( $field_key, $field_config );
 			}
@@ -1937,6 +1998,40 @@ function es_is_decimal( $val ) {
 }
 
 /**
+ * Get visitor IP Address.
+ *
+ * @return string|null
+ */
+function es_get_ip_address() {
+	$res = null;
+
+	foreach (
+		array(
+			'HTTP_CLIENT_IP',
+			'HTTP_X_FORWARDED_FOR',
+			'HTTP_X_FORWARDED',
+			'HTTP_X_CLUSTER_CLIENT_IP',
+			'HTTP_CF_CONNECTING_IP',
+			'HTTP_FORWARDED_FOR',
+			'HTTP_FORWARDED',
+			'REMOTE_ADDR'
+		) as $key
+	) {
+		if ( array_key_exists( $key, $_SERVER ) === true ) {
+			foreach ( explode( ',', $_SERVER[ $key ] ) as $ip ) {
+				$ip = trim( $ip );
+
+				if ( filter_var( $ip, FILTER_VALIDATE_IP, FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE ) !== false ) {
+					$res = $ip;
+				}
+			}
+		}
+	}
+
+	return $res;
+}
+
+/**
  * @param $string
  *
  * @return string|void
@@ -1961,4 +2056,38 @@ function es_mulultilingual_translate_string($string) {
  */
 function es_clean_string( $string ) {
 	return ! is_null( $string ) ? stripslashes( $string ) : '';
+}
+
+/**
+ * @param $arr1
+ * @param $arr2
+ * @param string $callback
+ *
+ * @return array
+ */
+function es_array_diff( $arr1, $arr2, $callback = 'strval' ) {
+    $arr1 = ! empty( $arr1 ) && is_scalar( $arr1 ) ? array( $arr1 ) : $arr1;
+    $arr2 = ! empty( $arr2 ) && is_scalar( $arr2 ) ? array( $arr2 ) : $arr2;
+    $arr1 = is_array( $arr1 ) ? $arr1 : array();
+    $arr2 = is_array( $arr2 ) ? $arr2 : array();
+    $arr1 = array_map( $callback, $arr1 );
+    $arr2 = array_map( $callback, $arr2 );
+
+    return array_diff( $arr1, $arr2 );
+}
+
+/**
+ * @param $value
+ *
+ * @return mixed|null
+ */
+function es_maybe_json_decode( $value ) {
+	if ( is_string( $value ) ) {
+		$decoded = json_decode( $value, true );
+		if ( is_null( $decoded ) ) { // older versions of Cornerstone stored JSON with escaped slashes
+			$decoded = json_decode( wp_unslash( $value ), true );
+		}
+		return $decoded;
+	}
+	return $value;
 }

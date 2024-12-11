@@ -3,7 +3,7 @@ Contributors: Estatik
 Donate link: http://estatik.net/
 Tags: real estate, idx, MLS, listings, RETS, webAPI, property, realtor
 Requires at least: 5.4
-Tested up to: 6.6
+Tested up to: 6.7.1
 Requires PHP: 5.6
 Stable tag: trunk
 License: GPLv2 or later
@@ -179,7 +179,22 @@ Your listings and plugin configuration will be safe.
 == Changelog ==
 
 
-= 4.1.7 (September 30, 2024) =
+= 4.1.8 (December 11, 2024) =
+
+
+* NEW: Additional Currencies added (Pro & Premium)
+* NEW: The design of the "Pricing" page updated (Pro & Premium)
+* NEW: The Currency settings moved to the Data Manager (All versions)
+* NEW: Remote images MLS Import Optimized (Premium)
+* NEW: MLS addresses import refactored (Premium)
+
+* FIXED: Resolved the issue with saving duplicate images (All versions)
+* FIXED: New translation fields added (All versions)
+* FIXED: The conflict with WPML resolved (Pro & Premium)
+* FIXED: Contains MLS operator fixed (Premium)
+
+
+= 4.1.7 (September 26, 2024) =
 
 
 * NEW: New settings for taxonomies slugs added

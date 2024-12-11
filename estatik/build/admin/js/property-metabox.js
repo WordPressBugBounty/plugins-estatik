@@ -175,7 +175,7 @@
         var map = $( '.js-es-form-map' ).get(0);
         var $address_field = $( '.js-es-autocomplete-address:not(.disable-autocomplete)' );
 
-        initBaseField();
+        // initBaseField();
 
         $( '.js-es-manual-address' ).click( function(e) {
             $( '.js-es-location-fields' ).toggleClass( 'es-hidden' );

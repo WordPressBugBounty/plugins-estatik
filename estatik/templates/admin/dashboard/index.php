@@ -17,17 +17,169 @@
         </div>
 
         <?php
-        $current_date = current_time('Ymd'); 
-        $target_date = '20240402';
+        $target_date_raw = '2024-12-28';
+        $target_date_start = date( 'Ymd', strtotime('2024-12-11' ) );
+        $current_date = current_time('Ymd');
+        $target_date = date('Ymd', strtotime($target_date_raw));
+        if ($current_date < $target_date && $current_date >= $target_date_start) :
+            $current_time = time() * 1000; 
+            $target_time = strtotime($target_date_raw) * 1000; ?>
+            <style>
+                .es-banner--event {
+                    display: flex;
+                    font-family: 'Open Sans', Arial, sans-serif;
+                    margin-top: 2em;
+                    /* border: 1px solid #CFD8DC; */
+                    position: relative;
+                    overflow: hidden;
+                    border: 1px solid #DEDEDE;
+                }
+                .es-banner--timer {
+                    text-align: center;
+                    font-size: 1em;
+                    display: flex;
+                    justify-content: space-between;
+                    /* background-color: #36003B; */
+                    padding: 20px 40px 20px 180px;
+                    position: relative;
+                    background-color: #E63532;
+                }
 
-        if ($current_date <= $target_date) : ?>
-            <div class="es-banner--easter" style="display: flex; margin: 20px 0; width: 100%; background: #FFECB3; padding: 20px 30px; position: relative;">
-                <svg width="14" height="18" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M7 18C5.05 18 3.396 17.321 2.038 15.963C0.68 14.605 0.000666667 12.9507 0 11C0 9.71667 0.212667 8.425 0.638 7.125C1.06333 5.825 1.61333 4.646 2.288 3.588C2.96267 2.52933 3.71667 1.66667 4.55 1C5.38333 0.333333 6.2 0 7 0C7.81667 0 8.63767 0.333333 9.463 1C10.2883 1.66667 11.0383 2.52933 11.713 3.588C12.3877 4.646 12.9377 5.825 13.363 7.125C13.7883 8.425 14.0007 9.71667 14 11C14 12.95 13.321 14.6043 11.963 15.963C10.605 17.3217 8.95067 18.0007 7 18ZM7 16C8.38333 16 9.56267 15.5123 10.538 14.537C11.5133 13.5617 12.0007 12.3827 12 11C12 10.05 11.8373 9.05 11.512 8C11.1867 6.95 10.7783 5.97933 10.287 5.088C9.79566 4.196 9.25833 3.45833 8.675 2.875C8.09167 2.29167 7.53333 2 7 2C6.48333 2 5.92933 2.29167 5.338 2.875C4.74667 3.45833 4.205 4.196 3.713 5.088C3.221 5.97933 2.81267 6.95 2.488 8C2.16333 9.05 2.00067 10.05 2 11C2 12.3833 2.48767 13.5627 3.463 14.538C4.43833 15.5133 5.61733 16.0007 7 16ZM8 15C8.28333 15 8.521 14.904 8.713 14.712C8.905 14.52 9.00067 14.2827 9 14C9 13.7167 8.904 13.4793 8.712 13.288C8.52 13.0967 8.28267 13.0007 8 13C7.16667 13 6.45833 12.7083 5.875 12.125C5.29167 11.5417 5 10.8333 5 10C5 9.71667 4.904 9.47933 4.712 9.288C4.52 9.09667 4.28267 9.00067 4 9C3.71667 9 3.47933 9.096 3.288 9.288C3.09667 9.48 3.00067 9.71733 3 10C3 11.3833 3.48767 12.5627 4.463 13.538C5.43833 14.5133 6.61733 15.0007 8 15Z" fill="#FFB300"/>
-                </svg>
+                .es-banner--timer__content {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    padding: 10px 0;
+                }
+                
+                .es-banner--timer__content div{
+                    color: white;
+                    font-size: 14px;
+                    margin-left: 15px;
+                    position: relative;
+                }
+                .es-banner--timer__content div:not(:last-child)::after {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    right: -9px;
+                    width: 1px;
+                    height: 100%;
+                    background-color: white;
+                }
+                .es-banner--timer span{
+                    font-size: 24px;
+                    font-weight: bold;
+                }
+                .es-banner--event img{
+                    position: absolute;
+                    height: 100%;
+                    left: 0px;
+                    overflow: hidden;
+                    top: 2px;
+                    /* padding: 2px 0; */
+                }
+                .es-banner-event--content{
+                    display: flex;
+                    width: 100%;
+                    flex-direction: column;
+                    align-self: center;
+                    margin-left: 40px;
+                    padding: 30px 0;
+                }
+                .es-banner--timer__title{
+                    color: #000000;
+                    font-size: 18px;
+                    font-weight: 800;
+                    padding-bottom: 8px;
+                }
+                .es-banner--timer__title a {
+                    color: #5AC03A;
+                    text-decoration: auto;
+                }
+                .es-banner--timer__subtitle{
+                    color: #000;
+                    font-size: 14px;
+                }
+                #es-banner-event--close svg{
+                    margin-top: 10px;
+                    margin-right: 10px;
+                }
 
-                <div class="es-banner-easter--content" style="padding-left: 20px; font-size: 14px; font-weight: 500;"><?php _e( 'Estatik Easter Sale is On!', 'es' ); ?> &#x1F423; <?php _e( 'Act fast—these deals hop away soon!', 'es' ); ?> <a target="_blank" href="https://estatik.net/choose-your-version/" style="text-decoration: underline; cursor: pointer;"> <?php _e( 'Click here to access the sale', 'es' ); ?></a></div>
-                <div id="es-banner-easter--close" style="position: absolute; right: 15px; top: 15px; cursor: pointer;">
+                .es-banner--timer__button {       
+                    background-color: #5AC03A;
+                    padding: 10px 40px;
+                    margin-top: 20px;
+                    border-radius: 10px;
+                    width: max-content;
+                    color: white;
+                    font-weight: 800;
+                    font-size: 14px;
+                }
+
+                .es-banner--timer__button a {
+                    color: white;
+                    font-weight: 800;
+                    font-size: 14px;
+                    text-decoration: none; 
+                }
+                @media screen and (max-width: 782px) {
+                    .es-banner--event {
+                        flex-direction: column;
+                    }
+                    .es-banner-event--content{
+                        padding: 20px 40px 20px 30px;
+                        margin: 0;
+                    }
+                    .es-banner--timer__content div:first-child {
+                        margin-left: 0;
+                    }
+                    .es-banner--timer{
+                        border-top-right-radius: 0px;
+                        border-bottom-right-radius: 0px;
+                        padding: 20px 40px 20px 30px;
+                    }
+                    .es-banner--timer__title{
+                        /*padding-top: 1em;*/
+                        display: flex;
+                        flex-direction: column;
+                        gap: 5px;
+                    }
+                    .es-banner--timer__subtitle {
+                        font-size: 12px;
+                    }
+                    #es-banner-event--close {
+                        position: absolute;
+                        right: 0;
+                    }
+                    #es-banner-event--close svg{
+                        fill: white;
+                    }
+                    .es-banner--event img {
+                        display: none;
+                    }
+                }   
+            </style>
+            <div class="es-banner--event">
+                <div class="es-banner--timer" id="es-banner--timer">
+                    <img src="<?php echo plugin_dir_url( ES_FILE ) . '/admin/images/christmas.png'; ?>" alt="">
+                    <div class="es-banner--timer__content">
+                        <div><span id="days">0</span> <?php  _e('days', 'es'); ?></div>
+                        <div><span id="hours">0</span> <?php   _e('hours', 'es'); ?></div>
+                        <div><span id="minutes">0</span> <?php  _e('min', 'es'); ?></div>
+                    </div>
+                </div>
+
+                <div class="es-banner-event--content">
+                    <div class="es-banner--timer__title">
+                        <?php _e( 'Enjoy our Xmas Estatik Deals! 🎄', 'es' ); ?>
+                        <!-- <a target="_blank" href="https://estatik.net/choose-your-version/"> <?php // _e( 'Click here to access the sale', 'es' ); ?></a> -->
+                    </div>
+                    <div class="es-banner--timer__subtitle"><?php _e( 'Unlock all the features with PRO or Premium with Xmas discounts!', 'es' ); ?></div>
+                    <div class="es-banner--timer__button"><a target="_blank" href="https://estatik.net/choose-your-version/"><?php _e( 'Upgrade', 'es' ); ?></a></div>
+                </div>
+
+                <div id="es-banner-event--close">
                     <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M7.54994 6.99984L10.9046 10.3545C11.0565 10.5064 11.0565 10.7526 10.9046 10.9045C10.7527 11.0563 10.5065 11.0563 10.3546 10.9045L6.99996 7.54981L3.64532 10.9045C3.49345 11.0563 3.24722 11.0563 3.09535 10.9045C2.94348 10.7526 2.94348 10.5064 3.09535 10.3545L6.44999 6.99984L3.09535 3.6452C2.94348 3.49333 2.94348 3.2471 3.09535 3.09523C3.24722 2.94336 3.49345 2.94336 3.64532 3.09523L6.99996 6.44987L10.3546 3.09523C10.5065 2.94336 10.7527 2.94336 10.9046 3.09523C11.0565 3.2471 11.0565 3.49333 10.9046 3.6452L7.54994 6.99984Z" fill="#4F4F4F"/>
                     </svg>
@@ -36,12 +188,29 @@
 
             <script>
                 document.addEventListener('DOMContentLoaded', function() {
-                    var closeButton = document.querySelector('#es-banner-easter--close');
-                    var bannerElement = document.querySelector('.es-banner--easter');
+                    var closeButton = document.querySelector('#es-banner-event--close');
+                    var bannerElement = document.querySelector('.es-banner--event');
 
                     closeButton.addEventListener('click', function() {
                         bannerElement.style.display = 'none';
                     });
+
+                    const targetTime = <?php echo $target_time; ?>;
+                    let currentTime = <?php echo $current_time; ?>;
+
+                    function updateTimer() {
+                        const difference = targetTime - currentTime;
+                        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+
+                        document.getElementById("days").textContent = days;
+                        document.getElementById("hours").textContent = hours;
+                        document.getElementById("minutes").textContent = minutes;
+
+                        currentTime += 1000;
+                    }
+                    setInterval(updateTimer, 1000);
                 });
             </script>    
         <?php endif; ?>

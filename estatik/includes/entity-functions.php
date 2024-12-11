@@ -96,3 +96,32 @@ function es_create_slug_transliterator( $str ) {
 			transliterator_transliterate( "Any-Latin; NFD; [:Nonspacing Mark:] Remove; NFC; [:Punctuation:] Remove; Lower();", $str ) : $str;
     }
 }
+
+/**
+ * @param $attachment_id int
+ * @param $field string
+ * @param $entity Es_Entity
+ */
+function es_entity_delete_attachment( $attachment_id, $field, $entity ) {
+	$media_fields = wp_list_filter( es_get_entity_fields( $entity::get_entity_name() ), array( 'type' => 'media' ) );
+
+	if ( ! empty( $media_fields ) ) {
+		global $wpdb;
+		$force_delete = true;
+		delete_post_meta( $entity->get_id(), $entity->get_entity_prefix() . $field, $attachment_id );
+
+		foreach ( $media_fields as $media_field => $config ) {
+			if ( $force_delete ) {
+				if ( $wpdb->get_var( $wpdb->prepare( "SELECT COUNT(*) FROM {$wpdb->postmeta} WHERE meta_value='%s' AND meta_key='%s'", $attachment_id, $entity->get_entity_prefix() . $media_field ) ) ) {
+					$force_delete = false;
+				}
+			}
+		}
+
+		if ( $force_delete ) {
+			wp_delete_attachment( $attachment_id, true );
+		}
+	} else {
+		wp_delete_attachment( $attachment_id, true );
+	}
+}

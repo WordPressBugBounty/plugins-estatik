@@ -970,25 +970,15 @@ class Es_Property extends Es_Post {
      * @param mixed $value
      */
 	public function save_field_value( $field, $value ) {
-
 	    $field_info = static::get_field_info( $field );
 
 	    if ( ! empty( $field_info['type'] ) && 'media' == $field_info['type'] ) {
-	        $media = $this->{$field};
-
-	        if ( ! empty( $media ) ) {
-	            foreach ( $media as $attachment_id ) {
-                    wp_update_post( array(
-                        'ID' => $attachment_id,
-                        'post_parent' => 0,
-                    ) );
-                }
-            }
-
 	        if ( ! empty( $value ) ) {
 				$value = is_string( $value ) ? array( $value ) : $value;
-	            $value = array_filter( $value );
+	            $value = array_unique( array_filter( $value ) );
 				$order = 0;
+
+				delete_post_meta( $this->get_id(), $this->get_entity_prefix() . $field );
 
 	            foreach ( $value as $key => $attachment_id ) {
 	                if ( filter_var( $attachment_id , FILTER_VALIDATE_URL ) !== false ) {
@@ -1003,6 +993,7 @@ class Es_Property extends Es_Post {
                             'post_parent' => $this->get_id()
                         ) );
 
+		                add_post_meta( $this->get_id(), $this->get_entity_prefix() . $field, $attachment_id );
                         update_post_meta( $attachment_id, 'es_attachment_order', $order++ );
                         update_post_meta( $attachment_id, 'es_attachment_type', $field );
                     }
@@ -1010,12 +1001,8 @@ class Es_Property extends Es_Post {
             }
 
 	        if ( 'gallery' == $field ) {
-				$json_value_gallery = json_encode( $value );
-
-               	if ( json_last_error() === JSON_ERROR_NONE ) {
-                    update_post_meta( $this->get_id(), 'es_property_gallery', $json_value_gallery );
-			    }
                 $featured_image_id = reset( $value );
+
                 if ( $value ) {
                     set_post_thumbnail( $this->get_id(), $featured_image_id );
                 } else {
@@ -1069,19 +1056,16 @@ class Es_Property extends Es_Post {
         }
 
         if ( ! empty( $field_info['type'] ) && $field_info['type'] == 'media' ) {
-			if ( $field == "gallery" ) {
-				$gallery_json_value = get_post_meta( $this->get_id(), 'es_property_gallery' );
+	        $value = get_post_meta( $this->get_id(), $this->get_entity_prefix() . $field );
 
-				if ( $gallery_json_value && is_array( $gallery_json_value ) ) {
-					$gallery_json_string = $gallery_json_value[0];
-					$decoded_value = is_array( $gallery_json_string ) ?
-                        $gallery_json_string : json_decode( $gallery_json_string, true );
+	        if ( ! empty( $value[0] ) ) {
+		        $value[0] = es_maybe_json_decode( $value[0] );
 
-					if ( json_last_error() === JSON_ERROR_NONE ) {
-						$value = array_values( $decoded_value );
-					}
-				}
-			}
+		        if ( is_array( $value[0] ) ) {
+			        $value = $value[0];
+		        }
+	        }
+
 			if ( empty( $value ) ) {
 				$value = get_posts( array(
 					'fields' => 'ids',

@@ -31,11 +31,12 @@
         ) ); ?>
     </div>
 
-    <?php es_settings_field_render( 'currency', array(
-        'label' => __( 'Currency', 'es' ),
-        'type' => 'select',
-    ) );
+    <div class="es-field">
+        <div class="es-field__label"><?php echo __( 'Currency', 'es' ); ?></div>
+        <span class="es-field__description"><?php echo sprintf( __( 'Configure your currency <a href="%s" target="_blank">here</a>.', 'es' ), esc_url( admin_url( 'admin.php?page=es_data_manager#es-currencies' ) ) );  ?></span>
+    </div>
 
+    <?php
     es_settings_field_render( 'date_format', array(
         'label' => __( 'Date format', 'es' ),
         'type' => 'select',

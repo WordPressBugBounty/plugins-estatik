@@ -37,6 +37,55 @@ class Es_Dashboard_Page {
 	 */
 	public static function get_changelog() {
 		return array(
+			'4.1.8' => array(
+				'date' => _x( 'December, 11, 2024', 'changelog', 'es' ),
+				'changes' => array(
+					array(
+						'text' => _x( 'Additional Currencies added (Pro & Premium)', 'changelog', 'es' ),
+						'label' => 'new',
+					),
+					array(
+						'text' => _x( 'Property attachments deletion refactored', 'changelog', 'es' ),
+						'label' => 'new',
+					),
+					array(
+						'text' => _x( 'The design of the "Pricing" page updated (Pro & Premium)', 'changelog', 'es' ),
+						'label' => 'new',
+					),
+					array(
+						'text' => _x( 'Remote images MLS Import Optimized (Premium)', 'changelog', 'es' ),
+						'label' => 'new',
+					),
+					array(
+						'text' => _x( 'MLS addresses import refactored (Premium)', 'changelog', 'es' ),
+						'label' => 'new',
+					),
+					array(
+						'text' => _x( 'The currency settings moved to the Data Manager (All versions)', 'changelog', 'es' ),
+						'label' => 'new',
+					),
+					array(
+						'text' => _x( 'New translation fields added (All versions)', 'changelog', 'es' ),
+						'label' => 'bugfix',
+					),
+					array(
+						'text' => _x( 'The conflict with WPML resolved (Pro & Premium)', 'changelog', 'es' ),
+						'label' => 'bugfix',
+					),
+					array(
+						'text' => _x( 'Contains MLS operator fixed (Premium)', 'changelog', 'es' ),
+						'label' => 'bugfix',
+					),
+					array(
+						'text' => _x( 'Resolved the issue with saving duplicate images (All versions)', 'changelog', 'es' ),
+						'label' => 'bugfix',
+					),
+					array(
+						'text' => _x( 'Minor fixes', 'changelog', 'es' ),
+						'label' => 'bugfix',
+					),
+				),
+			),		
 			'4.1.7' => array(
 				'date' => _x( 'September, 26, 2024', 'changelog', 'es' ),
 				'changes' => array(

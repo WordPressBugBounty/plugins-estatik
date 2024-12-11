@@ -184,7 +184,7 @@ abstract class Es_Entities_Archive_Page {
 				do_action( 'es_after_entities_actions', $posts_ids, $action );
 			}
 
-			wp_safe_redirect( $_SERVER['HTTP_REFERER'] ); die;
+			wp_safe_redirect( wp_get_raw_referer() ); die;
 		}
 	}
 
