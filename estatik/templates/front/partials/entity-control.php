@@ -11,14 +11,15 @@ $wishlist = es_get_wishlist_instance( $entity );
 $icon_size = ! empty( $icon_size ) ? $icon_size : 'small';
 $classes = array( 'es-btn__wishlist', 'es-btn', 'es-btn--default', 'es-btn--' . $icon_size );
 $context = ! empty( $context ) ? $context : 'es-control--default';
+$entity_id = ! empty( $entity_id ) ? $entity_id : get_the_ID();
 
 if ( ! $is_full  ) {
     $classes[] = 'es-btn--icon';
 } ?>
 
 <ul class="js-es-control es-control es-control--<?php echo $context; ?>">
-    <?php if ( ests( 'is_' . $entity_plural . '_wishlist_enabled' ) ) :
-	    if ( $wishlist->has( get_the_ID() ) ) $classes[] = 'es-btn--active'; ?>
+    <?php if ( ests( 'is_' . $entity_plural . '_wishlist_enabled' ) && es_get_entity_by_id( $entity_id ) ) :
+	    if ( $wishlist->has( $entity_id ) ) $classes[] = 'es-btn--active'; ?>
         <li class="es-control__item es-control__item--wishlist">
             <?php if ( ! is_user_logged_in() ) :
             $classes[] = 'js-es-popup-link'; ?>
@@ -26,7 +27,7 @@ if ( ! $is_full  ) {
             <?php else :
                 if ( ! empty( $wishlist_confirm ) ) $classes[] = 'js-es-wishlist--confirm';
                 $classes[] = 'js-es-wishlist'; ?>
-                <a href="#" data-entity="<?php echo $entity; ?>" data-id="<?php the_ID(); ?>" class="<?php echo implode( ' ', $classes ); ?>">
+                <a href="#" data-entity="<?php echo $entity; ?>" data-id="<?php echo $entity_id; ?>" class="<?php echo implode( ' ', $classes ); ?>">
             <?php endif; ?>
                 <span class="es-icon es-icon_heart"></span>
                 <span class="es-btn__label"><?php _e( 'Save', 'es' ); ?></span>

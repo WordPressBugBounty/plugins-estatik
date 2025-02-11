@@ -1105,60 +1105,63 @@ class Es_Property extends Es_Post {
      */
     public function save_fields( $data ) {
 	    $address_components_fields = array( 'city', 'province', 'state', 'country' );
+	    $action = ! empty( $_REQUEST['action'] ) ? $_REQUEST['action'] : '';
 
-        if ( empty( $data['address_components'] ) ) {
-            $components = array();
-            foreach ( $address_components_fields as $field ) {
-                $field_info = static::get_field_info( $field );
-                if ( ! empty( $field_info['address_component'] ) && ! empty( $data[ $field ] ) ) {
-                    $component = new stdClass();
-                    $component->types = array( $field_info['address_component'] );
+	    if ( $action != 'inline-save' ) {
+		    if ( empty( $data['address_components'] ) ) {
+			    $components = array();
+			    foreach ( $address_components_fields as $field ) {
+				    $field_info = static::get_field_info( $field );
+				    if ( ! empty( $field_info['address_component'] ) && ! empty( $data[ $field ] ) ) {
+					    $component        = new stdClass();
+					    $component->types = array( $field_info['address_component'] );
 
-                    if ( is_numeric( $data[ $field ] ) ) {
-                        $component->term_id = $data[ $field ];
-                    } else {
-                        $component->long_name = $data[ $field ];
-                    }
+					    if ( is_numeric( $data[ $field ] ) ) {
+						    $component->term_id = $data[ $field ];
+					    } else {
+						    $component->long_name = $data[ $field ];
+					    }
 
-                    $components[] = $component;
-                }
-            }
-            $data['address_components'] = json_encode( $components, JSON_UNESCAPED_UNICODE );
-        } else {
-			$address_components = json_decode( es_clean_string( $data['address_components'] ) );
-			$property = es_get_property( $this->get_id() );
+					    $components[] = $component;
+				    }
+			    }
+			    $data['address_components'] = json_encode( $components, JSON_UNESCAPED_UNICODE );
+		    } else {
+			    $address_components = json_decode( es_clean_string( $data['address_components'] ) );
+			    $property           = es_get_property( $this->get_id() );
 
-			foreach ( $address_components_fields as $location_field ) {
-				if ( ! empty( $data[ $location_field ] ) && $data[ $location_field ] != $property->{$location_field} ) {
-					$field = static::get_field_info( $location_field );
+			    foreach ( $address_components_fields as $location_field ) {
+				    if ( ! empty( $data[ $location_field ] ) && $data[ $location_field ] != $property->{$location_field} ) {
+					    $field = static::get_field_info( $location_field );
 
-					if ( is_numeric( $data[ $location_field ] ) && term_exists( (int) $data[ $location_field ], 'es_location' ) ) {
-						$term = get_term_by( 'term_id', $data[ $location_field ], 'es_location' );
-						$data[ $location_field ] = $term->name;
-					}
+					    if ( is_numeric( $data[ $location_field ] ) && term_exists( (int) $data[ $location_field ], 'es_location' ) ) {
+						    $term                    = get_term_by( 'term_id', $data[ $location_field ], 'es_location' );
+						    $data[ $location_field ] = $term->name;
+					    }
 
-					$type_isset = false;
+					    $type_isset = false;
 
-					foreach ( $address_components as $key => $component ) {
-						if ( ! empty( $field['address_component'] ) && ! empty( $component->types ) && in_array( $field['address_component'], $component->types ) ) {
-							$address_components[ $key ]->long_name = $data[ $location_field ];
-							$address_components[ $key ]->short_name = $data[ $location_field ];
-							$type_isset = true;
-						}
-					}
+					    foreach ( $address_components as $key => $component ) {
+						    if ( ! empty( $field['address_component'] ) && ! empty( $component->types ) && in_array( $field['address_component'], $component->types ) ) {
+							    $address_components[ $key ]->long_name  = $data[ $location_field ];
+							    $address_components[ $key ]->short_name = $data[ $location_field ];
+							    $type_isset                             = true;
+						    }
+					    }
 
-					if ( ! $type_isset ) {
-						$address_components[] = (object) array(
-							'long_name' => $data[ $location_field ],
-							'short_name' => $data[ $location_field ],
-							'type' => array( $field['address_component'] )
-						);
-					}
-				}
-			}
+					    if ( ! $type_isset ) {
+						    $address_components[] = (object) array(
+							    'long_name'  => $data[ $location_field ],
+							    'short_name' => $data[ $location_field ],
+							    'type'       => array( $field['address_component'] )
+						    );
+					    }
+				    }
+			    }
 
-			$data['address_components'] = json_encode( $address_components, JSON_UNESCAPED_UNICODE );
-        }
+			    $data['address_components'] = json_encode( $address_components, JSON_UNESCAPED_UNICODE );
+		    }
+	    }
 
         parent::save_fields( $data );
     }

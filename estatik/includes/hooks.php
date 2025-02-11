@@ -1453,7 +1453,26 @@ function es_add_sorting_and_taxonomy_to_archive_query( $query ) {
 					));
 					$query->set( 'order', 'DESC' );
 					break;
-
+                    
+                case 'lowest_sq_ft':
+                    $meta_query['property_area'] = array(
+                        'relation' => 'OR',
+                        array(
+                            'key' => 'es_property_area',
+                            'compare' => 'EXISTS',
+                        ),
+                        array(
+                            'key' => 'es_property_area',
+                            'compare' => 'NOT EXISTS',
+                        ),
+                    );
+                    $query->set('orderby', array(
+						'meta_value_num' => 'DESC',
+						'meta_value' => 'ASC',
+					));
+					$query->set( 'order', 'DESC' );
+					break;
+                    
 				case 'bedrooms':
 				case 'bathrooms':
 					$meta_query['exists_' . $sort] = array(

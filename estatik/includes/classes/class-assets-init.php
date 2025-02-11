@@ -218,13 +218,21 @@ class Es_Assets {
 					$localize['settings']['country'] = $c_code;
 				}
 			}
-		}
+		} else {
+			$localize['settings']['country']  = ests ( 'country' );
+			
+			if ( empty ( ests( 'is_tel_code_disabled' ) ) && ! empty ( ests ( 'default_code_request_form' ) ) ) {
+				$localize['settings']['phone_code']  = ests ( 'default_code_request_form' );
+			} else {
+				$localize['settings']['phone_code']  = ests ( 'country' );
+			}
+		} 
 
 		ob_start();
 		do_action( 'es_property_control', array(
-			'show_sharing' => true,
+			'show_sharing' => es_get_entity_by_id( get_the_ID() ),
 			'is_full' => false,
-			'icon_size' => 'medium'
+			'icon_size' => 'medium',
 		) );
 		$control = ob_get_clean();
 		$localize['single']['control'] = $control;

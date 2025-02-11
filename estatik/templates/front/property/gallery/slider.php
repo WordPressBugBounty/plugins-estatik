@@ -2,14 +2,16 @@
 
 /**
  * @var $images array
+ * @var $property_id int
  */
 ?>
 <div class="es-slider js-es-slider">
     <div class="es-slider__image">
         <?php do_action( 'es_property_badges' ); ?>
         <?php do_action( 'es_property_control', array(
-            'show_sharing' => true,
-            'is_full' => true
+	        'show_sharing' => es_is_property( get_the_ID() ),
+            'is_full' => true,
+            'entity_id' => $property_id,
         ) ); ?>
         <div class="es-slider__page-info">
             <span class="es-icon es-icon_icon"></span>

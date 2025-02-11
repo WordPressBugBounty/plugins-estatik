@@ -16,6 +16,20 @@
         'after' => '</div>'
     ) );
 
+    es_settings_field_render( 'heading_tag_posts_title', array(
+        'before' => '<div id="es-clickable-tags">',
+        'label' => __( 'Heading Tag for Posts Title', 'es' ),
+        'type' => 'select',
+        'options' => array(
+            'h1' => 'h1',
+            'h2' => 'h2',
+            'h3' => 'h3',
+            'h4' => 'h4',
+            'h5' => 'h5',
+        ),
+        'after' => '</div>'
+    ) );
+
     es_settings_field_render( 'is_dynamic_content_enabled', array(
         'label' => __( 'Enable dynamic content', 'es' ),
         'type' => 'switcher',

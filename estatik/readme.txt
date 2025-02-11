@@ -178,8 +178,21 @@ Your listings and plugin configuration will be safe.
 
 == Changelog ==
 
+= 4.1.9 (February 10, 2024) =
 
-= 4.1.8 (December 11, 2024) =
+
+* NEW: The ability to edit the number of added items in the user subscription is added. (Pro & Premium) 
+* NEW: The option to choose the heading tag in the SEO section is added. (All versions)
+* NEW: The option to sort by lowest sq ft is added. (All versions)
+* NEW: The setting to choose the default phone for the request form is added. (Pro & Premium) 
+* NEW: New flag icons are added.  (Pro & Premium) 
+* NEW: The new shortcode [es_property_single_map] is added. (All versions)
+* NEW: The new shortcode [es_property_single_gallery] is added.  (All versions)
+
+* FIXED: The issue with saving subscription settings is fixed. (Pro & Premium)  
+
+
+= 4.1.8 (November 28, 2024) =
 
 
 * NEW: Additional Currencies added (Pro & Premium)

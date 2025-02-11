@@ -37,6 +37,79 @@ class Es_Dashboard_Page {
 	 */
 	public static function get_changelog() {
 		return array(
+			'4.1.9' => array(
+				'date' => _x( 'February, 10, 2025', 'changelog', 'es' ),
+				'changes' => array(
+					array(
+						'text' => _x( 'Fields suggestion on fields config page added (Premium)', 'changelog', 'es' ),
+						'label' => 'new',
+					),
+					array(
+						'text' => _x( 'Ajax search for lookup MLS fields added (Premium)', 'changelog', 'es' ),
+						'label' => 'new',
+					),
+					array(
+						'text' => _x( 'Pagination for fields config page added (Premium)', 'changelog', 'es' ),
+						'label' => 'new',
+					),
+					array(
+						'text' => _x( 'The ability to edit the number of added items in the user subscription added (Pro & Premium)', 'changelog', 'es' ),
+						'label' => 'new',
+					),
+					array(
+						'text' => _x( 'The option to choose the heading tag in the SEO section added (All versions)', 'changelog', 'es' ),
+						'label' => 'new',
+					),
+					array(
+						'text' => _x( 'The option to sort by lowest sq ft added (All versions)', 'changelog', 'es' ),
+						'label' => 'new',
+					),
+					array(
+						'text' => _x( 'The setting to choose the default phone for the request form added (Pro & Premium)', 'changelog', 'es' ),
+						'label' => 'new',
+					),
+					array(
+						'text' => _x( 'New flag icons added (Pro & Premium)', 'changelog', 'es' ),
+						'label' => 'new',
+					),
+					array(
+						'text' => _x( 'The new shortcode [es_property_single_map] added (All versions)', 'changelog', 'es' ),
+						'label' => 'new',
+					),
+					array(
+						'text' => _x( 'The new shortcode [es_property_single_gallery] added (All versions)', 'changelog', 'es' ),
+						'label' => 'new',
+					),
+					array(
+						'text' => _x( 'The issue with saving subscription settings fixed (Pro & Premium)', 'changelog', 'es' ),
+						'label' => 'bugfix',
+					),
+					array(
+						'text' => _x( 'Estatik Elementor widgets switcher saving fix added (All versions)', 'changelog', 'es' ),
+						'label' => 'bugfix',
+					),
+					array(
+						'text' => _x( 'Attachments deletion fix added (All versions)', 'changelog', 'es' ),
+						'label' => 'bugfix',
+					),
+					array(
+						'text' => _x( 'Property Description markup saving fix added (All versions)', 'changelog', 'es' ),
+						'label' => 'bugfix',
+					),
+					array(
+						'text' => _x( 'SQL syntax query fix added (All versions)', 'changelog', 'es' ),
+						'label' => 'bugfix',
+					),
+					array(
+						'text' => _x( 'Rooms import warning fix added (Premium)', 'changelog', 'es' ),
+						'label' => 'bugfix',
+					),
+					array(
+						'text' => _x( 'Minor fixes', 'changelog', 'es' ),
+						'label' => 'bugfix',
+					),
+				),
+			),	
 			'4.1.8' => array(
 				'date' => _x( 'December, 11, 2024', 'changelog', 'es' ),
 				'changes' => array(

@@ -2,6 +2,7 @@
 
 /**
  * @var $images array
+ * @var $property_id int
  */
 
 ?>
@@ -9,20 +10,21 @@
     <div class="es-gallery__image">
         <?php do_action( 'es_property_badges' ); ?>
         <?php do_action( 'es_property_control', array(
-            'show_sharing' => true,
+            'show_sharing' => es_is_property( get_the_ID() ),
             'is_full' => true,
             'icon_size' => 'big',
-            'context' => 'property-gallery'
+            'context' => 'property-gallery',
+            'entity_id' => $property_id,
         ) ); ?>
         <?php if ( ! empty( $images ) ) : ?>
-        <a href="<?php echo es_get_the_featured_image_url( 'full' ); ?>" class="js-es-image" title="<?php echo wp_get_attachment_caption( $images[0] ); ?>">
+        <a href="<?php echo es_get_the_featured_image_url( 'full', $property_id ); ?>" class="js-es-image" title="<?php echo wp_get_attachment_caption( $images[0] ); ?>">
             <div class="es-gallery__image-background"
-                 style="background-image: url('<?php echo es_get_the_featured_image_url( 'full' ); ?>'); background-size: cover;">
+                 style="background-image: url('<?php echo es_get_the_featured_image_url( 'full', $property_id ); ?>'); background-size: cover;">
             </div>
         </a>
         <?php else : ?>
             <div class="es-gallery__image-background"
-                 style="background-image: url('<?php echo es_get_the_featured_image_url( 'full' ); ?>'); background-size: cover;">
+                 style="background-image: url('<?php echo es_get_the_featured_image_url( 'full', $property_id ); ?>'); background-size: cover;">
             </div>
         <?php endif; ?>
     </div>

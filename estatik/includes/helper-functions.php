@@ -663,7 +663,7 @@ function es_field_builder_get_tab_link_markup( $section ) {
  * @return bool
  */
 function es_is_html( $string ) {
-	return $string != strip_tags( $string );
+	return $string != strip_tags( $string ) || stristr( $string, PHP_EOL );
 }
 
 /**

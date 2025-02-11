@@ -34,6 +34,8 @@ class Es_Shortcodes_List {
             'Es_Profile_Shortcode' => $path . 'class-profile-shortcode.php',
             'Es_Property_Field_Shortcode' => $path . 'class-property-field-shortcode.php',
             'Es_Single_Property_Shortcode' => $path . 'class-single-property-shortcode.php',
+            'Es_Property_Single_Gallery_Shortcode' => $path . 'class-property-single-gallery-shortcode.php',
+            'Es_Property_Single_Map_Shortcode' => $path . 'class-property-single-map-shortcode.php',
 
             // Backward compatibility for Estatik 3 shortcodes.
             'Es_Login_Shortcode' => 'class-login-shortcode.php', // [es_login]

@@ -624,6 +624,8 @@
                     } );
                 }
             }
+        } else if ( typeof Estatik.settings !== 'undefined' && Estatik.settings.phone_code ) {
+            setRequestFormPhoneCode( Estatik.settings.phone_code );
         }
     }
 
@@ -1205,53 +1207,52 @@
             return false;
         } );
 
-        if ( $( '.js-es-single' ).length ) {
-            var magnific_popup = {
-                delegate: 'a.js-es-image',
-                type: 'image',
-                infinite: false,
-                tLoading: 'Loading image #%curr%...',
-                mainClass: 'es-property-magnific',
-                closeMarkup: '<button class="es-btn es-btn--default es-btn--transparent mfp-close">%title%</button>',
-                tClose: '<span class="es-mfg-close-ico" data-trigger-click=".mfp-close">&#x2715</span> ' + Estatik.tr.close,
-                gallery: {
-                    enabled: true,
-                    navigateByImgClick: true,
-                    preload: [0, 5],
-                    tCounter: '%curr% / %total%',
-                    arrowMarkup: '<span class="es-mfp-arrow es-mfp-arrow-%dir% es-btn es-btn--default es-btn--icon">%title%</span>',
+        var magnific_popup = {
+            delegate: 'a.js-es-image',
+            type: 'image',
+            infinite: false,
+            tLoading: 'Loading image #%curr%...',
+            mainClass: 'es-property-magnific',
+            closeMarkup: '<button class="es-btn es-btn--default es-btn--transparent mfp-close">%title%</button>',
+            tClose: '<span class="es-mfg-close-ico" data-trigger-click=".mfp-close">&#x2715</span> ' + Estatik.tr.close,
+            gallery: {
+                enabled: true,
+                navigateByImgClick: true,
+                preload: [0, 5],
+                tCounter: '%curr% / %total%',
+                arrowMarkup: '<span class="es-mfp-arrow es-mfp-arrow-%dir% es-btn es-btn--default es-btn--icon">%title%</span>',
 
-                    tPrev: '<span class="es-icon es-icon_chevron-left mfp-prevent-close"></span>',
-                    tNext: '<span class="es-icon es-icon_chevron-right mfp-prevent-close"></span>'
+                tPrev: '<span class="es-icon es-icon_chevron-left mfp-prevent-close"></span>',
+                tNext: '<span class="es-icon es-icon_chevron-right mfp-prevent-close"></span>'
+            },
+            image: {
+                titleSrc: function( item ) {
+                    return item.el.attr( 'title' );
                 },
-                image: {
-                    titleSrc: function( item ) {
-                        return item.el.attr( 'title' );
-                    },
-                    markup: '<div class="mfp-top-bar">' +
-                        '<div class="mfp-top-bar__inner">' +
-                        '<div class="mfp-close"></div>' +
-                        '<div class="mfp-counter"></div>' +
-                        '<div class="mfp-control">' + Estatik.single.control + '</div>' +
-                        '</div>' +
-                        '</div>' +
-                        '<div class="mfp-figure">' +
-                        '<div class="mfp-img"></div>' +
-                        '<div class="mfp-title"></div>' +
-                        '</div>' +
-                        '</div>'
-                }
-            };
-
-            var lightbox_disabled = +Estatik.settings.is_lightbox_disabled;
-
-            if ( ! lightbox_disabled ) {
-                $('.js-es-images, .js-es-property-gallery').magnificPopup( magnific_popup );
+                markup: '<div class="mfp-top-bar">' +
+                    '<div class="mfp-top-bar__inner">' +
+                    '<div class="mfp-close"></div>' +
+                    '<div class="mfp-counter"></div>' +
+                    '<div class="mfp-control">' + Estatik.single.control + '</div>' +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="mfp-figure">' +
+                    '<div class="mfp-img"></div>' +
+                    '<div class="mfp-title"></div>' +
+                    '</div>' +
+                    '</div>'
             }
+        };
 
-            magnific_popup.delegate = '.slick-slide:not(.slick-cloned) a.js-es-image';
-            $('.js-es-slider__image').magnificPopup(magnific_popup);
+        var lightbox_disabled = +Estatik.settings.is_lightbox_disabled;
+
+        if ( ! lightbox_disabled ) {
+            $('.js-es-images, .js-es-property-gallery').magnificPopup( magnific_popup );
         }
+
+        magnific_popup.delegate = '.slick-slide:not(.slick-cloned) a.js-es-image';
+        $('.js-es-slider__image').magnificPopup(magnific_popup);
+
 
         $( '.js-es-slider' ).each( function() {
             var $wrapper = $( this );

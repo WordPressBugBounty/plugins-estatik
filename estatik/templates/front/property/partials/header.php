@@ -3,7 +3,9 @@
         <?php es_load_template( 'front/property/partials/property-terms.php' ); ?>
     </div>
     <div class="es-single__header-left">
-        <?php es_the_title( '<h1 class="property-title heading-font">', '</h1>' );
+        <?php 
+        $heading_tag = empty( ests( 'heading_tag_posts_title' ) ) ? 'h1' : ests( 'heading_tag_posts_title' );
+        es_the_title( '<' . esc_html( $heading_tag ) . ' class="property-title heading-font" >', ' </' . esc_html( $heading_tag ) . '>' );
         do_action( 'es_single_property_after_title', get_the_ID() );
         es_the_address( '<span class="es-address">', '</span>' );
         es_load_template( 'front/property/partials/property-meta.php', array(

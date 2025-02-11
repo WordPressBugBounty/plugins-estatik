@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Estatik Simple\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-30 10:43+0000\n"
+"POT-Creation-Date: 2024-07-04 13:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -51,11 +51,11 @@ msgstr ""
 msgid "10+ advanced widgets"
 msgstr ""
 
-#: includes/classes/class-settings-container.php:1292
+#: includes/classes/class-settings-container.php:1288
 msgid "12-hour clock"
 msgstr ""
 
-#: includes/classes/class-settings-container.php:1293
+#: includes/classes/class-settings-container.php:1289
 msgid "24-hour clock"
 msgstr ""
 
@@ -186,7 +186,7 @@ msgstr ""
 msgid "Add recommended pages"
 msgstr ""
 
-#: includes/classes/pages/admin/class-fields-builder-page.php:612
+#: includes/classes/pages/admin/class-fields-builder-page.php:601
 msgid "Add section"
 msgstr ""
 
@@ -196,7 +196,7 @@ msgstr ""
 msgid "Added %s ago"
 msgstr ""
 
-#: includes/classes/class-settings-container.php:1067
+#: includes/classes/class-settings-container.php:1063
 #: includes/classes/entities/class-property.php:501
 #: includes/classes/pages/admin/class-properties-archive-page.php:405
 msgid "Address"
@@ -337,8 +337,8 @@ msgstr ""
 msgid "All categories"
 msgstr ""
 
-#: includes/classes/pages/admin/class-fields-builder-page.php:464
-#: includes/classes/pages/admin/class-fields-builder-page.php:496
+#: includes/classes/pages/admin/class-fields-builder-page.php:453
+#: includes/classes/pages/admin/class-fields-builder-page.php:485
 #: includes/classes/pages/admin/class-settings-page.php:138
 msgid "All changes saved."
 msgstr ""
@@ -568,7 +568,7 @@ msgstr ""
 msgid "Back to login"
 msgstr ""
 
-#: includes/property-functions.php:880
+#: includes/property-functions.php:875
 msgid "Back to Search Results"
 msgstr ""
 
@@ -2281,7 +2281,7 @@ msgstr ""
 msgid "Check out other <br>Estatik Real Estate Web Solutions"
 msgstr ""
 
-#: includes/classes/class-settings-container.php:1114
+#: includes/classes/class-settings-container.php:1110
 msgid "Checkbox"
 msgstr ""
 
@@ -2656,7 +2656,7 @@ msgstr ""
 msgid "Decimal separator"
 msgstr ""
 
-#: includes/classes/pages/admin/class-fields-builder-page.php:204
+#: includes/classes/pages/admin/class-fields-builder-page.php:193
 msgid "Default currency"
 msgstr ""
 
@@ -2693,7 +2693,7 @@ msgstr ""
 msgid "Default sort options"
 msgstr ""
 
-#: includes/classes/pages/admin/class-fields-builder-page.php:221
+#: includes/classes/pages/admin/class-fields-builder-page.php:210
 msgid "Default unit"
 msgstr ""
 
@@ -2836,7 +2836,7 @@ msgstr ""
 msgid "Draft"
 msgstr ""
 
-#: includes/classes/class-settings-container.php:1301
+#: includes/classes/class-settings-container.php:1297
 msgid "Dropdown"
 msgstr ""
 
@@ -3317,7 +3317,7 @@ msgid "Features"
 msgstr ""
 
 #. %s: field name.
-#: includes/classes/pages/admin/class-fields-builder-page.php:434
+#: includes/classes/pages/admin/class-fields-builder-page.php:423
 #, php-format
 msgid "Field <b>%s</b> was deleted successfully."
 msgstr ""
@@ -3347,11 +3347,11 @@ msgctxt "field builder visible for"
 msgid "Buyers"
 msgstr ""
 
-#: includes/classes/pages/admin/class-fields-builder-page.php:468
+#: includes/classes/pages/admin/class-fields-builder-page.php:457
 msgid "Field didn't saved."
 msgstr ""
 
-#: includes/classes/pages/admin/class-fields-builder-page.php:436
+#: includes/classes/pages/admin/class-fields-builder-page.php:425
 msgid "Field machine name is empty."
 msgstr ""
 
@@ -3936,7 +3936,7 @@ msgstr ""
 msgid "Invalid authentication method."
 msgstr ""
 
-#: includes/classes/pages/admin/class-fields-builder-page.php:286
+#: includes/classes/pages/admin/class-fields-builder-page.php:275
 msgid "Invalid input type"
 msgstr ""
 
@@ -4002,7 +4002,7 @@ msgstr ""
 msgid "Item successfully removed from wishlist"
 msgstr ""
 
-#: includes/classes/pages/admin/class-fields-builder-page.php:351
+#: includes/classes/pages/admin/class-fields-builder-page.php:340
 msgid "Items order was changed successfully."
 msgstr ""
 
@@ -4182,7 +4182,7 @@ msgstr ""
 msgid "Listing search"
 msgstr ""
 
-#: includes/classes/pages/admin/class-fields-builder-page.php:607
+#: includes/classes/pages/admin/class-fields-builder-page.php:596
 msgid "Listing sections"
 msgstr ""
 
@@ -4296,10 +4296,6 @@ msgstr ""
 msgid "Log out"
 msgstr ""
 
-#: includes/classes/pages/admin/class-fields-builder-page.php:166
-msgid "Logical operators"
-msgstr ""
-
 #: includes/classes/entities/class-user.php:29
 msgid "Login"
 msgstr ""
@@ -4372,7 +4368,7 @@ msgstr ""
 msgid "Manage your listings, profile and more"
 msgstr ""
 
-#: includes/classes/class-settings-container.php:1300
+#: includes/classes/class-settings-container.php:1296
 msgid "Manual Input"
 msgstr ""
 
@@ -4382,7 +4378,7 @@ msgid "Map view"
 msgstr ""
 
 #: includes/hooks.php:112 includes/hooks.php:113
-#: includes/classes/pages/admin/class-fields-builder-page.php:186
+#: includes/classes/pages/admin/class-fields-builder-page.php:175
 msgid "Max"
 msgstr ""
 
@@ -4466,7 +4462,7 @@ msgid "Migration successfully finished."
 msgstr ""
 
 #: includes/hooks.php:112 includes/hooks.php:113
-#: includes/classes/pages/admin/class-fields-builder-page.php:178
+#: includes/classes/pages/admin/class-fields-builder-page.php:167
 msgid "Min"
 msgstr ""
 
@@ -4685,7 +4681,7 @@ msgstr ""
 msgid "NOK - Norwegian Krone"
 msgstr ""
 
-#: includes/classes/pages/admin/class-fields-builder-page.php:353
+#: includes/classes/pages/admin/class-fields-builder-page.php:342
 msgid "Nothing to sort."
 msgstr ""
 
@@ -4736,10 +4732,6 @@ msgstr ""
 msgid ""
 "Oops! This page didn't load Google Maps correctly. Please contact admin to "
 "fix this."
-msgstr ""
-
-#: templates/admin/settings/tabs/listings-tab.php:191
-msgid "Open collapsed filters on mobile devices"
 msgstr ""
 
 #: includes/functions.php:328 includes/classes/entities/class-property.php:338
@@ -4825,7 +4817,7 @@ msgstr ""
 msgid "Password successfully changed."
 msgstr ""
 
-#: includes/classes/pages/admin/class-fields-builder-page.php:229
+#: includes/classes/pages/admin/class-fields-builder-page.php:218
 msgid "Pattern"
 msgstr ""
 
@@ -4910,12 +4902,12 @@ msgctxt "plugin options"
 msgid "Price"
 msgstr ""
 
-#: includes/classes/class-settings-container.php:1441
+#: includes/classes/class-settings-container.php:1437
 msgctxt "plugin settings"
 msgid "Buttons"
 msgstr ""
 
-#: includes/classes/class-settings-container.php:1442
+#: includes/classes/class-settings-container.php:1438
 msgctxt "plugin settings"
 msgid "Dropdown"
 msgstr ""
@@ -5140,7 +5132,7 @@ msgstr ""
 msgid "Properties per page"
 msgstr ""
 
-#: includes/classes/class-settings-container.php:1174
+#: includes/classes/class-settings-container.php:1170
 msgid "Property"
 msgstr ""
 
@@ -5265,11 +5257,11 @@ msgstr ""
 msgid "reCAPTCHA site key"
 msgstr ""
 
-#: includes/classes/class-settings-container.php:1104
+#: includes/classes/class-settings-container.php:1100
 msgid "reCAPTCHA v2"
 msgstr ""
 
-#: includes/classes/class-settings-container.php:1105
+#: includes/classes/class-settings-container.php:1101
 msgid "reCAPTCHA v3"
 msgstr ""
 
@@ -5316,22 +5308,22 @@ msgid "Rent periods"
 msgstr ""
 
 #: includes/functions.php:375
-#: includes/classes/class-settings-container.php:1122
-#: includes/classes/class-settings-container.php:1132
+#: includes/classes/class-settings-container.php:1118
+#: includes/classes/class-settings-container.php:1128
 msgid "Request form"
 msgstr ""
 
-#: includes/classes/pages/admin/class-fields-builder-page.php:244
+#: includes/classes/pages/admin/class-fields-builder-page.php:233
 msgctxt "request form bg color field"
 msgid "Background color"
 msgstr ""
 
-#: includes/classes/pages/admin/class-fields-builder-page.php:256
+#: includes/classes/pages/admin/class-fields-builder-page.php:245
 msgctxt "request form message field"
 msgid "Message"
 msgstr ""
 
-#: includes/classes/pages/admin/class-fields-builder-page.php:250
+#: includes/classes/pages/admin/class-fields-builder-page.php:239
 msgctxt "request form text color field"
 msgid "Text color"
 msgstr ""
@@ -5356,7 +5348,7 @@ msgstr ""
 msgid "Reset"
 msgstr ""
 
-#: includes/classes/class-settings-container.php:1131
+#: includes/classes/class-settings-container.php:1127
 #: includes/classes/emails/class-reset-password-email.php:35
 #: includes/classes/pages/admin/class-demo-page.php:314
 #: includes/classes/widgets/elementor/class-elementor-authentication-widget.php:77
@@ -5526,16 +5518,16 @@ msgid "Secondary color"
 msgstr ""
 
 #. %s: section name.
-#: includes/classes/pages/admin/class-fields-builder-page.php:389
+#: includes/classes/pages/admin/class-fields-builder-page.php:378
 #, php-format
 msgid "Section <b>%s</b> was deleted successfully."
 msgstr ""
 
-#: includes/classes/pages/admin/class-fields-builder-page.php:500
+#: includes/classes/pages/admin/class-fields-builder-page.php:489
 msgid "Section didn't saved."
 msgstr ""
 
-#: includes/classes/pages/admin/class-fields-builder-page.php:391
+#: includes/classes/pages/admin/class-fields-builder-page.php:380
 msgid "Section machine name is empty."
 msgstr ""
 
@@ -5746,7 +5738,7 @@ msgstr ""
 msgid "Sign"
 msgstr ""
 
-#: includes/classes/class-settings-container.php:1130
+#: includes/classes/class-settings-container.php:1126
 msgid "Sign in"
 msgstr ""
 
@@ -5758,8 +5750,8 @@ msgstr ""
 msgid "Sign position"
 msgstr ""
 
-#: includes/classes/class-settings-container.php:1121
-#: includes/classes/class-settings-container.php:1129
+#: includes/classes/class-settings-container.php:1117
+#: includes/classes/class-settings-container.php:1125
 #: includes/classes/pages/admin/class-demo-page.php:304
 #: templates/admin/demo/steps/step3.php:46
 #: templates/front/shortcodes/authentication/buyer-register-form.php:81
@@ -5927,8 +5919,8 @@ msgstr ""
 msgid "Statuses"
 msgstr ""
 
-#: includes/classes/pages/admin/class-fields-builder-page.php:194
-#: includes/classes/pages/admin/class-fields-builder-page.php:210
+#: includes/classes/pages/admin/class-fields-builder-page.php:183
+#: includes/classes/pages/admin/class-fields-builder-page.php:199
 msgid "Step"
 msgstr ""
 
@@ -6088,7 +6080,7 @@ msgstr ""
 msgid "Terrace"
 msgstr ""
 
-#: includes/classes/class-settings-container.php:1113
+#: includes/classes/class-settings-container.php:1109
 msgid "Text"
 msgstr ""
 
@@ -6133,7 +6125,7 @@ msgstr ""
 msgid "Time format"
 msgstr ""
 
-#: includes/classes/class-settings-container.php:1068
+#: includes/classes/class-settings-container.php:1064
 #: includes/classes/entities/class-property.php:388
 #: includes/classes/widgets/elementor/class-elementor-half-map-widget.php:69
 #: includes/classes/widgets/elementor/class-elementor-listings-widget.php:69
@@ -6369,22 +6361,22 @@ msgstr ""
 msgid "User doesn't exist"
 msgstr ""
 
-#: includes/classes/class-settings-container.php:1433
+#: includes/classes/class-settings-container.php:1429
 msgctxt "user email subject"
 msgid "New listing #{post_id} request submitted"
 msgstr ""
 
-#: includes/classes/class-settings-container.php:1417
+#: includes/classes/class-settings-container.php:1413
 msgctxt "user email subject"
 msgid "New user registered"
 msgstr ""
 
-#: includes/classes/class-settings-container.php:1425
+#: includes/classes/class-settings-container.php:1421
 msgctxt "user email subject"
 msgid "Password Reset Request"
 msgstr ""
 
-#: includes/classes/class-settings-container.php:1409
+#: includes/classes/class-settings-container.php:1405
 msgctxt "user email subject"
 msgid "Your username and password info"
 msgstr ""
@@ -6434,7 +6426,7 @@ msgstr ""
 msgid "Video URL"
 msgstr ""
 
-#: includes/classes/shortcodes/class-my-listing-shortcode.php:202
+#: includes/classes/shortcodes/class-my-listing-shortcode.php:198
 msgid "View all"
 msgstr ""
 

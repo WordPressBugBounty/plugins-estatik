@@ -12,6 +12,7 @@ if ( ! function_exists( 'es_the_property_gallery' ) ) {
 
         es_load_template( '/front/property/gallery/gallery.php', array(
             'images' => $property->gallery,
+            'property_id' => $post_id,
         ) );
     }
 }
@@ -26,6 +27,7 @@ if ( ! function_exists( 'es_the_mobile_slider' ) ) {
 
 	    es_load_template( '/front/property/gallery/mobile.php', array(
 		    'images' => $property->gallery,
+		    'property_id' => $post_id,
 	    ) );
     }
 }
@@ -42,6 +44,7 @@ if ( ! function_exists( 'es_the_property_slider' ) ) {
 
         es_load_template( '/front/property/gallery/slider.php', array(
             'images' => $property->gallery,
+            'property_id' => $post_id,
         ) );
     }
 }
@@ -64,10 +67,9 @@ if ( ! function_exists( 'es_the_property_section_content' ) ) {
 
             switch ( $section['machine_name'] ) {
                 case 'location':
-                    if ( $property->latitude && $property->longitude && ests( 'is_single_listing_map_enabled' ) && ests( 'google_api_key' ) ) {
-                        $content = "<div class='es-property-map js-es-property-map'
-                            data-latitude='" . esc_attr( $property->latitude ) . "'
-                            data-longitude='" . esc_attr( $property->longitude ) . "'></div>";
+                    if ( ests( 'is_single_listing_map_enabled' ) ) {
+                        $instance = es_get_shortcode_instance( 'es_property_single_map' );
+                        $content = $instance->get_content();
                     }
                     $content .= es_get_the_section_fields_html( $section, $post_id );
                     break;
@@ -172,6 +174,7 @@ if ( ! function_exists( 'es_the_property_control' ) ) {
             'wishlist_confirm' => false,
             'entity' => 'property',
             'entity_plural' => 'properties',
+            'entity_id' => get_the_ID(),
         ) );
         extract( $args );
         include es_locate_template( 'front/partials/entity-control.php' );
@@ -635,6 +638,26 @@ if ( ! function_exists( 'es_get_properties_query_args' ) ) {
 
                     $query_args['order'] = 'DESC';
 				    break;
+                    
+                case 'lowest_sq_ft':
+                    $meta_query['property_area'] = array(
+                        'relation' => 'OR',
+                        array(
+                            'key' => 'es_property_area',
+                            'compare' => 'EXISTS',
+                        ),
+                        array(
+                            'key' => 'es_property_area',
+                            'compare' => 'NOT EXISTS',
+                        ),
+                    );
+                    $query_args['orderby'] = array(
+                        'meta_value_num' => 'DESC',
+                        'meta_value' => 'ASC',
+                    );
+        
+                    $query_args['order'] = 'DESC';
+                    break;
 
 			    case 'bedrooms':
 			    case 'bathrooms':

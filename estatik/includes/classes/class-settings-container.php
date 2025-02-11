@@ -226,6 +226,7 @@ class Es_Settings_Container
 			'lowest_price' => __( 'Lowest price', 'es' ),
 			'highest_price' => __( 'Highest price', 'es' ),
 			'largest_sq_ft' => __( 'Largest sq ft', 'es' ),
+			'lowest_sq_ft' => __( 'Lowest sq ft', 'es' ), 
 			'bedrooms' => __( 'Bedrooms', 'es' ),
 			'bathrooms' => __( 'Bathrooms', 'es' ),
 			'oldest' => __( 'Oldest', 'es' ),
@@ -270,6 +271,8 @@ class Es_Settings_Container
 						'PL' => __( 'Poland', 'es' ),
 						'PT' => __( 'Portugal', 'es' ),
 						'SE' => __( 'Sweden', 'es' ),
+						'IT' => __( 'Italy', 'es' ),
+						'ZA' => __( 'South Africa', 'es' ),
 
 						'' => __( 'Other', 'es' ),
 					),
@@ -285,6 +288,28 @@ class Es_Settings_Container
 						'DE' => ES_PLUGIN_URL . '/public/img/flags/germany-flag.svg',
 						'ES' => ES_PLUGIN_URL . '/public/img/flags/spain-flag.svg',
 						'FR' => ES_PLUGIN_URL . '/public/img/flags/france-flag.svg',
+						//new
+						'AU' => ES_PLUGIN_URL . '/public/img/flags/australia-flag.svg',
+						'AT' => ES_PLUGIN_URL . '/public/img/flags/austria-flag.svg',
+						'BE' => ES_PLUGIN_URL . '/public/img/flags/belgium-flag.svg',
+						'CL' => ES_PLUGIN_URL . '/public/img/flags/chile-flag.svg',
+						'CY' => ES_PLUGIN_URL . '/public/img/flags/cyprus-flag.svg',
+						'CZ' => ES_PLUGIN_URL . '/public/img/flags/czech-republic-flag.svg',
+						'DK' => ES_PLUGIN_URL . '/public/img/flags/denmark-flag.svg',
+						'EG' => ES_PLUGIN_URL . '/public/img/flags/egypt-flag.svg',
+						'FI' => ES_PLUGIN_URL . '/public/img/flags/finland-flag.svg',
+						'GE' => ES_PLUGIN_URL . '/public/img/flags/georgia-flag.svg',
+						'GR' => ES_PLUGIN_URL . '/public/img/flags/greece-flag.svg',
+						'IL' => ES_PLUGIN_URL . '/public/img/flags/israel-flag.svg',
+						'LV' => ES_PLUGIN_URL . '/public/img/flags/latvia-flag.svg',
+						'LT' => ES_PLUGIN_URL . '/public/img/flags/lithuania-flag.svg',
+						'MC' => ES_PLUGIN_URL . '/public/img/flags/monaco-flag.svg',
+						'NL' => ES_PLUGIN_URL . '/public/img/flags/netherlands-flag.svg',
+						'PH' => ES_PLUGIN_URL . '/public/img/flags/philippines-flag.svg',
+						'PT' => ES_PLUGIN_URL . '/public/img/flags/portugal-flag.svg',
+						'SE' => ES_PLUGIN_URL . '/public/img/flags/sweden-flag.svg',
+						'IT' => ES_PLUGIN_URL . '/public/img/flags/italy-flag.svg',
+						'ZA' => ES_PLUGIN_URL . '/public/img/flags/south-africa-flag.svg', 
 					),
 				),
 
@@ -298,6 +323,27 @@ class Es_Settings_Container
 						'DE' => '+49',
 						'ES' => '+34',
 						'FR' => '+33',
+						//new
+						'AU' => '+61',
+						'AT' => '+43',
+						'BE' => '+32',
+						'CL' => '+56',
+						'CY' => '+357',
+						'CZ' => '+420',
+						'DK' => '+45',
+						'EG' => '+20',
+						'GE' => '+995',
+						'GR' => '+30',															
+						'IL' => '+972',
+						'LV' => '+371',
+						'LT' => '+370',
+						'MC' => '+377',
+						'NL' => '+31',
+						'PH' => '+63',
+						'PT' => '+351',
+						'SE' => '+46',
+						'IT' => '+39',
+						'ZA' => '+27',
 						'' => '',
 					),
 				),
@@ -933,6 +979,10 @@ class Es_Settings_Container
 					'default_value' => false,
 				),
 
+				'heading_tag_posts_title' => array(
+					'default_value' => 'h1',
+				),
+
 				'dynamic_content' => array(
 					'default_value' => 'This [es_property_field name="es_type"] style property is located in [es_property_field name="city"] is currently [es_property_field name="es_category"] and has been listed on {blog_name}. This property is listed at [es_property_field name="price"]. It has [es_property_field name="bedrooms"] bedrooms, [es_property_field name="bathrooms"] bathrooms, and is [es_property_field name="area"]. The property was built in [es_property_field name="year_built"] year.',
 				),
@@ -1072,6 +1122,10 @@ class Es_Settings_Container
 				'is_request_form_geolocation_enabled' => array(
 					'default_value' => 1,
 				),
+
+				'default_code_request_form' => array(
+					'default_value' => 'US',
+				), 
 
 				'is_lightbox_disabled' => array(
 					'default_value' => false,
@@ -1386,6 +1440,26 @@ class Es_Settings_Container
 								'es-single--lg'  => array( 'min' => 800 ),
 								'es-single--xl'  => array( 'min' => 1000 )
 							),
+						),
+						'single-gallery' => array(
+							'selector' => '.js-es-property-gallery',
+							'breakpoints' => array_reverse( array(
+								'es-gallery--xsm' => array( 'min' => 400 ),
+								'es-gallery--sm'  => array( 'min' => 520 ),
+								'es-gallery--md'  => array( 'min' => 650 ),
+								'es-gallery--lg'  => array( 'min' => 800 ),
+								'es-gallery--xl'  => array( 'min' => 1000 )
+							) ),
+						),
+						'single-slider' => array(
+							'selector' => '.js-es-slider',
+							'breakpoints' => array_reverse( array(
+								'es-slider--xsm' => array( 'min' => 400 ),
+								'es-slider--sm'  => array( 'min' => 520 ),
+								'es-slider--md'  => array( 'min' => 650 ),
+								'es-slider--lg'  => array( 'min' => 800 ),
+								'es-slider--xl'  => array( 'min' => 1000 )
+							) ),
 						),
 						'main_search' => array(
 							'selector' => '.js-es-search--main',

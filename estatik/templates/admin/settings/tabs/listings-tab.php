@@ -72,6 +72,14 @@ es_settings_field_render( 'is_request_form_geolocation_enabled', array(
     'description' => __( 'This option uses for autofill tel code field by user location.', 'es' ),
 ) );
 
+if ( empty ( ests( 'is_tel_code_disabled' ) ) ) {
+    es_settings_field_render( 'default_code_request_form', array(
+        'label' => __( 'Selecting a default tel code in the request form', 'es' ),
+        'type' => 'select',
+        'options' =>  ests_values( 'phone_codes' ),
+    ) );
+} 
+
 es_settings_field_render( 'is_request_form_button_disabled', array(
 	'label' => __( 'Hide Request Info button', 'es' ),
 	'type' => 'switcher',

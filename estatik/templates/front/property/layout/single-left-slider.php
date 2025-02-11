@@ -1,6 +1,6 @@
 <?php
-
-es_the_title( '<h1 class="property-title heading-font">', '</h1>' );
+$heading_tag = empty ( ests( 'heading_tag_posts_title' ) ) ? 'h1' : ests( 'heading_tag_posts_title' );
+es_the_title( '<' . esc_html( $heading_tag ) . ' class="property-title heading-font" >', ' </' . esc_html( $heading_tag ) . '>' );
 do_action( 'es_single_property_after_title', get_the_ID() ); ?>
 
 <div class="es-single__address-container">
@@ -9,8 +9,8 @@ do_action( 'es_single_property_after_title', get_the_ID() ); ?>
 </div>
 
 <div class="es-single__left-slider">
-    <?php es_the_property_slider(); ?>
-    <?php es_the_mobile_slider(); ?>
+    <?php $instance = es_get_shortcode_instance( 'property_single_gallery' );
+    echo $instance->get_content(); ?>
     <div class="es-single__basic">
         <div class="es-singe__basic-inner">
             <?php if ( es_get_the_field( 'price' ) ) : ?>
