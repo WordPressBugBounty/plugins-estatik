@@ -29,6 +29,7 @@
 			'label' => _x( 'Email', 'authenticate form', 'es' ),
 			'attributes' => array(
 				'required' => 'required',
+                'autocomplete' => 'username',
 				'id' => sprintf( '%s-%s', 'es_user_login', uniqid() ),
 			),
 		) );
@@ -43,6 +44,7 @@
                                {after}",
 			'attributes' => array(
 				'required' => 'required',
+                'autocomplete' => 'current-password',
 				'id' => sprintf( '%s-%s', 'es_user_password', uniqid() ),
 			),
 		) ); ?>

@@ -25,6 +25,13 @@ abstract class Es_Entity {
 	public static $entity_fields;
 
 	/**
+	 * Entity fields array.
+	 *
+	 * @var array
+	 */
+	public static $default_fields;
+
+	/**
 	 * Entity construct.
 	 *
 	 * @param $id

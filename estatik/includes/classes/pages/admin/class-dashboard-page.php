@@ -37,6 +37,59 @@ class Es_Dashboard_Page {
 	 */
 	public static function get_changelog() {
 		return array(
+			'4.1.10' => array(
+				'date' => _x( 'March, 26, 2025', 'changelog', 'es' ),
+				'changes' => array(
+					array(
+						'text' => _x( 'Plugin performance improved. Code refactored (All versions).', 'changelog', 'es' ),
+						'label' => 'new',
+					),
+					array(
+						'text' => _x( 'Autocomplete HTML attr for estatik fields added (All versions).', 'changelog', 'es' ),
+						'label' => 'new',
+					),
+					array(
+						'text' => _x( 'Agency logo in property boxes added (Pro & Premium).', 'changelog', 'es' ),
+						'label' => 'new',
+					),
+					array(
+						'text' => _x( 'MLS files upload warning fix added (Premium).', 'changelog', 'es' ),
+						'label' => 'bugfix',
+					),
+					array(
+						'text' => _x( 'Agent profile fields order fix added. (Pro & Premium)', 'changelog', 'es' ),
+						'label' => 'bugfix',
+					),
+					array(
+						'text' => _x( 'Price dependencies in search form fix added (All versions).', 'changelog', 'es' ),
+						'label' => 'bugfix',
+					),
+					array(
+						'text' => _x( 'LFI Vulnerability fix added (All versions).', 'changelog', 'es' ),
+						'label' => 'bugfix',
+					),
+					array(
+						'text' => _x( 'Compare tooltip text color fixed (All versions).', 'changelog', 'es' ),
+						'label' => 'bugfix',
+					),
+					array(
+						'text' => _x( 'Fixed HTML markup for estatik fields (All versions).', 'changelog', 'es' ),
+						'label' => 'bugfix',
+					),
+					array(
+						'text' => _x( 'Search form address ajax search fix added (All versions).', 'changelog', 'es' ),
+						'label' => 'bugfix',
+					),
+					array(
+						'text' => _x( 'Google Maps AdvancedMarkerElement implemented (All versions).', 'changelog', 'es' ),
+						'label' => 'bugfix',
+					),
+					array(
+						'text' => _x( 'Minor fixes', 'changelog', 'es' ),
+						'label' => 'bugfix',
+					),
+				),
+			),
 			'4.1.9' => array(
 				'date' => _x( 'February, 10, 2025', 'changelog', 'es' ),
 				'changes' => array(

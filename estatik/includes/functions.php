@@ -221,22 +221,34 @@ if ( ! function_exists( 'es_locate_template' ) ) {
 	 * @return string
 	 */
 	function es_locate_template( $template_path ) {
+		$template_path = ltrim( str_replace( array( '../', '..\\' ), '', $template_path ), '/' );
 
-		$find = array();
-		$path = $template_path;
-		$context = ES_PLUGIN_PATH . DS . 'templates' . DS;
-		$base = $template_path;
+		$plugin_templates_path  = realpath( ES_PLUGIN_PATH . DS . 'templates' . DS );
+		$parent_theme_templates_path = realpath( get_template_directory() . DS . 'estatik4' . DS );
+		$child_theme_templates_path  = realpath( get_stylesheet_directory() . DS . 'estatik4' . DS );
 
-		$find[] = 'estatik4/' . $template_path;
-		$find[] = $context . $template_path;
+		$find = array(
+			'estatik4/' . $template_path,
+			$plugin_templates_path . DS . $template_path,
+		);
 
-		$template_path = locate_template( array_unique( $find ) );
+		$located_template = locate_template( array_unique( $find ) );
 
-		if ( ! $template_path ) {
-			$template_path = $context . $base;
+		if ( ! $located_template ) {
+			$located_template = $plugin_templates_path . DS . $template_path;
 		}
 
-		return apply_filters( 'es_locate_template', $template_path, $path );
+		$real_template_path = realpath( $located_template );
+
+		if (
+			strpos( $real_template_path, $plugin_templates_path ) !== 0 &&
+			strpos( $real_template_path, $parent_theme_templates_path ) !== 0 &&
+			strpos( $real_template_path, $child_theme_templates_path ) !== 0
+		) {
+			return '';
+		}
+
+		return apply_filters( 'es_locate_template', $real_template_path, $template_path );
 	}
 }
 
@@ -539,10 +551,15 @@ if ( ! function_exists( 'es_get_wishlist_instance' ) ) {
 	 * @return Es_Wishlist_Cookie|Es_Wishlist_User
 	 */
     function es_get_wishlist_instance( $entity_name = 'property' ) {
-
         if ( is_user_logged_in() ) {
+			if ( ! class_exists( 'Es_Wishlist_User' ) ) {
+				require_once ES_PLUGIN_CLASSES . DS . 'wishlist' . DS . 'class-wishlist-user.php';
+			}
             $instance =  new Es_Wishlist_User( get_current_user_id(), $entity_name );
         } else {
+			if ( ! class_exists( 'Es_Wishlist_Cookie' ) ) {
+				require_once ES_PLUGIN_CLASSES . DS . 'wishlist' . DS . 'class-wishlist-cookie.php';
+			}
             $instance = new Es_Wishlist_Cookie( $entity_name );
         }
 
@@ -568,12 +585,22 @@ function es_get_auth_networks_list() {
 function es_get_auth_instance( $network, $config = array() ) {
     $instance = null;
 
+	if ( ! class_exists( 'Es_Authentication' ) ) {
+		require_once ES_PLUGIN_CLASSES . 'auth' . DS . 'class-authentication.php';
+	}
+
     switch ( $network ) {
         case 'facebook':
+			if ( ! class_exists( 'Es_Facebook_Authentication' ) ) {
+				require_once ES_PLUGIN_CLASSES . 'auth' . DS . 'class-facebook-authentication.php';
+			}
             $instance = new Es_Facebook_Authentication( $config );
             break;
 
         case 'google':
+			if ( ! class_exists( 'Es_Google_Authentication' ) ) {
+				require_once ES_PLUGIN_CLASSES . 'auth' . DS . 'class-google-authentication.php';
+			}
             $instance = new Es_Google_Authentication( $config );
             break;
     }

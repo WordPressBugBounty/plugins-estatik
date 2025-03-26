@@ -13,7 +13,11 @@ class Es_Framework_Radio_Field extends Es_Framework_Multi_Fields_Field {
 		$input = '';
         unset( $config['skeleton'] );
 
-		if ( empty( $config['disable_hidden_input'] ) ) {
+		if ( empty( $config['disable_hidden_input'] ) && ! isset( $config['enable_hidden_input'] ) ) {
+			$input = "<input type='hidden' name='{$config['attributes']['name']}' value=''>";
+		}
+
+		if ( ! empty( $config['enable_hidden_input'] ) ) {
 			$input = "<input type='hidden' name='{$config['attributes']['name']}' value=''>";
 		}
 

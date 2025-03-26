@@ -72,7 +72,7 @@ abstract class Es_Framework_Base_Field {
 
 		return array(
 			'label' => '',
-			'label_wrapper' => "<div class='es-field__label'>%s</div>",
+			'label_wrapper' => "<span class='es-field__label'>%s</span>",
 			'description_wrapper' => "<p class='es-field__description'>%s</p>",
 			'caption_wrapper' => "<p class='es-field__caption'>%s</p>",
 			'wrapper_class' => "",

@@ -16,7 +16,7 @@ class Es_Property_Single_Map_Shortcode extends Es_Shortcode {
 		if ( es_is_property( $attr['id'] ) ) {
 			$property = es_get_property( $attr['id'] );
 			if ( $property->latitude && $property->longitude && ests( 'google_api_key' ) ) {
-				$content = "<div class='es-property-map js-es-property-map'
+				$content = "<div class='es-property-map js-es-property-map' id='es-single-map'
                             data-latitude='" . esc_attr( $property->latitude ) . "'
                             data-longitude='" . esc_attr( $property->longitude ) . "'></div>";
 

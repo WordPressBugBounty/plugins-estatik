@@ -156,7 +156,11 @@ class Es_Fields_Builder_Page {
                         $config['value'][] = array( 'value' => $term, 'id' => $id );
                     }
                 }
-            }
+            } else if ( ! empty( $field['options'] ) ) {
+			    foreach ( $field['options'] as $val => $label ) {
+				    $config['value'][] = array( 'value' => $val, 'id' => $label );
+			    }
+		    }
 
 			es_field_builder_field_render( 'values', $config, $field );
 

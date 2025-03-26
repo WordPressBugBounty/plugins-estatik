@@ -50,6 +50,7 @@
 			'label' => _x( 'Email', 'authenticate form', 'es' ),
 			'attributes' => array(
 				'required' => 'required',
+                'autocomplete' => 'username',
 				'id' => sprintf( '%s-%s', 'es_user_email', uniqid() ),
 			),
 			'description' => __( "You'll use it to sign in, and we'll use it to contact you.", 'es' ),
@@ -61,6 +62,7 @@
 			'attributes' => array(
 				'required' => 'required',
 				'minlength' => '8',
+                'autocomplete' => 'new-password',
 				'class' => 'js-es-password-field',
 				'id' => sprintf( '%s-%s', 'es_user_password', uniqid() ),
 			),

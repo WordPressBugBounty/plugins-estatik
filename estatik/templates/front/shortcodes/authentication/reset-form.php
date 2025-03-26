@@ -30,6 +30,7 @@
 				'class' => 'js-es-password-field',
 				'data-email' => $user->user_email,
 				'required' => 'required',
+				'autocomplete' => 'new-password',
 				'id' => sprintf( '%s-%s', 'es_new_password', uniqid() ),
 			),
 			'skeleton' => "{before}
@@ -51,6 +52,7 @@
 				'type' => 'email',
 				'attributes' => array(
 					'required' => 'required',
+					'autocomplete' => 'username',
 					'id' => sprintf( '%s-%s', 'es_user_email', uniqid() ),
 				),
 			) ); ?>

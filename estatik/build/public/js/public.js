@@ -275,11 +275,12 @@
             var map_instance = new google.maps.Map( map , {
                 center: {lat: +lat, lng: +lon},
                 draggable: true,
-                zoom: +zoom
+                zoom: +zoom,
+                mapId: map.id
             } );
 
             // Add property marker.
-            new google.maps.Marker( {
+            new google.maps.marker.AdvancedMarkerElement( {
                 position: map_instance.getCenter(),
                 map: map_instance,
             } );

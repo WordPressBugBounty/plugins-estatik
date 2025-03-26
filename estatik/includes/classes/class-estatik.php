@@ -13,7 +13,7 @@ class Estatik {
 	 * @var Estatik
 	 */
 	protected static $_instance;
-	const VERSION = '4.1.9';
+	const VERSION = '4.1.10';
 	const TYPE = 'simple';
 
 	/**
@@ -46,7 +46,6 @@ class Estatik {
 	 * @return void
 	 */
 	protected function load_files() {
-
 		$files = apply_filters( 'es_plugin_files', array(
 			'settings-container' => ES_PLUGIN_CLASSES . 'class-settings-container.php',
 			'taxonomies_init' => ES_PLUGIN_CLASSES . 'class-taxonomies.php',
@@ -59,11 +58,6 @@ class Estatik {
 			'entity-functions' => ES_PLUGIN_INCLUDES . 'entity-functions.php',
 			'property-functions' => ES_PLUGIN_INCLUDES . 'property-functions.php',
 			'hooks' => ES_PLUGIN_INCLUDES . 'hooks.php',
-			'flash' => ES_PLUGIN_CLASSES . 'helpers' . DS . '/class-flash-message.php',
-
-			'auth' => ES_PLUGIN_CLASSES . 'auth' . DS . 'class-authentication.php',
-			'fb-auth' => ES_PLUGIN_CLASSES . 'auth' . DS . 'class-facebook-authentication.php',
-			'google-auth' => ES_PLUGIN_CLASSES . 'auth' . DS . 'class-google-authentication.php',
 
 			'framework' => ES_PLUGIN_CLASSES . 'framework' . DS . 'framework.php',
 			'admin_logo_init' => ES_PLUGIN_CLASSES . 'class-estatik-logo.php',
@@ -92,12 +86,8 @@ class Estatik {
             ES_PLUGIN_CLASSES . DS . 'helpers' . DS . 'interface-container.php',
             ES_PLUGIN_CLASSES . DS . 'helpers' . DS . 'class-user-container.php',
             ES_PLUGIN_CLASSES . DS . 'helpers' . DS . 'class-cookies-container.php',
-            'wishlist-user' => ES_PLUGIN_CLASSES . DS . 'wishlist' . DS . 'class-wishlist-user.php',
-            'wishlist-cookie' => ES_PLUGIN_CLASSES . DS . 'wishlist' . DS . 'class-wishlist-cookie.php',
 
 			'admin-menu' => ES_PLUGIN_CLASSES . 'class-admin-menu.php',
-
-			'address-components' => ES_PLUGIN_CLASSES . 'class-address-components.php',
 
 			'entity' => ES_PLUGIN_CLASSES . DS . 'entities' . DS . 'class-entity.php',
 			'post-entity' => ES_PLUGIN_CLASSES . DS . 'entities' . DS . 'class-post.php',
@@ -125,12 +115,6 @@ class Estatik {
 
 			'profile-page' => ES_PLUGIN_CLASSES . 'pages' . DS . 'front' . DS . 'class-profile-page.php',
 			'template-loader' => ES_PLUGIN_CLASSES . 'class-template-loader.php',
-
-			'email' => ES_PLUGIN_CLASSES . 'emails/class-email.php',
-			'request-property-info-email' => ES_PLUGIN_CLASSES . 'emails/class-request-property-info-email.php',
-			'new-user-info-email' => ES_PLUGIN_CLASSES . 'emails/class-new-user-info-email.php',
-			'new-user-registered-admin-email' => ES_PLUGIN_CLASSES . 'emails/class-new-user-registered-admin-email.php',
-			'reset-password-email' => ES_PLUGIN_CLASSES . 'emails/class-reset-password-email.php',
 
 			'polylang' => ES_PLUGIN_CLASSES . 'class-polylang-init.php',
 		) );

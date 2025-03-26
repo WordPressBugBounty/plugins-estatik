@@ -171,6 +171,10 @@ function es_get_notification_markup( $message, $type = 'success' ) {
  * @return Es_Flash_Message
  */
 function es_get_flash_instance( $context ) {
+    if ( ! class_exists( 'Es_Flash_Message' ) ) {
+        require_once ES_PLUGIN_CLASSES . 'helpers' . DS . '/class-flash-message.php';
+    }
+
 	return apply_filters( 'es_get_flash_instance', new Es_Flash_Message( $context ) );
 }
 
@@ -1200,6 +1204,10 @@ function es_esc_json_attr( $data ) {
  * @return Es_Address_Components
  */
 function es_get_address_components_container() {
+    if ( ! class_exists( 'Es_Address_Components' ) ) {
+        require_once ES_PLUGIN_CLASSES . 'class-address-components.php';
+    }
+
 	return apply_filters( 'es_get_address_components_container', new Es_Address_Components() );
 }
 
@@ -1776,6 +1784,15 @@ function es_get_active_grid_layout( $current_layout = '' ) {
     return $is_current_grid ? es_prepare_grid_layout( $current_layout ) : $temp;
 }
 
+function es_get_email_files_list() {
+    return apply_filters( 'es_get_email_files_list', array(
+	    'request_property_info' => ES_PLUGIN_CLASSES . 'emails/class-request-property-info-email.php',
+	    'new_user_info' => ES_PLUGIN_CLASSES . 'emails/class-new-user-info-email.php',
+	    'new_user_registered_admin' => ES_PLUGIN_CLASSES . 'emails/class-new-user-registered-admin-email.php',
+	    'reset_password' => ES_PLUGIN_CLASSES . 'emails/class-reset-password-email.php',
+    ) );
+}
+
 /**
  * @return mixed|void
  */
@@ -1797,8 +1814,17 @@ function es_get_email_types_list() {
  */
 function es_get_email_instance( $email_type, $data = array() ) {
 	$emails_list = es_get_email_types_list();
+	$emails_files = es_get_email_files_list();
+
+    if ( ! class_exists( 'Es_Email' ) ) {
+	    require_once ES_PLUGIN_CLASSES . 'emails/class-email.php';
+    }
 
     $class_name = ! empty( $emails_list[ $email_type ] ) ? $emails_list[ $email_type ] : false;
+
+	if ( ! class_exists( $class_name ) ) {
+        require_once $emails_files[ $email_type ];
+    }
 
     return apply_filters( 'es_get_email_instance', $class_name ? new $class_name( $data ) : null, $email_type, $data );
 }

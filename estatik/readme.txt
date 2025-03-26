@@ -3,7 +3,7 @@ Contributors: Estatik
 Donate link: http://estatik.net/
 Tags: real estate, idx, MLS, listings, RETS, webAPI, property, realtor
 Requires at least: 5.4
-Tested up to: 6.7.1
+Tested up to: 6.7.2
 Requires PHP: 5.6
 Stable tag: trunk
 License: GPLv2 or later
@@ -178,7 +178,24 @@ Your listings and plugin configuration will be safe.
 
 == Changelog ==
 
-= 4.1.9 (February 10, 2024) =
+= 4.1.10 (March 25, 2025) =
+
+
+* NEW: Plugin performance improved. Code refactored (All versions).
+* NEW: Autocomplete HTML attr for estatik fields added (All versions).
+* NEW: Agency logo in property boxes added (Pro & Premium).
+* FIXED: MLS files upload warning fix added (Premium).
+* FIXED: Agent profile fields order fix added. (Pro & Premium)
+* FIXED: Price dependencies in search form fix added (All versions).
+* FIXED: LFI Vulnerability fix added (All versions).
+* FIXED: Compare tooltip text color fixed (All versions).
+* FIXED: Fixed HTML markup for estatik fields (All versions).
+* FIXED: Search form address ajax search fix added (All versions).
+* FIXED: Google Maps AdvancedMarkerElement implemented (All versions).
+* FIXED: minor fixes
+
+
+= 4.1.9 (February 10, 2025) =
 
 
 * NEW: The ability to edit the number of added items in the user subscription is added. (Pro & Premium) 

@@ -63,7 +63,8 @@
         var map_instance = new google.maps.Map( map , {
             center: {lat: +lat, lng: +lon},
             draggable: true,
-            zoom: 16
+            zoom: 16,
+            mapId: map.id
         } );
 
         var controlDiv = document.createElement("div");
@@ -86,7 +87,7 @@
         google.maps.event.trigger( map_instance , 'resize' );
 
         // Add property marker.
-        var marker = new google.maps.Marker( {
+        var marker = new google.maps.marker.AdvancedMarkerElement( {
             position: map_instance.getCenter(),
             map: map_instance,
         } );
@@ -94,7 +95,7 @@
         // Set marker position always on map center on drag.
         window.google.maps.event.addListener( map_instance , 'drag', function (event) {
             if ( set_pin_active ) {
-                marker.setPosition( map_instance.getCenter() );
+                marker.position = map_instance.getCenter();
             }
         } );
 
@@ -103,7 +104,7 @@
             if ( map_triggered ) {
                 if ( set_pin_active ) {
                     var position = map_instance.getCenter();
-                    marker.setPosition( position );
+                    marker.position = position;
 
                     if ( $( '.js-es-address-components' ).val() ) {
                         // Load google address components by coordinates.

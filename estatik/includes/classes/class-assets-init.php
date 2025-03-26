@@ -87,9 +87,8 @@ class Es_Assets {
 		if ( ests( 'google_api_key' ) ) {
 			$api_deps = array();
 
-			wp_register_script( 'es-googlemap-osm', $public . '/js/osm.min.js', array(), Estatik::get_version() );
 			wp_register_script( 'es-googlemap-popup', $public . '/js/gm-popup.min.js', array(), Estatik::get_version() );
-			wp_register_script( 'es-googlemap-clusters-api', $public . '/js/markerclustererplus.min.js', array(), Estatik::get_version() );
+			wp_register_script( 'es-googlemap-clusters-api', $public . '/js/markerclusterer.min.js', array(), Estatik::get_version() );
 
 			if ( ests( 'is_clusters_enabled' ) ) {
 				$api_deps[] = 'es-googlemap-clusters-api';
@@ -98,7 +97,7 @@ class Es_Assets {
 			// Google map API.
 			wp_register_script(
 				'es-googlemap-api',
-				'https://maps.googleapis.com/maps/api/js?key=' . ests( 'google_api_key' ) . '&libraries=places&callback=Function.prototype&language=' . es_get_gmap_locale(),
+				'https://maps.googleapis.com/maps/api/js?key=' . ests( 'google_api_key' ) . '&libraries=places,marker&callback=Function.prototype&language=' . es_get_gmap_locale(),
 				$api_deps
 			);
 		}
@@ -113,7 +112,7 @@ class Es_Assets {
 		wp_register_style( 'es-magnific', $common . '/magnific-popup/magnific-popup.min.css', array(), Estatik::get_version() );
 
 		if ( ests( 'google_api_key' ) ) {
-			$public_deps[] = 'es-googlemap-osm';
+//			$public_deps[] = 'es-googlemap-osm';
 			$public_deps[] = 'es-googlemap-api';
 		}
 
@@ -407,7 +406,7 @@ class Es_Assets {
 								$weight = get_post_meta( $font_attachment, 'es_font_style', true );
 								$weight = $weight == 'regular' ? 400 : $weight;
 								$url = wp_get_attachment_url( $font_attachment );
-								$fonts_style_css .= "@font-face {font-family: '{$font['family']}'; font-style: normal; font-weight: {$weight}; src: url({$url}) format('woff2');}";
+								$fonts_style_css .= "@font-face {font-family: '{$font['family']}'; font-style: normal; font-weight: {$weight}; src: url({$url}) format('woff2'); font-display: swap;}";
 							}
 						}
 					} else {

@@ -1057,6 +1057,7 @@ body .es-box.es-box--input .es-box__title {
   font-size: 14px;
   line-height: 20px;
   margin-bottom: 6px;
+  display: block;
 }
 .es-field .es-field__label:empty {
   display: none;
@@ -1194,6 +1195,7 @@ body .es-box.es-box--input .es-box__title {
   margin: 0;
   padding: 0;
   line-height: 0;
+  z-index: 1;
 }
 .es-field input[type=radio]:checked[type=checkbox]:before, .es-field input[type=checkbox]:checked[type=checkbox]:before {
   border-radius: 2px;

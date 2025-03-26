@@ -53,7 +53,7 @@ if ( ! $google_api_key ) : ?>
     </div>
 <?php endif; ?>
 
-<div class="js-es-form-map es-form-map es-hidden"></div>
+<div class="js-es-form-map es-form-map es-hidden" id="es-form-map"></div>
 
 <?php es_property_field_render( 'address_components' ); ?>
 <?php es_property_field_render( 'is_manual_address', array(

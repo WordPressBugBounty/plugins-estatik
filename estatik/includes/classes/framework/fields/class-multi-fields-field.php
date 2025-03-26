@@ -66,7 +66,8 @@ abstract class Es_Framework_Multi_Fields_Field extends Es_Framework_Base_Field {
     public function get_default_config() {
         $default = parent::get_default_config();
         $config = array(
-            'wrapper_class' => 'es-field--multiple-checks'
+            'wrapper_class' => 'es-field--multiple-checks',
+	        'enable_hidden_input' => true,
         );
 
         return es_parse_args( $config, $default );

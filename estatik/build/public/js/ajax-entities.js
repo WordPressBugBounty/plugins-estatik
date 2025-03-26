@@ -1,6 +1,8 @@
 ( function( $ ) {
     'use strict';
 
+    var parser = new DOMParser();
+
     var Entities = {
 
         /**
@@ -480,7 +482,8 @@
 
             this.mapInstance = new google.maps.Map( _this.map , {
                 draggable: true,
-                zoom: 16
+                zoom: 16,
+                mapId: _this.map.id
             } );
 
             this.setMarkers( _this.$map.data( 'listings' ) );
@@ -538,12 +541,10 @@
 
             if ( _this.markers.length ) {
                 for ( var i in _this.markers ) {
-                    if ( _this.markers.hasOwnProperty( i ) ) {
-                        var position = _this.markers[i].getPosition();
+                    var position = _this.markers[i].position;
 
-                        if ( bounds !== undefined && bounds.contains( position ) ) {
-                            properties_ids.push( _this.markers[i].post_id );
-                        }
+                    if ( bounds !== undefined && bounds.contains( position ) ) {
+                        properties_ids.push( _this.markers[i].post_id );
                     }
                 }
 
@@ -573,18 +574,19 @@
          */
         $( _this.$wrapper ).on( 'mouseenter', '.js-es-listing', function() {
             var post_id = $( this ).data( 'post-id' );
+            var marker = _this.findMarkerByPostID( post_id );
 
-            if ( typeof _this.markers[ post_id ] !== 'undefined' ) {
-                var marker = _this.markers[ post_id ];
-                var icon = {};
-                if ( Estatik.settings.map_marker_type !== 'price' ) {
-                    icon = marker.getIcon();
-                }
+            if ( marker ) {
                 var marker_svg = marker.marker_svg;
                 if ( marker_svg ) {
                     marker_svg = marker_svg.replaceAll( 'data-color', 'style="fill: ' + Estatik.settings.main_color + '"' );
-                    icon.url = 'data:image/svg+xml;charset=UTF-8;base64,' + window.btoa( marker_svg );
-                    marker.setIcon( icon );
+                    // icon.url = 'data:image/svg+xml;charset=UTF-8;base64,' + window.btoa( marker_svg );
+                    var pinSvg = parser.parseFromString(
+                        marker_svg,
+                        "image/svg+xml"
+                    ).documentElement;
+                    // icon.url = 'data:image/svg+xml;charset=UTF-8;base64,' + window.btoa( marker_svg );
+                    marker.content = pinSvg;
                 }
             }
         } );
@@ -594,18 +596,18 @@
          */
         $( _this.$wrapper ).on( 'mouseleave', '.js-es-listing', function() {
             var post_id = $( this ).data( 'post-id' );
+            var marker = _this.findMarkerByPostID( post_id );
 
-            if ( typeof _this.markers[ post_id ] !== 'undefined' ) {
-                var marker = _this.markers[ post_id ];
-                var icon = {};
-                if ( Estatik.settings.map_marker_type !== 'price' ) {
-                    icon = marker.getIcon();
-                }
+            if ( marker ) {
                 var marker_svg = marker.marker_svg;
                 if ( marker_svg ) {
                     marker_svg = marker_svg.replaceAll( 'data-color', 'style="fill: ' + marker.marker_color + '"' );
-                    icon.url = 'data:image/svg+xml;charset=UTF-8;base64,' + window.btoa( marker_svg );
-                    marker.setIcon( icon );
+                    var pinSvg = parser.parseFromString(
+                        marker_svg,
+                        "image/svg+xml"
+                    ).documentElement;
+                    // icon.url = 'data:image/svg+xml;charset=UTF-8;base64,' + window.btoa( marker_svg );
+                    marker.content = pinSvg;
                 }
             }
         } );
@@ -638,6 +640,12 @@
             _this.markers = [];
         };
 
+        HalfMap.prototype.findMarkerByPostID = function( post_id ) {
+            return _this.markers.find( function( marker ) {
+                return marker.post_id === post_id;
+            } );
+        };
+
         /**
          * Set markers on the map.
          */
@@ -647,12 +655,6 @@
 
             var marker;
             var bounds = new google.maps.LatLngBounds();
-            var oms = new OverlappingMarkerSpiderfier( _this.mapInstance, {
-                markersWontMove: true,
-                markersWontHide: true,
-                basicFormatEvents: true,
-                keepSpiderfied: true
-            } );
 
             _this.$map.data( 'listings', coordinates );
 
@@ -672,7 +674,6 @@
                     marker = {
                         position: location,
                         map: _this.mapInstance,
-                        optimized: false,
                         zIndex: 99
                     };
 
@@ -687,29 +688,24 @@
                         marker_color = Estatik.settings.map_marker_color;
                     }
 
+                    var svg = marker_svg.replaceAll( 'data-color', 'style="fill: ' + marker_color + '"' );
+
+                    var pinSvg = parser.parseFromString(
+                        svg,
+                        "image/svg+xml"
+                    ).documentElement;
+                    // icon.url = 'data:image/svg+xml;charset=UTF-8;base64,' + window.btoa( marker_svg );
+                    marker.content = pinSvg;
+
+                    marker = new google.maps.marker.AdvancedMarkerElement( marker );
                     marker.marker_svg = marker_svg;
                     marker.marker_color = marker_color;
-
-                    var $svg = $( marker_svg );
-                    var svg_width = $svg.attr( 'width' );
-                    var svg_height = +$svg.attr( 'height' );
-                    marker_svg = marker_svg.replaceAll( 'data-color', 'style="fill: ' + marker_color + '"' );
-
-                    marker.icon = {
-                        url: 'data:image/svg+xml;charset=UTF-8;base64,' + window.btoa( marker_svg ),
-                        scaledSize: new google.maps.Size( svg_width, svg_height ),
-                        size: new google.maps.Size( svg_width, svg_height ),
-                        origin: new google.maps.Point(0, 0),
-                        anchor: new google.maps.Point( svg_width / 2, svg_height / 2 ),
-                        optimized: false
-                    };
-
-                    marker = new google.maps.Marker( marker );
                     marker.post_id = coordinates[j].post_id;
-                    google.maps.event.addListener( marker, 'click', ( _this.propertyPopup )( location, coordinates[j] ) );
+                    google.maps.event.addListener( marker, 'gmp-click', ( _this.propertyPopup )( location, coordinates[j] ) );
 
-                    _this.markers[ coordinates[j].post_id ] = marker;
-                    oms.addMarker( marker );
+                    if ( ! _this.findMarkerByPostID( marker.post_id ) ) {
+                        _this.markers.push( marker );
+                    }
                 }
 
                 if ( typeof Estatik.settings.default_lat_lng !== 'undefined' ) {
@@ -729,13 +725,7 @@
                 if ( _this.markers ) {
                     if ( Estatik.settings.is_cluster_enabled ) {
                         var cluster_styles = [{
-                            width: 44,
-                            height: 44,
-                            url: HalfMap.getClusterIcon(),
                             textColor: 'white',
-                            textSize: 10,
-                            anchorText: [16],
-                            anchorIcon: [38,22]
                         }];
 
                         if ( 'cluster3' === Estatik.settings.map_cluster_icon ) {
@@ -743,9 +733,23 @@
                         }
 
                         if ( +Estatik.settings.is_cluster_enabled && Estatik.settings.map_marker_type !== 'price' ) {
-                            _this.clusters.push( new MarkerClusterer( _this.mapInstance, _this.markers, {
+                            _this.clusters.push( new markerClusterer.MarkerClusterer( {
+                                map: _this.mapInstance,
+                                markers:_this.markers,
                                 maxZoom: 12,
-                                styles: cluster_styles
+                                renderer: {
+                                    render: function( marker ) {
+                                        return new google.maps.marker.AdvancedMarkerElement( {
+                                            map: _this.mapInstance,
+                                            position: marker.position,
+                                            content: HalfMap.getClusterIcon( {
+                                                number: marker.count,
+                                                textColor: cluster_styles[0].textColor,
+                                                textSize: 10,
+                                            } ),
+                                        });
+                                    }
+                                }
                             } ) );
                         }
                     }
@@ -810,13 +814,17 @@
          *
          * @returns {string}
          */
-        HalfMap.getClusterIcon = function( color ) {
-            color = color || Estatik.settings.map_cluster_color;
+        HalfMap.getClusterIcon = function( options ) {
+            var color = options.color || Estatik.settings.map_cluster_color;
             var cluster = Estatik.settings.map_cluster_icons[Estatik.settings.map_cluster_icon];
-            cluster = cluster.replaceAll( 'data-color', 'style="fill:' + color + '"' ).replaceAll('data-hide', 'style="fill:#ffffff"');
-            var encoded = window.btoa( cluster );
+            cluster = cluster.replaceAll( 'data-color', 'style="fill:' + color + '"' )
+                .replaceAll('data-hide', 'style="fill:#ffffff"')
+                .replaceAll( '{text}', '<text x="50%" y="50%" font-size="' + options.textSize + 'px" dominant-baseline="middle" text-anchor="middle" fill="' + options.textColor + '">' + options.number + '</text>' );
 
-            return ('data:image/svg+xml;base64,' + encoded);
+            return parser.parseFromString(
+                cluster,
+                "image/svg+xml"
+            ).documentElement;
         };
     };
 
