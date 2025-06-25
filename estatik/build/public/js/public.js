@@ -174,6 +174,10 @@
                                 break;
 
                             default:
+                                if ( ! $container.is(":visible") ) {
+                                    container_width = $container.parent().width();
+                                }
+
                                 classes.forEach( function( className ) {
                                     $container.removeClass( className );
                                 } );

@@ -125,3 +125,36 @@ function es_entity_delete_attachment( $attachment_id, $field, $entity ) {
 		wp_delete_attachment( $attachment_id, true );
 	}
 }
+
+/**
+ * @param $entity_name
+ *
+ * @return string
+ */
+function es_get_entity_plural_name( $entity_name ) {
+	$plural = null;
+
+	if ( $entity_name == 'property' ) {
+		$plural = 'properties';
+	}
+
+	return apply_filters( 'es_get_entity_plural_name', $plural, $entity_name );
+}
+
+if ( ! function_exists( 'es_the_entity_share_popup' ) ) {
+
+	/**
+	 * Render shares popup.
+	 *
+	 * @return void
+	 */
+	function es_the_entity_share_popup() {
+		$entity = es_get_entity_by_id( get_the_ID() );
+
+		es_load_template( 'front/popup/share.php', array(
+			'entity_plural' => es_get_entity_plural_name( $entity::get_entity_name() ),
+			'title' => sprintf( __( 'Share this %s', 'es' ), $entity::get_entity_name() ),
+		) );
+	}
+}
+add_action( 'es_after_single_content', 'es_the_entity_share_popup' );

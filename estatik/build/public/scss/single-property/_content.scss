@@ -335,6 +335,10 @@
 .es-property-map {
     height: 350px;
 
+    .es-properties__map, .es-map {
+        height: inherit;
+    }
+
     & + .es-property-fields {
         margin-top: 20px;
     }

@@ -13,7 +13,7 @@ class Estatik {
 	 * @var Estatik
 	 */
 	protected static $_instance;
-	const VERSION = '4.1.10';
+	const VERSION = '4.1.11';
 	const TYPE = 'simple';
 
 	/**
@@ -22,8 +22,13 @@ class Estatik {
 	protected function __construct() {
 		$this->load_files();
 
+		add_action( 'plugins_loaded', array( 'Estatik', 'load_textdomain' ) );
+
 		register_deactivation_hook( ES_FILE, array( get_called_class(), 'deactivation' ) );
-		register_activation_hook( ES_FILE, array( get_called_class(), 'activation' ) );
+	}
+
+	public static function load_textdomain() {
+		load_plugin_textdomain( 'es', false, dirname( plugin_basename( ES_FILE ) ) . '/languages/' );
 	}
 
 	/**

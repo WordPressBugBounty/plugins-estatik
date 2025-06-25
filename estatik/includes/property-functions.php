@@ -197,23 +197,6 @@ if ( ! function_exists( 'es_the_single_property_layout' ) ) {
 }
 add_action( 'es_single_property_layout', 'es_the_single_property_layout' );
 
-if ( ! function_exists( 'es_the_property_share_popup' ) ) {
-
-    /**
-     * Render shares popup.
-     *
-     * @return void
-     */
-	function es_the_property_share_popup( $popup_id = 'es-share-popup' ) {
-		es_load_template( 'front/popup/share.php', array(
-			'entity_plural' => 'properties',
-			'title' => __( 'Share this home', 'es' ),
-			'popup_id' => $popup_id,
-		) );
-	}
-}
-add_action( 'es_single_property_layout', 'es_the_property_share_popup', 10, 0 );
-
 if ( ! function_exists( 'es_sort_dropdown' ) ) {
 
     /**

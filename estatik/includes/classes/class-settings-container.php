@@ -1443,9 +1443,9 @@ class Es_Settings_Container
 						'single-gallery' => array(
 							'selector' => '.js-es-property-gallery',
 							'breakpoints' => array_reverse( array(
-								'es-gallery--xsm' => array( 'min' => 400 ),
+								'es-gallery--xsm' => array( 'min' => 1 ),
 								'es-gallery--sm'  => array( 'min' => 520 ),
-								'es-gallery--md'  => array( 'min' => 650 ),
+								'es-gallery--md'  => array( 'min' => 600 ),
 								'es-gallery--lg'  => array( 'min' => 800 ),
 								'es-gallery--xl'  => array( 'min' => 1000 )
 							) ),
@@ -1453,9 +1453,9 @@ class Es_Settings_Container
 						'single-slider' => array(
 							'selector' => '.js-es-slider',
 							'breakpoints' => array_reverse( array(
-								'es-slider--xsm' => array( 'min' => 400 ),
+								'es-slider--xsm' => array( 'min' => 1 ),
 								'es-slider--sm'  => array( 'min' => 520 ),
-								'es-slider--md'  => array( 'min' => 650 ),
+								'es-slider--md'  => array( 'min' => 600 ),
 								'es-slider--lg'  => array( 'min' => 800 ),
 								'es-slider--xl'  => array( 'min' => 1000 )
 							) ),

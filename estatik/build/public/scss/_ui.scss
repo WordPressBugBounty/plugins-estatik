@@ -85,7 +85,7 @@ body .es-field {
     }
 
     &.es-field--phone {
-        &>label {
+        &>div {
             display: flex;
             flex-wrap: wrap;
 
@@ -525,6 +525,7 @@ body .es-field {
         line-height: 2em;
         font-weight: bold;
         color: #263238;
+        display: block;
     }
 
     &.es-field--radio-item-bordered, &.es-field--checkbox-item-bordered {

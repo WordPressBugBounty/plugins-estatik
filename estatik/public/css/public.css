@@ -68,38 +68,38 @@ body .es-field .es-field__label {
   margin-bottom: 5px;
   display: block;
 }
-body .es-field.es-field--phone > label {
+body .es-field.es-field--phone > div {
   display: flex;
   flex-wrap: wrap;
 }
-body .es-field.es-field--phone > label .es-field__tel {
+body .es-field.es-field--phone > div .es-field__tel {
   flex: 1;
   max-width: 350px;
 }
-body .es-field.es-field--phone > label > .es-field {
+body .es-field.es-field--phone > div > .es-field {
   margin: 0;
 }
-body .es-field.es-field--phone > label .es-field__description {
+body .es-field.es-field--phone > div .es-field__description {
   flex: 1 0 100%;
 }
-body .es-field.es-field--phone > label .es-field__label {
+body .es-field.es-field--phone > div .es-field__label {
   flex: 1 0 100%;
 }
-body .es-field.es-field--phone > label .es-field__code {
+body .es-field.es-field--phone > div .es-field__code {
   flex: 0 0 96px;
   margin-bottom: 0;
   padding-bottom: 0;
   margin-right: 15px;
   min-width: unset;
 }
-body .es-field.es-field--phone > label .es-field__code .select2-selection__arrow {
+body .es-field.es-field--phone > div .es-field__code .select2-selection__arrow {
   top: 2px;
   right: 10px;
 }
-body .es-field.es-field--phone > label .es-field__code .select2-selection--single .select2-selection__rendered {
+body .es-field.es-field--phone > div .es-field__code .select2-selection--single .select2-selection__rendered {
   line-height: 40px;
 }
-body .es-field.es-field--phone > label .es-field__code .select2-selection img {
+body .es-field.es-field--phone > div .es-field__code .select2-selection img {
   width: 32px;
   height: 16px;
   position: relative;
@@ -107,7 +107,7 @@ body .es-field.es-field--phone > label .es-field__code .select2-selection img {
   vertical-align: middle;
   margin: 0;
 }
-body .es-field.es-field--phone > label .es-field__code + .es-field__input {
+body .es-field.es-field--phone > div .es-field__code + .es-field__input {
   flex: 1;
 }
 body .es-field.es-field--textarea label, body .es-field.es-field--text label, body .es-field.es-field--number label, body .es-field.es-field--password label, body .es-field.es-field--select label, body .es-field.es-field--email label {
@@ -405,6 +405,7 @@ body .es-field .es-field__label {
   line-height: 2em;
   font-weight: bold;
   color: #263238;
+  display: block;
 }
 body .es-field.es-field--radio-item-bordered input, body .es-field.es-field--checkbox-item-bordered input {
   display: none;
@@ -3500,6 +3501,9 @@ body .es-field .select2-container .select2-selection .select2-selection__arrow .
 .es-property-map {
   height: 350px;
 }
+.es-property-map .es-properties__map, .es-property-map .es-map {
+  height: inherit;
+}
 .es-property-map + .es-property-fields {
   margin-top: 20px;
 }
@@ -3783,6 +3787,9 @@ body.mfp-zoom-out-cur {
 }
 .es-mobile-gallery-wrap .slick-slide img {
   display: block !important;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
 }
 .es-mobile-gallery-wrap .es-mobile-gallery__pager {
   position: absolute;

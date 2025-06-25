@@ -62,6 +62,12 @@ class Es_Framework_Phone_Field extends Es_Framework_Field {
 			'icons' => array(),
 			'is_country_code_disabled' => false,
 
+			'skeleton' => "{before}
+                               <div class='es-field es-field__{field_key} es-field--{type} {wrapper_class}'>
+                                   <div>{label}{caption}{unit_before}{input}{unit_after}{description}</div>
+                               </div>
+                           {after}",
+
 			'code_config' => array(
 				'type' => 'select',
 				'options' => array(),

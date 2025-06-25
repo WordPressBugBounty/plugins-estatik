@@ -37,6 +37,67 @@ class Es_Dashboard_Page {
 	 */
 	public static function get_changelog() {
 		return array(
+			'4.1.11' => array(
+				'date' => _x( 'June, 26, 2025', 'changelog', 'es' ),
+				'changes' => array(
+					array(
+						'text' => _x( 'Sorting locations added (Pro & Premium).', 'changelog', 'es' ),
+						'label' => 'new',
+					),
+					array(
+						'text' => _x( 'Properties map styles fixed (All versions).', 'changelog', 'es' ),
+						'label' => 'bugfix',
+					),
+					array(
+						'text' => _x( 'PayPal plan save fixed. (Pro & Premium).', 'changelog', 'es' ),
+						'label' => 'bugfix',
+					),
+					array(
+						'text' => _x( 'List agents for agency on frontend fixed. (Pro & Premium).', 'changelog', 'es' ),
+						'label' => 'bugfix',
+					),
+					array(
+						'text' => _x( 'DMQL query fixed (Premium).', 'changelog', 'es' ),
+						'label' => 'bugfix',
+					),
+					array(
+						'text' => _x( 'MLS images render fixed (Premium).', 'changelog', 'es' ),
+						'label' => 'bugfix',
+					),
+					array(
+						'text' => _x( 'ParagonRETS WebAPI issues fixed (Premium).', 'changelog', 'es' ),
+						'label' => 'bugfix',
+					),
+					array(
+						'text' => _x( 'Lookup filter fields AJAX search fixed (Premium).', 'changelog', 'es' ),
+						'label' => 'bugfix',
+					),
+					array(
+						'text' => _x( 'MLS RETS disconnect functionality fix added (Premium).', 'changelog', 'es' ),
+						'label' => 'bugfix',
+					),
+					array(
+						'text' => _x( 'Map ID added (All versions).', 'changelog', 'es' ),
+						'label' => 'bugfix',
+					),
+					array(
+						'text' => _x( 'Default placeholder for address components added. (Pro & Premium).', 'changelog', 'es' ),
+						'label' => 'bugfix',
+					),
+					array(
+						'text' => _x( 'Original image metadata added for MLS attachments (Premium).', 'changelog', 'es' ),
+						'label' => 'bugfix',
+					),
+					array(
+						'text' => _x( 'Autoconfig for MLSGrid v2 refactored. (Premium)', 'changelog', 'es' ),
+						'label' => 'bugfix',
+					),
+					array(
+						'text' => _x( 'Minor fixes', 'changelog', 'es' ),
+						'label' => 'bugfix',
+					),
+				),
+			),
 			'4.1.10' => array(
 				'date' => _x( 'March, 26, 2025', 'changelog', 'es' ),
 				'changes' => array(

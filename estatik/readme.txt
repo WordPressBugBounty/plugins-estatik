@@ -3,7 +3,7 @@ Contributors: Estatik
 Donate link: http://estatik.net/
 Tags: real estate, idx, MLS, listings, RETS, webAPI, property, realtor
 Requires at least: 5.4
-Tested up to: 6.7.2
+Tested up to: 6.8.1
 Requires PHP: 5.6
 Stable tag: trunk
 License: GPLv2 or later
@@ -23,8 +23,6 @@ Visit [demo](http://major.estatik.net/) of Estatik plugin built with Elementor H
 
 
 = Main features: = 
-
-
 
 * Quick Demo Setup
 * Fields Builder (creates unlimited number of custom fields of any type - text, number, area, attachments, files, contact fields, etc.)
@@ -177,6 +175,44 @@ Your listings and plugin configuration will be safe.
 
 
 == Changelog ==
+
+
+
+= 4.1.11 (June, 24th, 2025) = 
+
+NEW: Sorting locations added (Pro & Premium)
+FIX: Properties map styles fixed (All versions)
+FIX: PayPal plan save fixed. (Pro & Premium)
+FIX: List agents for agency on frontend fixed (Pro & Premium)
+FIX: DMQL query fixed (Premium)
+FIX: MLS images render fixed (Premium)
+FIX: ParagonRETS WebAPI issues fixed (Premium)
+FIX: Lookup filter fields AJAX search fixed (Premium)
+FIX: MLS RETS disconnect functionality fix added (Premium)
+FIX: Map ID added (All versions).
+FIX: Default placeholder for address components added. (Pro & Premium)
+FIX: Original image metadata added for MLS attachments (Premium)
+FIX: Autoconfig for MLSGrid v2 refactored (Premium)
+FIX: Minor fixes
+
+
+= 4.1.10 (March 25, 2025) =
+
+
+FIX: Properties map styles fixed. (All versions)
+FIX: PayPal plan save fixed. (Pro, Premium)
+FIX: List agents for agency on frontend fixed. (Pro, Premium)
+FIX: DMQL query fixed. (Premium)
+FIX: MLS images render fixed. (Premium)
+FIX: ParagonRETS WebAPI issues fixed. (Premium)
+FIX: Lookup filter fields AJAX search fixed. (Premium)
+FIX: Empty catcher for RETS disconnect after scheduler added. (Premium)
+NEW: Map ID added. (Pro & Premium)
+NEW: MLS RETS disconnect functionality fix added (Premium)
+NEW: Sorting locations added. (Pro & Premium)
+NEW: Original image metadata added for MLS attachments. (Premium)
+NEW: Autoconfig for MLSGrid v2 refactored. (Premium)
+
 
 = 4.1.10 (March 25, 2025) =
 
