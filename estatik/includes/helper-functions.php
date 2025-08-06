@@ -231,6 +231,7 @@ function es_get_nonce( $name = '_wpnonce' ) {
 function es_entities_filter_field_render( $field_key, $field_config ) {
 
 	$filter = es_clean( filter_input( INPUT_GET, 'entities_filter', FILTER_DEFAULT, FILTER_REQUIRE_ARRAY ) );
+    $field_config['attributes']['required'] = false;
 
 	$field_config = es_parse_args( $field_config, array(
 		'attributes' => array(
@@ -1441,6 +1442,20 @@ function es_verify_recaptcha() {
 	}
 
 	return apply_filters( 'es_verify_recaptcha', true );
+}
+
+/**
+ * Verify honeypot.
+ *
+ * @return bool
+ */
+function es_check_honeypot() {
+
+	if ( ! empty( $_POST['es_extra_info'] ) ) {
+		return apply_filters( 'es_check_honeypot', false );
+	} 
+
+	return apply_filters( 'es_check_honeypot', true );
 }
 
 /**

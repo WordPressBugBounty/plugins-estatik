@@ -103,7 +103,7 @@ class Es_Auth {
 			$is_popup = es_post( 'is_popup' );
 			$type = es_post( 'es_type' );
 
-			if ( es_verify_recaptcha() ) {
+			if ( es_verify_recaptcha() && es_check_honeypot() ) {
 				$email = es_post( 'es_user_email', 'es_clean' );
 				$password = filter_input( INPUT_POST, 'es_user_password' );
 

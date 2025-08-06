@@ -13,16 +13,15 @@ class Estatik {
 	 * @var Estatik
 	 */
 	protected static $_instance;
-	const VERSION = '4.1.11';
+	const VERSION = '4.1.12';
 	const TYPE = 'simple';
 
 	/**
 	 * Estatik constructor.
 	 */
 	protected function __construct() {
-		$this->load_files();
-
 		add_action( 'plugins_loaded', array( 'Estatik', 'load_textdomain' ) );
+		$this->load_files();
 
 		register_deactivation_hook( ES_FILE, array( get_called_class(), 'deactivation' ) );
 	}

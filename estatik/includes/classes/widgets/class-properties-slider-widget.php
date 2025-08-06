@@ -9,7 +9,7 @@ class Es_Properties_Slider_Widget extends Es_Properties_Filter_Widget {
      * Es_Widget_Example constructor.
      */
     public function __construct() {
-        parent::__construct( 'es-slider', _x( 'Estatik Slider', 'widget name', 'es' ) );
+        parent::__construct( 'es-slider', 'Estatik Slider' );
     }
 
     /**

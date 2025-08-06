@@ -1085,6 +1085,29 @@ class Es_Property extends Es_Post {
 						)
 					),
 				) );
+			} else {
+				$attachments_ids = get_posts( array(
+					'fields' => 'ids',
+					'post_type' => 'attachment',
+					'posts_per_page' => -1,
+					'orderby' => 'post__in',
+					'post__in' => $value
+				) );
+
+				$value = array();
+
+				foreach ( $attachments_ids as $attachment_id ) {
+					if ( $order = get_post_meta( $attachment_id, 'es_attachment_order', true ) ) {
+						$value[ $order ] = $attachment_id;
+					} else {
+						$value[] = $attachment_id;
+					}
+				}
+
+				if ( $value ) {
+					ksort( $value );
+					$value = array_values( $value );
+				}
 			}
 
             return apply_filters( "es_{$entity}_get_field_value", $value, $field, $this );

@@ -1514,3 +1514,22 @@ function es_add_sorting_and_taxonomy_to_archive_query( $query ) {
     }
 }
 add_action( 'pre_get_posts', 'es_add_sorting_and_taxonomy_to_archive_query' );
+
+/**
+ * Fix widget titles translations.
+ *
+ * @return void
+ */
+function es_translate_widget_titles() {
+	global $wp_widget_factory;
+
+	if ( $wp_widget_factory instanceof WP_Widget_Factory && ! empty( $wp_widget_factory->widgets ) ) {
+		foreach ( $wp_widget_factory->widgets as $widget_obj ) {
+            if ( ! $widget_obj instanceof Es_Widget ) continue;
+
+            $widget_obj->name = _x( $widget_obj->name, 'widget name', 'es' );
+		}
+	}
+
+}
+add_action( 'widgets_init', 'es_translate_widget_titles', 20 );

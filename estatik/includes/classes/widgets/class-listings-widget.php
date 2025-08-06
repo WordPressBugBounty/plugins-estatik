@@ -9,7 +9,7 @@ class Es_Listings_Widget extends Es_Properties_Filter_Widget {
      * Es_Widget_Example constructor.
      */
     public function __construct() {
-        parent::__construct( 'es-listings', _x( 'Estatik Listings', 'widget name', 'es' ) );
+        parent::__construct( 'es-listings', 'Estatik Listings' );
     }
 
     /**

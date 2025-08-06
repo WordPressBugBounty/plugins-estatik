@@ -9,7 +9,7 @@ class Es_Search_Form_Widget extends Es_Widget {
 	 * Es_Widget_Example constructor.
 	 */
 	public function __construct() {
-		parent::__construct( 'es-search-form', _x( 'Estatik Search', 'widget name', 'es' ) );
+		parent::__construct( 'es-search-form', 'Estatik Search' );
 	}
 
     /**

@@ -45,6 +45,14 @@
 			) );
 		endif;
 
+		es_framework_field_render( 'es_extra_info', array(
+            'type' => 'text',
+            'value' => '',
+            'attributes' => array(
+                'id' => sprintf( '%s-%s', 'es_extra_info', uniqid() ),
+            ),
+        ) );
+
 		es_framework_field_render( 'es_user_email', array(
 			'type' => 'email',
 			'label' => _x( 'Email', 'authenticate form', 'es' ),

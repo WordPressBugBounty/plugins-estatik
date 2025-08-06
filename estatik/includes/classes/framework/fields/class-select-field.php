@@ -33,7 +33,7 @@ class Es_Framework_Select_Field extends Es_Framework_Base_Field {
 				if ( $value == '' && $label == '' && empty( $placeholder ) ) {
 					$options .= "<option></option>";
 				} else {
-					$options .= "<option value='{$value}' {$selected}>{$label}</option>";
+					$options .= '<option value="' . esc_attr( $value ) . "\" {$selected}>{$label}</option>";
 				}
 			}
 		} else if ( ! empty( $config['ajax_term_id_field'] ) && ! empty( $values ) ) {
@@ -43,7 +43,7 @@ class Es_Framework_Select_Field extends Es_Framework_Base_Field {
 				if ( $value == '' && $label == '' && empty( $placeholder ) ) {
 					$options .= "<option></option>";
 				} else {
-					$options .= "<option value='{$value}' {$selected}>{$label}</option>";
+					$options .= '<option value="' . esc_attr( $value ) . "\" {$selected}>{$label}</option>";
 				}
 			}
 		}

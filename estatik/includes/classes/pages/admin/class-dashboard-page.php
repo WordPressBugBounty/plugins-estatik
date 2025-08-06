@@ -37,6 +37,83 @@ class Es_Dashboard_Page {
 	 */
 	public static function get_changelog() {
 		return array(
+			'4.1.12' => array(
+				'date' => _x( 'August, 6, 2025', 'changelog', 'es' ),
+				'changes' => array(
+					array(
+						'text' => _x( 'New functionality for manage phone codes added (PRO & Premium).', 'changelog', 'es' ),
+						'label' => 'new',
+					),
+					array(
+						'text' => _x( 'Honeypot for plugin forms added (All versions).', 'changelog', 'es' ),
+						'label' => 'new',
+					),
+					array(
+						'text' => _x( 'Postal code added for address field in search widget (All versions).', 'changelog', 'es' ),
+						'label' => 'new',
+					),
+					array(
+						'text' => _x( 'Realcorp mls token generation implemented (Premium).', 'changelog', 'es' ),
+						'label' => 'new',
+					),
+					array(
+						'text' => _x( 'Disabled remote images option for MLSGRID provider (Premium).', 'changelog', 'es' ),
+						'label' => 'bugfix',
+					),
+					array(
+						'text' => _x( 'Pagelayout plugin JS conflict fix added.', 'changelog', 'es' ),
+						'label' => 'bugfix',
+					),
+					array(
+						'text' => _x( 'Property management fix added (Premium).', 'changelog', 'es' ),
+						'label' => 'bugfix',
+					),
+					array(
+						'text' => _x( 'esc_attr added for plugin inputs (All versions).', 'changelog', 'es' ),
+						'label' => 'bugfix',
+					),
+					array(
+						'text' => _x( 'Property gallery background position centered (All versions).', 'changelog', 'es' ),
+						'label' => 'bugfix',
+					),
+					array(
+						'text' => _x( 'Required attribute for admin property archive search input deleted (All versions).', 'changelog', 'es' ),
+						'label' => 'bugfix',
+					),
+					array(
+						'text' => _x( 'load_textdomain warnings fixed (All versions).', 'changelog', 'es' ),
+						'label' => 'bugfix',
+					),
+					array(
+						'text' => _x( 'Missed gallery images render fix added (All versions).', 'changelog', 'es' ),
+						'label' => 'bugfix',
+					),
+					array(
+						'text' => _x( 'Select2 font-size fix added (All versions).', 'changelog', 'es' ),
+						'label' => 'bugfix',
+					),
+					array(
+						'text' => _x( 'Tel field markup fix added (All versions).', 'changelog', 'es' ),
+						'label' => 'bugfix',
+					),
+					array(
+						'text' => _x( 'Share popup duplication fix added (All versions).', 'changelog', 'es' ),
+						'label' => 'bugfix',
+					),
+					array(
+						'text' => _x( 'Property mobile gallery fix added (All versions).', 'changelog', 'es' ),
+						'label' => 'bugfix',
+					),
+					array(
+						'text' => _x( 'Property map styles on single property page fix added (All versions).', 'changelog', 'es' ),
+						'label' => 'bugfix',
+					),
+					array(
+						'text' => _x( 'Minor fixes', 'changelog', 'es' ),
+						'label' => 'bugfix',
+					),
+				),
+			),
 			'4.1.11' => array(
 				'date' => _x( 'June, 26, 2025', 'changelog', 'es' ),
 				'changes' => array(

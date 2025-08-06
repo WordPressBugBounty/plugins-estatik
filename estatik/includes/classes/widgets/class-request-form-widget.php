@@ -9,7 +9,7 @@ class Es_Request_Form_Widget extends Es_Widget {
      * Es_Widget_Example constructor.
      */
     public function __construct() {
-        parent::__construct( 'es-request-form', _x( 'Estatik Request Form', 'widget name', 'es' ) );
+        parent::__construct( 'es-request-form', 'Estatik Request Form' );
     }
 
     /**

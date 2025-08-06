@@ -116,6 +116,10 @@
         &.es-auth__item--hidden {
             display: none;
         }
+        
+        .es-field__es_extra_info {
+			display: none !important;
+		}
     }
 }
 

@@ -11,14 +11,15 @@ class Es_Shortcodes_List {
      * Initialize plugin shortcodes.
      */
     public static function init() {
-        static::load_files();
+		add_action( 'init', array( get_called_class(), 'load_files' ) );
     }
 
-    /**
-     * Load plugin shortcodes files.
-     *
-     * @return void
-     */
+	/**
+	 * Load plugin shortcodes files.
+	 *
+	 * @return void
+	 * @throws ReflectionException
+	 */
     public static function load_files() {
         $path = ES_PLUGIN_CLASSES . 'shortcodes' . DS;
 
