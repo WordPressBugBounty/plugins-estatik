@@ -1503,6 +1503,31 @@ ul.es-images-list .es-image-item:hover .es-image-delete, ul.es-images-list .es-i
   display: none;
 }
 
+.es-box--pro {
+  position: relative;
+  opacity: 1 !important;
+}
+.es-box--pro * {
+  opacity: 0.5;
+}
+.es-box--pro:after {
+  opacity: 1;
+  content: "PRO";
+  display: block;
+  background: #69c200;
+  border-radius: 6px;
+  width: 33px;
+  line-height: 20px;
+  text-align: center;
+  color: #fff;
+  height: 20px;
+  font-size: 10px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%);
+  position: absolute;
+}
+
 .es-navbar {
   background: #263238;
   display: flex;
@@ -1976,6 +2001,31 @@ ul.es-images-list .es-image-item:hover .es-image-delete, ul.es-images-list .es-i
   background: url(../images/preload.svg);
   top: 50%;
   transform: translateY(-50%);
+}
+
+.es-ui-badge-wrap {
+    flex: 1;
+}
+
+.es-ui-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 6px;
+    padding: 4px 6px;
+    font-size: 11px;
+    line-height: 1;
+    border-radius: 6px;
+    color: #fff;
+    vertical-align: middle;
+}
+
+.es-ui-badge--new {
+    background: #EB2000;
+}
+
+.es-field.es-field--switcher label:has(.es-ui-badge-wrap) .es-field__label {
+    flex: inherit;
 }
 
 /*# sourceMappingURL=framework.css.map */

@@ -158,3 +158,15 @@ if ( ! function_exists( 'es_the_entity_share_popup' ) ) {
 	}
 }
 add_action( 'es_after_single_content', 'es_the_entity_share_popup' );
+
+/**
+ * @param $attachment_id
+ * @param $entity_id
+ *
+ * @return mixed|string
+ */
+function es_get_image_alt( $attachment_id, $entity_id, $suffix = '' ) {
+	$alt_text = wp_get_attachment_caption( $attachment_id );
+	$alt_text = $alt_text ? $alt_text : get_the_title( $entity_id ) . $suffix;
+	return apply_filters( 'es_get_image_alt', $alt_text, $attachment_id, $entity_id, $suffix );
+}

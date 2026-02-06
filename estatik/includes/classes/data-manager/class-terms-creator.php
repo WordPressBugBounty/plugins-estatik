@@ -182,7 +182,30 @@ class Es_Terms_Creator {
 		/* translators: %d: options num. */
 		if ( $taxonomy = $this->get_taxonomy_instance() ) : $message = __( 'Are you sure you want to delete %d Option(s)?', 'es' ); ?>
 			<div class="es-terms-creator js-es-terms-creator <?php $this->classes(); ?>" id="es-terms-<?php echo $this->get_id(); ?>-creator">
-				<h4><?php echo $this->get_title(); ?></h4>
+                <?php
+                $taxonomy = $this->get_id();
+
+                if ( in_array( $taxonomy, [ 'countries', 'cities', 'states', 'provinces' ], true ) ) {
+                    $taxonomy = 'es_location';
+                }
+
+                $edit_link = admin_url( 'edit-tags.php?taxonomy=' . $taxonomy );
+                ?>
+				<div class="es-term-header">
+					<h4><?php echo $this->get_title(); ?></h4>
+					<?php if ( ! empty( $edit_link ) ) : ?>
+
+						<a target="_blank" href="<?php echo esc_url( $edit_link ); ?>">	
+							<svg width="14px" height="14px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#c2c2c2">
+								<g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+								<g id="SVGRepo_iconCarrier"> 
+									<path d="M11 3H7C4.79086 3 3 4.79086 3 7V17C3 19.2091 4.79086 21 7 21H17C19.2091 21 21 19.2091 21 17V13" stroke="#b0b0b0" stroke-width="2" stroke-linecap="round"></path> 
+									<path d="M12 12L21 3" stroke="#b0b0b0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M21 9V3H15" stroke="#b0b0b0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> 
+								</g>
+							</svg>
+						</a>
+					<?php endif; ?>
+				</div>
                 <?php $this->before_list(); ?>
                 <ul class="es-items js-es-terms">
                     <?php $this->render_list(); ?>

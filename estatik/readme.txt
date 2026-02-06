@@ -3,7 +3,7 @@ Contributors: Estatik
 Donate link: http://estatik.net/
 Tags: real estate, idx, MLS, listings, RETS, webAPI, property, realtor
 Requires at least: 5.4
-Tested up to: 6.8.2
+Tested up to: 6.9
 Requires PHP: 5.6
 Stable tag: trunk
 License: GPLv2 or later
@@ -23,6 +23,7 @@ Visit [demo](http://major.estatik.net/) of Estatik plugin built with Elementor H
 
 
 = Main features: = 
+
 
 
 * Quick Demo Setup
@@ -111,7 +112,7 @@ Full list of shortcodes can be found [here](https://estatik.net/estatik-plugin-d
 
 = Do all Estatik Themes support Estatik 4.0? =
 
-No, not all Estatik Themes support Estatik 4.0 version. Currently, only Estatik Realtor Theme supports 4.0 ver. 
+No, not all Estatik Themes support Estatik 4.0 version. Currently, only Estatik Realtor Theme supports 4.0 ver. We will also add Portal Theme support. All other themes are incompatible with 4.0 ver. but you still can use it and count on our support.
 If you upgraded the plugin using Native Theme, for example, you can deactivate the plugin and install back the previous version. Nothing will be lost.
 
 
@@ -149,15 +150,6 @@ You can compare all available versions here >> http://estatik.net/choose-your-ve
 With Estatik PRO or Premium version you get free support for 6 months (PRO) / 1 year (Premium) and for 1 website. Support for Simple free version is limited to WordPress forum. Please post your question here at Support forum, or contact us >> http://estatik.net/contact-us/ and we will help you with issues.
 
 
-
-= How can I import MLS listings using Estatik plugin? =
-
-
-
-We developed [Estatik Premium](https://estatik.net/product/estatik-premium-rets/) version for MLS listings import via RETS or RESO Web API. 
-
-
-
 = When I click on details page it says 404 Error: page not found. =
 
 
@@ -172,48 +164,93 @@ Your listings and plugin configuration will be safe.
 
 
 
+
+
 == Changelog ==
 
-= 4.1.12 (August 6th, 2025) =
 
-NEW: Phone codes added (PRO & Premium)
-NEW: Honeypot for plugin forms added (All versions)
-NEW: Postal code added for address field in search widget (All versions)
-NEW: Realcorp mls token generation implemented (Premium)
-FIX: Disabled remote images feature for MLSGRID provider (Premium)
-FIX: Pagelayout plugin JS conflict fix added
-FIX: Property management fix added (Premium)
-FIX: esc_attr added for plugin inputs (All versions)
-FIX: Property gallery background position centered (All versions)
-FIX: Required attribute for admin property archive search input deleted (All versions)
-FIX: load_textdomain warnings fixed (All versions)
-FIX: Missed gallery images render fix added (All versions)
-FIX: Select2 font-size fix added (All versions)
-FIX: Tel field markup fix added (All versions)
-FIX: Share popup duplication fix added (All versions)
-FIX: Property mobile gallery fix added (All versions)
-FIX: Property map styles on single property page fix added (All versions)
+= 4.3.0 (January, 30, 2026) =
+
+NEW: HubSpot CRM integration added (Pro)
+NEW: Gutenberg block for displaying [es_my_listing] added (All versions)
+NEW: Price history functionality added (PRO)
+FIX: Default locations taxonomy link fixed (All versions)
+FIX: Conflict between Magnific Popup libraries fixed (All versions)
 
 
-= 4.1.11 (June, 24th, 2025) = 
+= 4.2.0 (November, 28, 2025) =
 
-NEW: Sorting locations added (Pro & Premium)
-FIX: Properties map styles fixed (All versions)
-FIX: PayPal plan save fixed. (Pro & Premium)
-FIX: List agents for agency on frontend fixed (Pro & Premium)
-FIX: DMQL query fixed (Premium)
-FIX: MLS images render fixed (Premium)
-FIX: ParagonRETS WebAPI issues fixed (Premium)
-FIX: Lookup filter fields AJAX search fixed (Premium)
-FIX: MLS RETS disconnect functionality fix added (Premium)
-FIX: Map ID added (All versions).
-FIX: Default placeholder for address components added. (Pro & Premium)
-FIX: Original image metadata added for MLS attachments (Premium)
-FIX: Autoconfig for MLSGrid v2 refactored (Premium)
+
+NEW: EPC & GES feature implemented (All versions)
+NEW: Mobile gallery for single property page implemented (All versions)
+NEW: Schema.org integrated for listings (All versions)
+NEW: Partially implemented Accessibility feature (All versions)
+NEW: Taxonomy terms edit link in data manager added (All versions)
+FIX: Properties hals map multiple instances js fix added (All versions)
+FIX: Local File Inclusion vulnerability fix added (All versions)
+FIX: Stored Cross-Site Scripting fix added (All versions)
+FIX: WP All Import images order fix added (All versions)
+FIX: minor fixes
+
+
+= 4.1.13 (October, 13, 2025) =
+
+
+NEW: OriginatingSystemName field added for MLS Trestle Web API (Premium)
+NEW: Manually added images excluded from MLS processes (Premium)
+NEW: Common CSS classes added in breadcrumbs (All versions)
+FIX: Duplicated media requests for MLSGRID provider fixed (Premium)
+FIX: Remote images feature deactivated for MLSGRID provider (Premium)
+FIX: Request timeouts for MLSGRID provider added (Premium)
+FIX: Agents & Agencies search shortcode warnings fixed (Pro & Premium)
+FIX: [es_property_map] shortcode attributes fixed (All versions)
+FIX: Property images order fix added (All versions)
+FIX: minor fixes
+
+
+= 4.1.12 (August, 6, 2025) =
+
+
+NEW: New functionality for manage phone codes added (PRO & Premium).
+NEW: Honeypot for plugin forms added (All versions).
+NEW: Postal code added for address field in search widget (All versions).
+NEW: Realcorp mls token generation implemented (Premium).
+FIX: Disabled remote images option for MLSGRID provider (Premium).
+FIX: Pagelayout plugin JS conflict fix added.
+FIX: Property management fix added (Premium).
+FIX: esc_attr added for plugin inputs (All versions).
+FIX: Property gallery background position centered (All versions).
+FIX: Required attribute for admin property archive search input deleted (All versions).
+FIX: load_textdomain warnings fixed (All versions).
+FIX: Missed gallery images render fix added (All versions).
+FIX: Select2 font-size fix added (All versions).
+FIX: Tel field markup fix added (All versions).
+FIX: Share popup duplication fix added (All versions).
+FIX: Property mobile gallery fix added (All versions).
+FIX: Property map styles on single property page fix added (All versions).
 FIX: Minor fixes
 
 
-= 4.1.10 (March 25, 2025) =
+= 4.1.11 (June, 26, 2025) =
+
+
+NEW: Sorting locations added (Pro & Premium).
+FIX: Properties map styles fixed (All versions).
+FIX: PayPal plan save fixed. (Pro & Premium).
+FIX: List agents for agency on frontend fixed. (Pro & Premium).
+FIX: DMQL query fixed (Premium).
+FIX: MLS images render fixed (Premium).
+FIX: ParagonRETS WebAPI issues fixed (Premium).
+FIX: Lookup filter fields AJAX search fixed (Premium).
+FIX: MLS RETS disconnect functionality fix added (Premium).
+FIX: Map ID added (All versions).
+FIX: Default placeholder for address components added. (Pro & Premium).
+FIX: Original image metadata added for MLS attachments (Premium).
+FIX: Autoconfig for MLSGrid v2 refactored. (Premium)
+FIX: Minor fixes
+
+
+= 4.1.10 (March, 26, 2025) =
 
 
 * NEW: Plugin performance improved. Code refactored (All versions).

@@ -100,7 +100,7 @@
 
     .es-address {
         font-weight: 600;
-        color: #78909C;
+        color: #4C5A67;
         display: block;
         margin-bottom: 24px;
     }
@@ -165,7 +165,7 @@
 
     .es-property-section__title {
         font-size: 2.2em;
-        color: #B0BEC5;
+        color: #4e5a6a;
         line-height: 1.5em;
         font-weight: 500;
         letter-spacing: .2px;
@@ -365,7 +365,7 @@
         padding: 25px;
         font-size: 1.2em;
         line-height: 1.6em;
-        color: #78909C;
+        color: #4C5A67;
 
         &:hover {
             box-shadow: 0 2px 8px rgba(38, 50, 56, 0.15);
@@ -474,6 +474,7 @@ body.mfp-zoom-out-cur {
 
 .mfp-wrap.es-property-magnific {
     font-size: 10px;
+    z-index: 100004;
 
     .mfp-figure {
         background: #fff;
@@ -631,7 +632,7 @@ body.mfp-zoom-out-cur {
 .admin-bar {
     .mfp-wrap.es-property-magnific {
         .mfp-top-bar {
-            top: 20px;
+            top: 50px;
         }
     }
 }
@@ -640,7 +641,7 @@ body.mfp-zoom-out-cur {
     .admin-bar {
         .mfp-wrap.es-property-magnific {
             .mfp-top-bar {
-                top: 20px;
+                top: 60px;
             }
         }
     }

@@ -47,18 +47,26 @@ $name_disabled = ! empty( $field['fb_settings']['disable_name_edit'] ); ?>
 		'label' => __( 'Visible on the front page (optional, helpful for translating custom field)', 'es' ),
 	), $field );
 
-	es_field_builder_field_render( 'section_machine_name', array(
-		'type' => 'select',
-		'label' => __( 'Single Property Section', 'es' ),
-		'options' => $sections,
-	), $field );
+	if ( empty( $field['fb_settings']['disable_section_field'] ) ) {
+		es_field_builder_field_render( 'section_machine_name', array(
+			'type'    => 'select',
+			'label'   => __( 'Single Property Section', 'es' ),
+			'options' => $sections,
+		), $field );
+	}
 
     if ( empty( $field['fb_settings']['disable_tab_field'] ) ) {
-	    es_field_builder_field_render( 'tab_machine_name', array(
-		    'type' => 'select',
-		    'label' => __( 'Admin Tab', 'es' ),
-		    'options' => $sections,
-	    ), $field );
+        $tab_f_config = array(
+	        'type' => 'select',
+	        'label' => __( 'Admin Tab', 'es' ),
+	        'options' => $sections,
+        );
+
+        if ( ! empty( $field['fb_settings']['readonly_tab_field'] ) ) {
+	        $tab_f_config['attributes']['readonly'] = 'readonly';
+        }
+
+	    es_field_builder_field_render( 'tab_machine_name', $tab_f_config, $field );
     }
 
 	es_field_builder_field_render( 'mandatory', array(

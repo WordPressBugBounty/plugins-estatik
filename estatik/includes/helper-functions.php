@@ -415,7 +415,7 @@ function es_settings_field_render( $field_key, $field_config ) {
 		$field_config['options'] = $values;
 	}
 
-	if ( ! empty( $field_config['pro'] ) ) {
+	if ( ! empty( $field_config['pro'] ) && $field_config['type'] != 'radio-image' ) {
 		$field_config['attributes']['disabled'] = 'disabled';
 		$field_config['wrapper_class']          = 'es-field--pro-version';
 	}

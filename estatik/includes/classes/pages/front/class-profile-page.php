@@ -35,7 +35,10 @@ class Es_Profile_Page {
 				if ( wp_check_password( $pwd, $user_data->data->user_pass, $user_id ) || es_is_user_registered_via_social_network( $user_id ) ) {
 					$name = es_clean( filter_input( INPUT_POST, 'es_user_name' ) );
 
-					if ( empty( $_POST['avatar_id'] ) ) {
+					$avatar_id = filter_input( INPUT_POST, 'avatar_id', FILTER_SANITIZE_NUMBER_INT );
+
+					if ( ! $avatar_id ) {
+						wp_delete_attachment( $avatar_id, true );
 						$user->delete_field_value( 'avatar_id' );
 					}
 
@@ -51,7 +54,7 @@ class Es_Profile_Page {
 					$user_updated = wp_update_user( $user_arr );
 
 					if ( is_wp_error( $user_updated ) ) {
-						$message = sprintf( $error_template, $error_title, $user_updated->get_error_message() );
+						$message = sprintf( $error_template, $error_title, esc_html( $user_updated->get_error_message() ) );
 						$response = es_error_ajax_response( $message . $btn );
 						es_set_wp_error_flash( 'profile', $user_updated );
 					} else {
@@ -74,7 +77,7 @@ class Es_Profile_Page {
 						}
 					}
 				} else {
-					$message = sprintf( $error_template, $error_title, __( 'Password you entered doesn\'t match.', 'esa' ) );
+					$message = sprintf( $error_template, $error_title, __( 'Password you entered doesn\'t match.', 'es' ) );
 					$response = es_error_ajax_response( $message . $btn );
 				}
 			} else {

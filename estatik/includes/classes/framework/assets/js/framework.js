@@ -3,6 +3,13 @@
 
     window.EstatikFramework = { initFields: initFields };
 
+    function esSafeHash(hash) {
+        // Дозволяємо тільки id формату #someId, без пробілів і спецсимволів
+        if (typeof hash !== 'string') return '';
+        if (!/^#[A-Za-z0-9_-]+$/.test(hash)) return '';
+        return hash;
+    }
+
     /**
      * @param size
      * @returns {string}
@@ -279,14 +286,14 @@
                         if (typeof country_icons[option.id] === 'undefined') {
                             return option.text;
                         } else {
-                            return '<img src="' + country_icons[option.id] + '"/>';
+                            return '<img alt="' + option.id + '" src="' + country_icons[option.id] + '"/>';
                         }
                     },
                     templateResult: function (option) {
                         var country_icons = $field.data('icons');
                         var codes = $field.data('codes');
                         if (typeof country_icons[option.id] !== 'undefined') {
-                            return '<img src="' + country_icons[option.id] + '"/>' +
+                            return '<img alt="' + option.id + '" src="' + country_icons[option.id] + '"/>' +
                                 option.text +
                                 '<span class="es-country-code">' + codes[option.id] + '</span>';
                         } else {
@@ -872,9 +879,10 @@
         } );
 
         try {
-            if ( window.location.hash && $( window.location.hash ).length ) {
-                if ( $( window.location.hash ).hasClass( 'js-es-tabs__content' ) ) {
-                    var $link = $( 'a[href="' + window.location.hash + '"]' );
+            var hash = esSafeHash( window.location.hash );
+            if ( hash && $( hash ).length ) {
+                if ( $( hash ).hasClass( 'js-es-tabs__content' ) ) {
+                    var $link = $( 'a[href="' + hash + '"]' );
                     $link.trigger( 'click' );
                 }
             }

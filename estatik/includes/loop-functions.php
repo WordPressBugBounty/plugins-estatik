@@ -56,7 +56,8 @@ if ( ! function_exists( 'es_the_price' ) ) {
                 $result = $price ? '<span class="es-price">' . $price . '</span>' : '';
             }
 
-		    echo $result ? $before . $result . $after : '';
+		    $result = $result ? $before . $result . $after : '';
+			echo wp_kses_post( $result );
         }
 	}
 }
@@ -72,7 +73,8 @@ if ( ! function_exists( 'es_the_field' ) ) {
 	 */
 	function es_the_field( $field, $before = '', $after = '' ) {
 		$value = es_get_the_field( $field );
-		echo $value ? apply_filters( 'es_the_field', $before . $value . $after ) : '';
+		$value = $value ? apply_filters( 'es_the_field', $before . $value . $after ) : '';
+		echo wp_kses_post( $value );
 	}
 }
 
@@ -321,38 +323,19 @@ function es_get_permalink( $post_id ) {
 *
 * @param \Elementor\Widget_Base $widget The widget instance.
 */
-
-
 add_action( 'plugins_loaded', function() {
 	if ( class_exists( 'Elementor\Plugin' ) || class_exists( 'Elementor\Plugin_Base' ) ) {
-
 		add_action( 'elementor/widget/before_render_content', function( $widget ) {
-
 			if ( 'es-listings-widget' == $widget->get_name() || 'es-hfm-widget' == $widget->get_name() ) {
-
 				$settings = $widget->get_settings_for_display();
-		
-				if ( isset( $settings['es_category'] ) && is_array( $settings['es_category'] ) ) {
-					$settings['es_category'] = implode( ',', $settings['es_category'] );
-					$widget->set_settings( $settings );
-				}
 
-				if ( isset( $settings['es_label'] ) && is_array( $settings['es_label'] ) ) {
-					$settings['es_label'] = implode( ',', $settings['es_label'] );
-					$widget->set_settings( $settings );
-				}
-
-				if ( isset( $settings['es_type'] ) && is_array( $settings['es_type'] ) ) {
-					$settings['es_type'] = implode( ',', $settings['es_type'] );
-					$widget->set_settings( $settings );
-				}
-
-				if ( isset( $settings['es_status'] ) && is_array( $settings['es_status'] ) ) {
-					$settings['es_status'] = implode( ',', $settings['es_status'] );
-					$widget->set_settings( $settings );
+				foreach( array( 'es_category', 'es_label', 'es_type', 'es_status' ) as $tax ) {
+					if ( isset( $settings[ $tax ] ) && is_array( $settings[ $tax ] ) ) {
+						$settings[ $tax ] = implode( ',', $settings[ $tax ] );
+						$widget->set_settings( $settings );
+					}
 				}
 			}
-
 		} );
 	}
 }); 

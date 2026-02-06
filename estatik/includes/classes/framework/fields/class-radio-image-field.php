@@ -24,15 +24,20 @@ class Es_Framework_Radio_Image_Field extends Es_Framework_Radio_Boxed_Field {
     function get_input_markup() {
         $config = $this->get_field_config();
         $input = '';
-        $type_class = $config['type'] == 'radio-text' ? 'es-box--titled-text' : null;
 
         if ( ! empty( $config['options'] ) ) {
             foreach ( $config['options'] as $value => $label ) {
+	            $type_class = $config['type'] == 'radio-text' ? 'es-box--titled-text' : null;
                 $input_field = '';
                 $field_config = $this->get_multi_field_config( $label, $value );
 
                 unset( $config['before'], $config['after'] );
                 $field_config = es_parse_args( $field_config, $config );
+
+	            if ( ! empty( $config['pro'] ) && in_array( $value, $config['pro'] ) ) {
+		            $type_class .= 'es-box--pro';
+					$field_config['attributes']['disabled'] = 'disabled';
+	            }
 
                 $field = new Es_Framework_Field( $this->_field_key, $field_config );
 

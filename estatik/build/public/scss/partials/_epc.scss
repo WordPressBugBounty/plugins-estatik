@@ -1,0 +1,98 @@
+$epc-radius: 6px;
+
+.es-epc-ges-light {
+  display: flex;
+  align-items: center;
+
+  &__item {
+    text-align: center;
+    height: 0.5rem;
+    flex: 1;
+    margin: 0 0.08rem;
+
+    &:first-child {
+      -webkit-border-top-left-radius: $epc-radius;
+      -webkit-border-bottom-left-radius: $epc-radius;
+      -moz-border-radius-topleft: $epc-radius;
+      -moz-border-radius-bottomleft: $epc-radius;
+      border-top-left-radius: $epc-radius;
+      border-bottom-left-radius: $epc-radius;
+      margin-left: 0;
+    }
+
+    &:last-child {
+      -webkit-border-top-right-radius: $epc-radius;
+      -webkit-border-bottom-right-radius: $epc-radius;
+      -moz-border-radius-topright: $epc-radius;
+      -moz-border-radius-bottomright: $epc-radius;
+      border-top-right-radius: $epc-radius;
+      border-bottom-right-radius: $epc-radius;
+      margin-right: 0;
+    }
+
+    &:not(&--active) {
+      font-size: 0;
+    }
+
+    &--active {
+      line-height: 1.5rem;
+      height: 1.5rem;
+      -webkit-border-radius: $epc-radius;
+      -moz-border-radius: $epc-radius;
+      border-radius: $epc-radius;
+      font-weight: bold;
+    }
+  }
+
+  &.es-epc-ges-light--epc_class {
+    .es-epc-ges-light__item {
+      &--A {
+        background-color: #009d1a;
+      }
+      &--B {
+        background-color: #00d000;
+      }
+      &--C {
+        background-color: #c5ff00;
+      }
+      &--D {
+        background-color: #feff00;
+      }
+      &--E {
+        background-color: #ffc900;
+      }
+      &--F {
+        background-color: #ff9400;
+      }
+      &--G {
+        background-color: #ff0000;
+      }
+    }
+  }
+
+  &.es-epc-ges-light--ges_class {
+    .es-epc-ges-light__item {
+      &--A {
+        background-color: #f8ecfe;
+      }
+      &--B {
+        background-color: #e7c0fc;
+      }
+      &--C {
+        background-color: #dba6fa;
+      }
+      &--D {
+        background-color: #d492f8;
+      }
+      &--E {
+        background-color: #c06fee;
+      }
+      &--F {
+        background-color: #b445f2;
+      }
+      &--G {
+        background-color: #9800ea;
+      }
+    }
+  }
+}

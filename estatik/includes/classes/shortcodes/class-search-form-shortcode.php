@@ -5,13 +5,22 @@
  */
 class Es_Search_Form_Shortcode extends Es_Shortcode {
 
+	public function get_search_type() {
+		$t = $this->_attributes['search_type'];
+		$s_types = apply_filters( 'es_search_types', array( 'simple', 'main', 'advanced' ), $this );
+		$this->_attributes['search_type'] = in_array( $t, $s_types ) ? $t : 'simple';
+		return apply_filters( 'es_get_search_type', $this->_attributes['search_type'], $this );
+	}
+
     /**
      * Return search shortcode DOM.
      *
      * @return string|void
      */
     public function get_content() {
-        $template = sprintf( 'front/shortcodes/search/%s.php', $this->_attributes['search_type'] );
+	    $search_type = $this->get_search_type();
+
+        $template = sprintf( 'front/shortcodes/search/%s.php', $search_type );
 
         foreach ( array( 'fields', 'collapsed_fields', 'main_fields' ) as $fields ) {
             if ( ! empty( $this->_attributes[ $fields ] ) && is_string( $this->_attributes[ $fields ] ) ) {

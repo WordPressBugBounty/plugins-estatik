@@ -136,13 +136,17 @@ class Es_Fields_Builder_Page {
                         'type' => 'text',
                         'label' => _x( 'Option {#index}', 'fields builder options', 'es' ),
                         'attributes' => array(
-                            'required' => 'required'
+                            'required' => 'required',
                         )
                     ),
                 ),
                 'add_button_label' => __( 'Add option', 'es' ),
                 'delete_button' => "<span class='js-es-repeater__delete-item es-icon es-icon_trash'></span>",
             );
+
+			if ( ! empty( $field['fb_settings']['readonly_options_field'] ) ) {
+				$config['fields']['value']['attributes']['readonly'] = 'readonly';
+			}
 
 		    if ( ! empty( $field['taxonomy'] ) ) {
 		        $terms = get_terms( array(

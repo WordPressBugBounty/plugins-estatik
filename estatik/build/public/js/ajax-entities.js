@@ -471,6 +471,7 @@
          * Initialize half map layout.
          */
         HalfMap.prototype.init = function() {
+            var _this = this;
             this.setFullWidth();
 
             if ( typeof google === 'undefined' ) return false;
@@ -531,6 +532,8 @@
          * Load listings in visible map area.
          */
         HalfMap.prototype.loadListingsFromVisibleBounds = function() {
+            var _this = this;
+
             if ( _this.ignoreLoadListingsByBounds ) return false;
             if ( typeof google === 'undefined' ) return false;
 
@@ -564,6 +567,7 @@
                 _this.$wrapper.find( '.js-es-listings' ).addClass( 'es-listings--loading' );
 
                 _this.xhr = $.post( Estatik.settings.ajaxurl, { reload_map: 0, hash: hash.getHash(), action: 'get_listings' }, function( response ) {
+                    console.log(_this.$wrapper);
                     Properties.append( response, _this.$wrapper.find( '.js-es-entities__wrap_inner' ), false );
                 }, 'json' );
             }
@@ -572,7 +576,7 @@
         /**
          * Markers hover state active.
          */
-        $( _this.$wrapper ).on( 'mouseenter', '.js-es-listing', function() {
+        $( this.$wrapper ).on( 'mouseenter', '.js-es-listing', function() {
             var post_id = $( this ).data( 'post-id' );
             var marker = _this.findMarkerByPostID( post_id );
 
@@ -594,7 +598,7 @@
         /**
          * Markers hover state inactive.
          */
-        $( _this.$wrapper ).on( 'mouseleave', '.js-es-listing', function() {
+        $( this.$wrapper ).on( 'mouseleave', '.js-es-listing', function() {
             var post_id = $( this ).data( 'post-id' );
             var marker = _this.findMarkerByPostID( post_id );
 
@@ -620,18 +624,18 @@
         HalfMap.prototype.deleteMarkers = function() {
             if ( typeof google === 'undefined' ) return false;
 
-            if ( _this.clusters.length ) {
-                for ( var j in _this.clusters ) {
-                    if ( _this.clusters.hasOwnProperty( j ) ) {
-                        _this.clusters[j].clearMarkers();
+            if ( this.clusters.length ) {
+                for ( var j in this.clusters ) {
+                    if ( this.clusters.hasOwnProperty( j ) ) {
+                        this.clusters[j].clearMarkers();
                     }
                 }
             }
 
-            if ( _this.markers.length ) {
-                for ( var i in _this.markers ) {
-                    if ( _this.markers.hasOwnProperty( i ) ) {
-                        _this.markers[i].setMap( null );
+            if ( this.markers.length ) {
+                for ( var i in this.markers ) {
+                    if ( this.markers.hasOwnProperty( i ) ) {
+                        this.markers[i].setMap( null );
                     }
                 }
             }
@@ -641,7 +645,7 @@
         };
 
         HalfMap.prototype.findMarkerByPostID = function( post_id ) {
-            return _this.markers.find( function( marker ) {
+            return this.markers.find( function( marker ) {
                 return marker.post_id === post_id;
             } );
         };
@@ -650,6 +654,7 @@
          * Set markers on the map.
          */
         HalfMap.prototype.setMarkers = function( coordinates ) {
+            var _this = this;
             if ( typeof google === 'undefined' ) return false;
             _this.ignoreLoadListingsByBounds = true;
 
@@ -802,7 +807,7 @@
          * Close map popups.
          */
         HalfMap.prototype.close_popups = function() {
-            var popupContainer = _this.mapInstance.getDiv().querySelector( '.es-map-popup' );
+            var popupContainer = this.mapInstance.getDiv().querySelector( '.es-map-popup' );
 
             if ( popupContainer ) {
                 popupContainer.remove();

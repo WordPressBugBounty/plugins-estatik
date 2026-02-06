@@ -113,7 +113,7 @@ class Es_Properties_Archive_Page extends Es_Entities_Archive_Page {
 
         $new_order = array();
 
-        if ( $order_query && $orderby_query ) {
+        if ( $order_query && $orderby_query && is_scalar( $orderby_query ) ) {
             $new_order[ $orderby_query ] = $order_query;
         }
 

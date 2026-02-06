@@ -85,7 +85,7 @@ class Es_Auth {
 		/* translators: %s: User login. */
 		$message  = sprintf( __( 'Username: %s' ), $user->user_login ) . "\r\n\r\n";
 		/* translators: %s: reset pwd url. */
-		$message .= sprintf( __( 'To set your password, visit the following <a href="%s">link</a>.', 'es' ), $link ) . "\r\n\r\n";
+		$message .= sprintf( __( 'To set your password, visit the following <a href="%s">link</a>.', 'es' ), esc_url( $link ) ) . "\r\n\r\n";
 
 		$wp_new_user_notification_email['message'] = $message;
 
@@ -386,7 +386,7 @@ class Es_Auth {
 		}
 
 		// `$deprecated` was pre-4.3 `$plaintext_pass`. An empty `$plaintext_pass` didn't sent a user notification.
-		if ( 'admin' === $notify || ( empty( $deprecated ) && empty( $notify ) ) ) {
+		if ( 'admin' === $notify || empty( $notify ) ) {
 			return;
 		}
 
@@ -473,7 +473,7 @@ class Es_Auth {
 		}
 
 		$email_instance = es_get_email_instance( 'reset_password', array(
-			'reset_link' => $link,
+			'reset_link' => esc_url( $link ),
 			'user_login' => $user_login,
 			'user_email' => $user_email,
 		) );

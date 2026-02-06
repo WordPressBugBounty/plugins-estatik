@@ -227,6 +227,10 @@
     .es-slider__image {
         position: relative;
 
+        .slick-list {
+            height: inherit !important;
+        }
+
         div:not(.es-slider__page-info), a {
             height: 100%;
         }
@@ -264,4 +268,39 @@
             }
         }
     }
+}
+
+.es-magnific-gallery {
+    .es-control {
+        margin-bottom: 1rem;
+    }
+
+    .mfp-close {
+        right: 10px;
+        top: 20px;
+    }
+
+    #es-mobile-gallery-popup {
+        background: #fff;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 1.2rem;
+        overflow-y: scroll;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+
+        &:not(:last-child) {
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+body .mfp-bg {
+    z-index: 99999;
 }

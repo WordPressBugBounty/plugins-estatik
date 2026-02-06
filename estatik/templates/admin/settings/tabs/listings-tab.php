@@ -45,6 +45,20 @@ es_settings_field_render( 'single_layout', array(
 //		'single-full-width-tiled' => ES_PLUGIN_URL . 'admin/images/single-full-width-tiled.svg',
 		'single-left-slider' => ES_PLUGIN_URL . 'admin/images/single-left-slider.svg',
 	),
+) );
+
+es_settings_field_render( 'epc_display_style', array(
+    'label' => __( 'Display style', 'es' ),
+    'type' => 'radio-image',
+    'pro' => array(
+        'style-2011',
+        'style-2021'
+    ),
+    'images' => array(
+        'style-2011' => ES_PLUGIN_URL . 'admin/images/style-2011.png',
+        'style-2021' => ES_PLUGIN_URL . 'admin/images/style-2021.png',
+        'style-light' => ES_PLUGIN_URL . 'admin/images/eec.png',
+    ),
 ) ); ?>
 
 <div class="es-settings-fields es-settings-fields--max-width">
@@ -113,6 +127,11 @@ es_settings_field_render( 'is_property_carousel_enabled', array(
     'type' => 'switcher',
     'label' => __( 'Enable property item carousel', 'es' )
 ) );
+
+es_settings_field_render( 'is_property_carousel_link_enabled', array(
+	'type' => 'switcher',
+	'label' => __( 'Enable property item carousel link', 'es' )
+));
 
 $image_sizes = es_get_image_sizes();
 

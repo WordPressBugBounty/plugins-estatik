@@ -37,6 +37,13 @@ body[class*=es_data_manager] #wpfooter {
 .es-terms-creator.es-terms-creator--disabled {
   opacity: 0.5;
 }
+.es-terms-creator .es-term-header {
+  display: flex;
+  gap: 5px;
+}
+.es-terms-creator .es-term-header svg:hover path {
+  stroke: #69C200;
+}
 .es-terms-creator .es-item__name .es-icon {
   margin-right: 5px;
   font-size: 18px;

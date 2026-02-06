@@ -185,14 +185,14 @@ class Es_Assets {
 			}
 		}
 
-		if ( ! empty( ests( 'is_request_form_geolocation_enabled' ) ) ) {
+		if ( ests( 'is_request_form_geolocation_enabled' ) ) {
 			$ip = es_get_ip_address();
 
 			if ( ! empty( $ip ) ) {
 				$c_code = get_transient( 'countryCode_' . $ip );
 
 				if ( ! $c_code ) {
-					$url = sprintf( "http://www.geoplugin.net/xml.gp?ip=%s", $ip );
+					$url = sprintf( "http://ip-api.com/json/%s", $ip );
 					$response = wp_safe_remote_get( $url );
 
 					if ( is_wp_error( $response ) ) {
@@ -200,14 +200,10 @@ class Es_Assets {
 					} else {
 						$body = wp_remote_retrieve_body( $response );
 
-						if ( ! empty( $body ) ) {
-							$xml = simplexml_load_string( $body );
-
-							if ( $xml !== false ) {
-								if ( ! empty( $xml->geoplugin_countryCode ) ) {
-									$c_code = (string) $xml->geoplugin_countryCode;
-									set_transient( 'countryCode_' . $ip, $c_code, 300 );
-								}
+						if ( ! empty( $body ) && ( $res = json_decode( $body ) ) ) {
+							if ( ! empty( $res->countryCode ) ) {
+								$c_code = (string) $res->countryCode;
+								set_transient( 'countryCode_' . $ip, $c_code, 300 );
 							}
 						}
 					}
@@ -290,14 +286,17 @@ class Es_Assets {
         }
         
         .es-btn.es-btn--secondary.es-btn--bordered, 
-        .es-btn.es-btn--default:hover:not([disabled]):not(.es-btn--disabled),
-        .es-btn.es-btn--icon:hover:not([disabled]):not(.es-btn--disabled) .es-icon,
+        .es-btn.es-btn--icon:hover:not([disabled]):not(.es-btn--disabled):not(.es-btn--primary) .es-icon,
         .xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_today,
         .es-property-field--post_content .es-property-field__value a,
         .es-dymanic-content a,
         .es-hit-limit a, button.es-slick-arrow:not(.slick-disabled):hover {
             color: {$secondary_color};
             background-color: transparent;
+        }
+        
+        .es-btn.es-btn--default:hover:not([disabled]):not(.es-btn--disabled), .es-listing__terms a:hover {
+            color: {$secondary_color};
         }
         
         .es-btn:hover:not([disabled]):not(.es-btn--disabled) .es-icon.es-icon_heart, .entity-box__delete:hover {

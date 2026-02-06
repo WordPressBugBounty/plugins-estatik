@@ -1,0 +1,149 @@
+<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+ <!--  Générateur d'étiquette DPE et GES , par https://www.outils.immo -->
+
+ <style>
+ text {
+    font-family: Arial;
+    font-weight: bold;
+  }
+  
+  .ges_valeur {
+    font-size: 15px;
+  }
+
+  .ges_intro {
+    font-size: 12px;
+  }
+  
+  .ges_legende {
+    font-size: 6.5px;
+  }
+  .ges_copyright {
+    font-size: 4px;
+    fill: grey;
+  }
+  
+  .ges_unite {
+    font-size: 4px;
+  }
+  
+  .ges_text_min,
+  .ges_text_max {
+    font-size: 7px;
+  }
+  .ges_text_min {
+    fill: #a4dbf8;
+  }
+  .ges_text_max {
+    fill: #281b35;
+  }
+  .ges_letter {
+    font-size: 12px;
+    fill: white;
+  }
+  .ges_letter_big {
+    font-size: 18px;
+    fill: white;
+  }
+  .ges_overlay_text {
+    font-size: 12px;
+  }
+  
+      
+  
+  </style>
+ <!-- Encadrement -->
+ <!-- Texte intro -->
+
+ <!-- Encadrement -->
+  <rect width="198" height="198" rx="4" transform="translate(1 1)" fill="none" stroke="#a5cc74" stroke-miterlimit="10" stroke-width="1"/>
+
+
+  <text class="ges_intro" x="10" y="20">Performance énergétique️</text>
+
+  
+  <text fill="#00a06d" class="ges_legende" x="75" y="50">Logement trés performant</text>
+  <text fill="#d7221f" class="ges_legende" x="75" y="188">Logement extrêmement peu performant</text>
+
+
+  <!-- A --> 
+      <path d="m102.27,69.63l-27.58,0l0,-14.99l27.58,0l4.76,7.49l-4.76,7.49l0,0.01z" fill="#00a06d"  />
+    <text class="ges_letter" x="80" y="67">A</text>
+  
+
+
+
+
+  <!-- B -->
+               <path d="m113.32,85.64l-38.61,0l0,-14.99l38.61,0l4.76,7.49l-4.76,7.49l0,0.01z" fill="#52b153"  />
+        <text class="ges_letter" x="80" y="82">B</text>
+          
+  
+  
+  
+  
+  <!-- C -->
+      <path d="m74.77,114.6l0,-27.51l51.12,0l9.37,13.76l-9.37,13.75l-51.12,0z" fill="#a5cc74" stroke="black" />
+    <text class="ges_letter_big" x="80" y="107"  stroke="black">C</text>
+    
+    <!-- cadre de valeurs -->
+    <g transform="translate(0 -65.6)">
+      <text class="ges_unite" y="145" x="7">consommation</text>
+      <text class="ges_unite" y="150" x="5" fill="grey">(énergie primaire)</text>
+      <text class="ges_unite" y="148" x="46">émissions</text>
+      <text class="ges_valeur" x="10" y="170">395</text>
+      <text class="ges_valeur" x="45" y="170">24<tspan fill="#a5dbf8">*</tspan></text> 
+      <text class="ges_unite" x="45" y="178">kg CO₂/m²/an</text>
+      <text class="ges_unite" x="10" y="178">kWh/m².an</text>      
+      <line stroke="black" x1="41" x2="41" y1="152.71" y2="180.33"/>
+      <path d="m74.59,152.9l0,27.16l-67.33,0a1.65,1.39 0 0 1 -1.21,-0.44a1.87,1.58 0 0 1 -0.5,-1.09l0,-24.1a1.76,1.49 0 0 1 1.7,-1.53l67.33,0m1.01,-0.91l-68.34,0a2.81,2.37 0 0 0 -2.71,2.44l0,24.08a2.81,2.37 0 0 0 2.71,2.44l68.34,0l0,-28.99l0,0.02l0,0.01z" fill="#1d1d1b"  />
+    </g>  
+    
+      
+    
+    
+    
+    
+  <!-- D -->
+        <g transform="translate(0 13)">       <path  d="m135.23,118.23l-60.48,0l0,-14.99l60.48,0l4.77,7.49l-4.77,7.49l0,0.01z" fill="#f4e70f"  />
+      <text class="ges_letter" x="80" y="115">D</text>
+      </g>   
+
+
+
+  <!-- E -->
+          <g transform="translate(0 13)">         <path d="m146.22,134.43l-71.44,0l0,-14.99l71.44,0l4.77,7.49l-4.77,7.49l0,0.01z" fill="#f0b40f"  />
+        <text class="ges_letter" x="80" y="131">E</text>
+        </g>     
+       <line id="svg_9" stroke="grey" x1="70" x2="70" y1="133" y2="179"/>
+     <text class="ges_legende" fill="grey" x="40" y="163">passoire </text>
+     <text class="ges_legende" fill="grey" x="30" y="170">énergétique</text>
+    
+  <!-- F -->
+        <g transform="translate(0 13)">       <path d="m157.15,150.63l-82.34,0l0,-14.99l82.34,0l4.76,7.49l-4.76,7.49l0,0.01z" fill="#eb8235"  />
+      <text class="ges_letter" x="80" y="148">F</text>
+      </g>     
+  
+  
+  
+  <!-- G -->
+        <g transform="translate(0 0)">            <path d="m168.4,179.84l-93.64,0l0,-14.74l93.64,0l4.39,7.36l-4.39,7.38z" fill="#d7221f" id="svg_rouge" xmlns="http://www.w3.org/2000/svg"/>
+           <text class="ges_letter" x="80" y="177">G</text>
+      </g>    
+ 
+ 
+ 
+ 
+  <!-- Personnage-->
+   
+  
+  
+
+
+  
+  
+  <a href="https://www.outils.immo/">
+    <text class="ges_copyright" x="160" y="195">www.outils.immo</text>
+  </a>
+  
+</svg>

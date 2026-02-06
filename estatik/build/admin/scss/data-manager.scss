@@ -46,6 +46,15 @@ body[class*='es_data_manager'] {
     opacity: 0.5;
   }
 
+  .es-term-header {
+    display: flex; 
+    gap: 5px;
+
+    svg:hover path {
+      stroke: #69C200;
+    }
+  }
+
   .es-item__name {
     .es-icon {
       margin-right: 5px;

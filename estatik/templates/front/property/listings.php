@@ -12,7 +12,7 @@
 <div class="es-listings__wrap-inner js-es-listings__wrap-inner js-es-entities__wrap_inner et_smooth_scroll_disabled">
     <?php do_action( 'es_before_listings', array_merge( $args, array( 'query' => $query ) ) ); ?>
 
-    <div data-entity="listings" class="js-es-listings js-es-entities es-listings <?php echo $css_layout; ?>" data-layout="<?php echo $css_layout; ?>" data-hash="<?php echo esc_attr( $hash ); ?>">
+    <div itemscope itemtype="https://schema.org/ItemList" data-entity="listings" class="js-es-listings js-es-entities es-listings <?php echo $css_layout; ?>" data-layout="<?php echo $css_layout; ?>" data-hash="<?php echo esc_attr( $hash ); ?>">
         <?php if ( $query->have_posts() ) : ?>
             <?php while( $query->have_posts() ) : $query->the_post(); ?>
                 <?php include es_locate_template( 'front/property/content-archive.php' ); ?>

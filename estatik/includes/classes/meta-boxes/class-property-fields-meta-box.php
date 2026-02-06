@@ -26,6 +26,7 @@ class Es_Property_Fields_Meta_Box extends Es_Entity_Fields_Meta_Box {
 		if ( ! static::$static_fields ) {
 			static::$static_fields = apply_filters( 'es_property_metabox_static_fields', array(
 				'country', 'state', 'province', 'city', 'address', 'latitude', 'longitude', 'postal_code', 'is_address_disabled',
+				'epc_class', 'ges_class',
 			) );
 		}
 
@@ -44,7 +45,7 @@ class Es_Property_Fields_Meta_Box extends Es_Entity_Fields_Meta_Box {
 		$fields = $fields_builder::get_tab_fields( $section_id );
 		$can_render = false;
 
-		if ( $section_id == 'location' || $section_id == 'basic-facts' ) {
+		if ( $section_id == 'location' || $section_id == 'basic-facts' || $section_id == 'energy_diagnostics' ) {
             $can_render = true;
         }
 		 else if ( ! empty( $fields ) ) {

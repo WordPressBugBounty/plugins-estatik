@@ -35,9 +35,9 @@ if ( $collapsed_fields_active || $main_fields_active || ! empty( $attributes['is
 			<?php if ( ! empty( $attributes['is_address_search_enabled'] ) ) : ?>
                 <div class="es-search__address">
                     <label class="es-field es-field__address">
-                        <input type="text" value="<?php echo esc_attr( filter_input( INPUT_GET, 'address' ) ); ?>" name="address" class="js-es-address" placeholder="<?php echo $attributes['address_placeholder']; ?>">
+                        <input type="text" value="<?php echo esc_attr( filter_input( INPUT_GET, 'address' ) ); ?>" name="address" class="js-es-address" placeholder="<?php echo esc_attr( $attributes['address_placeholder'] ); ?>">
                     </label>
-                    <button type="submit" class="es-btn es-btn--primary es-btn--icon">
+                    <button type="submit" aria-label="<?php esc_attr_e( 'Search', 'es' ); ?>" class="es-btn es-btn--primary es-btn--icon">
                         <span class="es-icon es-icon_search"></span>
                     </button>
                 </div>
@@ -65,12 +65,14 @@ if ( $collapsed_fields_active || $main_fields_active || ! empty( $attributes['is
 						<?php if ( $main_fields_active ) : ?>
 							<?php foreach ( $attributes['main_fields'] as $field ) :
 								$field_config = es_search_get_field_config( $field );
-                                if ( !empty ( $field_config['frontend_visible_name'] ) ) {
-                                    $label = es_mulultilingual_translate_string( $field_config['frontend_visible_name'] );
-                                } else {
-                                    $label = $field_config['label'];
-                                }
 								if ( $field_config && ! empty( $field_config['search_support'] ) ) :
+
+									if ( ! empty ( $field_config['frontend_visible_name'] ) ) {
+										$label = es_mulultilingual_translate_string( $field_config['frontend_visible_name'] );
+									} else {
+										$label = $field_config['label'];
+									}
+
 									$is_range_mode = ests( "is_search_{$field}_range_enabled" ) || $field_config['type'] == 'range' || ! empty( $field_config['search_settings']['range'] ) || $field == 'price';
 									ob_start(); do_action( 'es_search_render_field', $field, $attributes ); $content = ob_get_clean();
 									if ( $content ) : ?>

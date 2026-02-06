@@ -1,6 +1,13 @@
 ( function( $ ) {
     'use strict';
 
+    function esSafeHash(hash) {
+        // Дозволяємо тільки id формату #someId, без пробілів і спецсимволів
+        if (typeof hash !== 'string') return '';
+        if (!/^#[A-Za-z0-9_-]+$/.test(hash)) return '';
+        return hash;
+    }
+
     $.fn.serializeObject = function() {
         var o = {};
         var a = this.serializeArray();
@@ -86,9 +93,9 @@
                                         if ( breakpoints[desktop_layout].min <= container_width ) {
                                             $container.removeClass( 'es-listings--list-sm' ).removeClass( current_layout ).addClass( desktop_layout );
                                         } else if ( breakpoints[ className ].min < container_width && breakpoints[desktop_layout].min > container_width ) {
-                                            if ( current_layout != 'es-listings--list' ) {
+                                            // if ( current_layout != 'es-listings--list' ) {
                                                 $container.removeClass( 'es-listings--list-sm' ).removeClass( current_layout ).addClass( className );
-                                            }
+                                            // }
 
                                             if ( ! is_half_map ) {
                                                 
@@ -113,7 +120,7 @@
 
                                 container_width = is_half_map ? $wrapper.width() : container_width;
 
-                                if ( breakpoints.hasOwnProperty( 'es-listings--list-sm' ) && screenWidth <= breakpoints['es-listings--list-sm'].min ) {
+                                if ( breakpoints.hasOwnProperty( 'es-listings--list-sm' ) && container_width <= breakpoints['es-listings--list-sm'].min ) {
                                     $container.closest( '.js-es-listings__wrap-inner' ).find( '.es-control__list' ).hide();
                                 } else {
                                     $container.closest( '.js-es-listings__wrap-inner' ).find( '.es-control__list' ).show();
@@ -1186,28 +1193,30 @@
             resizeCaptcha( $( '.es-recaptcha-wrapper .js-g-recaptcha' ) );
         } );
 
-        $( document ).on( 'click', '.js-es-popup-link', function() {
+        $( document ).on( 'click touch', '.js-es-popup-link', function() {
             $.magnificPopup.close();
             var $link = $( this );
 
             var id = $( this ).data( 'popup-id' ) || $( this ).attr( 'href' );
 
-            $.magnificPopup.open( {
-                items: { src: id },
-                type:'inline',
-                midClick: true,
-                mainClass: 'es-magnific',
-                closeMarkup: '<span class="es-icon es-icon_close mfp-close"></span>',
-                callbacks: {
-                    beforeOpen: function () {
-                        $( id ).trigger( 'popup_before_open', {
-                            popup_id: id,
-                            link: $link,
-                        } );
-                        $.magnificPopup.close();
-                    },
-                }
-            } );
+            if ( $( id ).length ) {
+                $.magnificPopup.open( {
+                    items: { src: id },
+                    type:'inline',
+                    midClick: true,
+                    mainClass: id === '#es-mobile-gallery-popup' ? 'es-magnific-gallery' : 'es-magnific',
+                    closeMarkup: '<span class="es-icon es-icon_close mfp-close"></span>',
+                    callbacks: {
+                        beforeOpen: function () {
+                            $( id ).trigger( 'popup_before_open', {
+                                popup_id: id,
+                                link: $link,
+                            } );
+                            $.magnificPopup.close();
+                        },
+                    }
+                } );
+            }
 
             return false;
         } );
@@ -1427,24 +1436,23 @@
         } );
 
         try {
-            if ( window.location.hash ) {
-                if ( $( window.location.hash ).length ) {
-                    if ( $( window.location.hash ).hasClass( 'es-magnific-popup' ) ) {
-                        $.magnificPopup.open({
-                            items: {
-                                src: window.location.hash
-                            },
-                            type:'inline',
-                            midClick: true,
-                            mainClass: 'es-magnific',
-                            closeMarkup: '<span class="es-icon es-icon_close mfp-close"></span>',
-                            callbacks: {
-                                beforeOpen: function () {
-                                    $.magnificPopup.close();
-                                }
+            var hash = esSafeHash( window.location.hash );
+            if ( hash && $( hash ).length ) {
+                if ( $( hash ).hasClass( 'es-magnific-popup' ) ) {
+                    $.magnificPopup.open({
+                        items: {
+                            src: hash
+                        },
+                        type:'inline',
+                        midClick: true,
+                        mainClass: 'es-magnific',
+                        closeMarkup: '<span class="es-icon es-icon_close mfp-close"></span>',
+                        callbacks: {
+                            beforeOpen: function () {
+                                $.magnificPopup.close();
                             }
-                        });
-                    }
+                        }
+                    });
                 }
             }
         } catch (e) {}

@@ -8,6 +8,7 @@
  * @property string $price
  * @property float $latitude
  * @property float $longitude
+ * @property float $floor_level
  * @property string $call_for_price
  * @property string $price_per_sqft
  * @property string $is_manual_address
@@ -918,6 +919,30 @@ class Es_Property extends Es_Post {
 						)
 					),
 				),
+				'epc_class' => array(
+					'fb_settings' => array(
+						'disable_type_edit' => true,
+						'readonly_tab_field' => true,
+						'readonly_options_field' => true,
+					),
+					'type' => 'radio-bordered',
+					'label' => __( 'Energy Efficiency Class', 'es' ),
+					'tab_machine_name' => 'energy_diagnostics',
+					'section_machine_name' => 'energy_diagnostics',
+					'options' => es_get_dpe_options(),
+				),
+				'ges_class' => array(
+					'fb_settings' => array(
+						'disable_type_edit' => true,
+						'readonly_tab_field' => true,
+						'readonly_options_field' => true,
+					),
+					'type' => 'radio-bordered',
+					'label' => __( 'Greenhouse gas emission class (GHG)', 'es' ),
+					'tab_machine_name' => 'energy_diagnostics',
+					'section_machine_name' => 'energy_diagnostics',
+					'options' => es_get_dpe_options(),
+				),
 			);
 
 			foreach ( array( 'bedrooms', 'bathrooms', 'area', 'lot_size', 'half_baths', 'floor', 'floor_level' ) as $field ) {
@@ -925,6 +950,8 @@ class Es_Property extends Es_Post {
 					$values = explode( ',', ests( "search_{$field}_list" ) );
 					static::$default_fields[ $field ]['search_settings']['values'] = array_combine( $values, $values );
 				}
+
+				static::$default_fields[ $field ]['attributes']['min'] = 0;
 
 				if ( ests( "is_search_{$field}_range_enabled" ) ) {
 					static::$default_fields[ $field ]['search_settings']['range'] = true;
@@ -1091,6 +1118,7 @@ class Es_Property extends Es_Post {
 					'post_type' => 'attachment',
 					'posts_per_page' => -1,
 					'orderby' => 'post__in',
+					'order' => 'ASC',
 					'post__in' => $value
 				) );
 

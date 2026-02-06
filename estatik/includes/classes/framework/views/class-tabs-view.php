@@ -63,7 +63,6 @@ class Es_Tabs_View extends Es_Framework_View {
 	 * Render tabs UI element.
 	 */
 	public function render() {
-
 		/**
 		 * @var $this Es_Tabs_View
 		 */
@@ -94,7 +93,7 @@ class Es_Tabs_View extends Es_Framework_View {
                         <?php echo ! empty( $item['before'] ) ? $item['before'] : '';
 
                         if ( ! empty( $item['template'] ) && file_exists( $item['template'] ) ) {
-							include $item['template'];
+							include realpath( $item['template'] );
 						} else if ( ! empty( $item['action'] ) ) {
 							do_action( $item['action'], $item, $id, $config );
 						}

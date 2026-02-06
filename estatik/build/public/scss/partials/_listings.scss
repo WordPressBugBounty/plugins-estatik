@@ -39,7 +39,7 @@
     .es-total {
         font-weight: bold;
         font-size: 1.4em;
-        color: #78909C;
+        color: #4C5A67;
         line-height: 1.71em;
     }
 
@@ -125,7 +125,7 @@
 
             .es-field__label {
                 white-space: nowrap;
-                color: #78909C;
+                color: #4C5A67;
                 font-weight: normal;
                 font-size: 1.4em;
                 line-height: 1.71em;
@@ -135,14 +135,14 @@
     }
 }
 
-ul.es-listing__meta {
+.es-listing__meta {
     list-style: none;
     padding: 0 !important;
     margin: 0;
     margin-left: -1em;
     margin-right: -1em;
 
-    li {
+    &>div {
         padding: 0 !important;
 
         &:before {
@@ -188,16 +188,20 @@ ul.es-listing__meta {
         display: none;
     }
 
-    li {
+    div {
         display: inline-block;
         margin: 0 1em;
         padding: 0;
-        font-size: 1.2em;
+        font-size: 0.75rem;
     }
 }
 
 .widget .es-listing__terms {
     margin-bottom: 0;
+}
+
+.es-listing__terms {
+    padding: 0 !important;
 }
 
 .es-listing__terms, .widget .es-listing__terms, #footer-widgets .footer-widget .es-listing__terms {
@@ -228,7 +232,7 @@ ul.es-listing__meta {
         a {
             font-size: 1.2em;
             line-height: 2em;
-            color: #78909C;
+            color: #4C5A67;
             vertical-align: middle;
         }
     }
@@ -240,7 +244,7 @@ ul.es-listing__meta {
     margin: 5em 0 0;
 
     .es-navigation {
-        color: #B0BEC5;
+        color: #4e5a6a;
         font-size: 1.2em;
         font-weight: bold;
         margin-top: 1.6em;
@@ -454,10 +458,10 @@ ul.es-listing__meta {
                 }
             }
 
-            ul.es-listing__meta {
+            .es-listing__meta {
                 margin: 15px -1em;
 
-                &>li {
+                &>div {
                     margin: 0 1em;
                 }
             }
@@ -580,10 +584,10 @@ ul.es-listing__meta {
                 margin-bottom: 2%;
             }
 
-            ul.es-listing__meta {
+            .es-listing__meta {
                 margin: 0.2em -1em 0.8em;
 
-                &>li {
+                &>div {
                     margin: 0 1em;
                 }
             }
@@ -963,6 +967,10 @@ body .es-control {
 
             &:last-child {
                 margin-right: 0;
+            }
+
+            a {
+                font-size: 0;
             }
         }
     }

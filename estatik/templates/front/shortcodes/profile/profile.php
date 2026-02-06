@@ -6,7 +6,7 @@
  */
 
 $flashes = es_get_flash_instance( 'profile' );
-$current_tab = filter_input( INPUT_GET, 'tab' ); ?>
+$current_tab = es_get( 'tab' ); ?>
 
 <div class="es-wrap et_smooth_scroll_disabled">
     <div class="es-profile js-es-profile">

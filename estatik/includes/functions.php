@@ -179,13 +179,13 @@ if ( ! function_exists( 'es_format_value' ) ) {
 			case 'video':
 				if ( $value ) {
 					$formatted_value = '';
-					if ( ! empty( $value['video_url'] ) ) {
+					if ( ! empty( $value['video_url'] ) && ! is_array( $value['video_url'] ) ) {
 						$formatted_value = wp_oembed_get( esc_url( $value['video_url'] ) );
 					}
-					if ( ! empty( $value['video_iframe'] ) ) {
+					if ( ! empty( $value['video_iframe'] ) && ! is_array( $value['video_iframe'] ) ) {
 						$formatted_value .= html_entity_decode( $value['video_iframe'] );
 					}
-					if ( ! empty( $value['video_file'] ) ) {
+					if ( ! empty( $value['video_file'] ) && ! is_array( $value['video_file'] ) ) {
 						$formatted_value .= wp_video_shortcode( array(
 							'src' => wp_get_attachment_url( $value['video_file'] ),
 						) );
@@ -382,10 +382,16 @@ if ( ! function_exists( 'es_get_default_sections' ) ) {
 					'is_visible' => true,
 					'is_visible_for' => array( 'all_users' ),
 				),
+				'energy_diagnostics' => array(
+					'label' => __( 'Energy diagnostics', 'es' ),
+					'order' => 100,
+					'is_visible' => true,
+					'is_visible_for' => array( 'all_users' ),
+				),
 				'request_form' => array(
 					'label' => __( 'Ask an Agent About This Home', 'es' ),
 					'section_name' => __( 'Request form', 'es' ),
-					'order' => 110,
+					'order' => 120,
 					'is_visible' => true,
 					'is_visible_for' => array( 'all_users' ),
 					'options' => array(

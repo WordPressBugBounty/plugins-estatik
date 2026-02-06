@@ -1091,6 +1091,10 @@ class Es_Settings_Container
 					'default_value' => 1,
 				),
 
+				'is_property_carousel_link_enabled' => array(
+					'default_value' => 1,
+				),
+
 				'is_login_facebook_enabled' => array(
 					'default_value' => 0,
 				),
@@ -1532,6 +1536,15 @@ class Es_Settings_Container
 
 				'request_property_info_email_subject' => array(
 					'default_value' => _x( 'New listing #{post_id} request submitted', 'user email subject', 'es' ),
+				),
+
+				'epc_display_style' => array(
+					'default_value' => 'light',
+					'values' => array(
+						'style-light' => __( 'Light', 'es' ),
+						'style-2011' => __( '2011 - Old official version', 'es' ),
+						'style-2021' => __( 'From 2021 (updated in 2025)', 'es' ),
+					),
 				),
 			);
 

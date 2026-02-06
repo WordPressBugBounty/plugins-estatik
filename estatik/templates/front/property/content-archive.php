@@ -1,9 +1,9 @@
 <?php $target_blank = ! empty( $target_blank ) ? $target_blank : '';
 
 if ( empty( $ignore_wrapper ) ) : ?>
-    <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+    <div id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
 <?php endif; ?>
-    <div class="js-es-listing es-listing es-listing--<?php the_ID(); ?>" data-post-id="<?php the_ID(); ?>">
+    <div class="js-es-listing es-listing es-listing--<?php the_ID(); ?>" data-post-id="<?php the_ID(); ?>" itemprop="item" itemscope itemtype="https://schema.org/House">
         <?php es_load_template( 'front/property/content-archive-image.php', array(
                 'target_blank' => $target_blank,
                 'wishlist_confirm' => ! empty( $wishlist_confirm ) ? $wishlist_confirm : null,
@@ -11,14 +11,16 @@ if ( empty( $ignore_wrapper ) ) : ?>
         <div class="es-listing__content">
             <div class="es-listing__content__inner">
                 <div class="es-listing__content__left">
+                    <meta itemprop="name" content="<?php es_the_title(); ?>" />
+                    <meta itemprop="image" content="<?php echo es_get_the_featured_image_url(); ?>" />
                     <?php es_the_title( '<h3 class="es-listing__title">
-                        <a href="' . es_get_the_permalink() . '" ' . $target_blank . '>', '</a></h3>' ); ?>
+                        <a href="' . es_get_the_permalink() . '" ' . $target_blank . ' itemprop="url">', '</a></h3>' ); ?>
                     <div class='es-badges es-listing--hide-on-list'>
                         <?php es_the_price();
                         es_the_field( 'price_note', '<span class="es-badge es-badge--normal">', '</span>' ); ?></div>
-                    <?php es_the_address( '<div class="es-address es-listing--hide-on-grid">', '</div>' );
+                    <?php es_the_address( '<div class="es-address es-listing--hide-on-grid" itemprop="address">', '</div>' );
                     if ( get_the_excerpt() && ests( 'is_listing_description_enabled' ) ) : ?>
-                        <p class="es-excerpt es-listing--hide-on-grid"><?php the_excerpt(); ?></p>
+                        <p class="es-excerpt es-listing--hide-on-grid" itemprop="description"><?php the_excerpt(); ?></p>
                     <?php endif;
                     do_action( 'es_property_meta', array( 'use_icons' => true ) );
                     es_the_address( '<div class="es-address es-listing--hide-on-list">', '</div>' ); ?>

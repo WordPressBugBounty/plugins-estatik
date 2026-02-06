@@ -90,6 +90,7 @@ abstract class Es_Framework_Base_Field {
                            {after}",
 			'description' => '',
 			'caption' => '',
+            'ui_badge' => '',
 			'default_value' => '',
 			'type' => 'text',
 			'value' => '',
@@ -150,6 +151,14 @@ abstract class Es_Framework_Base_Field {
 			'{description}' => $config['description'] ? sprintf( $config['description_wrapper'], $config['description'] ) : '',
 			'{name}' => $config['attributes']['name'],
 			'{caption}' => $config['caption'] ? sprintf( $config['caption_wrapper'], $config['caption'] ) : '',
+            '{ui_badge}' => ! empty( $config['ui_badge'] )
+            ? sprintf(
+                '<span class="es-ui-badge-wrap" aria-hidden="true">
+                    <span class="es-ui-badge es-ui-badge--%1$s">%2$s</span>
+                </span>',
+                esc_attr( $config['ui_badge'] ),
+                esc_html( ucfirst( $config['ui_badge'] ) )
+            ) : '',
 			'{before}' => $config['before'],
 			'{after}' => $config['after'],
 			'{hidden_input}' => ! empty( $config['enable_hidden_input'] ) ? $hidden : '',

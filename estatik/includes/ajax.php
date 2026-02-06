@@ -107,7 +107,7 @@ function es_ajax_get_property_item() {
 
 	    // Generate back to search link.
 	    if ( $search_url = wp_get_raw_referer() ) {
-		    $GLOBALS['search_url'] = $search_url;
+		    $GLOBALS['search_url'] = esc_url( $search_url );
 	    }
 
         if ( $query->have_posts() ) {

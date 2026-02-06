@@ -16,7 +16,7 @@
         'entity_id' => $property_id,
     ) ); ?>
 
-    <div class="es-mobile-gallery js-es-mobile-gallery">
+    <div class="es-mobile-gallery js-es-mobile-gallery js-es-popup-link" data-popup-id="#es-mobile-gallery-popup">
         <?php if ( is_array( $images ) && ! empty( $images ) ) : ?>
             <?php foreach ( $images as $attachment_id ) : ?>
                 <?php echo wp_get_attachment_image( $attachment_id, 'medium' ); ?>
@@ -31,4 +31,12 @@
             <div class="js-es-mobile-gallery__pager"></div>
         </div>
     <?php endif; ?>
-</div>
+</div><?php
+
+if ( is_array( $images ) && ! empty( $images ) && count( $images ) > 1 ) :
+    es_load_template( 'front/property/gallery/mobile-gallery-popup.php', array(
+        'images' => $images,
+        'property_id' => $property_id,
+    ) );
+endif;
+

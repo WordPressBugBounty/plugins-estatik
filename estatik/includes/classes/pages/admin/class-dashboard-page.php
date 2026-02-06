@@ -37,6 +37,126 @@ class Es_Dashboard_Page {
 	 */
 	public static function get_changelog() {
 		return array(
+            '4.3.0' => array(
+				'date' => _x( 'January, 31, 2026', 'changelog', 'es' ),
+				'changes' => array(
+                    array(
+                        'text'  => _x( 'HubSpot CRM integration added (All versions)', 'changelog', 'es' ),
+                        'label' => 'new',
+                    ),
+                    array(
+                        'text'  => _x( 'Gutenberg block for displaying [es_my_listing] added (All versions)', 'changelog', 'es' ),
+                        'label' => 'new',
+                    ),
+                    array(
+                        'text'  => _x( 'Price history functionality added (PRO & Premium)', 'changelog', 'es' ),
+                        'label' => 'new',
+                    ),
+                    array(
+                        'text'  => _x( 'Default locations taxonomy link fixed (All versions)', 'changelog', 'es' ),
+                        'label' => 'bugfix',
+                    ),
+                    array(
+                        'text'  => _x( 'Conflict between Magnific Popup libraries fixed (All versions)', 'changelog', 'es' ),
+                        'label' => 'bugfix',
+                    ),
+                    array(
+                        'text'  => _x( 'MLS image import order fix added (Premium)', 'changelog', 'es' ),
+                        'label' => 'bugfix',
+                    ),
+                    
+				),
+			),
+			'4.2.0' => array(
+				'date' => _x( 'November, 25, 2025', 'changelog', 'es' ),
+				'changes' => array(
+					array(
+						'text' => _x( 'EPC & GES features added (All versions)', 'changelog', 'es' ),
+						'label' => 'new',
+					),
+					array(
+						'text' => _x( 'Mobile gallery for single property page implemented (All versions)', 'changelog', 'es' ),
+						'label' => 'new',
+					),
+					array(
+						'text' => _x( 'Schema.org markup integrated for listings (All versions)', 'changelog', 'es' ),
+						'label' => 'new',
+					),
+					array(
+						'text' => _x( 'Accessibility feature partially implemented (All versions)', 'changelog', 'es' ),
+						'label' => 'new',
+					),
+					array(
+						'text' => _x( 'Edit link for taxonomy terms added in Data Manager (All versions)', 'changelog', 'es' ),
+						'label' => 'new',
+					),
+					array(
+						'text' => _x( 'Multiple instances JS issue for Half map resolved (All versions)', 'changelog', 'es' ),
+						'label' => 'bugfix',
+					),
+					array(
+						'text' => _x( 'Local File Inclusion vulnerability patched (All versions)', 'changelog', 'es' ),
+						'label' => 'bugfix',
+					),
+					array(
+						'text' => _x( 'Stored Cross-Site Scripting vulnerability patched (All versions)', 'changelog', 'es' ),
+						'label' => 'bugfix',
+					),
+					array(
+						'text' => _x( 'WP All Import images order issue resolved (All versions)', 'changelog', 'es' ),
+						'label' => 'bugfix',
+					),
+					array(
+						'text' => _x( 'Minor fixes.', 'changelog', 'es' ),
+						'label' => 'bugfix',
+					),
+				),
+			),
+			'4.1.13' => array(
+				'date' => _x( 'October, 13, 2025', 'changelog', 'es' ),
+				'changes' => array(
+					array(
+						'text' => _x( 'OriginatingSystemName field added for MLS Trestle Web API (Premium)', 'changelog', 'es' ),
+						'label' => 'new',
+					),
+					array(
+						'text' => _x( 'Manually added images excluded from MLS processes (Premium)', 'changelog', 'es' ),
+						'label' => 'new',
+					),
+					array(
+						'text' => _x( 'Common CSS classes added in breadcrumbs (All versions)', 'changelog', 'es' ),
+						'label' => 'new',
+					),
+					array(
+						'text' => _x( 'Duplicated media requests for MLSGRID provider fixed (Premium)', 'changelog', 'es' ),
+						'label' => 'bugfix',
+					),
+					array(
+						'text' => _x( 'Remote images feature deactivated for MLSGRID provider (Premium)', 'changelog', 'es' ),
+						'label' => 'bugfix',
+					),
+					array(
+						'text' => _x( 'Request timeouts for MLSGRID provider added (Premium)', 'changelog', 'es' ),
+						'label' => 'bugfix',
+					),
+					array(
+						'text' => _x( 'Agents & Agencies search shortcode warnings fixed (Pro & Premium)', 'changelog', 'es' ),
+						'label' => 'bugfix',
+					),
+					array(
+						'text' => _x( '[es_property_map] shortcode attributes fixed (All versions)', 'changelog', 'es' ),
+						'label' => 'bugfix',
+					),
+					array(
+						'text' => _x( 'Property images order fix added (All versions)', 'changelog', 'es' ),
+						'label' => 'bugfix',
+					),
+					array(
+						'text' => _x( 'Minor fixes', 'changelog', 'es' ),
+						'label' => 'bugfix',
+					),
+				)
+			),
 			'4.1.12' => array(
 				'date' => _x( 'August, 6, 2025', 'changelog', 'es' ),
 				'changes' => array(
@@ -1644,7 +1764,7 @@ class Es_Dashboard_Page {
             ),
             'shortcodes' => array(
                 'name' => __( 'Shortcodes', 'es' ),
-                'url' => 'https://estatik.net/docs-category/shortcodes/',
+                'url' => 'https://estatik.net/docs-category/estatik-shortcodes/',
                 'icon' => '<span class="es-icon es-icon_shortcode es-icon--rounded es-icon--green"></span>',
             ),
             'agents' => array(

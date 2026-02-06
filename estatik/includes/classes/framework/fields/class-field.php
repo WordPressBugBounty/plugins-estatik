@@ -9,8 +9,9 @@ class Es_Framework_Field extends Es_Framework_Base_Field {
 	 * @return string
 	 */
 	function get_input_markup() {
+		$value = is_string( $this->_field_config['value'] ) ? esc_attr( stripslashes( $this->_field_config['value'] ) ) : $this->_field_config['value'];
 		$this->_field_config['attributes']['type'] = esc_attr( $this->_field_config['type'] );
-		$this->_field_config['attributes']['value'] = esc_attr( $this->_field_config['value'] );
+		$this->_field_config['attributes']['value'] = $value;
 		$input = sprintf( "<input %s/>", $this->build_attributes_string() );
 
 		$count = is_string( $this->_field_config['value'] ) ? strlen( $this->_field_config['value'] ) : 0;
@@ -20,7 +21,7 @@ class Es_Framework_Field extends Es_Framework_Base_Field {
 		$input .= $strlen;
 
 		if ( $this->_field_config['type'] == 'password' ) {
-		    $input .= "<a href='#' class='es-toggle-pwd js-es-toggle-pwd'><span class='es-icon es-icon_eye'></span></a>";
+		    $input .= "<a href='#' aria-label='" . esc_attr__( 'Show or Hide password', 'es' ) . "' class='es-toggle-pwd js-es-toggle-pwd'><span class='es-icon es-icon_eye'></span></a>";
         }
 		return $input;
 	}
@@ -35,7 +36,7 @@ class Es_Framework_Field extends Es_Framework_Base_Field {
         $args = array(
             'skeleton' => "{before}
                                <div class='es-field es-field__{field_key} es-field--{type} {wrapper_class}'>
-                                   <label for='{id}'>{label}{caption}{unit_before}{input}{unit_after}{description}</label>
+                                   <label for='{id}'>{label}{ui_badge}{caption}{unit_before}{input}{unit_after}{description}</label>
                                </div>
                            {after}",
             'unit_field_before_config' => array(),

@@ -339,10 +339,10 @@ if ( ! function_exists( 'es_privacy_policy' ) ) {
 
             if ( 'checkbox' == ests( 'terms_input_type' ) ) {
 	            /* translators: %1$s: link name, %2$s: link name */
-                $content = sprintf( __( 'I agree to the %1$s and %2$s', 'es' ), $terms, $policy );
-                $content = "<div class='es-terms-text'>{$content}</div>";
+                $content = '';
                 $content = es_framework_get_field_html( 'terms_conditions', array(
                     'type' => 'checkbox',
+                    'label' => sprintf( __( 'I agree to the %1$s and %2$s', 'es' ), $terms, $policy ),
                     'attributes' => array(
                         'required' => 'required',
                         'id' => 'terms-conditions-' . uniqid()
@@ -1129,6 +1129,7 @@ function es_pmxi_attach_images( $post_id ) {
             'post_parent' => $post_id,
             'posts_per_page' => -1,
             'fields' => 'ids',
+            'order' => 'ASC',
         ) );
 
         if ( ! empty( $attachments ) ) {
@@ -1533,3 +1534,83 @@ function es_translate_widget_titles() {
 
 }
 add_action( 'widgets_init', 'es_translate_widget_titles', 20 );
+
+/**
+ * Add schema.org script for estatik entities.
+ *
+ * @return void
+ */
+function es_schema_org_script() {
+    if ( is_singular( 'properties' ) ) {
+        $property = es_get_the_property();
+
+	    $schema = array(
+		    '@context' => 'https://schema.org',
+		    '@type'    => 'House',
+		    'name'     => get_the_title(),
+		    'url'      => get_the_permalink(),
+            'address'  => $property->address,
+            'floorLevel'  => $property->floor_level,
+            'yearBuilt'  => $property->year_built,
+            'numberOfBathroomsTotal'  => $property->bathrooms,
+            'numberOfBedrooms'  => $property->bedrooms,
+	    );
+
+//        if ( ! empty( $property->price ) ) {
+//            $schema['offers'] = array(
+//		        "@type" => "Offer",
+//                "price" => $property->price,
+//                "priceCurrency" => ests( 'currency' ),
+//                "availability" => "https://schema.org/InStock",
+//                "url" => get_the_permalink()
+//            );
+//        }
+
+        if ( ! empty( $property->longitude ) ) {
+            $schema['geo'] = array(
+	            "@type" => "GeoCoordinates",
+                "latitude" => $property->longitude,
+                "longitude" => $property->latitude,
+            );
+        }
+
+        if ( $excerpt = get_the_excerpt() ) {
+            $schema['description'] = $excerpt;
+        }
+
+        if ( $gallery = es_get_the_field( 'gallery' ) ) {
+            foreach ( $gallery as $attachment_id ) {
+                $schema['image'][] = wp_get_attachment_image_url( $attachment_id, 'full' );
+            }
+        }
+
+        $schema = array_filter( $schema );
+    }
+
+    if ( ! empty( $schema ) ) {
+	    // Encode the array as JSON and wrap it in a <script> tag
+	    echo '<script type="application/ld+json">' . json_encode( $schema, JSON_UNESCAPED_SLASHES ) . '</script>';
+    }
+}
+
+add_action( 'wp_head', 'es_schema_org_script' );
+
+/**
+ * @param $value
+ * @param $field_config
+ * @param $post_id
+ *
+ * @return void
+ */
+function es_get_the_epc_field( $value, $field, $post_id ) {
+    if ( in_array( $field, array( 'epc_class', 'ges_class' ) ) && $value && in_array( $value, es_get_dpe_options() ) ) {
+        ob_start();
+        es_load_template( 'front/property/partials/epc-ges-light.php', array(
+            'energy_class' => strtoupper( $value ),
+            'field' => $field,
+        ) );
+        $value = ob_get_clean();
+    }
+    return $value;
+}
+add_filter( 'es_get_the_formatted_field', 'es_get_the_epc_field', 10, 3 );

@@ -774,6 +774,7 @@ if ( ! function_exists( 'es_get_properties_query_args' ) ) {
                                 }
 
                                 if ( 'address' == $field ) {
+	                                $value = stripslashes( $value );
                                     if ( empty( $args['settings']['strict_address'] ) ) {
 	                                    $address_components = get_terms( array(
 		                                    'taxonomy' => 'es_location',
@@ -807,6 +808,7 @@ if ( ! function_exists( 'es_get_properties_query_args' ) ) {
 
                                     if ( is_array( $value ) ) {
 	                                    foreach ( $value as $field_value ) {
+		                                    $field_value = stripslashes( $field_value );
 		                                    $meta_query[ $field ][] = array( 'key' => $property->get_entity_prefix() . $field, 'value' => $field_value );
 	                                    }
 
@@ -914,7 +916,7 @@ if ( ! function_exists( 'es_the_property_breadcrumbs' ) ) {
             foreach ( $categories as $term_id => $label ) {
 	            $query_args['es_category'][] = $term_id;
 	            $args = array( 'es_category' => array( $term_id ) );
-	            $breadcrumbs[] = "<a class='es-breadcrumbs__item es-secondary-color-hover' href='" . add_query_arg( $args, $search_url ) . "'>{$label}</a>";
+	            $breadcrumbs[] = "<a class='es-breadcrumbs__item es-breadcrumbs__item--{$term_id} es-secondary-color-hover' href='" . add_query_arg( $args, $search_url ) . "'>{$label}</a>";
             }
         }
 
@@ -923,7 +925,7 @@ if ( ! function_exists( 'es_the_property_breadcrumbs' ) ) {
 	            $args = $query_args;
 	            $args['es_type'] = array( $term_id );
 	            $query_args['es_type'][] = $term_id;
-                $breadcrumbs[] = "<a class='es-breadcrumbs__item es-secondary-color-hover' href='" . add_query_arg( $args, $search_url ) . "'>{$label}</a>";
+                $breadcrumbs[] = "<a class='es-breadcrumbs__item es-breadcrumbs__item--{$term_id} es-secondary-color-hover' href='" . add_query_arg( $args, $search_url ) . "'>{$label}</a>";
             }
         }
 
@@ -935,23 +937,23 @@ if ( ! function_exists( 'es_the_property_breadcrumbs' ) ) {
                     $term = get_term_by( 'id', $location_id, 'es_location' );
                     if ( ! empty( $term->name ) ) {
 	                    $query_args[ $field ] = $location_id;
-                        $breadcrumbs[] = "<a class='es-breadcrumbs__item es-secondary-color-hover' href='" . add_query_arg( $query_args, $search_url ) . "'>" . $term->name . "</a>";
+                        $breadcrumbs[] = "<a class='es-breadcrumbs__item es-breadcrumbs__item--{$location_id} es-secondary-color-hover' href='" . add_query_arg( $query_args, $search_url ) . "'>" . $term->name . "</a>";
                     }
                 }
             }
 
             if ( $postal_code = $property->postal_code ) {
                 $query_args['postal_code'] = $postal_code;
-	            $breadcrumbs[] = "<a class='es-breadcrumbs__item es-secondary-color-hover' href='" . add_query_arg( $query_args, $search_url ) . "'>{$postal_code}</a>";
+	            $breadcrumbs[] = "<a class='es-breadcrumbs__item es-breadcrumbs__item--postal-code es-secondary-color-hover' href='" . add_query_arg( $query_args, $search_url ) . "'>{$postal_code}</a>";
             }
 
 			if ( $address = es_get_the_field( 'address' ) ) {
-				$breadcrumbs[] = "<span class='es-breadcrumbs__item'>" . $address . "</span>";
+				$breadcrumbs[] = "<span class='es-breadcrumbs__item es-breadcrumbs__item--address'>" . $address . "</span>";
 			} else {
-				$breadcrumbs[] = "<span class='es-breadcrumbs__item'>" . get_the_title() . "</span>";
+				$breadcrumbs[] = "<span class='es-breadcrumbs__item es-breadcrumbs__item--title'>" . get_the_title() . "</span>";
             }
         } else {
-			$breadcrumbs[] = "<span class='es-breadcrumbs__item'>" . get_the_title() . "</span>";
+			$breadcrumbs[] = "<span class='es-breadcrumbs__item es-breadcrumbs__item--title'>" . get_the_title() . "</span>";
         }
 
         ob_start();
@@ -1016,6 +1018,10 @@ function es_property_get_meta_fields() {
 			$icons = es_property_get_default_meta_icons();
 
 			foreach ( $fields as $key => $field ) {
+				if ( ! empty( $field['field_description'] ) ) {
+					$field['field_description'] = es_mulultilingual_translate_string( $field['field_description'] );
+				}
+
 				$property_meta_fields[ $key ] = $field;
 				if ( empty( $field['icon'] ) ) continue;
 
@@ -1026,23 +1032,21 @@ function es_property_get_meta_fields() {
 					$property_meta_fields[ $key ]['icon'] = $fields[ $key ]['icon'];
 
 					if ( empty( $cache[ $field['icon'] ] ) ) {
-						if ( stristr( $fields[ $key ]['icon'], ES_PLUGIN_URL ) !== FALSE ) {
+						if ( strpos( $fields[ $key ]['icon'], trailingslashit( ES_PLUGIN_URL ) ) === 0 ) {
 							foreach ( array( 'area.svg', 'bathroom.svg', 'bed.svg' ) as $file ) {
 								if ( stristr( $fields[ $key ]['icon'], $file ) && ! empty( $icons[ $file ] ) ) {
 									$cache[ $field['icon'] ] = $icons[ $file ];
 									break;
 								}
 							}
-						} else {
-							$cache[ $field['icon'] ] = file_get_contents( $fields[ $key ]['icon'] );
 						}
 
 						ests_save_option( 'listing_meta_icons_cache', $cache );
 					}
-                    
-                    if ( !empty ($cache[ $field['icon'] ]) ) {
-					    $property_meta_fields[ $key ]['svg'] = $cache[ $field['icon'] ];
-                    }
+
+					if ( ! empty( $cache[ $field['icon'] ] ) ) {
+						$property_meta_fields[ $key ]['svg'] = $cache[ $field['icon'] ];
+					}
 				}
 			}
 		}
@@ -1050,6 +1054,26 @@ function es_property_get_meta_fields() {
 
 	return $property_meta_fields;
 }
+
+/**
+ * Return list of DPE options.
+ *
+ * @return mixed|null
+ */
+function es_get_dpe_options() {
+	$options = array(
+		'A' => __( 'A', 'es' ),
+		'B' => __( 'B', 'es' ),
+		'C' => __( 'C', 'es' ),
+		'D' => __( 'D', 'es' ),
+		'E' => __( 'E', 'es' ),
+		'F' => __( 'F', 'es' ),
+		'G' => __( 'G', 'es' ),
+	);
+
+	return apply_filters( 'es_get_dpe_options', $options );
+}
+
 
 /// //if ( ! function_exists( '' ) ) {
 //

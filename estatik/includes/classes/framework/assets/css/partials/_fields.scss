@@ -984,3 +984,30 @@ ul.es-images-list, .es-field ul.es-images-list {
     }
   }
 }
+
+.es-box--pro {
+  position: relative;
+  opacity: 1 !important;
+
+  * {
+    opacity: 0.5;
+  }
+
+  &:after {
+    opacity: 1;
+    content: "PRO";
+    display: block;
+    background: #69c200;
+    border-radius: 6px;
+    width: 33px;
+    line-height: 20px;
+    text-align: center;
+    color: #fff;
+    height: 20px;
+    font-size: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    position: absolute;
+  }
+}
