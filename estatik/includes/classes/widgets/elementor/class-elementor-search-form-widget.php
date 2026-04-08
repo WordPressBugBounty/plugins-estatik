@@ -59,6 +59,11 @@ class Elementor_Es_Search_Form_Widget extends Elementor_Es_Base_Widget {
     protected function register_controls() {
         /** @var Es_Search_Form_Shortcode $shortcode */
         $shortcode = es_get_shortcode_instance( 'es_search_form' );
+
+        if ( ! $shortcode ) {
+            return;
+        }
+        
         $attr = $shortcode->get_default_attributes();
 
         $this->start_controls_section('section_content', array( 'label' => _x( 'Content', 'Elementor widget section', 'es' ) ) );

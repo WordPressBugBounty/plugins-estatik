@@ -37,6 +37,59 @@ class Es_Dashboard_Page {
 	 */
 	public static function get_changelog() {
 		return array(
+            '4.3.1' => array(
+                'date' => _x( 'April, 1, 2026', 'changelog', 'es' ),
+                'changes' => array(
+                    array(
+                        'text'  => _x( 'Extended [es_agent_field] shortcode to support agents on single property pages (Pro & Premium)', 'changelog', 'es' ),
+                        'label' => 'new',
+                    ),
+                    array(
+                        'text'  => _x( 'Gutenberg block for search form added (All versions)', 'changelog', 'es' ),
+                        'label' => 'new',
+                    ),
+                    array(
+                        'text'  => _x( '"search_by" field added to Gutenberg search blocks for keyword or address search (Pro & Premium)', 'changelog', 'es' ),
+                        'label' => 'new',
+                    ),
+                    array(
+                        'text'  => _x( '"Disable tel country code" option moved to the Request tab (Pro & Premium)', 'changelog', 'es' ),
+                        'label' => 'new',
+                    ),
+                    array(
+                        'text'  => _x( 'Slider lazy load mode added to settings (All versions)', 'changelog', 'es' ),
+                        'label' => 'new',
+                    ),
+                    array(
+                        'text'  => _x( 'New Elementor widget category added for Estatik single page widgets', 'changelog', 'es' ),
+                        'label' => 'new',
+                    ),
+                    array(
+                        'text'  => _x( 'Sync deletion entities issue with ConnectMLS fixed (Premium)', 'changelog', 'es' ),
+                        'label' => 'bugfix',
+                    ),
+                    array(
+                        'text'  => _x( 'Multilingual string translation logic improved for Polylang and WPML (All versions)', 'changelog', 'es' ),
+                        'label' => 'bugfix',
+                    ),
+                    array(
+                        'text'  => _x( 'Compatibility issue with Estatik Pro during Elementor update fixed (All versions)', 'changelog', 'es' ),
+                        'label' => 'bugfix',
+                    ),
+                    array(
+                        'text'  => _x( 'Translation strings updated (All versions)', 'changelog', 'es' ),
+                        'label' => 'bugfix',
+                    ),
+                    array(
+                        'text'  => _x( 'Translation issues in popup fixed (All versions)', 'changelog', 'es' ),
+                        'label' => 'bugfix',
+                    ),
+                    array(
+                        'text'  => _x( 'MLS agent & agency media import issue fixed (Premium)', 'changelog', 'es' ),
+                        'label' => 'bugfix',
+                    ),
+                ),
+            ),
             '4.3.0' => array(
 				'date' => _x( 'January, 31, 2026', 'changelog', 'es' ),
 				'changes' => array(

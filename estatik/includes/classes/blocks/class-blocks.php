@@ -43,6 +43,7 @@ final class Es_Blocks_List {
         // Shared styles (editor + frontend).
         add_action( 'enqueue_block_editor_assets', [ __CLASS__, 'enqueue_shared_styles' ] );
         add_action( 'wp_enqueue_scripts', [ __CLASS__, 'enqueue_shared_styles' ] );
+        
 
         // Editor-only assets.
         add_action( 'enqueue_block_editor_assets', [ __CLASS__, 'enqueue_editor_scripts' ] );
@@ -66,6 +67,7 @@ final class Es_Blocks_List {
         $blocks = apply_filters( 'es_blocks_list_files', [
             'Es_Block' => $base_path . '/default-block/class-es-block.php',
             'Es_My_Listing_Block' => $base_path . '/my-listing-block/class-my-listing-block.php',
+            'Es_Search_Form_Block' => $base_path . '/search-form-block/class-search-form-block.php',
         ] );
 
         foreach ( $blocks as $class_name => $file_path ) {
@@ -115,7 +117,9 @@ final class Es_Blocks_List {
      * @return void
      */
     public static function enqueue_editor_assets(): void {
-        // Reserved for editor-only block assets.
+        $base_url = plugin_dir_url( __FILE__ );
+
+        wp_enqueue_style( 'es-blocks-editor', $base_url . '/default-block/editor.css' );
     }
 
     /**

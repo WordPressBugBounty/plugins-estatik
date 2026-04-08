@@ -88,6 +88,9 @@ class Es_Elementor_Init {
             require_once ES_PLUGIN_CLASSES . 'widgets' . DS . 'elementor' . DS . 'class-elementor-listings-widget.php';
             require_once ES_PLUGIN_CLASSES . 'widgets' . DS . 'elementor' . DS . 'class-elementor-authentication-widget.php';
             require_once ES_PLUGIN_CLASSES . 'widgets' . DS . 'elementor' . DS . 'class-elementor-half-map-widget.php';
+            require_once ES_PLUGIN_CLASSES . 'widgets' . DS . 'elementor' . DS . 'class-elementor-single-property-field-widget.php';
+            require_once ES_PLUGIN_CLASSES . 'widgets' . DS . 'elementor' . DS . 'class-elementor-single-property-map-widget.php';
+            require_once ES_PLUGIN_CLASSES . 'widgets' . DS . 'elementor' . DS . 'class-elementor-single-property-gallery-widget.php';
 
             Plugin::instance()->widgets_manager->register_widget_type( new Elementor_Es_Search_Form_Widget() );
             Plugin::instance()->widgets_manager->register_widget_type( new Elementor_Es_Properties_Slider_Widget() );
@@ -95,6 +98,9 @@ class Es_Elementor_Init {
             Plugin::instance()->widgets_manager->register_widget_type( new Elementor_Es_Listings_Widget() );
             Plugin::instance()->widgets_manager->register_widget_type( new Elementor_Es_Authentication_Widget() );
             Plugin::instance()->widgets_manager->register_widget_type( new Elementor_Es_Half_Map_Widget() );
+            Plugin::instance()->widgets_manager->register_widget_type( new Elementor_Es_Single_Property_Field_Widget() );
+            Plugin::instance()->widgets_manager->register_widget_type( new Elementor_Es_Single_Property_Map_Widget() );
+            Plugin::instance()->widgets_manager->register_widget_type( new Elementor_Es_Single_Property_Gallery_Widget() );
         }
 	}
 
@@ -110,6 +116,13 @@ class Es_Elementor_Init {
 				'title' => _x( 'Estatik', 'Elementor widgets category name', 'es' ),
 			)
 		);
+
+        $elements_manager->add_category(
+            'estatik-single-category',
+            array(
+                'title' => _x( 'Estatik - Single Page', 'Elementor widgets category name', 'es' ),
+            )
+        );
 	}
 
 	/**

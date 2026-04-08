@@ -59,6 +59,11 @@ class Elementor_Es_Half_Map_Widget extends Elementor_Es_Query_Widget {
     protected function register_controls() {
         /** @var Es_Request_Form_Shortcode $shortcode */
         $shortcode = es_get_shortcode_instance( 'es_my_listing' );
+
+        if ( ! $shortcode ) {
+            return;
+        }
+        
         $attributes = $shortcode->get_attributes();
 
         $this->start_controls_section(

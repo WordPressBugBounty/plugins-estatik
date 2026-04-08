@@ -1,0 +1,128 @@
+/* ================================
+ * CHECKBOXES (CheckboxControl)
+ * ================================ */
+
+/* Checked state */
+.es-block-panel .components-checkbox-control__input:checked + .components-checkbox-control__icon {
+    background-color: #74c69d;
+    border-color: #74c69d;
+}
+
+/* Focus ring */
+.es-block-panel .components-checkbox-control__input:focus + .components-checkbox-control__icon {
+    box-shadow: 0 0 0 2px rgba(116, 198, 157, 0.35);
+}
+
+/* Hover */
+.es-block-panel .components-checkbox-control__input:hover + .components-checkbox-control__icon {
+    border-color: #52b788;
+}
+
+.es-block-panel .components-form-toggle.is-checked .components-form-toggle__track {
+    background-color: #74c69d;
+    border-color: #74c69d;
+}
+
+
+/* ================================
+ * FORM TOKEN FIELD (Multi select)
+ * ================================ */
+
+/* Token */
+.es-block-panel .components-form-token-field__token {
+    background-color: #d8f3dc;
+    border: 1px solid #95d5b2;
+    color: #1b4332;
+    border-radius: 14px;
+    padding: 2px 8px;
+}
+
+.es-block-panel .components-form-token-field__remove-token.components-button, .es-block-panel .components-form-token-field__token-text {
+    background-color: #d8f3dc;
+}
+
+/* Token text */
+.es-block-panel .components-form-token-field__token-text {
+    font-weight: 500;
+}
+
+/* Remove token button */
+.es-block-panel .components-form-token-field__remove-token {
+    color: #2d6a4f;
+}
+
+.es-block-panel .components-form-token-field__remove-token:hover {
+    color: #081c15;
+}
+
+/* Input focus */
+.es-block-panel .components-form-token-field__input:focus {
+    box-shadow: 0 0 0 2px rgba(116, 198, 157, 0.35);
+}
+
+.es-block-panel .components-form-token-field__suggestions-list:has(li:nth-child(8)) {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.es-block-panel .components-base-control__field .components-button {
+    display: block;
+}
+
+.es-query-filters-list .components-button.is-secondary{
+    margin-right: 8px;
+    margin-bottom: 8px;
+    margin-top: 8px;
+    color: #2d6a4f;
+    box-shadow: 0 0 0 2px rgba(116, 198, 157, 0.35);
+}
+
+.es-block-panel .components-button.is-secondary{
+    color: #2d6a4f;
+    box-shadow: 0 0 0 2px rgba(116, 198, 157, 0.35);
+    display: block;
+    margin-bottom: 16px;
+}
+
+/* ================================
+ * DROPDOWN (Suggestions list)
+ * ================================ */
+
+/* Dropdown wrapper */
+.es-block-panel .components-form-token-field__suggestions-list {
+    border: 1px solid #b7e4c7;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+/* Suggestion item */
+.es-block-panel .components-form-token-field__suggestion {
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+/* Hover */
+.es-block-panel .components-form-token-field__suggestion:hover {
+    background-color: #e9f5ec;
+}
+
+/* Active / selected */
+.es-block-panel  .components-form-token-field__suggestion.is-selected {
+    background-color: #b7e4c7;
+    color: #081c15;
+}
+
+
+.es-block-panel .es-block-panel--fields {
+    border-left: 3px solid #74c69d;
+    padding-left: 12px;
+}
+
+.es-block-panel  .components-checkbox-control__input[type=checkbox]:checked {
+    background: #74c69d;
+    background-color: #b7e4c7;
+}
+
+.es-block-panel .components-panel__body-title {
+    padding-bottom: 8px;
+}

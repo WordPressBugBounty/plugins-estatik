@@ -15,11 +15,23 @@ abstract class Elementor_Es_Query_Widget extends Elementor_Es_Base_Widget {
 	 */
 	public function query_register_controls() {
 		$shortcode = es_get_shortcode_instance( 'es_my_listing' );
+
+        if ( ! $shortcode ) {
+            return;
+        }
+        
 		$attributes = $shortcode->get_attributes();
 
 		$this->start_controls_section(
 			'query_content', array( 'label' => _x( 'Query filter', 'Elementor widget section', 'es' ), )
 		);
+
+        $this->add_custom_control( 'map_show', array(
+			'label' => __( 'Show all listings on map', 'es' ),
+			'type' => Controls_Manager::SWITCHER,
+            'description' => __( 'Displays all property locations on the map regardless of pagination. Note: enabling this option may slow down page loading if you have a large number of listings.', 'es' ),
+			'default' => $attributes['map_show'] ? 'all' : $attributes['map_show'],
+		) );
 
 		$this->add_custom_control( 'strict_address', array(
 			'label' => __( 'Search in address string', 'es' ),

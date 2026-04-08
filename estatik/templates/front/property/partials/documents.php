@@ -14,7 +14,7 @@ if ( ! empty( $attachments_ids ) ) : ?>
                 <span class="es-icon es-icon_file"></span>
                 <div class="es-document__info">
                     <?php if ( ! empty( $caption ) ) : ?>
-                        <span class="es-document__title es-document__title--caption"><?php echo $caption; ?></span>
+                        <span class="es-document__title es-document__title--caption"><?php echo esc_attr( $caption ); ?></span>
                         <ul class="es-listing__terms">
                             <li><?php echo $filename; ?></li>
                             <li><?php echo $filesize; ?></li>

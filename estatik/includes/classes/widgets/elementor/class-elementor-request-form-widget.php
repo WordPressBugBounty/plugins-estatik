@@ -59,6 +59,11 @@ class Elementor_Es_Request_Form_Widget extends Elementor_Es_Base_Widget {
 	protected function register_controls() {
 		/** @var Es_Request_Form_Shortcode $shortcode */
 		$shortcode = es_get_shortcode_instance( 'es_request_form' );
+
+        if ( ! $shortcode ) {
+            return;
+        }
+        
 		$attr = $shortcode->get_default_attributes();
 
 		$this->start_controls_section(

@@ -21,7 +21,7 @@
             <?php if ( is_array( $images ) && ! empty( $images ) ) : ?>
                 <?php foreach ( $images as $attachment_id ) : $caption = wp_get_attachment_caption( $attachment_id ); ?>
                     <a href="<?php echo wp_get_attachment_image_url( $attachment_id, 'full' ); ?>"
-                       class="es-slider__item js-es-image" title="<?php echo $caption; ?>"
+                       class="es-slider__item js-es-image" title="<?php echo esc_attr( $caption ); ?>"
                        style="background-image: url('<?php echo wp_get_attachment_image_url( $attachment_id, 'full' ); ?>'); background-size: cover;"></a>
                 <?php endforeach; ?>
             <?php else : ?>

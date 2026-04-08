@@ -2077,17 +2077,25 @@ function es_get_ip_address() {
  *
  * @return string|void
  */
-function es_mulultilingual_translate_string($string) {
+function es_mulultilingual_translate_string( $string ) {
     // Checking the presence and activation of Polylang
-    if (function_exists('pll__')) {
-        $string = pll__($string);
+    if ( function_exists( 'pll__' ) ) {
+        $translated = pll__( $string );
+        if ( ! empty( $translated ) && $translated !== $string ) {
+            return $translated;
+        }
+    }
+
 	// Checking the presence and activation of WPML
-    } elseif (function_exists('icl_t')) {
-        $string = icl_t('Estatik', $string, '');
-    } else {
-		$string = __($string, 'es');
-	}
-    return $string;
+    if ( function_exists( 'icl_t' ) ) {
+        $translated = icl_t( 'Estatik', $string, '' );
+        if ( ! empty( $translated ) &&  $translated !== $string ) { 
+            return $translated; 
+        }
+    }
+
+    return __( $string, 'es' );
+
 }
 
 /**

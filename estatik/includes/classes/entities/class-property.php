@@ -39,6 +39,20 @@ class Es_Property extends Es_Post {
     }
 
     /**
+     * @return array
+     */
+    public static function get_entity_labels() {
+        $labels = [
+            'singular' => __( 'property', 'es' ),
+            'plural'   => __( 'properties', 'es' ),
+        ];
+    
+        $entity = static::get_entity_name();
+    
+        return apply_filters( "es_{$entity}_labels", $labels );
+    }
+
+    /**
 	 * Return entities fields list.
 	 *
 	 * @return array

@@ -43,7 +43,7 @@ if ( $collapsed_fields_active || $main_fields_active || ! empty( $attributes['is
         <?php if ( ! empty( $attributes['is_address_search_enabled'] ) ) : ?>
             <div class="es-search__address">
                 <label class="es-field es-field__address">
-                    <input type="text" name="address" class="js-es-address" placeholder="<?php echo $attributes['address_placeholder']; ?>">
+                    <input type="text" name="address" class="js-es-address" placeholder="<?php echo esc_attr( Es_Multilingual::instance()->translate( $attributes['address_placeholder'] ) ); ?>">
                 </label>
                 <button type="submit" class="es-btn es-btn--primary">
                     <span class="es-icon es-icon_search"></span>
@@ -58,7 +58,7 @@ if ( $collapsed_fields_active || $main_fields_active || ! empty( $attributes['is
                     <?php foreach ( $attributes['main_fields'] as $field ) :
                         $field_config = es_search_get_field_config( $field );
                         if ( !empty ( $field_config['frontend_visible_name'] ) ) {
-                            $label = es_mulultilingual_translate_string( $field_config['frontend_visible_name'] );
+                            $label = Es_Multilingual::instance()->translate( $field_config['frontend_visible_name'] );
                         } else {
                             $label = $field_config['label'];
                         }

@@ -13,7 +13,7 @@ class Estatik {
      * @var Estatik
      */
     protected static $_instance;
-    const VERSION = '4.3.0';
+    const VERSION = '4.3.1';
     const TYPE = 'simple';
 
     /**
@@ -121,6 +121,7 @@ class Estatik {
             'template-loader' => ES_PLUGIN_CLASSES . 'class-template-loader.php',
 
             'polylang' => ES_PLUGIN_CLASSES . 'class-polylang-init.php',
+            'multilingual' => ES_PLUGIN_CLASSES . 'class-multilingual.php',
 
             'block-categories' => ES_PLUGIN_CLASSES . 'blocks' . DS . 'class-block-categories.php',
             'blocks' => ES_PLUGIN_CLASSES . 'blocks' . DS . 'class-blocks.php',

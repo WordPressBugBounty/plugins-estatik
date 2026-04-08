@@ -1019,7 +1019,7 @@ function es_property_get_meta_fields() {
 
 			foreach ( $fields as $key => $field ) {
 				if ( ! empty( $field['field_description'] ) ) {
-					$field['field_description'] = es_mulultilingual_translate_string( $field['field_description'] );
+					$field['field_description'] = Es_Multilingual::instance()->translate( $field['field_description'] );
 				}
 
 				$property_meta_fields[ $key ] = $field;

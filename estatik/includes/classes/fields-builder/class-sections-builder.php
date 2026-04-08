@@ -149,6 +149,10 @@ class Es_Sections_Builder extends Es_Fields_Builder_Item {
 
 		$section_data['machine_name'] = sanitize_title( $section_data['machine_name'] );
 
+        if ( ! empty( $section_data['label'] ) && isset( $section_data['machine_name'] ) ) {
+            Es_Multilingual::instance()->register( $section_data['machine_name'],  $section_data['label'] );
+        }
+
 		if ( ! static::exists( $section_data['machine_name'] ) ) {
 			$is_executed = $wpdb->insert( $table_name, $section_data );
 		} else {

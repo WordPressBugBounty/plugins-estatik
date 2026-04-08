@@ -28,7 +28,7 @@
 	    <?php if ( ! empty( $attributes['is_address_search_enabled'] ) ) : ?>
             <div class="es-search__address">
                 <label class="es-field es-field__address">
-                    <input type="text" value="<?php echo esc_attr( filter_input( INPUT_GET, 'address' ) ); ?>" name="address" class="js-es-address" placeholder="<?php echo esc_attr( $attributes['address_placeholder'] ); ?>">
+                    <input type="text" value="<?php echo esc_attr( filter_input( INPUT_GET, 'address' ) ); ?>" name="address" class="js-es-address" placeholder="<?php echo esc_attr( Es_Multilingual::instance()->translate( $attributes['address_placeholder'] ) ); ?>">
                 </label>
                 <button type="submit" class="es-btn es-btn--primary es-btn--icon">
                     <span class="es-icon es-icon_search"></span>

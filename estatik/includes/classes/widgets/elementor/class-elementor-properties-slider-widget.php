@@ -59,6 +59,11 @@ class Elementor_Es_Properties_Slider_Widget extends Elementor_Es_Query_Widget {
 	protected function register_controls() {
 		/** @var Es_Request_Form_Shortcode $shortcode */
 		$shortcode = es_get_shortcode_instance( 'es_properties_slider' );
+        
+        if ( ! $shortcode ) {
+            return;
+        }
+
 		$attr = $shortcode->get_attributes();
 
 		$this->start_controls_section(

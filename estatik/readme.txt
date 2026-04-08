@@ -1,15 +1,16 @@
 ===Estatik Real Estate Plugin===
 Contributors: Estatik
 Donate link: http://estatik.net/
-Tags: real estate, idx, MLS, listings, RETS, webAPI, property, realtor
+Tags: real estate, idx, MLS, listings, RETS, webAPI, property, realtor, crm, hubspot
 Requires at least: 5.4
-Tested up to: 6.9
+Tested up to: 6.9.4
 Requires PHP: 5.6
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-You will love its clean design, simple use, and colorful themes. WordPress real estate plugin Estatik is a worthy choice for single agents and portals
+You will love its clean design, simple use, and colorful themes. WordPress real estate plugin Estatik is a worthy choice for single agents and portals.
+
 
 == Description ==
 
@@ -52,6 +53,7 @@ Visit [demo](http://major.estatik.net/) of Estatik plugin built with Elementor H
 
 
 * Agents & Agencies support (PRO)
+* HubSpot CRM Integration (PRO)
 * Agents & Agencies search (PRO)
 * Private fields (for Admin, Agents only) (PRO)
 * Front-end management for admin and users/agents (PRO)
@@ -167,6 +169,22 @@ Your listings and plugin configuration will be safe.
 
 
 == Changelog ==
+
+
+= 4.3.1 (April, 7, 2026) =
+
+NEW: Extended [es_agent_field] shortcode to support agents on single property pages (Pro & Premium)
+NEW: Gutenberg block for search form added (All versions)
+NEW: "search_by" field added to Gutenberg search blocks for keyword or address search (Pro & Premium)
+NEW: "Disable tel country code" option moved to the Request tab (Pro & Premium)
+NEW: Slider lazy load mode added to settings (All versions)
+NEW: New Elementor widget category added for Estatik single page widgets
+FIX: Sync deletion entities issue with ConnectMLS fixed (Premium)
+FIX: Multilingual string translation logic improved for Polylang and WPML (All versions)
+FIX: Compatibility issue with Estatik Pro during Elementor update fixed (All versions)
+FIX: Translation strings updated (All versions)
+FIX: Translation issues in popup fixed (All versions)
+FIX: MLS agent & agency media import issue fixed (Premium)
 
 
 = 4.3.0 (January, 30, 2026) =
@@ -1944,4 +1962,4 @@ Please read full description of new release [here](http://estatik.net/estatik-2-
 
 * Data manager is added.
 * Property listings shortcodes are added.
-* Search widget is added.
+* Search widget is added= 4.3.0 (January, 30, 2026) =

@@ -151,10 +151,15 @@ if ( ! function_exists( 'es_the_entity_share_popup' ) ) {
 	function es_the_entity_share_popup() {
 		$entity = es_get_entity_by_id( get_the_ID() );
 
-		es_load_template( 'front/popup/share.php', array(
-			'entity_plural' => es_get_entity_plural_name( $entity::get_entity_name() ),
-			'title' => sprintf( __( 'Share this %s', 'es' ), $entity::get_entity_name() ),
-		) );
+		$labels = $entity::get_entity_labels();
+
+        $singular = ! empty( $labels['singular'] ) ? $labels['singular'] : $entity::get_entity_name();
+        $plural   = ! empty( $labels['plural'] )   ? $labels['plural']   : es_get_entity_plural_name( $entity::get_entity_name() );
+
+        es_load_template( 'front/popup/share.php', array(
+            'entity_plural' => $plural,
+            'title' => sprintf( __( 'Share this %s', 'es' ), $singular ),
+        ) );
 	}
 }
 add_action( 'es_after_single_content', 'es_the_entity_share_popup' );

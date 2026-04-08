@@ -343,6 +343,15 @@ abstract class Es_Entity {
 		return null;
 	}
 
+    /**
+	 * Return entity labels.
+	 *
+	 * @return string
+	 */
+	public static function get_entity_labels() {
+		return null;
+	}
+
 	/**
 	 * Return entity type.
 	 *

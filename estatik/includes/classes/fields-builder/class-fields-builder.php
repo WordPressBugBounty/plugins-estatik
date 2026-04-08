@@ -376,18 +376,9 @@ class Es_Fields_Builder extends Es_Fields_Builder_Item {
 			$field_data['machine_name'] = static::get_unique_machine_name( $field_data['label'] );
 		}
 
-		if ( ! empty( $field_data['frontend_visible_name'] && isset ( $field_data['machine_name'] )) ) {
-			// Checking the presence and activation of Polylang 
-			if ( function_exists('pll_register_string') ) {
-				// Registering translation strings in Polylang
-					pll_register_string($field_data['machine_name'], $field_data['frontend_visible_name']);
-			}
-			// Checking the presence and activation of WPML
-			if ( function_exists('icl_register_string') ) {
-				// Registering translation strings in WPML
-				icl_register_string('Estatik', $field_data['machine_name'], $field_data['frontend_visible_name']);
-			}
-		}
+        if ( ! empty( $field_data['frontend_visible_name'] ) && isset( $field_data['machine_name'] ) ) {
+            Es_Multilingual::instance()->register( $field_data['machine_name'], $field_data['frontend_visible_name'] );
+        }
 
 		$field_data = apply_filters( 'es_fields_builder_save_field', $field_data, $is_new_field );
 

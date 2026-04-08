@@ -1664,6 +1664,10 @@ class Es_Settings_Container
 		static::$options = empty( static::$options ) ? array() : static::$options;
 		static::$options[ $name ] = $value;
 
+        if ( 'address_search_placeholder' == $name ) {
+            Es_Multilingual::instance()->register( $name, $value );
+        }
+
 		if ( 'language' == $name ) {
 			if ( get_locale() != $value && current_user_can( 'install_languages' ) ) {
 				try {

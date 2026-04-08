@@ -13,7 +13,7 @@
         Button,
     } = components;
 
-    const { attributes, fields, blockName, taxonomies } = window.ES_BLOCK_MY_LISTING;
+    const { attributes, fields, blockName, taxonomies } = window.ES_BLOCK_SEARCH_FORM;
 
     const FIELD_OPTIONS = Object.keys(fields || {}).map((value) => ({
         value,
@@ -33,9 +33,9 @@
     }, {});
 
     blocks.registerBlockType(blockName, {
-        title: "My Listing",
+        title: "Search Form",
         icon: {
-            src: "list-view",
+            src: "search",
             foreground: "#40916c",
         },
         category: "es-blocks",
@@ -70,33 +70,32 @@
                     /* =========================
                      * General
                      * ========================= */
+
                     el(
                         PanelBody,
-                        { title: "General", className: "es-block-panel es-my-listing-panel", initialOpen: true },
+                        { title: "General", className: "es-block-panel es-search-form-panel", initialOpen: false },
 
-                        el(ToggleControl, {
-                            label: "Show Page Title",
-                            checked: attrs.show_page_title,
-                            onChange: (val) => setAttributes({ show_page_title: val }),
+                        el(SelectControl, {
+                            label: "Search Type",
+                            value: attrs.search_type,
+                            options: [
+                                { label: "Main", value: "main" },
+                                { label: "Simple", value: "simple" },
+                                { label: "Advanced", value: "advanced" },
+                            ],
+                            onChange: (val) => setAttributes({ search_type: val }),
                         }),
 
                         el(TextControl, {
-                            label: "Page Title",
-                            value: attrs.page_title,
-                            onChange: (val) => setAttributes({ page_title: val }),
+                            label: "Search Title",
+                            value: attrs.title,
+                            onChange: (val) => setAttributes({ title: val }),
                         }),
 
-                        el(SelectControl, {
-                            label: "Layout",
-                            value: attrs.layout,
-                            options: [
-                                { label: "Grid 2", value: "grid-2" },
-                                { label: "Grid 3", value: "grid-3" },
-                                { label: "Grid 4", value: "grid-4" },
-                                { label: "List", value: "list" },
-                                { label: "Half map", value: "half_map" },
-                            ],
-                            onChange: (val) => setAttributes({ layout: val }),
+                        el(TextControl, {
+                            label: "Search Page ID",
+                            value: attrs.search_page_id,
+                            onChange: (val) => setAttributes({ search_page_id: val }),
                         })
                     ),
 
@@ -105,13 +104,7 @@
                      * ========================= */
                     el(
                         PanelBody,
-                        { title: "Behaviour", className: "es-block-panel es-my-listing-panel", initialOpen: false },
-
-                        el(ToggleControl, {
-                            label: "Enable Search",
-                            checked: attrs.enable_search,
-                            onChange: (val) => setAttributes({ enable_search: val }),
-                        }),
+                        { title: "Behaviour", className: "es-block-panel es-search-form-panel", initialOpen: false },
 
                         el(ToggleControl, {
                             label: "Enable Address Search",
@@ -149,7 +142,11 @@
                      * ========================= */
                     el(
                         PanelBody,
-                        { title: "Fields", className: "es-block-panel es-my-listing-panel es-block-panel--fields", initialOpen: true },
+                        {
+                            title: "Fields",
+                            className: "es-block-panel es-search-form-panel es-block-panel--fields",
+                            initialOpen: true,
+                        },
 
                         isSimpleMode &&
                             el(FormTokenField, {
@@ -204,118 +201,11 @@
                     ),
 
                     /* =========================
-                     * Search
-                     * ========================= */
-
-                    el(
-                        PanelBody,
-                        { title: "Search", className: "es-block-panel es-my-listing-panel", initialOpen: false },
-
-                        el(SelectControl, {
-                            label: "Search Type",
-                            value: attrs.search_type,
-                            options: [
-                                { label: "Main", value: "main" },
-                                { label: "Simple", value: "simple" },
-                                { label: "Advanced", value: "advanced" },
-                            ],
-                            onChange: (val) => setAttributes({ search_type: val }),
-                        }),
-
-                        el(TextControl, {
-                            label: "Search Page ID",
-                            value: attrs.search_page_id,
-                            onChange: (val) => setAttributes({ search_page_id: val }),
-                        }),
-                        
-                    ),
-
-                    /* =========================
-                     * Content
-                     * ========================= */
-                    el(
-                        PanelBody,
-                        { title: "Content", className: "es-block-panel es-my-listing-panel", initialOpen: false },
-
-                        el(TextControl, {
-                            label: "Posts Per Page",
-                            value: attrs.posts_per_page,
-                            onChange: (val) => setAttributes({ posts_per_page: val }),
-                        }),
-
-                        el(TextControl, {
-                            label: "Limit",
-                            value: attrs.limit,
-                            onChange: (val) => setAttributes({ limit: val }),
-                        })
-                    ),
-
-                    /* =========================
-                     * Pagination
-                     * ========================= */
-                    el(
-                        PanelBody,
-                        { title: "Pagination", className: "es-block-panel es-my-listing-panel", initialOpen: false },
-
-                        el(TextControl, {
-                            label: "Page Number",
-                            value: attrs.page_num,
-                            onChange: (val) => setAttributes({ page_num: val }),
-                        }),
-
-                        el(ToggleControl, {
-                            label: "Disable Navigation",
-                            checked: attrs.disable_navbar,
-                            onChange: (val) => setAttributes({ disable_navbar: val }),
-                        })
-                    ),
-
-                    /* =========================
-                     * Display Options
-                     * ========================= */
-                    el(
-                        PanelBody,
-                        { title: "Display Options", className: "es-block-panel es-my-listing-panel", initialOpen: false },
-
-                        el(ToggleControl, {
-                            label: "Show Sort",
-                            checked: attrs.show_sort,
-                            onChange: (val) => setAttributes({ show_sort: val }),
-                        }),
-
-                        el(ToggleControl, {
-                            label: "Show Total",
-                            checked: attrs.show_total,
-                            onChange: (val) => setAttributes({ show_total: val }),
-                        }),
-
-                        el(ToggleControl, {
-                            label: "Show Layout Switcher",
-                            checked: attrs.show_layouts,
-                            onChange: (val) => setAttributes({ show_layouts: val }),
-                        })
-                    ),
-
-                    /* =========================
-                     * Map
-                     * ========================= */
-                    el(
-                        PanelBody,
-                        { title: "Map", className: "es-block-panel es-my-listing-panel", initialOpen: false },
-
-                        el(ToggleControl, {
-                            label: "Show Map",
-                            checked: attrs.map_show,
-                            onChange: (val) => setAttributes({ map_show: val }),
-                        })
-                    ),
-
-                    /* =========================
                      * Query Filters (REPEATER)
                      * ========================= */
                     el(
                         PanelBody,
-                        { title: "Query Filters", className: "es-block-panel es-my-listing-panel", initialOpen: false },
+                        { title: "Query Filters", className: "es-block-panel es-search-form-panel", initialOpen: false },
 
                         queryKeys.length > 0 &&
                             el(
@@ -443,10 +333,22 @@
                     /* =========================
                      * Appearance
                      * ========================= */
-                    el(PanelBody, { title: "Appearance", className: "es-block-panel es-my-listing-panel", initialOpen: false })
+
+                    el(
+                        PanelBody,
+                        { title: "Appearance", className: "es-block-panel es-search-form-panel", initialOpen: false },
+
+                        el(ColorPicker, {
+                            color: attrs.background || "#ffffff",
+                            onChangeComplete: (value) => {
+                                setAttributes({ background: value.hex });
+                            },
+                            disableAlpha: true
+                        })
+                    ),
                 ),
 
-                el("strong", {}, attrs.title || "My Listing"),
+                el("strong", {}, attrs.title || "Search Form"),
                 el(
                     "p",
                     { style: { marginTop: "6px", opacity: 0.65 } },

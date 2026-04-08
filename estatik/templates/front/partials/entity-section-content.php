@@ -40,7 +40,7 @@ foreach ( $fields as $field => $field_info ) :
 
             <li class='<?php echo implode( " ", $class_list ); ?>'>
                 <?php if ( ! empty( $field_info['label'] ) ) :
-                    $label = ! empty( $field_info['frontend_visible_name'] ) ? es_mulultilingual_translate_string( $field_info['frontend_visible_name'] ) : ( ! empty( $field_info['id'] ) ? __( $field_info['label'], 'es' ) : $field_info['label'] ); ?>
+                    $label = ! empty( $field_info['frontend_visible_name'] ) ? Es_Multilingual::instance()->translate( $field_info['frontend_visible_name'] ) : ( ! empty( $field_info['id'] ) ? __( $field_info['label'], 'es' ) : $field_info['label'] ); ?>
                     <?php printf( "<span class='es-{$entity_name}-field__label'>%s<span class='es-{$entity_name}-field__sep'>:</span> </span>", $label );
                 endif;
 

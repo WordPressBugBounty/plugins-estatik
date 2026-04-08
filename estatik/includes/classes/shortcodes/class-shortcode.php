@@ -25,6 +25,7 @@ abstract class Es_Shortcode {
      * @param $attributes
      */
     public function merge_shortcode_attr( $attributes ) {
+        $attributes = add_magic_quotes( $attributes );
         $this->_attributes = wp_parse_args( $attributes, $this->get_default_attributes() );
     }
 

@@ -49,7 +49,7 @@ if ( ! function_exists( 'es_search_render_field' ) ) {
             $field_html = null;
 
             if ( !empty ( $field_config['frontend_visible_name'] ) ) {
-                $label = es_mulultilingual_translate_string( $field_config['frontend_visible_name'] );
+                $label = Es_Multilingual::instance()->translate( $field_config['frontend_visible_name'] );
             } else {
                 $label = $field_config['label'];
             }

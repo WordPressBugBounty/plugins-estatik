@@ -10,10 +10,10 @@
  */
 
 if ( empty( $args['ignore_search'] ) && ! empty( $args['search_form_selector'] ) ) : ?>
-    <div data-search-form-selector='<?php echo $args['search_form_selector']; ?>'>
+    <div data-search-form-selector='<?php echo esc_attr( $args['search_form_selector'] ); ?>'>
 <?php endif; ?>
 
-<div class="<?php echo $wrapper_class; ?>">
+<div class="<?php echo esc_attr( $wrapper_class ); ?>">
     <?php if ( ! empty( $search_form ) ) : ?>
         <div class="es-properties__search">
 	        <?php echo $search_form->get_content(); ?>
