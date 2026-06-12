@@ -1,7 +1,7 @@
 ===Estatik Real Estate Plugin===
 Contributors: Estatik
 Donate link: http://estatik.net/
-Tags: real estate, idx, MLS, listings, RETS, webAPI, property, realtor, crm, hubspot
+Tags: real estate, idx, MLS, listings, RETS, webAPI, property, realtor
 Requires at least: 5.4
 Tested up to: 6.9.4
 Requires PHP: 5.6
@@ -9,8 +9,7 @@ Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-You will love its clean design, simple use, and colorful themes. WordPress real estate plugin Estatik is a worthy choice for single agents and portals.
-
+You will love its clean design, simple use, and colorful themes. WordPress real estate plugin Estatik is a worthy choice for single agents and portals
 
 == Description ==
 
@@ -53,7 +52,6 @@ Visit [demo](http://major.estatik.net/) of Estatik plugin built with Elementor H
 
 
 * Agents & Agencies support (PRO)
-* HubSpot CRM Integration (PRO)
 * Agents & Agencies search (PRO)
 * Private fields (for Admin, Agents only) (PRO)
 * Front-end management for admin and users/agents (PRO)
@@ -92,7 +90,6 @@ Full list of shortcodes can be found [here](https://estatik.net/estatik-plugin-d
 
 
 = Translated into: =
-
 
 
 * Italian
@@ -152,6 +149,15 @@ You can compare all available versions here >> http://estatik.net/choose-your-ve
 With Estatik PRO or Premium version you get free support for 6 months (PRO) / 1 year (Premium) and for 1 website. Support for Simple free version is limited to WordPress forum. Please post your question here at Support forum, or contact us >> http://estatik.net/contact-us/ and we will help you with issues.
 
 
+
+= How can I import MLS listings using Estatik plugin? =
+
+
+
+We developed [Estatik Premium](https://estatik.net/product/estatik-premium-rets/) version for MLS listings import via RETS or RESO Web API. 
+
+
+
 = When I click on details page it says 404 Error: page not found. =
 
 
@@ -171,7 +177,22 @@ Your listings and plugin configuration will be safe.
 == Changelog ==
 
 
-= 4.3.1 (April, 7, 2026) =
+= 4.3.2 (June, 12, 2026) =
+
+NEW: Security improvements and fixes (All versions)
+NEW: New styles added for SiteOrigin Estatik widgets (All versions)
+NEW: Estatik slider and slideshow Gutenberg blocks added (Pro & Premium)
+NEW: Agent details section added (Pro & Premium)
+NEW: Added an ability to import multiple agents for a single listing (Premium)
+
+FIX: Sorting by agent name fixed on agents admin page (Pro & Premium)
+FIX: Email reminders for saved searches fixed (Pro & Premium)
+FIX: Framework switcher default value fix added (All versions)
+FIX: Lowest sq ft sorting fixed (All versions)
+FIX: Media import fix for query.ampre.ca (Premium)
+
+
+= 4.3.1 (April, 1, 2026) =
 
 NEW: Extended [es_agent_field] shortcode to support agents on single property pages (Pro & Premium)
 NEW: Gutenberg block for search form added (All versions)
@@ -179,6 +200,7 @@ NEW: "search_by" field added to Gutenberg search blocks for keyword or address s
 NEW: "Disable tel country code" option moved to the Request tab (Pro & Premium)
 NEW: Slider lazy load mode added to settings (All versions)
 NEW: New Elementor widget category added for Estatik single page widgets
+
 FIX: Sync deletion entities issue with ConnectMLS fixed (Premium)
 FIX: Multilingual string translation logic improved for Polylang and WPML (All versions)
 FIX: Compatibility issue with Estatik Pro during Elementor update fixed (All versions)
@@ -186,28 +208,28 @@ FIX: Translation strings updated (All versions)
 FIX: Translation issues in popup fixed (All versions)
 FIX: MLS agent & agency media import issue fixed (Premium)
 
-
 = 4.3.0 (January, 30, 2026) =
 
-NEW: HubSpot CRM integration added (Pro)
+NEW: HubSpot CRM integration added (Pro & Premium)
 NEW: Gutenberg block for displaying [es_my_listing] added (All versions)
-NEW: Price history functionality added (PRO)
+NEW: Price history functionality added (PRO & Premium)
 FIX: Default locations taxonomy link fixed (All versions)
 FIX: Conflict between Magnific Popup libraries fixed (All versions)
+FIX: MLS image import order fix added (Premium)
 
 
 = 4.2.0 (November, 28, 2025) =
 
 
-NEW: EPC & GES feature implemented (All versions)
-NEW: Mobile gallery for single property page implemented (All versions)
-NEW: Schema.org integrated for listings (All versions)
-NEW: Partially implemented Accessibility feature (All versions)
-NEW: Taxonomy terms edit link in data manager added (All versions)
-FIX: Properties hals map multiple instances js fix added (All versions)
-FIX: Local File Inclusion vulnerability fix added (All versions)
-FIX: Stored Cross-Site Scripting fix added (All versions)
-FIX: WP All Import images order fix added (All versions)
+NEW: EPC & GES feature implemented. (All versions).
+NEW: Mobile gallery for single property page implemented. (All versions).
+NEW: Schema.org integrated for listings (All versions).
+NEW: Partially implemented Accessibility feature (All versions).
+NEW: Taxonomy terms edit link in data manager added. (All versions).
+FIX: Properties hals map multiple instances js fix added. (All versions).
+FIX: Local File Inclusion vulnerability fix added (All versions).
+FIX: Stored Cross-Site Scripting fix added. (All versions).
+FIX: WP All Import images order fix added. (All versions).
 FIX: minor fixes
 
 
@@ -1962,4 +1984,4 @@ Please read full description of new release [here](http://estatik.net/estatik-2-
 
 * Data manager is added.
 * Property listings shortcodes are added.
-* Search widget is added= 4.3.0 (January, 30, 2026) =
+* Search widget is added.

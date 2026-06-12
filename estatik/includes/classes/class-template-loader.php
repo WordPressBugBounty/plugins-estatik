@@ -41,7 +41,7 @@ class Es_Template_Loader {
 	 * @return void
 	 */
 	public static function divi_post_content_loop_start() {
-		if ( class_exists( 'ET_Builder_Element' ) ) {
+		if ( class_exists( 'ET_Builder_Element' ) && method_exists( 'ET_Builder_Element', 'get_theme_builder_layout_id' ) ) {
 			$post_id = ET_Builder_Element::get_theme_builder_layout_id();
 			if ( $post_id && es_get_entity_by_id( $post_id ) ) {
 				static::$single_divi_template = true;
@@ -53,7 +53,7 @@ class Es_Template_Loader {
 	 * @return void
 	 */
 	public static function divi_post_content_loop_end() {
-		if ( class_exists( 'ET_Builder_Element' ) ) {
+		if ( class_exists( 'ET_Builder_Element' ) && method_exists( 'ET_Builder_Element', 'get_theme_builder_layout_id' ) ) {
 			$post_id = ET_Builder_Element::get_theme_builder_layout_id();
 			if ( $post_id && es_get_entity_by_id( $post_id ) ) {
 				static::$single_divi_template = false;

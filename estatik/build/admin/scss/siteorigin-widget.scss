@@ -1,0 +1,392 @@
+.so-content.panel-dialog {
+    $accent: #409e00;
+    $accent-hover: darken($accent, 7%);
+    $text-main: #374151;
+    $text-muted: #9ca3af;
+    $border: #e5e7eb;
+    $bg-light: #f9fafb;
+
+    .es-widget__form {
+        background: #ffffff;
+        border-radius: 12px;
+        padding: 24px;
+        border: 1px solid $border;
+
+        a:not(.js-es-delete-fields-item) {
+            display: inline-block;
+            padding: 10px 16px;
+            border-radius: 8px;
+            background: $accent;
+            color: #fff;
+            font-size: 13px;
+            text-decoration: none;
+            transition: 0.2s;
+            margin-top: 10px;
+
+            &:hover {
+                background: $accent-hover;
+            }
+        }
+    }
+
+    .es-field {
+        margin-bottom: 16px;
+
+        &__label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: $text-main;
+            margin-bottom: 8px;
+        }
+
+        &__description {
+            font-size: 12px;
+            color: $text-muted;
+            margin-top: 6px;
+            line-height: 1.4;
+        }
+
+        &__input {
+            width: 100%;
+            height: 42px;
+            padding: 0 14px;
+            border-radius: 8px;
+            border: 1px solid #d1d5db;
+            background: $bg-light;
+            font-size: 14px;
+            transition: all 0.2s ease;
+
+            &:focus {
+                border-color: $accent;
+                background: #fff;
+                outline: none;
+                box-shadow: 0 0 0 2px rgba(64, 158, 0, 0.1);
+            }
+        }
+
+        &--checkboxes {
+            padding: 14px;
+            border-radius: 10px;
+            border: 1px solid $border;
+            background: $bg-light;
+        }
+
+        &--checkbox {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            input[type="checkbox"] {
+                appearance: none;
+                -webkit-appearance: none;
+                width: 16px;
+                height: 16px;
+                border: 1px solid $border;
+                border-radius: 4px;
+                cursor: pointer;
+                position: relative;
+                margin-right: 10px;
+            
+                &:checked {
+                    background-color: $accent;
+                    border-color: $accent;
+            
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        top: 1px;
+                        left: 4px;
+                        width: 4px;
+                        height: 8px;
+                        border: solid #fff;
+                        border-width: 0 2px 2px 0;
+                        transform: rotate(45deg);
+                    }
+                }
+            }
+
+            .es-field__label {
+                margin: 0;
+                font-weight: 500;
+                font-size: 13px;
+                cursor: pointer;
+            }
+        }
+
+        &.es-field--radio-item-bordered {
+            margin-bottom: 6px;
+        }
+    }
+
+    .es-radio--bordered {
+        border: 1px solid $border;
+        border-radius: 10px;
+        padding: 8px;
+        background: $bg-light;
+        transition: 0.2s;
+        cursor: pointer;
+        margin-bottom: 10px;
+
+        &:hover {
+            border-color: $accent;
+            background: #fff;
+        }
+
+        input {
+            display: none;
+
+            &:checked + label {
+                color: $accent;
+
+                .es-icon {
+                    background: $accent;
+                    color: #fff;
+                    border-color: $accent;
+                }
+            }
+        }
+
+        label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 500;
+
+            .es-field__label {
+                margin-bottom: 0px;
+            }
+        }
+
+        .es-icon {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: 1px solid #d1d5db;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            transition: 0.2s;
+        }
+    }
+
+    .es-switcher {
+        position: relative;
+        display: inline-block;
+        width: 38px;
+        height: 20px;
+        margin-left: 8px;
+
+        input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+
+            &:checked + .es-switcher-slider {
+                background-color: $accent;
+            }
+
+            &:checked + .es-switcher-slider:before {
+                transform: translateX(16px);
+            }
+        }
+    }
+
+    .es-switcher-slider {
+        position: absolute;
+        inset: 0;
+        cursor: pointer;
+        background-color: #d1d5db;
+        border-radius: 999px;
+        transition: 0.25s;
+
+        &:before {
+            content: "";
+            position: absolute;
+            height: 14px;
+            width: 14px;
+            left: 3px;
+            top: 3px;
+            background: #fff;
+            border-radius: 50%;
+            transition: 0.25s;
+        }
+    }
+
+    select.es-field__input {
+        appearance: none;
+        background: $bg-light;
+        border: 1px solid #d1d5db;
+        border-radius: 8px;
+        height: 42px;
+        padding: 0 14px;
+        font-size: 14px;
+
+        &:focus {
+            border-color: $accent;
+            background: #fff;
+            outline: none;
+        }
+    }
+
+    .select2-container--default {
+        .select2-selection--multiple {
+            border-radius: 8px;
+            border: 1px solid #d1d5db;
+            min-height: 42px;
+            padding: 6px;
+            background: $bg-light;
+        }
+    }
+
+    .es-items {
+        margin: 12px 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .es-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: #f3f4f6;
+        border-radius: 8px;
+        padding: 8px 12px;
+        margin-bottom: 8px;
+        font-size: 13px;
+        transition: 0.2s;
+
+        &:hover {
+            background: #e5e7eb;
+        }
+
+        b {
+            font-weight: 600;
+        }
+
+        a {
+            color: $text-muted;
+
+            &:hover {
+                color: #ef4444;
+            }
+        }
+    }
+
+    .es-fields-list__selector {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    .es-btn {
+        padding: 8px 16px;
+        border-radius: 8px;
+        font-size: 13px;
+        border: none;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    .es-btn--secondary {
+        background: rgba($accent, 0.1);
+        color: $accent;
+        border: 1px solid rgba($accent, 0.3);
+
+        &:hover {
+            background: $accent;
+            color: #fff;
+            border-color: $accent;
+        }
+
+        &:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+    }
+
+    .es-listings-by-filter,
+    .es-listings-by-id {
+        padding: 16px;
+        border: 1px solid $border;
+        border-radius: 12px;
+        background: #ffffff;
+        margin-bottom: 22px;
+    }
+
+    h4 {
+        font-size: 14px;
+        font-weight: 600;
+        margin: 20px 0 12px;
+        color: $text-main;
+    }
+
+    hr {
+        border: none;
+        border-top: 1px solid $border;
+        margin: 20px 0;
+    }
+
+    input[type="number"] {
+        padding-right: 8px;
+    }
+
+    input::placeholder {
+        color: $text-muted;
+    }
+
+    .es-hidden {
+        display: none;
+    }
+
+    .js-es-delete-fields-item {
+        width: 18px;
+        height: 18px;
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+
+        .es-icon {
+            font-size: 0; 
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .es-icon::before,
+        .es-icon::after {
+            content: "";
+            position: absolute;
+            width: 12px;
+            height: 2px;
+            background: #9ca3af;
+            transition: 0.2s;
+            top: 50%;
+            left: 50%;
+            transform-origin: center;
+        }
+
+        .es-icon::before {
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+
+        .es-icon::after {
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+
+        &:hover .es-icon::before,
+        &:hover .es-icon::after {
+            background: #ef4444;
+        }
+    }
+}

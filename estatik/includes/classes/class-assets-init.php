@@ -14,6 +14,9 @@ class Es_Assets {
 		add_action( 'wp_enqueue_scripts', array( 'Es_Assets', 'register_global_assets' ) );
 		add_action( 'admin_enqueue_scripts', array( 'Es_Assets', 'register_global_assets' ) );
 
+        add_filter( 'siteorigin_panel_enqueue_admin_scripts', array( 'Es_Assets', 'register_siteorigin_widget_assets' ) );
+        add_filter( 'admin_enqueue_scripts', array( 'Es_Assets', 'register_upgrade_page_assets' ) );
+        
 		add_action( 'wp_enqueue_scripts', array( 'Es_Assets', 'frontend_assets' ) );
 		add_action( 'admin_enqueue_scripts', array( 'Es_Assets', 'admin_assets' ), 9 );
 
@@ -58,6 +61,14 @@ class Es_Assets {
 			wp_enqueue_script( 'es-admin' );
 		}
 	}
+
+    public static function register_siteorigin_widget_assets() {
+        wp_enqueue_style( 'es-admin-siteorigin-widget', ES_PLUGIN_URL .  'admin/css/siteorigin-widget.min.css', array(), Estatik::get_version() );
+    }
+
+    public static function register_upgrade_page_assets() {
+        wp_enqueue_style( 'es-admin-upgrade', ES_PLUGIN_URL .  'admin/css/upgrade-page.min.css', array(), Estatik::get_version() );
+    }
 
 	/**
 	 * Register global plugin assets.

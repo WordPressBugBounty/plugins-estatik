@@ -208,12 +208,34 @@ if ( ! function_exists( 'es_sort_dropdown' ) ) {
     function es_sort_dropdown( $sort ) {
         $sorting = ests( 'properties_sorting_options' );
 
+        if ( empty( $sorting ) ) {
+            return;
+        }
+    
+        $options = ests_selected( 'properties_sorting_options' );
+    
+        $area_unit = ests_label( 'area_unit' );
+    
+        if ( isset( $options['largest_sq_ft'] ) && !empty ( $area_unit ) ) {
+            $options['largest_sq_ft'] = sprintf(
+                __( 'Largest %s', 'es' ),
+                $area_unit
+            );
+        }
+    
+        if ( isset( $options['lowest_sq_ft'] ) && !empty ( $area_unit ) ) {
+            $options['lowest_sq_ft'] = sprintf(
+                __( 'Lowest %s', 'es' ),
+                $area_unit
+            );
+        }
+
         if ( ! empty( $sorting ) ) : ?>
             <div class="es-form">
                 <?php es_framework_field_render( 'sort', array(
                     'type' => 'select',
                     'value' => $sort,
-                    'options' => ests_selected( 'properties_sorting_options' ),
+                    'options' => $options,
                     'label' => __( 'Sort by', 'es' ),
                     'attributes' => array(
                         'class' => 'js-es-sort'
@@ -223,6 +245,7 @@ if ( ! function_exists( 'es_sort_dropdown' ) ) {
         <?php endif;
     }
 }
+
 add_action( 'es_sort_dropdown', 'es_sort_dropdown' );
 
 if ( ! function_exists( 'es_layouts' ) ) {
@@ -611,7 +634,9 @@ if ( ! function_exists( 'es_get_properties_query_args' ) ) {
                         ),
                         array(
                             'key' => 'es_property_area',
-                            'compare' => 'EXISTS',
+                            'value'   => 0,
+                            'compare' => '>=',
+                            'type'    => 'DECIMAL(15,2)',
                         ),
                     );
                     $query_args['orderby'] = array(
@@ -627,19 +652,21 @@ if ( ! function_exists( 'es_get_properties_query_args' ) ) {
                         'relation' => 'OR',
                         array(
                             'key' => 'es_property_area',
-                            'compare' => 'EXISTS',
+                            'compare' => 'NOT EXISTS',
                         ),
                         array(
                             'key' => 'es_property_area',
-                            'compare' => 'NOT EXISTS',
+                            'value' => 0,
+                            'compare' => '>=',
+                            'type' => 'DECIMAL(15,2)',
                         ),
                     );
+
                     $query_args['orderby'] = array(
-                        'meta_value_num' => 'DESC',
-                        'meta_value' => 'ASC',
+                        'meta_value_num' => 'ASC',
                     );
-        
-                    $query_args['order'] = 'DESC';
+
+                    $query_args['order'] = 'ASC';
                     break;
 
 			    case 'bedrooms':

@@ -309,6 +309,11 @@
             var $el = $( '.js-es-fixed-nav, .es-tabs__fields-builder .es-tabs__nav-inner' );
             var $window = $( this );
 
+
+            if ( window.innerWidth < 768 ) {
+                return;
+            }
+
             $el.each( function() {
                 var $one = $( this );
                 var height = $one.height();
@@ -369,6 +374,38 @@
             $.post( ajaxurl, { _ajax_nonce: Estatik.nonces.dismiss_notice_nonce,
                 notice: notice, action: 'es_dismiss_notices' } );
         } );
+    } );
+
+    $( document ).on( 'click', '.es-upgrade__promo-copy', function() {
+
+        var $button = $( this );
+
+        var code = $button
+            .siblings( '.es-upgrade__promo-code' )
+            .text()
+            .trim();
+
+        if ( navigator.clipboard ) {
+            navigator.clipboard.writeText( code );
+        } else {
+            var input = document.createElement( 'input' );
+
+            input.value = code;
+
+            document.body.appendChild( input );
+
+            input.select();
+
+            document.execCommand( 'copy' );
+
+            document.body.removeChild( input );
+        }
+
+        $button.html(
+            '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">' +
+                '<path d="M5 10L8.5 13.5L15 7" stroke="#4CAF50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>' +
+            '</svg>'
+        );
     } );
 
     window.Estatik_Admin = Estatik_Admin;

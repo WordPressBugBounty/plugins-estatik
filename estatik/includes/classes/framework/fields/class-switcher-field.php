@@ -24,7 +24,7 @@ class Es_Framework_Switcher_Field extends Es_Framework_Field {
 		$hidden['attributes'] = array();
 		$hidden['type'] = 'hidden';
 		$hidden['attributes']['name'] = $config['attributes']['name'];
-		$hidden['value'] = '';
+        $hidden['value'] = isset( $config['default_value'] ) && strlen( $config['default_value'] ) ? $config['default_value'] : '';
 		$hidden['attributes']['value'] = '';
 		$hidden['attributes']['id'] = empty( $hidden['attributes']['id'] ) ? $this->_field_config['attributes']['id'] : $hidden['attributes']['id'];
 		$hidden['attributes']['id'] .= '-hidden';

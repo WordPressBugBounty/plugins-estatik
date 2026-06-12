@@ -13,7 +13,7 @@ class Estatik {
      * @var Estatik
      */
     protected static $_instance;
-    const VERSION = '4.3.1';
+    const VERSION = '4.3.2';
     const TYPE = 'simple';
 
     /**
@@ -86,6 +86,7 @@ class Estatik {
             'properties-archive-page' => ES_PLUGIN_CLASSES . DS . 'pages' . DS . 'admin' . DS . 'class-properties-archive-page.php',
             'demo-page' => ES_PLUGIN_CLASSES . DS . 'pages' . DS . 'admin' . DS . 'class-demo-page.php',
             'migration-page' => ES_PLUGIN_CLASSES . DS . 'pages' . DS . 'admin' . DS . 'class-migration-page.php',
+            'upgrade-page' => ES_PLUGIN_CLASSES . DS . 'pages' . DS . 'admin' . DS . 'class-upgrade-page.php',
 
             ES_PLUGIN_CLASSES . DS . 'helpers' . DS . 'interface-container.php',
             ES_PLUGIN_CLASSES . DS . 'helpers' . DS . 'class-user-container.php',

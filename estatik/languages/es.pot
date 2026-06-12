@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Estatik Simple\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-05 09:26+0000\n"
+"POT-Creation-Date: 2026-03-18 10:41+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -166,11 +166,11 @@ msgstr ""
 #: includes/classes/class-admin-menu.php:61
 #: includes/classes/class-admin-menu.php:62
 #: templates/admin/properties-archive/header.php:7
-#: includes/classes/pages/admin/class-dashboard-page.php:1740
+#: includes/classes/pages/admin/class-dashboard-page.php:1761
 msgid "Add new property"
 msgstr ""
 
-#: includes/classes/entities/class-property.php:344
+#: includes/classes/entities/class-property.php:358
 msgid "Add open house"
 msgstr ""
 
@@ -201,7 +201,7 @@ msgid "Added %s ago"
 msgstr ""
 
 #: includes/classes/class-settings-container.php:1153
-#: includes/classes/entities/class-property.php:504
+#: includes/classes/entities/class-property.php:518
 #: includes/classes/pages/admin/class-properties-archive-page.php:405
 msgid "Address"
 msgstr ""
@@ -210,7 +210,7 @@ msgstr ""
 msgid "Address component"
 msgstr ""
 
-#: includes/classes/entities/class-property.php:688
+#: includes/classes/entities/class-property.php:702
 msgid "Address components"
 msgstr ""
 
@@ -295,7 +295,7 @@ msgstr ""
 msgid "After with space 100 {sign}"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1757
+#: includes/classes/pages/admin/class-dashboard-page.php:1778
 #: templates/admin/demo/steps/step3.php:66
 msgid "Agencies"
 msgstr ""
@@ -316,7 +316,7 @@ msgstr ""
 msgid "Agent registration page"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1750
+#: includes/classes/pages/admin/class-dashboard-page.php:1771
 #: templates/admin/demo/steps/step3.php:62
 msgid "Agents"
 msgstr ""
@@ -329,7 +329,7 @@ msgstr ""
 msgid "Air conditioning"
 msgstr ""
 
-#: includes/classes/entities/class-property.php:103
+#: includes/classes/entities/class-property.php:117
 msgid "All"
 msgstr ""
 
@@ -337,7 +337,7 @@ msgstr ""
 msgid "ALL - Albanian Lek"
 msgstr ""
 
-#: includes/classes/entities/class-property.php:81
+#: includes/classes/entities/class-property.php:95
 msgid "All categories"
 msgstr ""
 
@@ -347,7 +347,7 @@ msgstr ""
 msgid "All changes saved."
 msgstr ""
 
-#: includes/classes/entities/class-property.php:125
+#: includes/classes/entities/class-property.php:139
 msgid "All home types"
 msgstr ""
 
@@ -363,7 +363,7 @@ msgstr ""
 msgid "All sign up options"
 msgstr ""
 
-#: includes/classes/entities/class-property.php:148
+#: includes/classes/entities/class-property.php:162
 msgid "All statuses"
 msgstr ""
 
@@ -398,7 +398,7 @@ msgid "AMD - Armenian Dram"
 msgstr ""
 
 #: includes/classes/class-taxonomies.php:184
-#: includes/classes/entities/class-property.php:783
+#: includes/classes/entities/class-property.php:797
 msgid "Amenities"
 msgstr ""
 
@@ -471,7 +471,7 @@ msgstr ""
 msgid "Are you sure you want to delete <b>%s</b> Option?"
 msgstr ""
 
-#: includes/classes/entities/class-property.php:274
+#: includes/classes/entities/class-property.php:288
 msgid "Area"
 msgstr ""
 
@@ -485,7 +485,7 @@ msgid "Area units"
 msgstr ""
 
 #. %s: units.
-#: includes/classes/entities/class-property.php:274
+#: includes/classes/entities/class-property.php:288
 #, php-format
 msgid "Area, %s"
 msgstr ""
@@ -552,11 +552,11 @@ msgstr ""
 msgid "Autocomplete will be done with data used on your database"
 msgstr ""
 
-#: includes/classes/widgets/elementor/class-elementor-properties-slider-widget.php:98
+#: includes/classes/widgets/elementor/class-elementor-properties-slider-widget.php:103
 msgid "Autoplay"
 msgstr ""
 
-#: includes/classes/widgets/elementor/class-elementor-properties-slider-widget.php:104
+#: includes/classes/widgets/elementor/class-elementor-properties-slider-widget.php:109
 msgid "Autoplay timeout"
 msgstr ""
 
@@ -585,8 +585,8 @@ msgid "Back to the listing"
 msgstr ""
 
 #: includes/classes/widgets/class-search-form-widget.php:104
-#: includes/classes/widgets/elementor/class-elementor-search-form-widget.php:84
-#: includes/classes/widgets/elementor/class-elementor-request-form-widget.php:105
+#: includes/classes/widgets/elementor/class-elementor-search-form-widget.php:89
+#: includes/classes/widgets/elementor/class-elementor-request-form-widget.php:110
 msgid "Background color"
 msgstr ""
 
@@ -600,11 +600,11 @@ msgstr ""
 
 #: includes/classes/class-taxonomies.php:145
 #: includes/classes/class-taxonomies.php:146
-#: includes/classes/entities/class-property.php:841
+#: includes/classes/entities/class-property.php:855
 msgid "Basement"
 msgstr ""
 
-#: includes/classes/entities/class-property.php:179
+#: includes/classes/entities/class-property.php:193
 msgid "Basic facts"
 msgstr ""
 
@@ -612,14 +612,14 @@ msgstr ""
 msgid "Basics"
 msgstr ""
 
-#: includes/functions.php:97 includes/classes/entities/class-property.php:193
+#: includes/functions.php:97 includes/classes/entities/class-property.php:207
 msgid "bath"
 msgid_plural "baths"
 msgstr[0] ""
 msgstr[1] ""
 
 #: includes/classes/class-settings-container.php:231
-#: includes/classes/entities/class-property.php:188
+#: includes/classes/entities/class-property.php:202
 msgid "Bathrooms"
 msgstr ""
 
@@ -627,7 +627,7 @@ msgstr ""
 msgid "Baths"
 msgstr ""
 
-#: includes/classes/entities/class-property.php:194
+#: includes/classes/entities/class-property.php:208
 msgid "baths"
 msgstr ""
 
@@ -639,14 +639,14 @@ msgstr ""
 msgid "BDT - Bangladesh taka"
 msgstr ""
 
-#: includes/functions.php:93 includes/classes/entities/class-property.php:170
+#: includes/functions.php:93 includes/classes/entities/class-property.php:184
 msgid "bed"
 msgid_plural "beds"
 msgstr[0] ""
 msgstr[1] ""
 
 #: includes/classes/class-settings-container.php:230
-#: includes/classes/entities/class-property.php:176
+#: includes/classes/entities/class-property.php:190
 msgid "Bedrooms"
 msgstr ""
 
@@ -654,7 +654,7 @@ msgstr ""
 msgid "Beds"
 msgstr ""
 
-#: includes/classes/entities/class-property.php:171
+#: includes/classes/entities/class-property.php:185
 msgid "beds"
 msgstr ""
 
@@ -738,11 +738,11 @@ msgstr ""
 msgid "Built-up"
 msgstr ""
 
-#: includes/classes/widgets/elementor/class-elementor-authentication-widget.php:76
+#: includes/classes/widgets/elementor/class-elementor-authentication-widget.php:81
 msgid "Buyer register buttons"
 msgstr ""
 
-#: includes/classes/widgets/elementor/class-elementor-authentication-widget.php:75
+#: includes/classes/widgets/elementor/class-elementor-authentication-widget.php:80
 msgid "Buyer register form"
 msgstr ""
 
@@ -762,7 +762,7 @@ msgstr ""
 msgid "BWP - Pula"
 msgstr ""
 
-#: includes/classes/entities/class-property.php:330
+#: includes/classes/entities/class-property.php:344
 msgid "By appointment only"
 msgstr ""
 
@@ -806,12 +806,12 @@ msgstr ""
 msgid "CAD - Canadian Dollar"
 msgstr ""
 
-#: includes/classes/widgets/elementor/class-elementor-half-map-widget.php:81
+#: includes/classes/widgets/elementor/class-elementor-half-map-widget.php:86
 msgid "Calculate full width using JavaScript"
 msgstr ""
 
 #: includes/loop-functions.php:53
-#: includes/classes/entities/class-property.php:481
+#: includes/classes/entities/class-property.php:495
 #: templates/admin/properties-archive/quick-edit.php:137
 msgid "Call for price"
 msgstr ""
@@ -844,12 +844,12 @@ msgstr ""
 
 #: includes/classes/class-taxonomies.php:40
 #: includes/classes/pages/admin/class-data-manager-page.php:372
-#: includes/classes/widgets/elementor/class-elementor-query.php:53
+#: includes/classes/widgets/elementor/class-elementor-query.php:58
 msgid "Categories"
 msgstr ""
 
 #: includes/classes/class-taxonomies.php:41
-#: includes/classes/entities/class-property.php:85
+#: includes/classes/entities/class-property.php:99
 #: templates/admin/properties-archive/quick-edit.php:41
 #: templates/admin/properties-archive/filter.php:31
 #: templates/admin/properties-archive/quick-edit-bulk.php:37
@@ -878,2014 +878,2039 @@ msgstr ""
 msgid "Changelog"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:44
-msgctxt "changelog"
-msgid " (All versions)"
-msgstr ""
-
-#: includes/classes/pages/admin/class-dashboard-page.php:649
+#: includes/classes/pages/admin/class-dashboard-page.php:670
 msgctxt "changelog"
 msgid ""
 "\"Call for price\" option cancellation upon saving listing fixed  (All "
 "versions)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:615
+#: includes/classes/pages/admin/class-dashboard-page.php:636
 msgctxt "changelog"
 msgid ""
 "\"Clear all filters\" button to expanded filter in mobile version added (All "
 "versions)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:41
-msgctxt "changelog"
-msgid ", 2025"
-msgstr ""
-
-#: includes/classes/pages/admin/class-dashboard-page.php:1151
+#: includes/classes/pages/admin/class-dashboard-page.php:1172
 msgctxt "changelog"
 msgid "[es_property_map] shortcode added"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:126
+#: includes/classes/pages/admin/class-dashboard-page.php:147
 msgctxt "changelog"
 msgid "[es_property_map] shortcode attributes fixed (All versions)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:509
+#: includes/classes/pages/admin/class-dashboard-page.php:530
 msgctxt "changelog"
 msgid "Ability to add logical operator to checkboxes added (All versions)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:65
+#: includes/classes/pages/admin/class-dashboard-page.php:86
 msgctxt "changelog"
 msgid "Accessibility feature partially implemented (All versions)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1288
+#: includes/classes/pages/admin/class-dashboard-page.php:1309
 msgctxt "changelog"
 msgid "Added bulk actions for admin requests archive."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:735
+#: includes/classes/pages/admin/class-dashboard-page.php:756
 msgctxt "changelog"
 msgid "Added collapsed description option for agent & agency single page"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:808
+#: includes/classes/pages/admin/class-dashboard-page.php:829
 msgctxt "changelog"
 msgid ""
 "Added map_show=\"all\" attribute for es_my_listing shortcode with half map "
 "layout."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1625
+#: includes/classes/pages/admin/class-dashboard-page.php:1646
 msgctxt "changelog"
 msgid "Added min & max map zoom setting fields"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:723
+#: includes/classes/pages/admin/class-dashboard-page.php:744
 msgctxt "changelog"
 msgid "Added MLS Classes support for raprets MLS Provider"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1490
+#: includes/classes/pages/admin/class-dashboard-page.php:1511
 msgctxt "changelog"
 msgid ""
 "Added new attribute named \"default\" in [es_property_field] shortcode for "
 "empty property fields."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:934
+#: includes/classes/pages/admin/class-dashboard-page.php:955
 msgctxt "changelog"
 msgid "Added new email settings fields."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1486
+#: includes/classes/pages/admin/class-dashboard-page.php:1507
 msgctxt "changelog"
 msgid "Added new option for disable tel country code field."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1506
+#: includes/classes/pages/admin/class-dashboard-page.php:1527
 msgctxt "changelog"
 msgid "Added new plugin translations."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1510
+#: includes/classes/pages/admin/class-dashboard-page.php:1531
 msgctxt "changelog"
 msgid "Added new settings for manage PDF fields in Fields Builder."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:812
+#: includes/classes/pages/admin/class-dashboard-page.php:833
 msgctxt "changelog"
 msgid "Added option for change Open House time format."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:792
+#: includes/classes/pages/admin/class-dashboard-page.php:813
 msgctxt "changelog"
 msgid "Added option for disable property carousel."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:804
+#: includes/classes/pages/admin/class-dashboard-page.php:825
 msgctxt "changelog"
 msgid "Added recaptcha for Login and Reset password forms."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:832
+#: includes/classes/pages/admin/class-dashboard-page.php:853
 msgctxt "changelog"
 msgid "Added scripts & styles versions in enqueue\\register functions."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:942
+#: includes/classes/pages/admin/class-dashboard-page.php:963
 msgctxt "changelog"
 msgid "Added search support for es_parking, es_roof etc fields."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:800
+#: includes/classes/pages/admin/class-dashboard-page.php:821
 msgctxt "changelog"
 msgid "Added url slugs for plugin taxonomies."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1050
+#: includes/classes/pages/admin/class-dashboard-page.php:1071
 msgctxt "changelog"
 msgid "Added video field import support for WP All Import plugin."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:966
+#: includes/classes/pages/admin/class-dashboard-page.php:987
 msgctxt "changelog"
 msgid "Added zoom level option for single property page map."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:407
+#: includes/classes/pages/admin/class-dashboard-page.php:428
 msgctxt "changelog"
 msgid "Additional Currencies added (Pro & Premium)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1328
+#: includes/classes/pages/admin/class-dashboard-page.php:1349
 msgctxt "changelog"
 msgid "Admin properties archive pagination fixed."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1344
+#: includes/classes/pages/admin/class-dashboard-page.php:1365
 msgctxt "changelog"
 msgid "Admin widgets broken page fixed."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1646
+#: includes/classes/pages/admin/class-dashboard-page.php:1667
 msgctxt "changelog"
 msgid "Agencies support added"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:570
+#: includes/classes/pages/admin/class-dashboard-page.php:591
 msgctxt "changelog"
 msgid "Agency creation in subscription agent account added (PRO & Premium)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:289
+#: includes/classes/pages/admin/class-dashboard-page.php:310
 msgctxt "changelog"
 msgid "Agency logo in property boxes added (Pro & Premium)."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1429
+#: includes/classes/pages/admin/class-dashboard-page.php:1450
 msgctxt "changelog"
 msgid "Agent & agencies enabler switcher fix added."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:888
+#: includes/classes/pages/admin/class-dashboard-page.php:909
 msgctxt "changelog"
 msgid "Agent avatar fixed."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1336
+#: includes/classes/pages/admin/class-dashboard-page.php:1357
 msgctxt "changelog"
 msgid "Agent description css fix added."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:637
+#: includes/classes/pages/admin/class-dashboard-page.php:658
 msgctxt "changelog"
 msgid "Agent Logout link fixed  (PRO & Premium)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:297
+#: includes/classes/pages/admin/class-dashboard-page.php:318
 msgctxt "changelog"
 msgid "Agent profile fields order fix added. (Pro & Premium)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:710
+#: includes/classes/pages/admin/class-dashboard-page.php:731
 msgctxt "changelog"
 msgid "Agent profile links issue fixed."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:706
+#: includes/classes/pages/admin/class-dashboard-page.php:727
 msgctxt "changelog"
 msgid "Agent saving issue fixed."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1312
+#: includes/classes/pages/admin/class-dashboard-page.php:1333
 msgctxt "changelog"
 msgid "Agent tel saving fix added."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:122
+#: includes/classes/pages/admin/class-dashboard-page.php:143
 msgctxt "changelog"
 msgid "Agents & Agencies search shortcode warnings fixed (Pro & Premium)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1179
+#: includes/classes/pages/admin/class-dashboard-page.php:1200
 msgctxt "changelog"
 msgid "Agents order in Request form fixed"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1666
+#: includes/classes/pages/admin/class-dashboard-page.php:1687
 msgctxt "changelog"
 msgid "AJAX map search added"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:338
+#: includes/classes/pages/admin/class-dashboard-page.php:359
 msgctxt "changelog"
 msgid "Ajax search for lookup MLS fields added (Premium)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1010
+#: includes/classes/pages/admin/class-dashboard-page.php:1031
 msgctxt "changelog"
 msgid "Appointments deletion fix added."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1260
+#: includes/classes/pages/admin/class-dashboard-page.php:1281
 msgctxt "changelog"
 msgid "appsecret_proof argument added for Facebook auth."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1087
+#: includes/classes/pages/admin/class-dashboard-page.php:1108
 msgctxt "changelog"
 msgid "Appsecret_proof for facebook auth added"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:679
+#: includes/classes/pages/admin/class-dashboard-page.php:700
 msgctxt "changelog"
 msgid "April, 08, 2024"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1257
+#: includes/classes/pages/admin/class-dashboard-page.php:1278
 msgctxt "changelog"
 msgid "April, 17, 2023"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:382
+#: includes/classes/pages/admin/class-dashboard-page.php:403
 msgctxt "changelog"
 msgid "Attachments deletion fix added (All versions)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:502
+#: includes/classes/pages/admin/class-dashboard-page.php:523
 msgctxt "changelog"
 msgid "August, 19, 2024"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:140
+#: includes/classes/pages/admin/class-dashboard-page.php:161
 msgctxt "changelog"
 msgid "August, 6, 2025"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:574
+#: includes/classes/pages/admin/class-dashboard-page.php:595
 msgctxt "changelog"
 msgid "Authors attribute added to shortcode [es_my_listing] (All versions)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:962
+#: includes/classes/pages/admin/class-dashboard-page.php:983
 msgctxt "changelog"
 msgid "Auto assign agent to agency implemented for MLS Import."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:285
+#: includes/classes/pages/admin/class-dashboard-page.php:306
 msgctxt "changelog"
 msgid "Autocomplete HTML attr for estatik fields added (All versions)."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:268
+#: includes/classes/pages/admin/class-dashboard-page.php:289
 msgctxt "changelog"
 msgid "Autoconfig for MLSGrid v2 refactored. (Premium)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:641
+#: includes/classes/pages/admin/class-dashboard-page.php:662
 msgctxt "changelog"
 msgid "Automatic data input during authorization fixed  (All versions)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:950
+#: includes/classes/pages/admin/class-dashboard-page.php:971
 msgctxt "changelog"
 msgid "Back button on compare page css fix added."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:657
+#: includes/classes/pages/admin/class-dashboard-page.php:678
 msgctxt "changelog"
 msgid "Bulk selection issue in admin panel fixed  (All versions)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1658
+#: includes/classes/pages/admin/class-dashboard-page.php:1679
 msgctxt "changelog"
 msgid "Buyer's & agent's profiles upgraded"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:998
+#: includes/classes/pages/admin/class-dashboard-page.php:1019
 msgctxt "changelog"
 msgid "Buyers migration fix added."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1575
+#: includes/classes/pages/admin/class-dashboard-page.php:1596
 msgctxt "changelog"
 msgid "Captcha issues fixed"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:464
+#: includes/classes/pages/admin/class-dashboard-page.php:485
 msgctxt "changelog"
 msgid "Checkboxes for bulk actions in admin panel fix added (All versions)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1276
+#: includes/classes/pages/admin/class-dashboard-page.php:1297
 msgctxt "changelog"
 msgid "City field set as multiple in estatik search widget."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1207
+#: includes/classes/pages/admin/class-dashboard-page.php:1228
 msgctxt "changelog"
 msgid "Comma separation for ‘city’ values in es_my_listing shortcode fixed"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:106
+#: includes/classes/pages/admin/class-dashboard-page.php:127
 msgctxt "changelog"
 msgid "Common CSS classes added in breadcrumbs (All versions)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1654
+#: includes/classes/pages/admin/class-dashboard-page.php:1675
 msgctxt "changelog"
 msgid "Compare feature added"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1163
+#: includes/classes/pages/admin/class-dashboard-page.php:1184
 msgctxt "changelog"
 msgid "Compare listings container fix added."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:309
+#: includes/classes/pages/admin/class-dashboard-page.php:330
 msgctxt "changelog"
 msgid "Compare tooltip text color fixed (All versions)."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1235
+#: includes/classes/pages/admin/class-dashboard-page.php:60
+msgctxt "changelog"
+msgid "Conflict between Magnific Popup libraries fixed (All versions)"
+msgstr ""
+
+#: includes/classes/pages/admin/class-dashboard-page.php:1256
 msgctxt "changelog"
 msgid "Contacts field fatal error fixed"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:439
+#: includes/classes/pages/admin/class-dashboard-page.php:460
 msgctxt "changelog"
 msgid "Contains MLS operator fixed (Premium)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1425
+#: includes/classes/pages/admin/class-dashboard-page.php:1446
 msgctxt "changelog"
 msgid "CSS fix for MLS password field added."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1115
+#: includes/classes/pages/admin/class-dashboard-page.php:1136
 msgctxt "changelog"
 msgid "Currency code display support added"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1026
+#: includes/classes/pages/admin/class-dashboard-page.php:1047
 msgctxt "changelog"
 msgid "Data manager fixes added."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1239
+#: includes/classes/pages/admin/class-dashboard-page.php:1260
 msgctxt "changelog"
 msgid "Data Manager Icon uploader bug fixed"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1674
+#: includes/classes/pages/admin/class-dashboard-page.php:1695
 msgctxt "changelog"
 msgid "Data Manager improved"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:404
+#: includes/classes/pages/admin/class-dashboard-page.php:425
 msgctxt "changelog"
 msgid "December, 11, 2024"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:777
+#: includes/classes/pages/admin/class-dashboard-page.php:798
 msgctxt "changelog"
 msgid "December, 13, 2023"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1572
+#: includes/classes/pages/admin/class-dashboard-page.php:1593
 msgctxt "changelog"
 msgid "December, 25, 2022"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1091
+#: includes/classes/pages/admin/class-dashboard-page.php:1112
 msgctxt "changelog"
 msgid "Default archive page disable option added"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:260
+#: includes/classes/pages/admin/class-dashboard-page.php:56
+msgctxt "changelog"
+msgid "Default locations taxonomy link fixed (All versions)"
+msgstr ""
+
+#: includes/classes/pages/admin/class-dashboard-page.php:281
 msgctxt "changelog"
 msgid "Default placeholder for address components added. (Pro & Premium)."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1502
+#: includes/classes/pages/admin/class-dashboard-page.php:1523
 msgctxt "changelog"
 msgid ""
 "Deleted formatters for bathrooms, bedrooms fields on single property page."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1409
+#: includes/classes/pages/admin/class-dashboard-page.php:1430
 msgctxt "changelog"
 msgid "Deletion of child automatic imports implemented."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:159
+#: includes/classes/pages/admin/class-dashboard-page.php:180
 msgctxt "changelog"
 msgid "Disabled remote images option for MLSGRID provider (Premium)."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:513
+#: includes/classes/pages/admin/class-dashboard-page.php:534
 msgctxt "changelog"
 msgid ""
 "Display of \"Rent Period\" field has been corrected for agents (PRO & "
 "Premium)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:521
+#: includes/classes/pages/admin/class-dashboard-page.php:542
 msgctxt "changelog"
 msgid "Display of archive page \"tags\" fixed (All versions)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:236
+#: includes/classes/pages/admin/class-dashboard-page.php:257
 msgctxt "changelog"
 msgid "DMQL query fixed (Premium)."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1111
+#: includes/classes/pages/admin/class-dashboard-page.php:1132
 msgctxt "changelog"
 msgid "Drop-down fields placeholder to search form added"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1473
+#: includes/classes/pages/admin/class-dashboard-page.php:1494
 msgctxt "changelog"
 msgid "Duplicated label for phone field deleted."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1308
+#: includes/classes/pages/admin/class-dashboard-page.php:1329
 msgctxt "changelog"
 msgid "Duplicated machine name for fb fields & sections fix added."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:110
+#: includes/classes/pages/admin/class-dashboard-page.php:131
 msgctxt "changelog"
 msgid "Duplicated media requests for MLSGRID provider fixed (Premium)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:751
+#: includes/classes/pages/admin/class-dashboard-page.php:772
 msgctxt "changelog"
 msgid "Duplicated taxonomies in admin property form fix added"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:69
+#: includes/classes/pages/admin/class-dashboard-page.php:90
 msgctxt "changelog"
 msgid "Edit link for taxonomy terms added in Data Manager (All versions)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1433
+#: includes/classes/pages/admin/class-dashboard-page.php:1454
 msgctxt "changelog"
 msgid "Elementor listings widget filter fix added."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1690
+#: includes/classes/pages/admin/class-dashboard-page.php:1711
 msgctxt "changelog"
 msgid "Elementor Support improved"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:53
+#: includes/classes/pages/admin/class-dashboard-page.php:74
 msgctxt "changelog"
 msgid "EPC & GES features added (All versions)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1401
+#: includes/classes/pages/admin/class-dashboard-page.php:1422
 msgctxt "changelog"
 msgid ""
 "es_before_single_wrapper, es_after_single_wrapper actions for estatik single "
 "templates added"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1227
+#: includes/classes/pages/admin/class-dashboard-page.php:1248
 msgctxt "changelog"
 msgid "es_get_agents_list function allowed memory size error fixed"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:978
+#: includes/classes/pages/admin/class-dashboard-page.php:999
 msgctxt "changelog"
 msgid "es_get_contact_link function php warning fixed."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1183
+#: includes/classes/pages/admin/class-dashboard-page.php:1204
 msgctxt "changelog"
 msgid "es_the_formatted_field $before, $after variables for empty value fixed"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:171
+#: includes/classes/pages/admin/class-dashboard-page.php:192
 msgctxt "changelog"
 msgid "esc_attr added for plugin inputs (All versions)."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:378
+#: includes/classes/pages/admin/class-dashboard-page.php:399
 msgctxt "changelog"
 msgid "Estatik Elementor widgets switcher saving fix added (All versions)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1703
+#: includes/classes/pages/admin/class-dashboard-page.php:1724
 msgctxt "changelog"
 msgid "Estatik settings php warning fixed (All versions)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:476
+#: includes/classes/pages/admin/class-dashboard-page.php:497
 msgctxt "changelog"
 msgid "et_builder_is_enabled function conflict fixed"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:682
+#: includes/classes/pages/admin/class-dashboard-page.php:703
 msgctxt "changelog"
 msgid "Extra price input format in search added."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:901
+#: includes/classes/pages/admin/class-dashboard-page.php:922
 msgctxt "changelog"
 msgid "FB fields & sections saving fix added."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1324
+#: includes/classes/pages/admin/class-dashboard-page.php:1345
 msgctxt "changelog"
 msgid "FB fields translations fix added."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1083
+#: includes/classes/pages/admin/class-dashboard-page.php:1104
 msgctxt "changelog"
 msgid "FB support for video section in single property added"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1579
+#: includes/classes/pages/admin/class-dashboard-page.php:1600
 msgctxt "changelog"
 msgid "FB tab fields issues fixed"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:331
+#: includes/classes/pages/admin/class-dashboard-page.php:352
 msgctxt "changelog"
 msgid "February, 10, 2025"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1358
+#: includes/classes/pages/admin/class-dashboard-page.php:1379
 msgctxt "changelog"
 msgid "February, 25, 2023"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:566
+#: includes/classes/pages/admin/class-dashboard-page.php:587
 msgctxt "changelog"
 msgid "Field \"Visible on the front\" enhanced (All versions)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1018
+#: includes/classes/pages/admin/class-dashboard-page.php:1039
 msgctxt "changelog"
 msgid "Field builder fixes added."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1670
+#: includes/classes/pages/admin/class-dashboard-page.php:1691
 msgctxt "changelog"
 msgid "Fields Builder considerably improved"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1304
+#: includes/classes/pages/admin/class-dashboard-page.php:1325
 msgctxt "changelog"
 msgid "Fields builder fields deletion fix added for PDF brochure."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1268
+#: includes/classes/pages/admin/class-dashboard-page.php:1289
 msgctxt "changelog"
 msgid "Fields builder request form section message setting added."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1437
+#: includes/classes/pages/admin/class-dashboard-page.php:1458
 msgctxt "changelog"
 msgid "Fields builder translations fix added."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:334
+#: includes/classes/pages/admin/class-dashboard-page.php:355
 msgctxt "changelog"
 msgid "Fields suggestion on fields config page added (Premium)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1385
+#: includes/classes/pages/admin/class-dashboard-page.php:1406
 msgctxt "changelog"
 msgid "file_get_contents function for retrieve SVG content deleted."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1445
+#: includes/classes/pages/admin/class-dashboard-page.php:1466
 msgctxt "changelog"
 msgid "file_type warning fix added."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:661
+#: includes/classes/pages/admin/class-dashboard-page.php:682
 msgctxt "changelog"
 msgid "Filter functionality for resetting categories fixed  (All versions)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1550
+#: includes/classes/pages/admin/class-dashboard-page.php:1571
 msgctxt "changelog"
 msgid "Fixed duplicated HTML input IDs in DOM."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1441
+#: includes/classes/pages/admin/class-dashboard-page.php:1462
 msgctxt "changelog"
 msgid "Fixed fields builder special characters for machine_name."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:313
+#: includes/classes/pages/admin/class-dashboard-page.php:334
 msgctxt "changelog"
 msgid "Fixed HTML markup for estatik fields (All versions)."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1514
+#: includes/classes/pages/admin/class-dashboard-page.php:1535
 msgctxt "changelog"
 msgid "Fixed images uploading via front property management."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1066
+#: includes/classes/pages/admin/class-dashboard-page.php:1087
 msgctxt "changelog"
 msgid "Fixed location fields in search form."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1566
+#: includes/classes/pages/admin/class-dashboard-page.php:1587
 msgctxt "changelog"
 msgid "Fixed MLS automatic import table render"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1022
+#: includes/classes/pages/admin/class-dashboard-page.php:1043
 msgctxt "changelog"
 msgid "Fixed plugin emails fatal error."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1461
+#: includes/classes/pages/admin/class-dashboard-page.php:1482
 msgctxt "changelog"
 msgid "Fixed price field formatter."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:856
+#: includes/classes/pages/admin/class-dashboard-page.php:877
 msgctxt "changelog"
 msgid "Fixed property images in saved searches email."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1546
+#: includes/classes/pages/admin/class-dashboard-page.php:1567
 msgctxt "changelog"
 msgid "Fixed property price spaces."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1530
+#: includes/classes/pages/admin/class-dashboard-page.php:1551
 msgctxt "changelog"
 msgid "Fixed property quick edit form agents saving."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1522
+#: includes/classes/pages/admin/class-dashboard-page.php:1543
 msgctxt "changelog"
 msgid "Fixed search fields order in Elementor search form widget."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1469
+#: includes/classes/pages/admin/class-dashboard-page.php:1490
 msgctxt "changelog"
 msgid "Fixed search form selected values labels."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1562
+#: includes/classes/pages/admin/class-dashboard-page.php:1583
 msgctxt "changelog"
 msgid "Fixed search widget location fields loading for non authorised users."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1558
+#: includes/classes/pages/admin/class-dashboard-page.php:1579
 msgctxt "changelog"
 msgid "Fixed slick slider initializing for property boxes."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:905
+#: includes/classes/pages/admin/class-dashboard-page.php:926
 msgctxt "changelog"
 msgid "Floor plans render fix added."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:694
+#: includes/classes/pages/admin/class-dashboard-page.php:715
 msgctxt "changelog"
 msgid ""
 "For subscription agents, the functionality for adding and removing listings "
 "corrected."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1642
+#: includes/classes/pages/admin/class-dashboard-page.php:1663
 msgctxt "changelog"
 msgid "Front-and back-end interface design updated"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1405
+#: includes/classes/pages/admin/class-dashboard-page.php:1426
 msgctxt "changelog"
 msgid "Full width field setting in fields builder form added."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1417
+#: includes/classes/pages/admin/class-dashboard-page.php:1438
 msgctxt "changelog"
 msgid "German translations modified."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:848
+#: includes/classes/pages/admin/class-dashboard-page.php:869
 msgctxt "changelog"
 msgid "Google Auth fix added."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1099
+#: includes/classes/pages/admin/class-dashboard-page.php:1120
 msgctxt "changelog"
 msgid "Google fonts cache optimized"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1604
+#: includes/classes/pages/admin/class-dashboard-page.php:1625
 msgctxt "changelog"
 msgid "Google fonts GDPR issue fixed"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:321
+#: includes/classes/pages/admin/class-dashboard-page.php:342
 msgctxt "changelog"
 msgid "Google Maps AdvancedMarkerElement implemented (All versions)."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1526
+#: includes/classes/pages/admin/class-dashboard-page.php:1547
 msgctxt "changelog"
 msgid "Google maps callback error fix added."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:147
+#: includes/classes/pages/admin/class-dashboard-page.php:48
+msgctxt "changelog"
+msgid "Gutenberg block for displaying [es_my_listing] added (All versions)"
+msgstr ""
+
+#: includes/classes/pages/admin/class-dashboard-page.php:168
 msgctxt "changelog"
 msgid "Honeypot for plugin forms added (All versions)."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1155
+#: includes/classes/pages/admin/class-dashboard-page.php:1176
 msgctxt "changelog"
 msgid "HTML editor field in FB added"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1494
+#: includes/classes/pages/admin/class-dashboard-page.php:44
+msgctxt "changelog"
+msgid "HubSpot CRM integration added (All versions)"
+msgstr ""
+
+#: includes/classes/pages/admin/class-dashboard-page.php:1515
 msgctxt "changelog"
 msgid "Implemented agents registration confirmation email."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:796
+#: includes/classes/pages/admin/class-dashboard-page.php:817
 msgctxt "changelog"
 msgid "Implemented MLS import for dropdown, checkboxes fields types."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:820
+#: includes/classes/pages/admin/class-dashboard-page.php:841
 msgctxt "changelog"
 msgid "Implemented new MLS operator From -> To."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:816
+#: includes/classes/pages/admin/class-dashboard-page.php:837
 msgctxt "changelog"
 msgid "Implemented values converter for 0,1 MLS values."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1123
+#: includes/classes/pages/admin/class-dashboard-page.php:1144
 msgctxt "changelog"
 msgid "Import limits in MLS schedules added"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1231
+#: includes/classes/pages/admin/class-dashboard-page.php:1252
 msgctxt "changelog"
 msgid "Incorrect MLS credentials fatal error fixed"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1465
+#: includes/classes/pages/admin/class-dashboard-page.php:1486
 msgctxt "changelog"
 msgid "Incorrect top margin in property gallery lightbox removed."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:529
+#: includes/classes/pages/admin/class-dashboard-page.php:550
 msgctxt "changelog"
 msgid ""
 "Issue with disappearing images in gallery when duplicating fixed (All "
 "versions)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:525
+#: includes/classes/pages/admin/class-dashboard-page.php:546
 msgctxt "changelog"
 msgid "Issues with taxonomy pages fixed (All versions)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:631
+#: includes/classes/pages/admin/class-dashboard-page.php:652
 msgctxt "changelog"
 msgid "Italian language files updated (All versions)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1483
+#: includes/classes/pages/admin/class-dashboard-page.php:1504
 msgctxt "changelog"
 msgid "January, 27, 2023"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1191
+#: includes/classes/pages/admin/class-dashboard-page.php:41
+msgctxt "changelog"
+msgid "January, 31, 2026"
+msgstr ""
+
+#: includes/classes/pages/admin/class-dashboard-page.php:1212
 msgctxt "changelog"
 msgid "JSON_UNESCAPED_UNICODE to json_encode for address components added"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:559
+#: includes/classes/pages/admin/class-dashboard-page.php:580
 msgctxt "changelog"
 msgid "July, 04, 2024"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1076
+#: includes/classes/pages/admin/class-dashboard-page.php:1097
 msgctxt "changelog"
 msgid "June, 24, 2023"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:217
+#: includes/classes/pages/admin/class-dashboard-page.php:238
 msgctxt "changelog"
 msgid "June, 26, 2025"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:607
+#: includes/classes/pages/admin/class-dashboard-page.php:628
 msgctxt "changelog"
 msgid "Languages with non-Latin alphabets support added (All versions)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:598
+#: includes/classes/pages/admin/class-dashboard-page.php:619
 msgctxt "changelog"
 msgid "Layout saving after screen reboot fixed (All versions)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1600
+#: includes/classes/pages/admin/class-dashboard-page.php:1621
 msgctxt "changelog"
 msgid "Lazy load for carousel images added"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:305
+#: includes/classes/pages/admin/class-dashboard-page.php:326
 msgctxt "changelog"
 msgid "LFI Vulnerability fix added (All versions)."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:232
+#: includes/classes/pages/admin/class-dashboard-page.php:253
 msgctxt "changelog"
 msgid "List agents for agency on frontend fixed. (Pro & Premium)."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:594
+#: includes/classes/pages/admin/class-dashboard-page.php:615
 msgctxt "changelog"
 msgid "List display corrected (All versions)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:590
+#: includes/classes/pages/admin/class-dashboard-page.php:611
 msgctxt "changelog"
 msgid "Listing filter fixed (All versions)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:619
+#: includes/classes/pages/admin/class-dashboard-page.php:640
 msgctxt "changelog"
 msgid "Listing limit notification to agent's profile added (PRO & Premium)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:864
+#: includes/classes/pages/admin/class-dashboard-page.php:885
 msgctxt "changelog"
 msgid "Listings alax loading animation fix added."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1175
+#: includes/classes/pages/admin/class-dashboard-page.php:1196
 msgctxt "changelog"
 msgid "Listings duplication for crea ddf preventive fix added"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:183
+#: includes/classes/pages/admin/class-dashboard-page.php:204
 msgctxt "changelog"
 msgid "load_textdomain warnings fixed (All versions)."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1694
+#: includes/classes/pages/admin/class-dashboard-page.php:1715
 msgctxt "changelog"
 msgid "Loads of minor fixes and improvements"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:77
+#: includes/classes/pages/admin/class-dashboard-page.php:98
 msgctxt "changelog"
 msgid "Local File Inclusion vulnerability patched (All versions)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:611
+#: includes/classes/pages/admin/class-dashboard-page.php:632
 msgctxt "changelog"
 msgid ""
 "Location saving functionality for [es_my_listing] shortcode added (PRO & "
 "Premium)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1247
+#: includes/classes/pages/admin/class-dashboard-page.php:1268
 msgctxt "changelog"
 msgid "Locations breadcrumbs bug fixed"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:930
+#: includes/classes/pages/admin/class-dashboard-page.php:951
 msgctxt "changelog"
 msgid "Log out link added on user profile page for mobile devices."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:698
+#: includes/classes/pages/admin/class-dashboard-page.php:719
 msgctxt "changelog"
 msgid "Logic for sorting listings refactored."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1453
+#: includes/classes/pages/admin/class-dashboard-page.php:1474
 msgctxt "changelog"
 msgid "Login form prefilled fields submit button fix added."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:248
+#: includes/classes/pages/admin/class-dashboard-page.php:269
 msgctxt "changelog"
 msgid "Lookup filter fields AJAX search fixed (Premium)."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:844
+#: includes/classes/pages/admin/class-dashboard-page.php:865
 msgctxt "changelog"
 msgid "Lookup values retrieving fix added for Web API."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:102
+#: includes/classes/pages/admin/class-dashboard-page.php:123
 msgctxt "changelog"
 msgid "Manually added images excluded from MLS processes (Premium)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:256
+#: includes/classes/pages/admin/class-dashboard-page.php:277
 msgctxt "changelog"
 msgid "Map ID added (All versions)."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1054
+#: includes/classes/pages/admin/class-dashboard-page.php:1075
 msgctxt "changelog"
 msgid "Map popup fix added."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:986
+#: includes/classes/pages/admin/class-dashboard-page.php:1007
 msgctxt "changelog"
 msgid "Map zoom saving fix added."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:720
+#: includes/classes/pages/admin/class-dashboard-page.php:741
 msgctxt "changelog"
 msgid "March, 01, 2024"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:278
+#: includes/classes/pages/admin/class-dashboard-page.php:299
 msgctxt "changelog"
 msgid "March, 26, 2025"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:604
+#: includes/classes/pages/admin/class-dashboard-page.php:625
 msgctxt "changelog"
 msgid "May, 22, 2024"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1119
+#: includes/classes/pages/admin/class-dashboard-page.php:1140
 msgctxt "changelog"
 msgid "Meta icons loading in property box optimized"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1251
+#: includes/classes/pages/admin/class-dashboard-page.php:1272
 msgctxt "changelog"
 msgid "Migration progress bar fixed"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:134
-#: includes/classes/pages/admin/class-dashboard-page.php:211
-#: includes/classes/pages/admin/class-dashboard-page.php:272
-#: includes/classes/pages/admin/class-dashboard-page.php:325
-#: includes/classes/pages/admin/class-dashboard-page.php:398
-#: includes/classes/pages/admin/class-dashboard-page.php:447
-#: includes/classes/pages/admin/class-dashboard-page.php:496
-#: includes/classes/pages/admin/class-dashboard-page.php:553
-#: includes/classes/pages/admin/class-dashboard-page.php:771
-#: includes/classes/pages/admin/class-dashboard-page.php:913
-#: includes/classes/pages/admin/class-dashboard-page.php:1070
+#: includes/classes/pages/admin/class-dashboard-page.php:155
+#: includes/classes/pages/admin/class-dashboard-page.php:232
+#: includes/classes/pages/admin/class-dashboard-page.php:293
+#: includes/classes/pages/admin/class-dashboard-page.php:346
+#: includes/classes/pages/admin/class-dashboard-page.php:419
+#: includes/classes/pages/admin/class-dashboard-page.php:468
+#: includes/classes/pages/admin/class-dashboard-page.php:517
+#: includes/classes/pages/admin/class-dashboard-page.php:574
+#: includes/classes/pages/admin/class-dashboard-page.php:792
+#: includes/classes/pages/admin/class-dashboard-page.php:934
+#: includes/classes/pages/admin/class-dashboard-page.php:1091
 msgctxt "changelog"
 msgid "Minor fixes"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1711
+#: includes/classes/pages/admin/class-dashboard-page.php:1732
 msgctxt "changelog"
 msgid "minor fixes"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:89
-#: includes/classes/pages/admin/class-dashboard-page.php:1352
+#: includes/classes/pages/admin/class-dashboard-page.php:110
+#: includes/classes/pages/admin/class-dashboard-page.php:1373
 msgctxt "changelog"
 msgid "Minor fixes."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:187
+#: includes/classes/pages/admin/class-dashboard-page.php:208
 msgctxt "changelog"
 msgid "Missed gallery images render fix added (All versions)."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:788
+#: includes/classes/pages/admin/class-dashboard-page.php:809
 msgctxt "changelog"
 msgid "MLS Actualizer new hooks added."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:727
+#: includes/classes/pages/admin/class-dashboard-page.php:748
 msgctxt "changelog"
 msgid "MLS Actualizer refactored"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:423
+#: includes/classes/pages/admin/class-dashboard-page.php:444
 msgctxt "changelog"
 msgid "MLS addresses import refactored (Premium)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:731
+#: includes/classes/pages/admin/class-dashboard-page.php:752
 msgctxt "changelog"
 msgid "MLS Automatic import refactored"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:784
+#: includes/classes/pages/admin/class-dashboard-page.php:805
 msgctxt "changelog"
 msgid "MLS entity popup upgraded."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:293
+#: includes/classes/pages/admin/class-dashboard-page.php:314
 msgctxt "changelog"
 msgid "MLS files upload warning fix added (Premium)."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:759
+#: includes/classes/pages/admin/class-dashboard-page.php:780
 msgctxt "changelog"
 msgid "MLS Grid requests issue fix added"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:240
+#: includes/classes/pages/admin/class-dashboard-page.php:64
+msgctxt "changelog"
+msgid "MLS image import order fix added (Premium)"
+msgstr ""
+
+#: includes/classes/pages/admin/class-dashboard-page.php:261
 msgctxt "changelog"
 msgid "MLS images render fixed (Premium)."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:922
+#: includes/classes/pages/admin/class-dashboard-page.php:943
 msgctxt "changelog"
 msgid "MLS import & sync refactored."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:836
+#: includes/classes/pages/admin/class-dashboard-page.php:857
 msgctxt "changelog"
 msgid "MLS import entities count fix added."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1062
+#: includes/classes/pages/admin/class-dashboard-page.php:1083
 msgctxt "changelog"
 msgid "MLS import video fix added."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:468
+#: includes/classes/pages/admin/class-dashboard-page.php:489
 msgctxt "changelog"
 msgid "MLS logger refactored (Premium)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:780
+#: includes/classes/pages/admin/class-dashboard-page.php:801
 msgctxt "changelog"
 msgid "MLS media re-import implemented."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1633
+#: includes/classes/pages/admin/class-dashboard-page.php:1654
 msgctxt "changelog"
 msgid "MLS migration fix added"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1264
+#: includes/classes/pages/admin/class-dashboard-page.php:1285
 msgctxt "changelog"
 msgid "MLS mlsaligned provider integrated."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:755
+#: includes/classes/pages/admin/class-dashboard-page.php:776
 msgctxt "changelog"
 msgid "MLS multiple values saving fix added"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:484
+#: includes/classes/pages/admin/class-dashboard-page.php:505
 msgctxt "changelog"
 msgid "MLS open-house deletion fix added"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:938
+#: includes/classes/pages/admin/class-dashboard-page.php:959
 msgctxt "changelog"
 msgid "MLS Realtyserver autoconfig added."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:252
+#: includes/classes/pages/admin/class-dashboard-page.php:273
 msgctxt "changelog"
 msgid "MLS RETS disconnect functionality fix added (Premium)."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:880
+#: includes/classes/pages/admin/class-dashboard-page.php:901
 msgctxt "changelog"
 msgid "MLS sync not_equal operator fixed."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:488
+#: includes/classes/pages/admin/class-dashboard-page.php:509
 msgctxt "changelog"
 msgid "MLS terms import with alt-label fix added"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:665
+#: includes/classes/pages/admin/class-dashboard-page.php:686
 msgctxt "changelog"
 msgid "MLS URL modification for existing profiles blocked (Premium)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1373
+#: includes/classes/pages/admin/class-dashboard-page.php:1394
 msgctxt "changelog"
 msgid "MLS Web API classes added."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1103
+#: includes/classes/pages/admin/class-dashboard-page.php:1124
 msgctxt "changelog"
 msgid "mls_resource and mls_class attributes to es_my_listing shortcode added"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1413
+#: includes/classes/pages/admin/class-dashboard-page.php:1434
 msgctxt "changelog"
 msgid "MLSGrid v2 provider autoconfig added."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:57
+#: includes/classes/pages/admin/class-dashboard-page.php:78
 msgctxt "changelog"
 msgid "Mobile gallery for single property page implemented (All versions)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:909
+#: includes/classes/pages/admin/class-dashboard-page.php:930
 msgctxt "changelog"
 msgid "Multiple estatik elementor widgets saving fix added."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:73
+#: includes/classes/pages/admin/class-dashboard-page.php:94
 msgctxt "changelog"
 msgid "Multiple instances JS issue for Half map resolved (All versions)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1393
+#: includes/classes/pages/admin/class-dashboard-page.php:1414
 msgctxt "changelog"
 msgid "Multiple support for select2 fields in estatik framework added."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1139
+#: includes/classes/pages/admin/class-dashboard-page.php:1160
 msgctxt "changelog"
 msgid "Neighborhood field in property management added"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:739
+#: includes/classes/pages/admin/class-dashboard-page.php:760
 msgctxt "changelog"
 msgid "Neighborhoods added in Data Manager"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:824
+#: includes/classes/pages/admin/class-dashboard-page.php:845
 msgctxt "changelog"
 msgid "New \"link\" FB field type added."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:505
+#: includes/classes/pages/admin/class-dashboard-page.php:526
 msgctxt "changelog"
 msgid "New field \"Field Description\" added (PRO & Premium)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:362
+#: includes/classes/pages/admin/class-dashboard-page.php:383
 msgctxt "changelog"
 msgid "New flag icons added (Pro & Premium)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:143
+#: includes/classes/pages/admin/class-dashboard-page.php:164
 msgctxt "changelog"
 msgid "New functionality for manage phone codes added (PRO & Premium)."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:517
+#: includes/classes/pages/admin/class-dashboard-page.php:538
 msgctxt "changelog"
 msgid "New option \"Open collapsed filters\" added (All versions)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:456
+#: includes/classes/pages/admin/class-dashboard-page.php:477
 msgctxt "changelog"
 msgid "New settings for taxonomies slugs added"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1369
+#: includes/classes/pages/admin/class-dashboard-page.php:1390
 msgctxt "changelog"
 msgid "New settings tab for manage user profile added."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:431
+#: includes/classes/pages/admin/class-dashboard-page.php:452
 msgctxt "changelog"
 msgid "New translation fields added (All versions)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1682
+#: includes/classes/pages/admin/class-dashboard-page.php:1703
 msgctxt "changelog"
 msgid "New widgets added: agencies, locations, slideshow widget"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1397
+#: includes/classes/pages/admin/class-dashboard-page.php:1418
 msgctxt "changelog"
 msgid "No min, No max labels changed to min,max in search form."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:897
+#: includes/classes/pages/admin/class-dashboard-page.php:918
 msgctxt "changelog"
 msgid "No min, No max labels translation fix added."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:50
+#: includes/classes/pages/admin/class-dashboard-page.php:71
 msgctxt "changelog"
 msgid "November, 25, 2025"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1597
+#: includes/classes/pages/admin/class-dashboard-page.php:1618
 msgctxt "changelog"
 msgid "November, 30, 2022"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:653
+#: includes/classes/pages/admin/class-dashboard-page.php:674
 msgctxt "changelog"
 msgid "Number-type filter values reset functionality improved  (All versions)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:95
+#: includes/classes/pages/admin/class-dashboard-page.php:116
 msgctxt "changelog"
 msgid "October, 13, 2025"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1650
+#: includes/classes/pages/admin/class-dashboard-page.php:1671
 msgctxt "changelog"
 msgid "One-time payments added"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1477
+#: includes/classes/pages/admin/class-dashboard-page.php:1498
 msgctxt "changelog"
 msgid "Openhouse fields FB fix added"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:763
+#: includes/classes/pages/admin/class-dashboard-page.php:784
 msgctxt "changelog"
 msgid "Optimized locations saving"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:958
+#: includes/classes/pages/admin/class-dashboard-page.php:979
 msgctxt "changelog"
 msgid "Option for disable geolocation of request form added."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1365
+#: includes/classes/pages/admin/class-dashboard-page.php:1386
 msgctxt "changelog"
 msgid "Option for disable saved search functionality added."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:627
+#: includes/classes/pages/admin/class-dashboard-page.php:648
 msgctxt "changelog"
 msgid ""
 "Option to change Subject field for \"Saved Search\" email added (PRO & "
 "Premium)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:264
+#: includes/classes/pages/admin/class-dashboard-page.php:285
 msgctxt "changelog"
 msgid "Original image metadata added for MLS attachments (Premium)."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:98
+#: includes/classes/pages/admin/class-dashboard-page.php:119
 msgctxt "changelog"
 msgid "OriginatingSystemName field added for MLS Trestle Web API (Premium)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:163
+#: includes/classes/pages/admin/class-dashboard-page.php:184
 msgctxt "changelog"
 msgid "Pagelayout plugin JS conflict fix added."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:342
+#: includes/classes/pages/admin/class-dashboard-page.php:363
 msgctxt "changelog"
 msgid "Pagination for fields config page added (Premium)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:537
+#: includes/classes/pages/admin/class-dashboard-page.php:558
 msgctxt "changelog"
 msgid "Pagination on archives has been fixed (All versions)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:982
+#: includes/classes/pages/admin/class-dashboard-page.php:1003
 msgctxt "changelog"
 msgid "Paragonapi WebApi autoconfig added."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:244
+#: includes/classes/pages/admin/class-dashboard-page.php:265
 msgctxt "changelog"
 msgid "ParagonRETS WebAPI issues fixed (Premium)."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:669
+#: includes/classes/pages/admin/class-dashboard-page.php:690
 msgctxt "changelog"
 msgid "Pause functionality for hidden automatic import fixed (Premium)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:228
+#: includes/classes/pages/admin/class-dashboard-page.php:249
 msgctxt "changelog"
 msgid "PayPal plan save fixed. (Pro & Premium)."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1707
+#: includes/classes/pages/admin/class-dashboard-page.php:1728
 msgctxt "changelog"
 msgid "PDF library fixed (Pro & Premium)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:549
+#: includes/classes/pages/admin/class-dashboard-page.php:570
 msgctxt "changelog"
 msgid "PHP stripshashes func warning fix added"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:472
+#: includes/classes/pages/admin/class-dashboard-page.php:493
 msgctxt "changelog"
 msgid "PHP warnings fixed (ALl versions)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:747
+#: includes/classes/pages/admin/class-dashboard-page.php:768
 msgctxt "changelog"
 msgid "Plugin DB migration refactored"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1381
+#: includes/classes/pages/admin/class-dashboard-page.php:1402
 msgctxt "changelog"
 msgid "Plugin fonts uploading fixed."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1002
+#: includes/classes/pages/admin/class-dashboard-page.php:1023
 msgctxt "changelog"
 msgid "Plugin migration fix added."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:281
+#: includes/classes/pages/admin/class-dashboard-page.php:302
 msgctxt "changelog"
 msgid "Plugin performance improved. Code refactored (All versions)."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:828
+#: includes/classes/pages/admin/class-dashboard-page.php:849
 msgctxt "changelog"
 msgid "Plugin security upgraded."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:860
+#: includes/classes/pages/admin/class-dashboard-page.php:881
 msgctxt "changelog"
 msgid "Plugin translations added dictionaries."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:623
+#: includes/classes/pages/admin/class-dashboard-page.php:644
 msgctxt "changelog"
 msgid "Polylang and WPML support for custom fields added (All versions)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:970
+#: includes/classes/pages/admin/class-dashboard-page.php:991
 msgctxt "changelog"
 msgid "Polylang integrated for breadcrumbs links on single property page."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1243
+#: includes/classes/pages/admin/class-dashboard-page.php:1264
 msgctxt "changelog"
 msgid "Polylang migration fatal error fixed"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1629
+#: includes/classes/pages/admin/class-dashboard-page.php:1650
 msgctxt "changelog"
 msgid "Polylang support added"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:151
+#: includes/classes/pages/admin/class-dashboard-page.php:172
 msgctxt "changelog"
 msgid "Postal code added for address field in search widget (All versions)."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:990
+#: includes/classes/pages/admin/class-dashboard-page.php:1011
 msgctxt "changelog"
 msgid "Predefined values for search form fix added."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:301
+#: includes/classes/pages/admin/class-dashboard-page.php:322
 msgctxt "changelog"
 msgid "Price dependencies in search form fix added (All versions)."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1058
+#: includes/classes/pages/admin/class-dashboard-page.php:1079
 msgctxt "changelog"
 msgid "Price format fix added."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:460
+#: includes/classes/pages/admin/class-dashboard-page.php:52
+msgctxt "changelog"
+msgid "Price history functionality added (PRO & Premium)"
+msgstr ""
+
+#: includes/classes/pages/admin/class-dashboard-page.php:481
 msgctxt "changelog"
 msgid "Price styles in property PDF fix added"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1211
+#: includes/classes/pages/admin/class-dashboard-page.php:1232
 msgctxt "changelog"
 msgid "Price variation in search form fixed"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:545
+#: includes/classes/pages/admin/class-dashboard-page.php:566
 msgctxt "changelog"
 msgid "Problem with loading elementor for shortcode [‘es-property-map’] fixed"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1223
+#: includes/classes/pages/admin/class-dashboard-page.php:1244
 msgctxt "changelog"
 msgid "Profile single request info page fixed"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1389
+#: includes/classes/pages/admin/class-dashboard-page.php:1410
 msgctxt "changelog"
 msgid "prop_id attribute added for [es_my_listing shortcode]"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1296
+#: includes/classes/pages/admin/class-dashboard-page.php:1317
 msgctxt "changelog"
 msgid "Properties carousel vertical layout fixed."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:224
+#: includes/classes/pages/admin/class-dashboard-page.php:245
 msgctxt "changelog"
 msgid "Properties map styles fixed (All versions)."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1195
+#: includes/classes/pages/admin/class-dashboard-page.php:1216
 msgctxt "changelog"
 msgid "Properties removal actualizer fixed"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1034
+#: includes/classes/pages/admin/class-dashboard-page.php:1055
 msgctxt "changelog"
 msgid "Properties slider fixes added."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:868
+#: includes/classes/pages/admin/class-dashboard-page.php:889
 msgctxt "changelog"
 msgid "Property addresses saving fix added."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:411
+#: includes/classes/pages/admin/class-dashboard-page.php:432
 msgctxt "changelog"
 msgid "Property attachments deletion refactored"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:386
+#: includes/classes/pages/admin/class-dashboard-page.php:407
 msgctxt "changelog"
 msgid "Property Description markup saving fix added (All versions)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1348
+#: includes/classes/pages/admin/class-dashboard-page.php:1369
 msgctxt "changelog"
 msgid "Property file fields saving fix added."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:175
+#: includes/classes/pages/admin/class-dashboard-page.php:196
 msgctxt "changelog"
 msgid "Property gallery background position centered (All versions)."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:130
+#: includes/classes/pages/admin/class-dashboard-page.php:151
 msgctxt "changelog"
 msgid "Property images order fix added (All versions)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1518
+#: includes/classes/pages/admin/class-dashboard-page.php:1539
 msgctxt "changelog"
 msgid "Property management agent assignment fix added."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:167
+#: includes/classes/pages/admin/class-dashboard-page.php:188
 msgctxt "changelog"
 msgid "Property management fix added (Premium)."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1421
+#: includes/classes/pages/admin/class-dashboard-page.php:1442
 msgctxt "changelog"
 msgid "Property management form buttons css fix added."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:207
+#: includes/classes/pages/admin/class-dashboard-page.php:228
 msgctxt "changelog"
 msgid "Property map styles on single property page fix added (All versions)."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:926
+#: includes/classes/pages/admin/class-dashboard-page.php:947
 msgctxt "changelog"
 msgid "Property meta icons refactored."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1449
+#: includes/classes/pages/admin/class-dashboard-page.php:1470
 msgctxt "changelog"
 msgid "Property mobile gallery css fix added."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:203
+#: includes/classes/pages/admin/class-dashboard-page.php:224
 msgctxt "changelog"
 msgid "Property mobile gallery fix added (All versions)."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1215
+#: includes/classes/pages/admin/class-dashboard-page.php:1236
 msgctxt "changelog"
 msgid "Property sections translation bug fixed"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1320
+#: includes/classes/pages/admin/class-dashboard-page.php:1341
 msgctxt "changelog"
 msgid "Property SVG icon color fixed."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1167
+#: includes/classes/pages/admin/class-dashboard-page.php:1188
 msgctxt "changelog"
 msgid "Property video section CSS sizes fixed"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1079
+#: includes/classes/pages/admin/class-dashboard-page.php:1100
 msgctxt "changelog"
 msgid "Pure autoconfig for MLSAligned, harmls MLS provider added"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1284
+#: includes/classes/pages/admin/class-dashboard-page.php:1305
 msgctxt "changelog"
 msgid "Range mode for custom numeric fb fields implemented."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1377
+#: includes/classes/pages/admin/class-dashboard-page.php:1398
 msgctxt "changelog"
 msgid "Raprets MLS provider media support added."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:155
+#: includes/classes/pages/admin/class-dashboard-page.php:176
 msgctxt "changelog"
 msgid "Realcorp mls token generation implemented (Premium)."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1042
-#: includes/classes/pages/admin/class-dashboard-page.php:1554
+#: includes/classes/pages/admin/class-dashboard-page.php:1063
+#: includes/classes/pages/admin/class-dashboard-page.php:1575
 msgctxt "changelog"
 msgid "Recaptcha fix added."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1187
+#: includes/classes/pages/admin/class-dashboard-page.php:1208
 msgctxt "changelog"
 msgid "ReCaptcha for AJAX request forms fixed"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:562
+#: includes/classes/pages/admin/class-dashboard-page.php:583
 msgctxt "changelog"
 msgid "Registered agent confirmation functionality added (PRO & Premium)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:114
+#: includes/classes/pages/admin/class-dashboard-page.php:135
 msgctxt "changelog"
 msgid "Remote images feature deactivated for MLSGRID provider (Premium)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:419
+#: includes/classes/pages/admin/class-dashboard-page.php:440
 msgctxt "changelog"
 msgid "Remote images MLS Import Optimized (Premium)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1095
+#: includes/classes/pages/admin/class-dashboard-page.php:1116
 msgctxt "changelog"
 msgid "Request form default message deleted"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:686
+#: includes/classes/pages/admin/class-dashboard-page.php:707
 msgctxt "changelog"
 msgid "Request form fields order changed."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1608
+#: includes/classes/pages/admin/class-dashboard-page.php:1629
 msgctxt "changelog"
 msgid "Request Info form (subject and from email issue fixed)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:884
+#: includes/classes/pages/admin/class-dashboard-page.php:905
 msgctxt "changelog"
 msgid "Request notes fix added."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:118
+#: includes/classes/pages/admin/class-dashboard-page.php:139
 msgctxt "changelog"
 msgid "Request timeouts for MLSGRID provider added (Premium)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1662
+#: includes/classes/pages/admin/class-dashboard-page.php:1683
 msgctxt "changelog"
 msgid "Requests to profile added"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:179
+#: includes/classes/pages/admin/class-dashboard-page.php:200
 msgctxt "changelog"
 msgid ""
 "Required attribute for admin property archive search input deleted (All "
 "versions)."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1272
+#: includes/classes/pages/admin/class-dashboard-page.php:1293
 msgctxt "changelog"
 msgid "Reset option for MLS sync fields added."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:876
+#: includes/classes/pages/admin/class-dashboard-page.php:897
 msgctxt "changelog"
 msgid "Reset search button fix added."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:974
+#: includes/classes/pages/admin/class-dashboard-page.php:995
 msgctxt "changelog"
 msgid "Reset search button refactored."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:443
+#: includes/classes/pages/admin/class-dashboard-page.php:464
 msgctxt "changelog"
 msgid "Resolved the issue with saving duplicate images (All versions)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1038
+#: includes/classes/pages/admin/class-dashboard-page.php:1059
 msgctxt "changelog"
 msgid "Responsive fixed for single property page."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1616
+#: includes/classes/pages/admin/class-dashboard-page.php:1637
 msgctxt "changelog"
 msgid "Responsive js refactored"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1340
+#: includes/classes/pages/admin/class-dashboard-page.php:1361
 msgctxt "changelog"
 msgid "Rooms functionality fixes added."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:394
+#: includes/classes/pages/admin/class-dashboard-page.php:415
 msgctxt "changelog"
 msgid "Rooms import warning fix added (Premium)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:954
+#: includes/classes/pages/admin/class-dashboard-page.php:975
 msgctxt "changelog"
 msgid "RTL support added for all of slick sliders."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:492
+#: includes/classes/pages/admin/class-dashboard-page.php:513
 msgctxt "changelog"
 msgid "SABOR mls connection fix added"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:645
+#: includes/classes/pages/admin/class-dashboard-page.php:666
 msgctxt "changelog"
 msgid "Saving address (Google Maps) issue fixed  (All versions)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:61
+#: includes/classes/pages/admin/class-dashboard-page.php:82
 msgctxt "changelog"
 msgid "Schema.org markup integrated for listings (All versions)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1219
+#: includes/classes/pages/admin/class-dashboard-page.php:1240
 msgctxt "changelog"
 msgid "Scroll top animation after using pagination - fixed"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:317
+#: includes/classes/pages/admin/class-dashboard-page.php:338
 msgctxt "changelog"
 msgid "Search form address ajax search fix added (All versions)."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1131
+#: includes/classes/pages/admin/class-dashboard-page.php:1152
 msgctxt "changelog"
 msgid "Search form autocomplete support for listings addresses added"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:852
+#: includes/classes/pages/admin/class-dashboard-page.php:873
 msgctxt "changelog"
 msgid "Search form labels fixed."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1199
+#: includes/classes/pages/admin/class-dashboard-page.php:1220
 msgctxt "changelog"
 msgid "Search form range fields fixed"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1159
+#: includes/classes/pages/admin/class-dashboard-page.php:1180
 msgctxt "changelog"
 msgid "Search from Select2 fields CSS + JS fix added"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1457
+#: includes/classes/pages/admin/class-dashboard-page.php:1478
 msgctxt "changelog"
 msgid "Search php warning fix added."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1300
+#: includes/classes/pages/admin/class-dashboard-page.php:1321
 msgctxt "changelog"
 msgid "Search widget locations fields fix added for elementor popups."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:191
+#: includes/classes/pages/admin/class-dashboard-page.php:212
 msgctxt "changelog"
 msgid "Select2 font-size fix added (All versions)."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1292
+#: includes/classes/pages/admin/class-dashboard-page.php:1313
 msgctxt "changelog"
 msgid "Select2 for elementor popups fix added."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1612
+#: includes/classes/pages/admin/class-dashboard-page.php:1633
 msgctxt "changelog"
 msgid "SEO issues fixed"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:919
+#: includes/classes/pages/admin/class-dashboard-page.php:940
 msgctxt "changelog"
 msgid "September, 03, 2023"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:453
+#: includes/classes/pages/admin/class-dashboard-page.php:474
 msgctxt "changelog"
 msgid "September, 26, 2024"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1498
+#: includes/classes/pages/admin/class-dashboard-page.php:1519
 msgctxt "changelog"
 msgid "Set dynamic content disabled by default."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:199
+#: includes/classes/pages/admin/class-dashboard-page.php:220
 msgctxt "changelog"
 msgid "Share popup duplication fix added (All versions)."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1686
+#: includes/classes/pages/admin/class-dashboard-page.php:1707
 msgctxt "changelog"
 msgid "Share via email added"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:872
+#: includes/classes/pages/admin/class-dashboard-page.php:893
 msgctxt "changelog"
 msgid "Show more link fixed for Features section on single property page."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1583
+#: includes/classes/pages/admin/class-dashboard-page.php:1604
 msgctxt "changelog"
 msgid "Single property pages mobile layout fixed"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1046
+#: includes/classes/pages/admin/class-dashboard-page.php:1067
 msgctxt "changelog"
 msgid "Slick slider in flexbox container fix added."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:892
+#: includes/classes/pages/admin/class-dashboard-page.php:913
 msgctxt "changelog"
 msgid "Social sharing option switcher fix added."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1127
+#: includes/classes/pages/admin/class-dashboard-page.php:1148
 msgctxt "changelog"
 msgid "Sorting by labels implemented"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:586
+#: includes/classes/pages/admin/class-dashboard-page.php:607
 msgctxt "changelog"
 msgid "Sorting fixed (All versions)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:220
+#: includes/classes/pages/admin/class-dashboard-page.php:241
 msgctxt "changelog"
 msgid "Sorting locations added (Pro & Premium)."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:390
+#: includes/classes/pages/admin/class-dashboard-page.php:411
 msgctxt "changelog"
 msgid "SQL syntax query fix added (All versions)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1316
+#: includes/classes/pages/admin/class-dashboard-page.php:1337
 msgctxt "changelog"
 msgid "Status field for properties map fix added."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:81
+#: includes/classes/pages/admin/class-dashboard-page.php:102
 msgctxt "changelog"
 msgid "Stored Cross-Site Scripting vulnerability patched (All versions)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:480
+#: includes/classes/pages/admin/class-dashboard-page.php:501
 msgctxt "changelog"
 msgid "Strict address option for elementor listings widget added"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:946
+#: includes/classes/pages/admin/class-dashboard-page.php:967
 msgctxt "changelog"
 msgid "strict_address param added for es_my_listing shortcode."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1030
+#: includes/classes/pages/admin/class-dashboard-page.php:1051
 msgctxt "changelog"
 msgid "Subscription labels fixes added."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1014
+#: includes/classes/pages/admin/class-dashboard-page.php:1035
 msgctxt "changelog"
 msgid "Subscription plans ID generation fix added."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:767
+#: includes/classes/pages/admin/class-dashboard-page.php:788
 msgctxt "changelog"
 msgid "Switcher field in search form fix added"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1135
+#: includes/classes/pages/admin/class-dashboard-page.php:1156
 msgctxt "changelog"
 msgid "Switcher field values changed to Yes / No"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1280
+#: includes/classes/pages/admin/class-dashboard-page.php:1301
 msgctxt "changelog"
 msgid "Tags field support added for listings shortcode."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1203
+#: includes/classes/pages/admin/class-dashboard-page.php:1224
 msgctxt "changelog"
 msgid "Taxonomy archive title fixed"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:195
+#: includes/classes/pages/admin/class-dashboard-page.php:216
 msgctxt "changelog"
 msgid "Tel field markup fix added (All versions)."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:994
+#: includes/classes/pages/admin/class-dashboard-page.php:1015
 msgctxt "changelog"
 msgid "Tel field php warning fixed."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:346
+#: includes/classes/pages/admin/class-dashboard-page.php:367
 msgctxt "changelog"
 msgid ""
 "The ability to edit the number of added items in the user subscription added "
 "(Pro & Premium)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:435
+#: includes/classes/pages/admin/class-dashboard-page.php:456
 msgctxt "changelog"
 msgid "The conflict with WPML resolved (Pro & Premium)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:427
+#: includes/classes/pages/admin/class-dashboard-page.php:448
 msgctxt "changelog"
 msgid "The currency settings moved to the Data Manager (All versions)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:415
+#: includes/classes/pages/admin/class-dashboard-page.php:436
 msgctxt "changelog"
 msgid "The design of the \"Pricing\" page updated (Pro & Premium)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:714
+#: includes/classes/pages/admin/class-dashboard-page.php:735
 msgctxt "changelog"
 msgid "The issue with incorrect translations has been fixed."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:374
+#: includes/classes/pages/admin/class-dashboard-page.php:395
 msgctxt "changelog"
 msgid "The issue with saving subscription settings fixed (Pro & Premium)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:370
+#: includes/classes/pages/admin/class-dashboard-page.php:391
 msgctxt "changelog"
 msgid "The new shortcode [es_property_single_gallery] added (All versions)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:366
+#: includes/classes/pages/admin/class-dashboard-page.php:387
 msgctxt "changelog"
 msgid "The new shortcode [es_property_single_map] added (All versions)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:350
+#: includes/classes/pages/admin/class-dashboard-page.php:371
 msgctxt "changelog"
 msgid ""
 "The option to choose the heading tag in the SEO section added (All versions)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:354
+#: includes/classes/pages/admin/class-dashboard-page.php:375
 msgctxt "changelog"
 msgid "The option to sort by lowest sq ft added (All versions)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:541
+#: includes/classes/pages/admin/class-dashboard-page.php:562
 msgctxt "changelog"
 msgid "The problem with displaying images on mobile devices has been fixed"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:358
+#: includes/classes/pages/admin/class-dashboard-page.php:379
 msgctxt "changelog"
 msgid ""
 "The setting to choose the default phone for the request form added (Pro & "
 "Premium)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:582
+#: includes/classes/pages/admin/class-dashboard-page.php:603
 msgctxt "changelog"
 msgid "Time offset setting for Open House added to MLS (Premium)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1361
+#: includes/classes/pages/admin/class-dashboard-page.php:1382
 msgctxt "changelog"
 msgid "Title field for MLS Profiles added."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1591
+#: includes/classes/pages/admin/class-dashboard-page.php:1612
 msgctxt "changelog"
 msgid "Translation for sorting fixed"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1107
+#: includes/classes/pages/admin/class-dashboard-page.php:1128
 msgctxt "changelog"
 msgid "Translation support for multiple values in FB added"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:578
+#: includes/classes/pages/admin/class-dashboard-page.php:599
 msgctxt "changelog"
 msgid ""
 "Translations creation for properties in agent's account added (only for "
 "Polylang) (PRO & Premium)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:840
+#: includes/classes/pages/admin/class-dashboard-page.php:861
 msgctxt "changelog"
 msgid "Twitter icon changed to X."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1006
+#: includes/classes/pages/admin/class-dashboard-page.php:1027
 msgctxt "changelog"
 msgid "Unlimited subscription plans fix added."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1171
+#: includes/classes/pages/admin/class-dashboard-page.php:1192
 msgctxt "changelog"
 msgid "URL field type fixed."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:533
+#: includes/classes/pages/admin/class-dashboard-page.php:554
 msgctxt "changelog"
 msgid "User geolocation in contact form fetching fixed (All versions)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1332
+#: includes/classes/pages/admin/class-dashboard-page.php:1353
 msgctxt "changelog"
 msgid "User profile avatar fixed."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:673
+#: includes/classes/pages/admin/class-dashboard-page.php:694
 msgctxt "changelog"
 msgid "WEB API access token regeneration issue fixed (Premium)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1147
+#: includes/classes/pages/admin/class-dashboard-page.php:1168
 msgctxt "changelog"
 msgid "White label for admin plugin area improved"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1143
+#: includes/classes/pages/admin/class-dashboard-page.php:1164
 msgctxt "changelog"
 msgid "WP All Import address components generation added"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:85
+#: includes/classes/pages/admin/class-dashboard-page.php:106
 msgctxt "changelog"
 msgid "WP All Import images order issue resolved (All versions)"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:743
+#: includes/classes/pages/admin/class-dashboard-page.php:764
 msgctxt "changelog"
 msgid "WP All Import property keywords generation added"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1678
+#: includes/classes/pages/admin/class-dashboard-page.php:1699
 msgctxt "changelog"
 msgid "WP ALL Import support added"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:690
+#: includes/classes/pages/admin/class-dashboard-page.php:711
 msgctxt "changelog"
 msgid "“Homes” to “properties” switched in pagination."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:702
+#: includes/classes/pages/admin/class-dashboard-page.php:723
 msgctxt "changelog"
 msgid "“Number” type filter issue fixed."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1700
+#: includes/classes/pages/admin/class-dashboard-page.php:1721
 msgctxt "changelog date"
 msgid "July, 26, 2022"
 msgstr ""
@@ -2930,13 +2955,13 @@ msgstr ""
 msgid "Choose category"
 msgstr ""
 
-#: includes/classes/entities/class-property.php:627
-#: includes/classes/entities/class-property.php:637
+#: includes/classes/entities/class-property.php:641
+#: includes/classes/entities/class-property.php:651
 msgid "Choose city"
 msgstr ""
 
-#: includes/classes/entities/class-property.php:534
-#: includes/classes/entities/class-property.php:543
+#: includes/classes/entities/class-property.php:548
+#: includes/classes/entities/class-property.php:557
 msgid "Choose country"
 msgstr ""
 
@@ -2948,13 +2973,13 @@ msgstr ""
 msgid "Choose page"
 msgstr ""
 
-#: includes/classes/entities/class-property.php:596
-#: includes/classes/entities/class-property.php:605
+#: includes/classes/entities/class-property.php:610
+#: includes/classes/entities/class-property.php:619
 msgid "Choose province"
 msgstr ""
 
-#: includes/classes/entities/class-property.php:565
-#: includes/classes/entities/class-property.php:574
+#: includes/classes/entities/class-property.php:579
+#: includes/classes/entities/class-property.php:588
 msgid "Choose state"
 msgstr ""
 
@@ -2982,7 +3007,7 @@ msgstr ""
 msgid "Cities"
 msgstr ""
 
-#: includes/classes/entities/class-property.php:617
+#: includes/classes/entities/class-property.php:631
 msgid "City / Department"
 msgstr ""
 
@@ -3018,13 +3043,13 @@ msgstr ""
 msgid "CNY - Yuan Renminbi"
 msgstr ""
 
-#: includes/classes/widgets/elementor/class-elementor-half-map-widget.php:143
-#: includes/classes/widgets/elementor/class-elementor-listings-widget.php:164
+#: includes/classes/widgets/elementor/class-elementor-half-map-widget.php:148
+#: includes/classes/widgets/elementor/class-elementor-listings-widget.php:169
 msgid "Collapsed fields"
 msgstr ""
 
 #: includes/classes/widgets/class-search-form-widget.php:144
-#: includes/classes/widgets/elementor/class-elementor-search-form-widget.php:129
+#: includes/classes/widgets/elementor/class-elementor-search-form-widget.php:134
 msgid "Collapsed filters"
 msgstr ""
 
@@ -3037,7 +3062,7 @@ msgstr ""
 msgid "Comma separated emails"
 msgstr ""
 
-#: includes/classes/widgets/elementor/class-elementor-query.php:46
+#: includes/classes/widgets/elementor/class-elementor-query.php:51
 msgid "Comma separated properties IDs"
 msgstr ""
 
@@ -3125,7 +3150,7 @@ msgstr ""
 msgid "country"
 msgstr ""
 
-#: includes/classes/entities/class-property.php:524
+#: includes/classes/entities/class-property.php:538
 msgid "Country / Region"
 msgstr ""
 
@@ -3186,12 +3211,12 @@ msgstr ""
 msgid "Current password didn't match."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1827
+#: includes/classes/pages/admin/class-dashboard-page.php:1848
 msgid "Custom Development"
 msgstr ""
 
 #: includes/classes/widgets/class-request-form-widget.php:107
-#: includes/classes/widgets/elementor/class-elementor-request-form-widget.php:136
+#: includes/classes/widgets/elementor/class-elementor-request-form-widget.php:141
 msgid "Custom emails"
 msgstr ""
 
@@ -3269,7 +3294,7 @@ msgctxt "data manager title"
 msgid "Units & formats"
 msgstr ""
 
-#: includes/classes/entities/class-property.php:59
+#: includes/classes/entities/class-property.php:73
 #: templates/admin/properties-archive/filter.php:113
 #: includes/classes/pages/admin/class-properties-archive-page.php:407
 msgid "Date added"
@@ -3320,7 +3345,7 @@ msgid "Default Search results"
 msgstr ""
 
 #: includes/classes/widgets/class-properties-filter-widget.php:41
-#: includes/classes/widgets/elementor/class-elementor-query.php:37
+#: includes/classes/widgets/elementor/class-elementor-query.php:42
 msgid "Default sort"
 msgstr ""
 
@@ -3395,7 +3420,7 @@ msgstr ""
 msgid "Denmark"
 msgstr ""
 
-#: includes/functions.php:334 includes/classes/entities/class-property.php:401
+#: includes/functions.php:334 includes/classes/entities/class-property.php:415
 msgid "Description"
 msgstr ""
 
@@ -3404,7 +3429,7 @@ msgid "Details"
 msgstr ""
 
 #: includes/classes/widgets/class-request-form-widget.php:94
-#: includes/classes/widgets/elementor/class-elementor-request-form-widget.php:93
+#: includes/classes/widgets/elementor/class-elementor-request-form-widget.php:98
 msgid "Disable e-mail"
 msgstr ""
 
@@ -3413,21 +3438,21 @@ msgid "Disable lightBox on single page"
 msgstr ""
 
 #: includes/classes/widgets/class-request-form-widget.php:84
-#: includes/classes/widgets/elementor/class-elementor-request-form-widget.php:81
+#: includes/classes/widgets/elementor/class-elementor-request-form-widget.php:86
 msgid "Disable name"
 msgstr ""
 
-#: includes/classes/widgets/elementor/class-elementor-half-map-widget.php:93
-#: includes/classes/widgets/elementor/class-elementor-listings-widget.php:114
+#: includes/classes/widgets/elementor/class-elementor-half-map-widget.php:98
+#: includes/classes/widgets/elementor/class-elementor-listings-widget.php:119
 msgid "Disable navbar"
 msgstr ""
 
-#: includes/classes/widgets/elementor/class-elementor-listings-widget.php:90
+#: includes/classes/widgets/elementor/class-elementor-listings-widget.php:95
 msgid "Disable pagination"
 msgstr ""
 
 #: includes/classes/widgets/class-request-form-widget.php:89
-#: includes/classes/widgets/elementor/class-elementor-request-form-widget.php:87
+#: includes/classes/widgets/elementor/class-elementor-request-form-widget.php:92
 msgid "Disable phone"
 msgstr ""
 
@@ -3451,7 +3476,7 @@ msgstr ""
 msgid "DKK - Danish Krone"
 msgstr ""
 
-#: includes/functions.php:368 includes/classes/entities/class-property.php:733
+#: includes/functions.php:368 includes/classes/entities/class-property.php:747
 msgid "Documents"
 msgstr ""
 
@@ -3506,11 +3531,11 @@ msgstr ""
 msgid "E.g. %s"
 msgstr ""
 
-#: includes/classes/entities/class-property.php:917
+#: includes/classes/entities/class-property.php:931
 msgid "E.g. great view..."
 msgstr ""
 
-#: includes/classes/entities/class-property.php:470
+#: includes/classes/entities/class-property.php:484
 msgid "E.g. Start From"
 msgstr ""
 
@@ -3551,54 +3576,54 @@ msgstr ""
 msgid "Egypt"
 msgstr ""
 
-#: includes/classes/widgets/elementor/class-elementor-search-form-widget.php:144
+#: includes/classes/widgets/elementor/class-elementor-search-form-widget.php:149
 msgctxt "Elementor widget section"
 msgid "Advanced search fields"
 msgstr ""
 
-#: includes/classes/widgets/elementor/class-elementor-search-form-widget.php:64
-#: includes/classes/widgets/elementor/class-elementor-request-form-widget.php:65
-#: includes/classes/widgets/elementor/class-elementor-half-map-widget.php:65
-#: includes/classes/widgets/elementor/class-elementor-authentication-widget.php:65
-#: includes/classes/widgets/elementor/class-elementor-listings-widget.php:65
-#: includes/classes/widgets/elementor/class-elementor-properties-slider-widget.php:65
+#: includes/classes/widgets/elementor/class-elementor-search-form-widget.php:69
+#: includes/classes/widgets/elementor/class-elementor-request-form-widget.php:70
+#: includes/classes/widgets/elementor/class-elementor-half-map-widget.php:70
+#: includes/classes/widgets/elementor/class-elementor-authentication-widget.php:70
+#: includes/classes/widgets/elementor/class-elementor-listings-widget.php:70
+#: includes/classes/widgets/elementor/class-elementor-properties-slider-widget.php:70
 msgctxt "Elementor widget section"
 msgid "Content"
 msgstr ""
 
-#: includes/classes/widgets/elementor/class-elementor-request-form-widget.php:119
+#: includes/classes/widgets/elementor/class-elementor-request-form-widget.php:124
 msgctxt "Elementor widget section"
 msgid "Email"
 msgstr ""
 
-#: includes/classes/widgets/elementor/class-elementor-half-map-widget.php:89
-#: includes/classes/widgets/elementor/class-elementor-listings-widget.php:110
+#: includes/classes/widgets/elementor/class-elementor-half-map-widget.php:94
+#: includes/classes/widgets/elementor/class-elementor-listings-widget.php:115
 msgctxt "Elementor widget section"
 msgid "Navbar"
 msgstr ""
 
-#: includes/classes/widgets/elementor/class-elementor-query.php:21
+#: includes/classes/widgets/elementor/class-elementor-query.php:26
 msgctxt "Elementor widget section"
 msgid "Query filter"
 msgstr ""
 
-#: includes/classes/widgets/elementor/class-elementor-half-map-widget.php:125
-#: includes/classes/widgets/elementor/class-elementor-listings-widget.php:146
+#: includes/classes/widgets/elementor/class-elementor-half-map-widget.php:130
+#: includes/classes/widgets/elementor/class-elementor-listings-widget.php:151
 msgctxt "Elementor widget section"
 msgid "Search navbar"
 msgstr ""
 
-#: includes/classes/widgets/elementor/class-elementor-search-form-widget.php:112
+#: includes/classes/widgets/elementor/class-elementor-search-form-widget.php:117
 msgctxt "Elementor widget section"
 msgid "Simple & main search fields"
 msgstr ""
 
-#: includes/classes/widgets/elementor/class-elementor-properties-slider-widget.php:87
+#: includes/classes/widgets/elementor/class-elementor-properties-slider-widget.php:92
 msgctxt "Elementor widget section"
 msgid "Slider settings"
 msgstr ""
 
-#: includes/classes/widgets/elementor/class-elementor-request-form-widget.php:101
+#: includes/classes/widgets/elementor/class-elementor-request-form-widget.php:106
 msgctxt "Elementor widget section"
 msgid "Style"
 msgstr ""
@@ -3617,7 +3642,7 @@ msgstr ""
 msgid "Email subject"
 msgstr ""
 
-#: includes/classes/widgets/elementor/class-elementor-request-form-widget.php:123
+#: includes/classes/widgets/elementor/class-elementor-request-form-widget.php:128
 msgctxt "email subject"
 msgid "Subject"
 msgstr ""
@@ -3637,7 +3662,7 @@ msgid "Enable %s range"
 msgstr ""
 
 #: includes/classes/widgets/class-properties-slider-widget.php:65
-#: includes/classes/widgets/elementor/class-elementor-properties-slider-widget.php:110
+#: includes/classes/widgets/elementor/class-elementor-properties-slider-widget.php:115
 msgid "Enable arrows"
 msgstr ""
 
@@ -3678,11 +3703,11 @@ msgstr ""
 msgid "Enable dynamic content"
 msgstr ""
 
-#: includes/classes/widgets/elementor/class-elementor-authentication-widget.php:82
+#: includes/classes/widgets/elementor/class-elementor-authentication-widget.php:87
 msgid "Enable Facebook auth"
 msgstr ""
 
-#: includes/classes/widgets/elementor/class-elementor-authentication-widget.php:88
+#: includes/classes/widgets/elementor/class-elementor-authentication-widget.php:93
 msgid "Enable Google auth"
 msgstr ""
 
@@ -3720,7 +3745,7 @@ msgstr ""
 msgid "Enable log in with Google"
 msgstr ""
 
-#: includes/classes/widgets/elementor/class-elementor-authentication-widget.php:94
+#: includes/classes/widgets/elementor/class-elementor-authentication-widget.php:99
 msgid "Enable Login form"
 msgstr ""
 
@@ -3753,13 +3778,13 @@ msgid "Enable REST Support"
 msgstr ""
 
 #: includes/classes/widgets/class-search-form-widget.php:111
-#: includes/classes/widgets/elementor/class-elementor-search-form-widget.php:91
+#: includes/classes/widgets/elementor/class-elementor-search-form-widget.php:96
 #: templates/admin/settings/tabs/listing-search-tab.php:22
 msgid "Enable saved search"
 msgstr ""
 
-#: includes/classes/widgets/elementor/class-elementor-half-map-widget.php:129
-#: includes/classes/widgets/elementor/class-elementor-listings-widget.php:150
+#: includes/classes/widgets/elementor/class-elementor-half-map-widget.php:134
+#: includes/classes/widgets/elementor/class-elementor-listings-widget.php:155
 msgid "Enable search bar"
 msgstr ""
 
@@ -3813,7 +3838,7 @@ msgstr ""
 msgid "Energy diagnostics"
 msgstr ""
 
-#: includes/classes/entities/class-property.php:929
+#: includes/classes/entities/class-property.php:943
 msgid "Energy Efficiency Class"
 msgstr ""
 
@@ -3928,11 +3953,11 @@ msgstr ""
 msgid "EUR - Euro"
 msgstr ""
 
-#: includes/classes/entities/class-property.php:683
+#: includes/classes/entities/class-property.php:697
 msgid "Ex. -62.149905"
 msgstr ""
 
-#: includes/classes/entities/class-property.php:670
+#: includes/classes/entities/class-property.php:684
 msgid "Ex. 63.524073"
 msgstr ""
 
@@ -3949,7 +3974,7 @@ msgstr ""
 msgid "Exterior Material"
 msgstr ""
 
-#: includes/classes/entities/class-property.php:859
+#: includes/classes/entities/class-property.php:873
 msgid "Exterior material"
 msgstr ""
 
@@ -3980,7 +4005,7 @@ msgid "Featured"
 msgstr ""
 
 #: includes/classes/class-taxonomies.php:171
-#: includes/classes/entities/class-property.php:803
+#: includes/classes/entities/class-property.php:817
 msgid "Features"
 msgstr ""
 
@@ -4116,9 +4141,9 @@ msgctxt "field type"
 msgid "URL"
 msgstr ""
 
-#: includes/classes/widgets/elementor/class-elementor-search-form-widget.php:121
-#: includes/classes/widgets/elementor/class-elementor-search-form-widget.php:135
-#: includes/classes/widgets/elementor/class-elementor-search-form-widget.php:147
+#: includes/classes/widgets/elementor/class-elementor-search-form-widget.php:126
+#: includes/classes/widgets/elementor/class-elementor-search-form-widget.php:140
+#: includes/classes/widgets/elementor/class-elementor-search-form-widget.php:152
 msgid "Fields"
 msgstr ""
 
@@ -4128,7 +4153,7 @@ msgid "Fields Builder"
 msgstr ""
 
 #: includes/classes/class-admin-init.php:104
-#: includes/classes/pages/admin/class-dashboard-page.php:1735
+#: includes/classes/pages/admin/class-dashboard-page.php:1756
 msgid "Fields builder"
 msgstr ""
 
@@ -4194,7 +4219,7 @@ msgstr[1] ""
 
 #: includes/classes/class-taxonomies.php:158
 #: includes/classes/class-taxonomies.php:159
-#: includes/classes/entities/class-property.php:823
+#: includes/classes/entities/class-property.php:837
 msgid "Floor covering"
 msgstr ""
 
@@ -4202,7 +4227,7 @@ msgstr ""
 msgid "Floor Level"
 msgstr ""
 
-#: includes/classes/entities/class-property.php:257
+#: includes/classes/entities/class-property.php:271
 msgid "Floor level"
 msgstr ""
 
@@ -4210,11 +4235,11 @@ msgstr ""
 msgid "Floor Plans"
 msgstr ""
 
-#: includes/classes/entities/class-property.php:751
+#: includes/classes/entities/class-property.php:765
 msgid "Floor plans"
 msgstr ""
 
-#: includes/classes/entities/class-property.php:242
+#: includes/classes/entities/class-property.php:256
 #: templates/admin/settings/tabs/listing-search-tab.php:272
 msgid "Floors"
 msgstr ""
@@ -4247,7 +4272,7 @@ msgstr ""
 msgid "Forgot password?"
 msgstr ""
 
-#: includes/classes/widgets/elementor/class-elementor-authentication-widget.php:69
+#: includes/classes/widgets/elementor/class-elementor-authentication-widget.php:74
 msgid "Form"
 msgstr ""
 
@@ -4387,7 +4412,7 @@ msgstr ""
 msgid "Greece"
 msgstr ""
 
-#: includes/classes/entities/class-property.php:941
+#: includes/classes/entities/class-property.php:955
 msgid "Greenhouse gas emission class (GHG)"
 msgstr ""
 
@@ -4419,7 +4444,7 @@ msgid_plural "half baths"
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/classes/entities/class-property.php:206
+#: includes/classes/entities/class-property.php:220
 msgid "Half baths"
 msgstr ""
 
@@ -4456,7 +4481,7 @@ msgstr ""
 msgid "Hide"
 msgstr ""
 
-#: includes/classes/entities/class-property.php:496
+#: includes/classes/entities/class-property.php:510
 msgid "Hide address from clients"
 msgstr ""
 
@@ -4493,7 +4518,7 @@ msgstr ""
 msgid "HNL - Lempira"
 msgstr ""
 
-#: includes/classes/widgets/elementor/class-elementor-properties-slider-widget.php:79
+#: includes/classes/widgets/elementor/class-elementor-properties-slider-widget.php:84
 msgid "Horizontal"
 msgstr ""
 
@@ -4547,7 +4572,7 @@ msgstr ""
 msgid "Icons"
 msgstr ""
 
-#: includes/classes/entities/class-property.php:382
+#: includes/classes/entities/class-property.php:396
 #: includes/classes/pages/admin/class-properties-archive-page.php:401
 msgid "ID"
 msgstr ""
@@ -4556,7 +4581,7 @@ msgstr ""
 msgid "IDR - Rupiah"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1831
+#: includes/classes/pages/admin/class-dashboard-page.php:1852
 msgid ""
 "If you are limited in time or just don’t feel like setting up the plugin "
 "yourself, our team is at your service. We can help set up your WordPress "
@@ -4600,7 +4625,7 @@ msgid ""
 msgstr ""
 
 #: includes/classes/widgets/class-properties-slider-widget.php:70
-#: includes/classes/widgets/elementor/class-elementor-properties-slider-widget.php:116
+#: includes/classes/widgets/elementor/class-elementor-properties-slider-widget.php:121
 msgid "Infinite"
 msgstr ""
 
@@ -4608,11 +4633,11 @@ msgstr ""
 msgid "INR - Indian Rupee"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1832
+#: includes/classes/pages/admin/class-dashboard-page.php:1853
 msgid "Installation & Setup"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1836
+#: includes/classes/pages/admin/class-dashboard-page.php:1857
 msgid ""
 "Installation, connection to MLS, and mapping MLS fields to Estatik for every "
 "property type (Residential, Commercial, Multifamily, Lease, LotsAndLand, etc."
@@ -4682,7 +4707,7 @@ msgstr ""
 msgid "IRR - Iranian Rial"
 msgstr ""
 
-#: includes/classes/entities/class-property.php:490
+#: includes/classes/entities/class-property.php:504
 msgid "Is manual address"
 msgstr ""
 
@@ -4730,7 +4755,7 @@ msgstr ""
 msgid "KES - Kenyan Shilling"
 msgstr ""
 
-#: includes/classes/entities/class-property.php:910
+#: includes/classes/entities/class-property.php:924
 msgid "Keywords"
 msgstr ""
 
@@ -4775,9 +4800,9 @@ msgid "Label for frontend form"
 msgstr ""
 
 #: includes/classes/class-taxonomies.php:79
-#: includes/classes/entities/class-property.php:413
+#: includes/classes/entities/class-property.php:427
 #: includes/classes/pages/admin/class-data-manager-page.php:384
-#: includes/classes/widgets/elementor/class-elementor-query.php:86
+#: includes/classes/widgets/elementor/class-elementor-query.php:91
 msgid "Labels"
 msgstr ""
 
@@ -4814,7 +4839,7 @@ msgstr ""
 msgid "Last name"
 msgstr ""
 
-#: includes/classes/entities/class-property.php:663
+#: includes/classes/entities/class-property.php:677
 msgid "Latitude"
 msgstr ""
 
@@ -4824,9 +4849,9 @@ msgstr ""
 
 #: includes/classes/widgets/class-listings-widget.php:56
 #: includes/classes/widgets/class-properties-slider-widget.php:52
-#: includes/classes/widgets/elementor/class-elementor-half-map-widget.php:75
-#: includes/classes/widgets/elementor/class-elementor-listings-widget.php:75
-#: includes/classes/widgets/elementor/class-elementor-properties-slider-widget.php:75
+#: includes/classes/widgets/elementor/class-elementor-half-map-widget.php:80
+#: includes/classes/widgets/elementor/class-elementor-listings-widget.php:80
+#: includes/classes/widgets/elementor/class-elementor-properties-slider-widget.php:80
 msgid "Layout"
 msgstr ""
 
@@ -4861,7 +4886,7 @@ msgid "Link name"
 msgstr ""
 
 #: includes/helper-functions.php:337
-#: includes/classes/entities/class-property.php:776
+#: includes/classes/entities/class-property.php:790
 msgid "Link to your video from YouTube or Vimeo"
 msgstr ""
 
@@ -4907,43 +4932,43 @@ msgid "Listings labels migrated."
 msgstr ""
 
 #: includes/classes/widgets/class-listings-widget.php:60
-#: includes/classes/widgets/elementor/class-elementor-listings-widget.php:79
+#: includes/classes/widgets/elementor/class-elementor-listings-widget.php:84
 msgctxt "listings layout name"
 msgid "1 column"
 msgstr ""
 
 #: includes/classes/widgets/class-listings-widget.php:61
-#: includes/classes/widgets/elementor/class-elementor-listings-widget.php:80
+#: includes/classes/widgets/elementor/class-elementor-listings-widget.php:85
 msgctxt "listings layout name"
 msgid "2 columns"
 msgstr ""
 
 #: includes/classes/widgets/class-listings-widget.php:62
-#: includes/classes/widgets/elementor/class-elementor-listings-widget.php:81
+#: includes/classes/widgets/elementor/class-elementor-listings-widget.php:86
 msgctxt "listings layout name"
 msgid "3 columns"
 msgstr ""
 
 #: includes/classes/widgets/class-listings-widget.php:63
-#: includes/classes/widgets/elementor/class-elementor-listings-widget.php:82
+#: includes/classes/widgets/elementor/class-elementor-listings-widget.php:87
 msgctxt "listings layout name"
 msgid "4 columns"
 msgstr ""
 
 #: includes/classes/widgets/class-listings-widget.php:64
-#: includes/classes/widgets/elementor/class-elementor-listings-widget.php:83
+#: includes/classes/widgets/elementor/class-elementor-listings-widget.php:88
 msgctxt "listings layout name"
 msgid "5 columns"
 msgstr ""
 
 #: includes/classes/widgets/class-listings-widget.php:65
-#: includes/classes/widgets/elementor/class-elementor-listings-widget.php:84
+#: includes/classes/widgets/elementor/class-elementor-listings-widget.php:89
 msgctxt "listings layout name"
 msgid "6 columns"
 msgstr ""
 
 #: includes/classes/widgets/class-listings-widget.php:59
-#: includes/classes/widgets/elementor/class-elementor-listings-widget.php:78
+#: includes/classes/widgets/elementor/class-elementor-listings-widget.php:83
 msgctxt "listings layout name"
 msgid "List"
 msgstr ""
@@ -5016,11 +5041,11 @@ msgstr ""
 msgid "Login"
 msgstr ""
 
-#: includes/classes/widgets/elementor/class-elementor-authentication-widget.php:74
+#: includes/classes/widgets/elementor/class-elementor-authentication-widget.php:79
 msgid "Login buttons"
 msgstr ""
 
-#: includes/classes/widgets/elementor/class-elementor-authentication-widget.php:73
+#: includes/classes/widgets/elementor/class-elementor-authentication-widget.php:78
 msgid "Login form"
 msgstr ""
 
@@ -5028,11 +5053,11 @@ msgstr ""
 msgid "Logo image for admin login page"
 msgstr ""
 
-#: includes/classes/entities/class-property.php:676
+#: includes/classes/entities/class-property.php:690
 msgid "Longitude"
 msgstr ""
 
-#: includes/classes/entities/class-property.php:291
+#: includes/classes/entities/class-property.php:305
 msgid "Lot size"
 msgstr ""
 
@@ -5046,7 +5071,7 @@ msgid "Lot size units"
 msgstr ""
 
 #. %s: units
-#: includes/classes/entities/class-property.php:291
+#: includes/classes/entities/class-property.php:305
 #, php-format
 msgid "Lot size, %s"
 msgstr ""
@@ -5080,7 +5105,7 @@ msgid "Main color"
 msgstr ""
 
 #: includes/classes/widgets/class-search-form-widget.php:125
-#: includes/classes/widgets/elementor/class-elementor-search-form-widget.php:115
+#: includes/classes/widgets/elementor/class-elementor-search-form-widget.php:120
 msgid "Main filters"
 msgstr ""
 
@@ -5223,7 +5248,7 @@ msgstr ""
 msgid "MKD - Denar"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1764
+#: includes/classes/pages/admin/class-dashboard-page.php:1785
 msgid "MLS Import"
 msgstr ""
 
@@ -5258,7 +5283,7 @@ msgstr ""
 msgid "More filters"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1811
+#: includes/classes/pages/admin/class-dashboard-page.php:1832
 msgid "Mortgage Calculator"
 msgstr ""
 
@@ -5293,7 +5318,7 @@ msgstr ""
 #: includes/classes/class-admin-menu.php:51
 #: includes/classes/class-admin-menu.php:52
 #: templates/admin/properties-archive/header.php:3
-#: includes/classes/pages/admin/class-dashboard-page.php:1725
+#: includes/classes/pages/admin/class-dashboard-page.php:1746
 msgid "My listings"
 msgstr ""
 
@@ -5326,7 +5351,7 @@ msgstr ""
 msgid "Name*"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1780
+#: includes/classes/pages/admin/class-dashboard-page.php:1801
 msgid "Native Theme"
 msgstr ""
 
@@ -5348,7 +5373,7 @@ msgid "neighborhood"
 msgstr ""
 
 #: includes/classes/class-taxonomies.php:197
-#: includes/classes/entities/class-property.php:708
+#: includes/classes/entities/class-property.php:722
 #: includes/classes/pages/admin/class-data-manager-page.php:442
 msgid "Neighborhoods"
 msgstr ""
@@ -5437,19 +5462,19 @@ msgstr ""
 
 #. %1$s: file size, %2$s: file extensions.
 #: includes/helper-functions.php:363
-#: includes/classes/entities/class-property.php:717
-#: includes/classes/entities/class-property.php:736
-#: includes/classes/entities/class-property.php:754
+#: includes/classes/entities/class-property.php:731
+#: includes/classes/entities/class-property.php:750
+#: includes/classes/entities/class-property.php:768
 #, php-format
 msgid "One file must be less than %1$s. Allowed Extensions: %2$s."
 msgstr ""
 
-#: includes/classes/widgets/elementor/class-elementor-search-form-widget.php:85
+#: includes/classes/widgets/elementor/class-elementor-search-form-widget.php:90
 msgid "Only for Main search layout"
 msgstr ""
 
 #: includes/classes/widgets/class-search-form-widget.php:112
-#: includes/classes/widgets/elementor/class-elementor-search-form-widget.php:92
+#: includes/classes/widgets/elementor/class-elementor-search-form-widget.php:97
 msgid "Only for Simple or Advanced search layout"
 msgstr ""
 
@@ -5459,32 +5484,32 @@ msgid ""
 "fix this."
 msgstr ""
 
-#: includes/functions.php:340 includes/classes/entities/class-property.php:341
+#: includes/functions.php:340 includes/classes/entities/class-property.php:355
 msgid "Open House"
 msgstr ""
 
 #: includes/classes/class-migrations.php:190
-#: includes/classes/entities/class-property.php:318
+#: includes/classes/entities/class-property.php:332
 msgid "Open house"
 msgstr ""
 
-#: includes/classes/entities/class-property.php:361
+#: includes/classes/entities/class-property.php:375
 msgctxt "open house date"
 msgid "Date"
 msgstr ""
 
-#: includes/classes/entities/class-property.php:373
+#: includes/classes/entities/class-property.php:387
 msgctxt "open house time"
 msgid "End time"
 msgstr ""
 
-#: includes/classes/entities/class-property.php:368
+#: includes/classes/entities/class-property.php:382
 msgctxt "open house time"
 msgid "Start time"
 msgstr ""
 
 #. %s: min - max
-#: includes/classes/entities/class-property.php:960
+#: includes/classes/entities/class-property.php:974
 #, php-format
 msgid "Or %s range"
 msgstr ""
@@ -5525,7 +5550,7 @@ msgstr ""
 
 #: includes/classes/class-taxonomies.php:106
 #: includes/classes/class-taxonomies.php:107
-#: includes/classes/entities/class-property.php:895
+#: includes/classes/entities/class-property.php:909
 msgid "Parking"
 msgstr ""
 
@@ -5590,7 +5615,7 @@ msgstr ""
 msgid "Phone"
 msgstr ""
 
-#: includes/classes/entities/class-property.php:714
+#: includes/classes/entities/class-property.php:728
 msgid "Photo gallery"
 msgstr ""
 
@@ -5735,7 +5760,7 @@ msgctxt "popup error title"
 msgid "Error!"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1799
+#: includes/classes/pages/admin/class-dashboard-page.php:1820
 msgid "Portal Theme"
 msgstr ""
 
@@ -5763,11 +5788,11 @@ msgid "premise"
 msgstr ""
 
 #: templates/admin/dashboard/index.php:314
-#: includes/classes/pages/admin/class-dashboard-page.php:1765
+#: includes/classes/pages/admin/class-dashboard-page.php:1786
 msgid "Premium"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1837
+#: includes/classes/pages/admin/class-dashboard-page.php:1858
 msgid "Premium MLS Setup (for Premium users only)"
 msgstr ""
 
@@ -5781,7 +5806,7 @@ msgid "Preview"
 msgstr ""
 
 #: includes/classes/class-settings-container.php:582
-#: includes/classes/entities/class-property.php:435
+#: includes/classes/entities/class-property.php:449
 #: templates/admin/properties-archive/quick-edit.php:118
 #: includes/classes/pages/admin/class-properties-archive-page.php:409
 msgid "Price"
@@ -5791,11 +5816,11 @@ msgstr ""
 msgid "Price Input Type"
 msgstr ""
 
-#: includes/classes/entities/class-property.php:467
+#: includes/classes/entities/class-property.php:481
 msgid "Price note"
 msgstr ""
 
-#: includes/classes/entities/class-property.php:452
+#: includes/classes/entities/class-property.php:466
 #: templates/admin/properties-archive/quick-edit.php:125
 msgid "Price per sqft"
 msgstr ""
@@ -5818,8 +5843,8 @@ msgid "Privacy policy page"
 msgstr ""
 
 #: templates/admin/dashboard/index.php:306
-#: includes/classes/pages/admin/class-dashboard-page.php:1751
-#: includes/classes/pages/admin/class-dashboard-page.php:1758
+#: includes/classes/pages/admin/class-dashboard-page.php:1772
+#: includes/classes/pages/admin/class-dashboard-page.php:1779
 msgid "PRO"
 msgstr ""
 
@@ -5835,8 +5860,12 @@ msgstr ""
 msgid "Profile updated successfully."
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1793
+#: includes/classes/pages/admin/class-dashboard-page.php:1814
 msgid "Project Theme"
+msgstr ""
+
+#: includes/classes/entities/class-property.php:47
+msgid "properties"
 msgstr ""
 
 #: templates/admin/properties-archive/filter.php:34
@@ -5846,7 +5875,7 @@ msgctxt "properties filter select"
 msgid "All"
 msgstr ""
 
-#: includes/classes/widgets/elementor/class-elementor-query.php:44
+#: includes/classes/widgets/elementor/class-elementor-query.php:49
 msgid "Properties IDs"
 msgstr ""
 
@@ -5858,12 +5887,16 @@ msgstr ""
 msgid "Properties number per page"
 msgstr ""
 
-#: includes/classes/widgets/elementor/class-elementor-query.php:31
+#: includes/classes/widgets/elementor/class-elementor-query.php:36
 msgid "Properties per page"
 msgstr ""
 
 #: includes/classes/class-settings-container.php:1260
 msgid "Property"
+msgstr ""
+
+#: includes/classes/entities/class-property.php:46
+msgid "property"
 msgstr ""
 
 #: templates/admin/settings/tabs/slugs-tab.php:30
@@ -5972,7 +6005,7 @@ msgstr ""
 msgid "Property types to show"
 msgstr ""
 
-#: includes/classes/entities/class-property.php:586
+#: includes/classes/entities/class-property.php:600
 msgid "Province"
 msgstr ""
 
@@ -6003,7 +6036,7 @@ msgstr ""
 msgid "Quick edit"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1805
+#: includes/classes/pages/admin/class-dashboard-page.php:1826
 msgid "Realtor Theme"
 msgstr ""
 
@@ -6053,7 +6086,7 @@ msgid "Remove this home from saved?"
 msgstr ""
 
 #: includes/classes/class-taxonomies.php:67
-#: includes/classes/entities/class-property.php:109
+#: includes/classes/entities/class-property.php:123
 msgid "Rent Period"
 msgstr ""
 
@@ -6109,7 +6142,7 @@ msgstr ""
 #: includes/classes/class-settings-container.php:1217
 #: includes/classes/emails/class-reset-password-email.php:35
 #: includes/classes/pages/admin/class-demo-page.php:314
-#: includes/classes/widgets/elementor/class-elementor-authentication-widget.php:77
+#: includes/classes/widgets/elementor/class-elementor-authentication-widget.php:82
 #: templates/admin/demo/steps/step3.php:52
 msgid "Reset password"
 msgstr ""
@@ -6120,7 +6153,7 @@ msgstr ""
 
 #: includes/classes/class-taxonomies.php:119
 #: includes/classes/class-taxonomies.php:120
-#: includes/classes/entities/class-property.php:877
+#: includes/classes/entities/class-property.php:891
 msgid "Roof"
 msgstr ""
 
@@ -6187,7 +6220,7 @@ msgstr ""
 msgid "SBD - Solomon Islands Dollar"
 msgstr ""
 
-#: includes/classes/entities/class-property.php:325
+#: includes/classes/entities/class-property.php:339
 msgid ""
 "Scheduled period of time in which property designated to be open for viewing "
 "by potential clients"
@@ -6210,7 +6243,7 @@ msgid "Search"
 msgstr ""
 
 #: includes/classes/widgets/class-search-form-widget.php:116
-#: includes/classes/widgets/elementor/class-elementor-search-form-widget.php:105
+#: includes/classes/widgets/elementor/class-elementor-search-form-widget.php:110
 msgid "Search by location"
 msgstr ""
 
@@ -6218,7 +6251,7 @@ msgstr ""
 msgid "Search by title, ID or address"
 msgstr ""
 
-#: includes/classes/widgets/elementor/class-elementor-query.php:25
+#: includes/classes/widgets/elementor/class-elementor-query.php:30
 msgid "Search in address string"
 msgstr ""
 
@@ -6242,7 +6275,7 @@ msgid "Search results"
 msgstr ""
 
 #: includes/classes/widgets/class-search-form-widget.php:95
-#: includes/classes/widgets/elementor/class-elementor-search-form-widget.php:98
+#: includes/classes/widgets/elementor/class-elementor-search-form-widget.php:103
 msgid "Search results page"
 msgstr ""
 
@@ -6254,24 +6287,24 @@ msgstr ""
 msgid "Search support"
 msgstr ""
 
-#: includes/classes/widgets/elementor/class-elementor-search-form-widget.php:73
+#: includes/classes/widgets/elementor/class-elementor-search-form-widget.php:78
 msgid "Search type"
 msgstr ""
 
 #: includes/classes/widgets/class-search-form-widget.php:87
-#: includes/classes/widgets/elementor/class-elementor-search-form-widget.php:78
+#: includes/classes/widgets/elementor/class-elementor-search-form-widget.php:83
 msgctxt "search widget"
 msgid "Advanced"
 msgstr ""
 
 #: includes/classes/widgets/class-search-form-widget.php:85
-#: includes/classes/widgets/elementor/class-elementor-search-form-widget.php:76
+#: includes/classes/widgets/elementor/class-elementor-search-form-widget.php:81
 msgctxt "search widget"
 msgid "Main"
 msgstr ""
 
 #: includes/classes/widgets/class-search-form-widget.php:86
-#: includes/classes/widgets/elementor/class-elementor-search-form-widget.php:77
+#: includes/classes/widgets/elementor/class-elementor-search-form-widget.php:82
 msgctxt "search widget"
 msgid "Simple"
 msgstr ""
@@ -6354,7 +6387,7 @@ msgid "Selecting a default tel code in the request form"
 msgstr ""
 
 #: includes/classes/widgets/class-request-form-widget.php:98
-#: includes/classes/widgets/elementor/class-elementor-request-form-widget.php:129
+#: includes/classes/widgets/elementor/class-elementor-request-form-widget.php:134
 msgid "Send Message To"
 msgstr ""
 
@@ -6374,7 +6407,7 @@ msgstr ""
 msgid "Set map markers"
 msgstr ""
 
-#: includes/classes/entities/class-property.php:441
+#: includes/classes/entities/class-property.php:455
 msgid "Set property price"
 msgstr ""
 
@@ -6385,7 +6418,7 @@ msgstr ""
 #: includes/classes/class-admin-menu.php:93
 #: includes/classes/class-admin-menu.php:94
 #: templates/admin/settings/index.php:13
-#: includes/classes/pages/admin/class-dashboard-page.php:1730
+#: includes/classes/pages/admin/class-dashboard-page.php:1751
 msgid "Settings"
 msgstr ""
 
@@ -6405,7 +6438,7 @@ msgstr ""
 msgid "Share"
 msgstr ""
 
-#: includes/entity-functions.php:156
+#: includes/entity-functions.php:161
 #, php-format
 msgid "Share this %s"
 msgstr ""
@@ -6422,7 +6455,7 @@ msgstr ""
 msgid "Shingle"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1745
+#: includes/classes/pages/admin/class-dashboard-page.php:1766
 msgid "Shortcodes"
 msgstr ""
 
@@ -6430,7 +6463,7 @@ msgstr ""
 msgid "Show all"
 msgstr ""
 
-#: includes/classes/entities/class-property.php:788
+#: includes/classes/entities/class-property.php:802
 msgid "Show all amenities"
 msgstr ""
 
@@ -6438,11 +6471,11 @@ msgstr ""
 msgid "Show all amenities & features"
 msgstr ""
 
-#: includes/classes/entities/class-property.php:403
+#: includes/classes/entities/class-property.php:417
 msgid "Show all description"
 msgstr ""
 
-#: includes/classes/entities/class-property.php:808
+#: includes/classes/entities/class-property.php:822
 msgid "Show all features"
 msgstr ""
 
@@ -6454,8 +6487,8 @@ msgstr ""
 msgid "Show description in listing box"
 msgstr ""
 
-#: includes/classes/widgets/elementor/class-elementor-half-map-widget.php:117
-#: includes/classes/widgets/elementor/class-elementor-listings-widget.php:138
+#: includes/classes/widgets/elementor/class-elementor-half-map-widget.php:122
+#: includes/classes/widgets/elementor/class-elementor-listings-widget.php:143
 msgid "Show layouts"
 msgstr ""
 
@@ -6479,8 +6512,8 @@ msgstr ""
 msgid "Show or Hide password"
 msgstr ""
 
-#: includes/classes/widgets/elementor/class-elementor-half-map-widget.php:105
-#: includes/classes/widgets/elementor/class-elementor-listings-widget.php:126
+#: includes/classes/widgets/elementor/class-elementor-half-map-widget.php:110
+#: includes/classes/widgets/elementor/class-elementor-listings-widget.php:131
 msgid "Show page title"
 msgstr ""
 
@@ -6492,13 +6525,13 @@ msgstr ""
 msgid "Show properties"
 msgstr ""
 
-#: includes/classes/widgets/elementor/class-elementor-half-map-widget.php:99
-#: includes/classes/widgets/elementor/class-elementor-listings-widget.php:120
+#: includes/classes/widgets/elementor/class-elementor-half-map-widget.php:104
+#: includes/classes/widgets/elementor/class-elementor-listings-widget.php:125
 msgid "Show sorting"
 msgstr ""
 
-#: includes/classes/widgets/elementor/class-elementor-half-map-widget.php:111
-#: includes/classes/widgets/elementor/class-elementor-listings-widget.php:132
+#: includes/classes/widgets/elementor/class-elementor-half-map-widget.php:116
+#: includes/classes/widgets/elementor/class-elementor-listings-widget.php:137
 msgid "Show total"
 msgstr ""
 
@@ -6580,7 +6613,7 @@ msgstr ""
 msgid "Slides per serving"
 msgstr ""
 
-#: includes/classes/widgets/elementor/class-elementor-properties-slider-widget.php:91
+#: includes/classes/widgets/elementor/class-elementor-properties-slider-widget.php:96
 msgid "Slides to show"
 msgstr ""
 
@@ -6625,7 +6658,7 @@ msgstr ""
 msgid "South Africa"
 msgstr ""
 
-#: includes/classes/widgets/elementor/class-elementor-properties-slider-widget.php:122
+#: includes/classes/widgets/elementor/class-elementor-properties-slider-widget.php:127
 msgid "Space between slides (px)"
 msgstr ""
 
@@ -6672,7 +6705,7 @@ msgstr ""
 msgid "Start searching for properties to add now."
 msgstr ""
 
-#: includes/classes/entities/class-property.php:555
+#: includes/classes/entities/class-property.php:569
 msgid "State"
 msgstr ""
 
@@ -6681,7 +6714,7 @@ msgid "States"
 msgstr ""
 
 #: includes/classes/class-taxonomies.php:94
-#: includes/classes/entities/class-property.php:154
+#: includes/classes/entities/class-property.php:168
 #: templates/admin/properties-archive/quick-edit.php:99
 #: templates/admin/properties-archive/filter.php:45
 #: templates/admin/properties-archive/quick-edit-bulk.php:87
@@ -6691,7 +6724,7 @@ msgstr ""
 
 #: includes/classes/class-taxonomies.php:93
 #: includes/classes/pages/admin/class-data-manager-page.php:380
-#: includes/classes/widgets/elementor/class-elementor-query.php:75
+#: includes/classes/widgets/elementor/class-elementor-query.php:80
 msgid "Statuses"
 msgstr ""
 
@@ -6815,7 +6848,7 @@ msgid "Tag"
 msgstr ""
 
 #: includes/classes/class-taxonomies.php:210
-#: includes/classes/entities/class-property.php:65
+#: includes/classes/entities/class-property.php:79
 #: includes/classes/pages/admin/class-data-manager-page.php:404
 msgid "Tags"
 msgstr ""
@@ -6860,7 +6893,7 @@ msgstr ""
 msgid "Text"
 msgstr ""
 
-#: includes/classes/widgets/elementor/class-elementor-request-form-widget.php:111
+#: includes/classes/widgets/elementor/class-elementor-request-form-widget.php:116
 msgid "Text color"
 msgstr ""
 
@@ -6902,9 +6935,9 @@ msgid "Time format"
 msgstr ""
 
 #: includes/classes/class-settings-container.php:1154
-#: includes/classes/entities/class-property.php:391
-#: includes/classes/widgets/elementor/class-elementor-half-map-widget.php:69
-#: includes/classes/widgets/elementor/class-elementor-listings-widget.php:69
+#: includes/classes/entities/class-property.php:405
+#: includes/classes/widgets/elementor/class-elementor-half-map-widget.php:74
+#: includes/classes/widgets/elementor/class-elementor-listings-widget.php:74
 msgid "Title"
 msgstr ""
 
@@ -6964,7 +6997,7 @@ msgstr ""
 msgid "TOP - Pa’anga"
 msgstr ""
 
-#: includes/classes/entities/class-property.php:225
+#: includes/classes/entities/class-property.php:239
 msgid "Total rooms"
 msgstr ""
 
@@ -6976,7 +7009,7 @@ msgstr ""
 msgid "Trash compactor"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1787
+#: includes/classes/pages/admin/class-dashboard-page.php:1808
 msgid "Trendy Theme"
 msgstr ""
 
@@ -6997,7 +7030,7 @@ msgid "Twitter"
 msgstr ""
 
 #: includes/classes/class-taxonomies.php:54
-#: includes/classes/entities/class-property.php:131
+#: includes/classes/entities/class-property.php:145
 #: templates/admin/properties-archive/quick-edit.php:70
 #: templates/admin/properties-archive/filter.php:73
 #: templates/admin/properties-archive/quick-edit-bulk.php:62
@@ -7009,7 +7042,7 @@ msgstr ""
 
 #: includes/classes/class-taxonomies.php:53
 #: includes/classes/pages/admin/class-data-manager-page.php:376
-#: includes/classes/widgets/elementor/class-elementor-query.php:64
+#: includes/classes/widgets/elementor/class-elementor-query.php:69
 msgid "Types"
 msgstr ""
 
@@ -7033,8 +7066,8 @@ msgstr ""
 msgid "Units & Formats"
 msgstr ""
 
-#: includes/classes/entities/class-property.php:303
-#: includes/classes/entities/class-property.php:313
+#: includes/classes/entities/class-property.php:317
+#: includes/classes/entities/class-property.php:327
 msgid "Unknown"
 msgstr ""
 
@@ -7075,7 +7108,7 @@ msgstr ""
 msgid "Upgrade"
 msgstr ""
 
-#: includes/classes/entities/class-property.php:741
+#: includes/classes/entities/class-property.php:755
 msgid "Upload files"
 msgstr ""
 
@@ -7087,7 +7120,7 @@ msgstr ""
 msgid "Upload image"
 msgstr ""
 
-#: includes/classes/entities/class-property.php:760
+#: includes/classes/entities/class-property.php:774
 msgid "Upload images"
 msgstr ""
 
@@ -7096,7 +7129,7 @@ msgstr ""
 msgid "Upload new photo"
 msgstr ""
 
-#: includes/classes/entities/class-property.php:721
+#: includes/classes/entities/class-property.php:735
 msgid "Upload photos"
 msgstr ""
 
@@ -7195,11 +7228,11 @@ msgstr ""
 msgid "Version %s"
 msgstr ""
 
-#: includes/classes/widgets/elementor/class-elementor-properties-slider-widget.php:80
+#: includes/classes/widgets/elementor/class-elementor-properties-slider-widget.php:85
 msgid "Vertical"
 msgstr ""
 
-#: includes/functions.php:362 includes/classes/entities/class-property.php:767
+#: includes/functions.php:362 includes/classes/entities/class-property.php:781
 msgid "Video"
 msgstr ""
 
@@ -7211,11 +7244,11 @@ msgstr ""
 msgid "View all"
 msgstr ""
 
-#: includes/classes/widgets/elementor/class-elementor-listings-widget.php:96
+#: includes/classes/widgets/elementor/class-elementor-listings-widget.php:101
 msgid "View all link name"
 msgstr ""
 
-#: includes/classes/widgets/elementor/class-elementor-listings-widget.php:102
+#: includes/classes/widgets/elementor/class-elementor-listings-widget.php:107
 msgid "View all page"
 msgstr ""
 
@@ -7223,8 +7256,8 @@ msgstr ""
 msgid "Vinyl"
 msgstr ""
 
-#: includes/classes/widgets/elementor/class-elementor-half-map-widget.php:135
-#: includes/classes/widgets/elementor/class-elementor-listings-widget.php:156
+#: includes/classes/widgets/elementor/class-elementor-half-map-widget.php:140
+#: includes/classes/widgets/elementor/class-elementor-listings-widget.php:161
 msgid "Visible fields"
 msgstr ""
 
@@ -7251,7 +7284,7 @@ msgstr ""
 msgid "VUV - Vatu"
 msgstr ""
 
-#: includes/classes/pages/admin/class-dashboard-page.php:1826
+#: includes/classes/pages/admin/class-dashboard-page.php:1847
 msgid ""
 "We can extend plugin features and customize it to meet your requirements. To "
 "get an estimate, just fill out the form and we will get back to you with a "
@@ -7266,15 +7299,15 @@ msgstr ""
 msgid "What is your country?"
 msgstr ""
 
-#: includes/classes/entities/class-property.php:157
+#: includes/classes/entities/class-property.php:171
 msgid "What is your property status?"
 msgstr ""
 
-#: includes/classes/entities/class-property.php:134
+#: includes/classes/entities/class-property.php:148
 msgid "What is your property type?"
 msgstr ""
 
-#: includes/classes/entities/class-property.php:89
+#: includes/classes/entities/class-property.php:103
 msgid "What kind of property are you marketing?"
 msgstr ""
 
@@ -7370,7 +7403,7 @@ msgstr ""
 msgid "Would you like to add demo listings?"
 msgstr ""
 
-#: includes/classes/widgets/elementor/class-elementor-search-form-widget.php:100
+#: includes/classes/widgets/elementor/class-elementor-search-form-widget.php:105
 msgid "WP default"
 msgstr ""
 
@@ -7406,11 +7439,11 @@ msgstr ""
 msgid "XUA - ADB Unit of Account"
 msgstr ""
 
-#: includes/classes/entities/class-property.php:297
+#: includes/classes/entities/class-property.php:311
 msgid "Year built"
 msgstr ""
 
-#: includes/classes/entities/class-property.php:307
+#: includes/classes/entities/class-property.php:321
 msgid "Year remodeled"
 msgstr ""
 
@@ -7487,7 +7520,7 @@ msgstr ""
 msgid "ZAR - Rand"
 msgstr ""
 
-#: includes/classes/entities/class-property.php:648
+#: includes/classes/entities/class-property.php:662
 msgid "Zip / Postal Code"
 msgstr ""
 

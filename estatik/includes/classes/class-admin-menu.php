@@ -98,6 +98,17 @@ class Es_Admin_Menu {
 				),
 				'callback' => 'add_submenu_page',
 			),
+            'upgrade' => array(
+				'args' => array(
+					$parent,
+					__( 'Upgrade to Pro', 'es' ),
+					'<span class="estatik-upgrade-v4">' . __( 'Upgrade to Pro', 'es' ) . '</span>',
+					'manage_options',
+					'es_upgrade',
+					array( 'Es_Upgrade_Page', 'render' )
+				),
+				'callback' => 'add_submenu_page',
+			),
 		);
 
 		if ( ! es_is_demo_executed() ) {
