@@ -25,6 +25,9 @@ if ( $collapsed_fields_active || $main_fields_active || ! empty( $attributes['is
 
 <div class="<?php echo $container_classes; ?>" id="es-search--<?php echo $uniqid; ?>" data-same-price="<?php echo ests( 'is_same_price_for_categories_enabled' ); ?>">
     <form action="<?php echo $search_page_uri; ?>" role="search" method="get">
+
+        <?php do_action( 'es_before_search_form_fields', 'main' ); ?>
+
         <input type="hidden" name="es" value="1"/>
 
         <?php if ( ! $search_page_exists ) : ?>

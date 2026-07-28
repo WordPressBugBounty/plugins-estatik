@@ -38,6 +38,31 @@ class Es_Dashboard_Page {
     public static function get_changelog() {
         return array(
 
+            '4.3.3' => array(
+                'date' => _x( 'Jule, 27, 2026', 'changelog', 'es' ),
+                'changes' => array(
+                    array(
+                        'text' => _x( 'New Estatik Gutenberg blocks added (Pro)', 'changelog', 'es' ),
+                        'label' => 'new',
+                    ),
+                    array(
+                        'text' => _x( 'Schema.org markup improved and new SEO filters added (All versions)', 'changelog', 'es' ),
+                        'label' => 'new',
+                    ),
+                    array(
+                        'text' => _x( 'Request form security improvements added (All versions)', 'changelog', 'es' ),
+                        'label' => 'bugfix',
+                    ),
+                    array(
+                        'text' => _x( 'reCAPTCHA security improvements added (All versions)', 'changelog', 'es' ),
+                        'label' => 'bugfix',
+                    ),
+                    array(
+                        'text' => _x( 'Facebook and Google website registration security improved (All versions)', 'changelog', 'es' ),
+                        'label' => 'bugfix',
+                    ),
+                ),
+            ),    
             '4.3.2' => array(
                 'date' => _x( 'June, 9, 2026', 'changelog', 'es' ),
                 'changes' => array(

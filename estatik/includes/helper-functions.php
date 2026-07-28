@@ -1422,27 +1422,45 @@ function es_property_get_field_info( $field ) {
  * @return bool
  */
 function es_verify_recaptcha() {
+	$site_key = trim( (string) ests( 'recaptcha_site_key' ) );
+	$secret_key = trim( (string) ests( 'recaptcha_secret_key' ) );
+	$version = trim( (string) ests( 'recaptcha_version' ) );
 
-	if ( isset( $_POST['g-recaptcha-response'] ) ) {
-		if ( ! empty( $_POST['g-recaptcha-response'] ) ) {
-			$secret   = ests( 'recaptcha_secret_key' );
+	if ( ! $site_key || ! $secret_key || ! $version ) {
+		return apply_filters( 'es_verify_recaptcha', true );
+	}
 
-			$verify_response = wp_safe_remote_get( 'https://www.google.com/recaptcha/api/siteverify?secret=' . $secret . '&response=' . sanitize_text_field( $_POST['g-recaptcha-response'] ) );
+	$recaptcha_response = isset( $_POST['g-recaptcha-response'] ) ? sanitize_text_field( wp_unslash( $_POST['g-recaptcha-response'] ) ) : '';
 
-			if ( ! empty( $verify_response['body'] ) ) {
-				$response_data = json_decode( $verify_response['body'] );
+	if ( ! $recaptcha_response ) {
+		return apply_filters( 'es_verify_recaptcha', false );
+	}
 
-				if ( ! empty( $response_data->success ) || ( ! empty( $response_data->score ) && $response_data->score >= 0.5 ) ) {
-					return apply_filters( 'es_verify_recaptcha', true );
-				}
-			}
-		}
+	$verify_response = wp_safe_remote_post( 'https://www.google.com/recaptcha/api/siteverify', array( 'timeout' => 10, 'body' => array( 'secret' => $secret_key, 'response' => $recaptcha_response, ), ) );
 
+	if ( is_wp_error( $verify_response ) ) {
+		return apply_filters( 'es_verify_recaptcha', false );
+	}
+
+	$response_body = wp_remote_retrieve_body( $verify_response );
+
+	if ( ! $response_body ) {
+		return apply_filters( 'es_verify_recaptcha', false );
+	}
+
+	$response_data = json_decode( $response_body, true );
+
+	if ( ! is_array( $response_data ) || empty( $response_data['success'] ) ) {
+		return apply_filters( 'es_verify_recaptcha', false );
+	}
+
+	if ( isset( $response_data['score'] ) && (float) $response_data['score'] < 0.5 ) {
 		return apply_filters( 'es_verify_recaptcha', false );
 	}
 
 	return apply_filters( 'es_verify_recaptcha', true );
 }
+
 
 /**
  * Verify honeypot.

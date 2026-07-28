@@ -138,7 +138,14 @@ class Es_Request_Form_Shortcode extends Es_Shortcode {
     public static function submit_form() {
         $btn = '<a href="" class="es-btn es-btn--secondary js-es-close-popup">' . __( 'Got it', 'es' ) . '</a>';
         $id = es_clean( filter_input( INPUT_POST, 'uniqid' ) );
-        if ( wp_verify_nonce( es_get_nonce( 'es_request_form_nonce_' . $id ), 'es_submit_request_form' ) ) {
+
+        $recipient_type = (int) filter_input( INPUT_POST, 'recipient_type' );
+        $send_to_emails = es_clean( filter_input( INPUT_POST, 'send_to_emails' ) );
+        $send_to_emails_signature = es_clean( filter_input( INPUT_POST, 'send_to_emails_signature' ) );
+
+        $is_send_to_emails_valid = $send_to_emails_signature && hash_equals( hash_hmac( 'sha256', $recipient_type . '|' . $send_to_emails, wp_salt( 'auth' ) ), $send_to_emails_signature );
+
+        if ( wp_verify_nonce( es_get_nonce( 'es_request_form_nonce_' . $id ), 'es_submit_request_form' ) && $is_send_to_emails_valid ) {
             if ( es_verify_recaptcha() ) {
                 if ( ( isset( $_POST['terms_conditions'] ) && ! empty( $_POST['terms_conditions'] ) ) || ! isset( $_POST['terms_conditions'] ) ) {
                     $data = apply_filters( 'es_request_form_submit_data', es_clean( $_POST ) );
@@ -174,6 +181,25 @@ class Es_Request_Form_Shortcode extends Es_Shortcode {
         $response['message'] = sprintf( "<div id='es-request-form-popup' class='es-magnific-popup es-ajax-form-popup'>%s</div>", $response['message'] );
 
         wp_die( json_encode( apply_filters( 'es_request_form_submit_response', $response, $content ) ) );
+    }
+
+    /**
+     * Render request form security fields.
+     *
+     * @param array $args
+     *
+     * @return void
+     */
+    public static function render_security_fields( $args ) {
+        $attributes = $args['attributes'] ?? array();
+
+        $recipient_type = isset( $attributes['recipient_type'] ) ? (int) $attributes['recipient_type'] : static::SEND_ADMIN;
+
+        $send_to_emails = ! empty( $attributes['custom_email'] ) ? $attributes['custom_email'] : '';
+
+        $signature = hash_hmac( 'sha256', $recipient_type . '|' . $send_to_emails,  wp_salt( 'auth' ) );
+
+        echo '<input type="hidden" name="send_to_emails_signature" value="' . esc_attr( $signature ) . '">';
     }
 
 	/**
@@ -226,7 +252,9 @@ class Es_Request_Form_Shortcode extends Es_Shortcode {
 
         return apply_filters( 'es_request_form_get_emails', $emails, $this );
     }
+    
 }
 
 add_action( 'wp_ajax_es_submit_request_form', array( 'Es_Request_Form_Shortcode', 'submit_form' ) );
 add_action( 'wp_ajax_nopriv_es_submit_request_form', array( 'Es_Request_Form_Shortcode', 'submit_form' ) );
+add_action( 'es_before_request_form', array( 'Es_Request_Form_Shortcode', 'render_security_fields' ) );

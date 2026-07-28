@@ -1541,56 +1541,85 @@ add_action( 'widgets_init', 'es_translate_widget_titles', 20 );
  * @return void
  */
 function es_schema_org_script() {
-    if ( is_singular( 'properties' ) ) {
-        $property = es_get_the_property();
+	if ( ! is_singular( 'properties' ) ) {
+		return;
+	}
 
-	    $schema = array(
-		    '@context' => 'https://schema.org',
-		    '@type'    => 'House',
-		    'name'     => get_the_title(),
-		    'url'      => get_the_permalink(),
-            'address'  => $property->address,
-            'floorLevel'  => $property->floor_level,
-            'yearBuilt'  => $property->year_built,
-            'numberOfBathroomsTotal'  => $property->bathrooms,
-            'numberOfBedrooms'  => $property->bedrooms,
-	    );
+	$property = es_get_the_property();
 
-//        if ( ! empty( $property->price ) ) {
-//            $schema['offers'] = array(
-//		        "@type" => "Offer",
-//                "price" => $property->price,
-//                "priceCurrency" => ests( 'currency' ),
-//                "availability" => "https://schema.org/InStock",
-//                "url" => get_the_permalink()
-//            );
-//        }
+	if ( ! $property ) {
+		return;
+	}
 
-        if ( ! empty( $property->longitude ) ) {
-            $schema['geo'] = array(
-	            "@type" => "GeoCoordinates",
-                "latitude" => $property->longitude,
-                "longitude" => $property->latitude,
-            );
-        }
+	$post_id = get_the_ID();
 
-        if ( $excerpt = get_the_excerpt() ) {
-            $schema['description'] = $excerpt;
-        }
+	$schema = array(
+		'@context' => 'https://schema.org',
+		'@type' => apply_filters( 'es_schema_org_type', 'House', $property, $post_id ),
+		'name' => get_the_title(),
+		'url' => get_the_permalink(),
+		'address' => $property->address,
+		'floorLevel' => $property->floor_level,
+		'yearBuilt' => $property->year_built,
+		'numberOfBathroomsTotal' => $property->bathrooms,
+		'numberOfBedrooms' => $property->bedrooms,
+	);
 
-        if ( $gallery = es_get_the_field( 'gallery' ) ) {
-            foreach ( $gallery as $attachment_id ) {
-                $schema['image'][] = wp_get_attachment_image_url( $attachment_id, 'full' );
-            }
-        }
+	/*
+	if ( ! empty( $property->price ) ) {
+		$schema['offers'] = array(
+			'@type' => 'Offer',
+			'price' => $property->price,
+			'priceCurrency' => ests( 'currency' ),
+			'availability' => 'https://schema.org/InStock',
+			'url' => get_the_permalink(),
+		);
+	}
+	*/
 
-        $schema = array_filter( $schema );
-    }
+	if ( is_numeric( $property->latitude ) && is_numeric( $property->longitude ) ) {
+		$geo = array(
+			'@type' => 'GeoCoordinates',
+			'latitude' => $property->latitude,
+			'longitude' => $property->longitude,
+		);
 
-    if ( ! empty( $schema ) ) {
-	    // Encode the array as JSON and wrap it in a <script> tag
-	    echo '<script type="application/ld+json">' . json_encode( $schema, JSON_UNESCAPED_SLASHES ) . '</script>';
-    }
+		$schema['geo'] = apply_filters( 'es_schema_org_geo', $geo, $property, $post_id );
+	}
+
+	if ( $excerpt = get_the_excerpt() ) {
+		$schema['description'] = $excerpt;
+	}
+
+	if ( $gallery = es_get_the_field( 'gallery' ) ) {
+		$images = array();
+
+		foreach ( $gallery as $attachment_id ) {
+			$image_url = wp_get_attachment_image_url( $attachment_id, 'full' );
+
+			if ( $image_url ) {
+				$images[] = $image_url;
+			}
+		}
+
+		if ( $images ) {
+			$schema['image'] = $images;
+		}
+	}
+
+	$schema = array_filter( $schema,
+		static function ( $value ) {
+			return null !== $value && '' !== $value && array() !== $value;
+		}
+	);
+
+	$schema = apply_filters( 'es_schema_org_data', $schema, $property, $post_id );
+
+	if ( empty( $schema ) ) {
+		return;
+	}
+
+	echo '<script type="application/ld+json">' . wp_json_encode( $schema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE ) . '</script>';
 }
 
 add_action( 'wp_head', 'es_schema_org_script' );
