@@ -38,6 +38,20 @@ class Es_Dashboard_Page {
     public static function get_changelog() {
         return array(
 
+            '4.3.4' => array(
+                'date' => _x( 'August, 3, 2026', 'changelog', 'es' ),
+                'changes' => array(
+                    array(
+                        'text' => _x( 'Request form recipient routing is now validated and sent to the same value, closing an arbitrary recipient issue (All versions)', 'changelog', 'es' ),
+                        'label' => 'bugfix',
+                    ),
+                    array(
+                        'text' => _x( 'Rate limiting added to the request form submission handler (All versions)', 'changelog', 'es' ),
+                        'label' => 'bugfix',
+                    ),
+                ),
+            ),
+
             '4.3.3' => array(
                 'date' => _x( 'Jule, 27, 2026', 'changelog', 'es' ),
                 'changes' => array(

@@ -16,6 +16,38 @@ class Es_Request_Form_Shortcode extends Es_Shortcode {
     const SEND_OTHER = -1;
 
     /**
+     * Recipient signature format version. Bumping it invalidates every signature
+     * rendered by an earlier release.
+     *
+     * @var string
+     */
+    const SIGNATURE_VERSION = 'v2';
+
+    /**
+     * Max submissions accepted from a single IP per rate limit window.
+     *
+     * @var int
+     */
+    const RATE_LIMIT_MAX = 5;
+
+    /**
+     * Rate limit window, in seconds.
+     *
+     * @var int
+     */
+    const RATE_LIMIT_WINDOW = 300;
+
+    /**
+     * Recipient list whose signature has been verified for the current request.
+     *
+     * Stays null until a signature check passes, so an unverified request can
+     * never resolve to a recipient.
+     *
+     * @var array|null
+     */
+    protected $_verified_recipient_emails = null;
+
+    /**
      * Return list of "send_to" selectbox field.
      *
      * @return mixed
@@ -131,6 +163,107 @@ class Es_Request_Form_Shortcode extends Es_Shortcode {
     }
 
     /**
+     * Parse an arbitrary recipient value into a canonical list of valid emails.
+     *
+     * Both the signature we render and the signature we verify are built from the
+     * output of this method, and the mail is sent to that same output. Signing one
+     * representation of the value while sending to another is what allowed a
+     * replayed signature to carry attacker chosen recipients.
+     *
+     * @param mixed $value
+     *
+     * @return array
+     */
+    public static function normalize_recipient_emails( $value ) {
+        if ( is_array( $value ) ) {
+            $value = implode( ',', array_filter( $value, 'is_scalar' ) );
+        }
+
+        if ( ! is_scalar( $value ) ) {
+            return array();
+        }
+
+        $emails = array();
+
+        foreach ( explode( ',', wp_strip_all_tags( (string) $value ) ) as $email ) {
+            $email = sanitize_email( trim( $email ) );
+
+            if ( $email && is_email( $email ) ) {
+                // Key by lowercase so case variants cannot produce duplicates.
+                $emails[ strtolower( $email ) ] = $email;
+            }
+        }
+
+        $emails = array_values( $emails );
+
+        // Canonical order, so the signature does not depend on submitted order.
+        sort( $emails );
+
+        return $emails;
+    }
+
+    /**
+     * Build the recipient routing signature for a type and recipient list.
+     *
+     * @param int   $recipient_type
+     * @param mixed $emails
+     *
+     * @return string
+     */
+    public static function get_recipient_signature( $recipient_type, $emails ) {
+        $emails = static::normalize_recipient_emails( $emails );
+
+        $payload = implode( '|', array(
+            static::SIGNATURE_VERSION,
+            (int) $recipient_type,
+            implode( ',', $emails ),
+        ) );
+
+        return hash_hmac( 'sha256', $payload, wp_salt( 'auth' ) );
+    }
+
+    /**
+     * Whether the current client has exceeded the submission rate limit.
+     *
+     * Counts every attempt, not just successful sends, so a harvested nonce and
+     * signature pair cannot be replayed in bulk.
+     *
+     * @return bool
+     */
+    public static function is_rate_limited() {
+        $limit  = (int) apply_filters( 'es_request_form_rate_limit', static::RATE_LIMIT_MAX );
+        $window = (int) apply_filters( 'es_request_form_rate_limit_window', static::RATE_LIMIT_WINDOW );
+
+        if ( $limit < 1 || $window < 1 ) {
+            return false;
+        }
+
+        $ip = isset( $_SERVER['REMOTE_ADDR'] ) ? (string) $_SERVER['REMOTE_ADDR'] : '';
+        $key = 'es_rf_rate_' . md5( $ip );
+
+        $count = (int) get_transient( $key );
+
+        if ( $count >= $limit ) {
+            return true;
+        }
+
+        set_transient( $key, $count + 1, $window );
+
+        return false;
+    }
+
+    /**
+     * Set the recipient list that passed signature verification.
+     *
+     * @param array $emails
+     *
+     * @return void
+     */
+    public function set_verified_recipient_emails( $emails ) {
+        $this->_verified_recipient_emails = static::normalize_recipient_emails( $emails );
+    }
+
+    /**
      * Submit request form handler.
      *
      * @return void
@@ -139,11 +272,35 @@ class Es_Request_Form_Shortcode extends Es_Shortcode {
         $btn = '<a href="" class="es-btn es-btn--secondary js-es-close-popup">' . __( 'Got it', 'es' ) . '</a>';
         $id = es_clean( filter_input( INPUT_POST, 'uniqid' ) );
 
-        $recipient_type = (int) filter_input( INPUT_POST, 'recipient_type' );
-        $send_to_emails = es_clean( filter_input( INPUT_POST, 'send_to_emails' ) );
-        $send_to_emails_signature = es_clean( filter_input( INPUT_POST, 'send_to_emails_signature' ) );
+        if ( static::is_rate_limited() ) {
+            $response = es_error_ajax_response( sprintf(
+                '<span class="es-icon es-icon_close"></span><h4>%s</h4><p>%s</p>%s',
+                __( 'Error!', 'es' ),
+                __( 'Too many requests. Please, wait a few minutes and try again.', 'es' ),
+                $btn
+            ) );
 
-        $is_send_to_emails_valid = $send_to_emails_signature && hash_equals( hash_hmac( 'sha256', $recipient_type . '|' . $send_to_emails, wp_salt( 'auth' ) ), $send_to_emails_signature );
+            $content = $response;
+            $response['message'] = sprintf( "<div id='es-request-form-popup' class='es-magnific-popup es-ajax-form-popup'>%s</div>", $response['message'] );
+
+            wp_die( json_encode( apply_filters( 'es_request_form_submit_response', $response, $content ) ) );
+        }
+
+        $recipient_type = (int) filter_input( INPUT_POST, 'recipient_type' );
+
+        // Normalise before verifying, and keep the result: this exact array is the
+        // one get_emails() sends to. Read $_POST directly so array payloads reach
+        // the normaliser instead of being silently dropped by filter_input().
+        $send_to_emails = static::normalize_recipient_emails(
+            isset( $_POST['send_to_emails'] ) ? wp_unslash( $_POST['send_to_emails'] ) : ''
+        );
+
+        $send_to_emails_signature = isset( $_POST['send_to_emails_signature'] ) && is_scalar( $_POST['send_to_emails_signature'] )
+            ? trim( (string) wp_unslash( $_POST['send_to_emails_signature'] ) )
+            : '';
+
+        $is_send_to_emails_valid = $send_to_emails_signature
+            && hash_equals( static::get_recipient_signature( $recipient_type, $send_to_emails ), $send_to_emails_signature );
 
         if ( wp_verify_nonce( es_get_nonce( 'es_request_form_nonce_' . $id ), 'es_submit_request_form' ) && $is_send_to_emails_valid ) {
             if ( es_verify_recaptcha() ) {
@@ -151,6 +308,7 @@ class Es_Request_Form_Shortcode extends Es_Shortcode {
                     $data = apply_filters( 'es_request_form_submit_data', es_clean( $_POST ) );
                     $instance = new static( $data );
 	                $data['subject'] = $instance->_attributes['subject'];
+                    $instance->set_verified_recipient_emails( $send_to_emails );
                     $emails = $instance->get_emails();
 
 					$email_instance = es_get_email_instance( static::get_email_instance_name( $data ), $data );
@@ -197,7 +355,7 @@ class Es_Request_Form_Shortcode extends Es_Shortcode {
 
         $send_to_emails = ! empty( $attributes['custom_email'] ) ? $attributes['custom_email'] : '';
 
-        $signature = hash_hmac( 'sha256', $recipient_type . '|' . $send_to_emails,  wp_salt( 'auth' ) );
+        $signature = static::get_recipient_signature( $recipient_type, $send_to_emails );
 
         echo '<input type="hidden" name="send_to_emails_signature" value="' . esc_attr( $signature ) . '">';
     }
@@ -230,21 +388,16 @@ class Es_Request_Form_Shortcode extends Es_Shortcode {
      */
     public function get_emails() {
         $emails = array();
-        $type = $this->_attributes['recipient_type'];
+        $type = (int) $this->_attributes['recipient_type'];
 
-        if ( static::SEND_OTHER == $type && ( $another_emails = filter_input( INPUT_POST, 'send_to_emails' ) ) ) {
-            $another_emails = explode( ',', $another_emails );
-
-            if ( $another_emails ) {
-                foreach ( $another_emails as $email ) {
-                    if ( filter_var( $email, FILTER_VALIDATE_EMAIL ) ) {
-                        $emails[] = $email;
-                    }
-                }
-            }
+        if ( static::SEND_OTHER === $type ) {
+            // Only the signature verified list may be used here. Never re-read
+            // $_POST: parsing the request again is what let a valid signature be
+            // paired with a different recipient list.
+            $emails = is_array( $this->_verified_recipient_emails ) ? $this->_verified_recipient_emails : array();
         }
 
-        if ( static::SEND_ADMIN == $type ) {
+        if ( static::SEND_ADMIN === $type ) {
             $emails = es_get_admin_emails();
         }
 

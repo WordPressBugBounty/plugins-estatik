@@ -3,7 +3,7 @@ Contributors: Estatik
 Donate link: http://estatik.net/
 Tags: real estate, idx, MLS, listings, RETS, webAPI, property, realtor
 Requires at least: 5.4
-Tested up to: 7.0
+Tested up to: 7.0.2
 Requires PHP: 5.6
 Stable tag: trunk
 License: GPLv2 or later
@@ -175,6 +175,12 @@ Your listings and plugin configuration will be safe.
 
 
 == Changelog ==
+
+
+= 4.3.4 (August 3, 2026) =
+
+FIX: Request form recipient routing is now validated and sent to the same value, closing an arbitrary recipient issue (All versions)
+FIX: Rate limiting added to the request form submission handler (All versions)
 
 
 = 4.3.3 (July 27, 2026) =
