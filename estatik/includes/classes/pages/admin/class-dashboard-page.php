@@ -37,7 +37,23 @@ class Es_Dashboard_Page {
      */
     public static function get_changelog() {
         return array(
-
+            '4.3.5' => array(
+                'date' => _x( 'September, 1, 2026', 'changelog', 'es' ),
+                'changes' => array(
+                    array(
+                        'text' => _x( 'Improved PDF generation performance and stability (All versions)', 'changelog', 'es' ),
+                        'label' => 'bugfix',
+                    ),
+                    array(
+                        'text' => _x( 'Security hardening and additional security improvements (All versions)', 'changelog', 'es' ),
+                        'label' => 'new',
+                    ),
+                    array(
+                        'text' => _x( 'New styles added to the Listing form in the user profile (Pro & Premium)', 'changelog', 'es' ),
+                        'label' => 'new',
+                    ),
+                ),
+            ),
             '4.3.4' => array(
                 'date' => _x( 'August, 3, 2026', 'changelog', 'es' ),
                 'changes' => array(
@@ -51,7 +67,6 @@ class Es_Dashboard_Page {
                     ),
                 ),
             ),
-
             '4.3.3' => array(
                 'date' => _x( 'Jule, 27, 2026', 'changelog', 'es' ),
                 'changes' => array(

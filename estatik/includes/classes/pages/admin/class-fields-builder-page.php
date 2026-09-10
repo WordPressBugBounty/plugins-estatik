@@ -34,10 +34,39 @@ class Es_Fields_Builder_Page {
 		add_action( 'es_fields_builder_section_settings', array( 'Es_Fields_Builder_Page', 'render_section_settings' ) );
 	}
 
+    /**
+     * Check whether current user can manage Fields Builder.
+     *
+     * @return bool
+     */
+    protected static function user_can_manage() {
+        return current_user_can( 'manage_options' );
+    }
+
+
+    /**
+     * Verify current user access to Fields Builder AJAX actions.
+     *
+     * @return void
+     */
+    protected static function verify_access() {
+
+        if ( static::user_can_manage() ) {
+            return;
+        }
+
+        status_header( 403 );
+
+        wp_die( wp_json_encode( es_notification_ajax_response( __( 'You are not allowed to perform this action.', 'es' ), 'error' ) ) );
+    }
+
 	/**
 	 * Restore default field via ajax.
 	 */
 	public static function ajax_restore_field() {
+
+        static::verify_access();
+
 		$action = 'es_fields_builder_restore_field';
 
 		if ( check_ajax_referer( $action, 'field_builder_nonce', false ) ) {
@@ -54,6 +83,9 @@ class Es_Fields_Builder_Page {
 	 * Restore default field via ajax.
 	 */
 	public static function ajax_restore_section() {
+
+        static::verify_access();
+
 		$action = 'es_fields_builder_restore_section';
 
 		if ( check_ajax_referer( $action, 'field_builder_nonce', false ) ) {
@@ -72,6 +104,9 @@ class Es_Fields_Builder_Page {
 	 * @return void
 	 */
 	public static function ajax_get_sections() {
+
+        static::verify_access();
+
 		$action = 'es_fields_builder_get_sections';
 
 		if ( check_ajax_referer( $action, 'field_builder_nonce', false ) ) {
@@ -98,6 +133,9 @@ class Es_Fields_Builder_Page {
      * @return void
 	 */
 	public static function ajax_get_fields_tab() {
+        
+        static::verify_access();
+
 	    $action = 'es_fields_builder_get_fields_tab';
 
 		if ( check_ajax_referer( $action, 'field_builder_nonce', false ) ) {
@@ -246,6 +284,7 @@ class Es_Fields_Builder_Page {
 	 * @param $section_config
 	 */
 	public static function render_section_settings( $section_config ) {
+
 		if ( ! empty( $section_config['machine_name'] ) && 'request_form' == $section_config['machine_name'] ) {
 			es_field_builder_field_option_render( 'background_color', false, array(
 				'type' => 'color',
@@ -273,6 +312,8 @@ class Es_Fields_Builder_Page {
 	 */
 	public static function ajax_get_field_settings() {
 
+        static::verify_access();
+        
 		$action = 'es_fields_builder_get_field_settings';
 
 		if ( check_ajax_referer( $action, 'field_builder_nonce', true ) ) {
@@ -307,6 +348,8 @@ class Es_Fields_Builder_Page {
 	 */
 	public static function ajax_change_items_order() {
 
+        static::verify_access();
+        
 		$action = 'es_fields_builder_change_items_order';
 
 		if ( check_ajax_referer( $action, 'field_builder_nonce', false ) ) {
@@ -374,6 +417,8 @@ class Es_Fields_Builder_Page {
 	 */
 	public static function ajax_delete_section() {
 
+        static::verify_access();
+
 		$action = 'es_fields_builder_delete_section';
 
 		if ( check_ajax_referer( $action, 'field_builder_nonce', false ) ) {
@@ -411,6 +456,8 @@ class Es_Fields_Builder_Page {
 	 * @return void
 	 */
 	public static function ajax_delete_field() {
+
+        static::verify_access();
 
 		$action = 'es_fields_builder_delete_field';
 
@@ -457,11 +504,15 @@ class Es_Fields_Builder_Page {
 	 */
 	public static function ajax_save_field() {
 
+        static::verify_access();
+
 		$action = 'es_fields_builder_save_field';
 
 		if ( check_ajax_referer( $action, '_wpnonce', false ) && ! empty( $_POST['es_fields_builder'] ) ) {
 			$field_data = es_clean( $_POST['es_fields_builder'] );
 			$field_data = wp_unslash( $field_data );
+
+            $field_data = es_fields_builder_sanitize_field_data( $field_data );
 			$field_builder = es_get_fields_builder_instance();
 
 			if ( $field_machine_name = $field_builder::save_field( $field_data ) ) {
@@ -488,6 +539,8 @@ class Es_Fields_Builder_Page {
 	 * @return void
 	 */
 	public static function ajax_save_section() {
+
+        static::verify_access();
 
 		$action = 'es_fields_builder_save_section';
 
@@ -521,6 +574,8 @@ class Es_Fields_Builder_Page {
 	 */
 	public static function ajax_get_field_form() {
 
+        static::verify_access();
+
 		$action = 'es_fields_builder_get_field_form';
 
 		if ( check_ajax_referer( $action , 'field_builder_nonce', false ) ) {
@@ -552,6 +607,8 @@ class Es_Fields_Builder_Page {
 	 * @return void
 	 */
 	public static function ajax_get_section_form() {
+
+        static::verify_access();
 
 		$action = 'es_fields_builder_get_section_form';
 

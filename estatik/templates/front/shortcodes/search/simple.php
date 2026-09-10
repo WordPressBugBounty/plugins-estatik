@@ -18,7 +18,7 @@ if ( $collapsed_fields_active || $main_fields_active || ! empty( $attributes['is
     <div class="<?php echo $container_classes; ?>" id="es-search--<?php echo $uniqid; ?>">
         <form action="<?php echo $search_page_uri; ?>" role="search" method="get">
 
-            <?php do_action( 'es_before_search_form_fields', 'simple' ); ?>
+        <?php do_action( 'es_search_form_start', 'simple' ); ?>
 
             <input type="hidden" name="es" value="1"/>
 
@@ -47,6 +47,9 @@ if ( $collapsed_fields_active || $main_fields_active || ! empty( $attributes['is
 			<?php endif; ?>
 
 			<?php if ( $collapsed_fields_active || $main_fields_active ) : ?>
+
+                <?php do_action( 'es_before_search_form_fields', 'simple' ); ?>
+
                 <a href="" class="js-es-search__collapse-link es-search__collapse-link es-leave-border">
 					<?php _e( 'Filters', 'es' ); ?><span class="es-icon es-icon_chevron-bottom"></span>
                 </a>

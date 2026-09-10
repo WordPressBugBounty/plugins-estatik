@@ -2158,3 +2158,53 @@ function es_maybe_json_decode( $value ) {
 	}
 	return $value;
 }
+
+
+if ( ! function_exists( 'es_is_ajax_listing_template_allowed' ) ) {
+
+	/**
+	 * Check whether template can be rendered through listings AJAX.
+	 *
+	 * @param string $template_path Template path.
+	 *
+	 * @return bool
+	 */
+	function es_is_ajax_listing_template_allowed( $template_path ) {
+
+		$template_path = str_replace( '\\', '/', (string) $template_path );
+		$template_path = ltrim( $template_path, '/' );
+
+		while ( strpos( $template_path, './' ) === 0 ) {
+			$template_path = substr( $template_path, 2 );
+		}
+
+		return strpos( $template_path, 'admin/' ) !== 0;
+	}
+}
+
+
+if ( ! function_exists( 'es_fields_builder_sanitize_field_data' ) ) {
+
+	/**
+	 * Sanitize Fields Builder data received from user input.
+	 *
+	 * @param array $field_data Field data.
+	 *
+	 * @return array
+	 */
+	function es_fields_builder_sanitize_field_data( $field_data ) {
+
+		if ( ! is_array( $field_data ) ) {
+			return array();
+		}
+
+		if (
+			isset( $field_data['options']['search_settings'] ) &&
+			is_array( $field_data['options']['search_settings'] )
+		) {
+			unset( $field_data['options']['search_settings']['values_callback'] );
+		}
+
+		return $field_data;
+	}
+}

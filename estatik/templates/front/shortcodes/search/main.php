@@ -26,7 +26,7 @@ if ( $collapsed_fields_active || $main_fields_active || ! empty( $attributes['is
 <div class="<?php echo $container_classes; ?>" id="es-search--<?php echo $uniqid; ?>" data-same-price="<?php echo ests( 'is_same_price_for_categories_enabled' ); ?>">
     <form action="<?php echo $search_page_uri; ?>" role="search" method="get">
 
-        <?php do_action( 'es_before_search_form_fields', 'main' ); ?>
+        <?php do_action( 'es_search_form_start', 'main' ); ?>
 
         <input type="hidden" name="es" value="1"/>
 
@@ -56,6 +56,9 @@ if ( $collapsed_fields_active || $main_fields_active || ! empty( $attributes['is
         <?php endif; ?>
 
         <?php if ( $collapsed_fields_active || $main_fields_active ) : ?>
+
+            <?php do_action( 'es_before_search_form_fields', 'main' ); ?>
+
             <ul class="es-search-nav js-es-search-nav <?php echo empty( $attributes['is_address_search_enabled'] ) ? 'es-search-nav--dropdowns' : ''; ?>">
                 <?php if ( $main_fields_active ) : ?>
                     <?php foreach ( $attributes['main_fields'] as $field ) :

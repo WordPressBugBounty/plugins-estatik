@@ -3,7 +3,7 @@ Contributors: Estatik
 Donate link: http://estatik.net/
 Tags: real estate, idx, MLS, listings, RETS, webAPI, property, realtor
 Requires at least: 5.4
-Tested up to: 7.0.2
+Tested up to: 7.1
 Requires PHP: 5.6
 Stable tag: trunk
 License: GPLv2 or later
@@ -92,6 +92,7 @@ Full list of shortcodes can be found [here](https://estatik.net/estatik-plugin-d
 = Translated into: =
 
 
+
 * Italian
 * Spanish
 * French
@@ -176,23 +177,27 @@ Your listings and plugin configuration will be safe.
 
 == Changelog ==
 
+= 4.3.5 (September 9, 2026) =
+
+FIX: Improved PDF generation performance and stability (All versions)
+NEW: Security hardening and additional security improvements (All versions)
+NEW: New styles added to the Listing form in the user profile (Pro & Premium)
 
 = 4.3.4 (August 3, 2026) =
 
 FIX: Request form recipient routing is now validated and sent to the same value, closing an arbitrary recipient issue (All versions)
 FIX: Rate limiting added to the request form submission handler (All versions)
 
-
-= 4.3.3 (July 27, 2026) =
+= 4.3.3 (Jule, 27, 2026) =
 
 NEW: New Estatik Gutenberg blocks added (Pro)
 NEW: Schema.org markup improved and new SEO filters added (All versions)
+
 FIX: Request form security improvements added (All versions)
 FIX: reCAPTCHA security improvements added (All versions)
 FIX: Facebook and Google website registration security improved (All versions)
 
-
-= 4.3.2 (June, 12, 2026) =
+= 4.3.2 (June, 9, 2026) =
 
 NEW: Security improvements and fixes (All versions)
 NEW: New styles added for SiteOrigin Estatik widgets (All versions)

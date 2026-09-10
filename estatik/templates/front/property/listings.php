@@ -24,8 +24,8 @@
     <?php endif; ?>
     <?php if ( $query->have_posts() && ! empty( $args['view_all_page_id'] ) && ! empty( $args['view_all_link_name'] ) ) : ?>
         <div class="es-view-all">
-            <a href="<?php echo get_permalink( $args['view_all_page_id'] ); ?>" class="es-btn es-btn--secondary es-btn--bordered">
-                <?php _e( $args['view_all_link_name'], 'es' ); ?>
+            <a href="<?php echo esc_url( get_permalink( $args['view_all_page_id'] ) ); ?>" class="es-btn es-btn--secondary es-btn--bordered">
+                <?php echo esc_html( $args['view_all_link_name'] ); ?>
             </a>
         </div>
     <?php endif;

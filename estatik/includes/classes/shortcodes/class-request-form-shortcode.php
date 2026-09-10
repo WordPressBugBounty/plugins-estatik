@@ -54,8 +54,8 @@ class Es_Request_Form_Shortcode extends Es_Shortcode {
      */
     public static function get_send_to_list() {
         return apply_filters( 'es_request_widget_get_send_to_list', array(
-            self::SEND_ADMIN       => __( 'Admin', 'es' ),
-            self::SEND_OTHER       => __( 'Other email', 'es' ),
+            self::SEND_ADMIN => __( 'Admin', 'es' ),
+            self::SEND_OTHER => __( 'Other email', 'es' ),
         ) );
     }
 
@@ -122,9 +122,9 @@ class Es_Request_Form_Shortcode extends Es_Shortcode {
                 'attributes' => array(
                     'required' => 'required',
                     'id' => 'name-' . $uid,
-	                'maxlength' => 50,
+                    'maxlength' => 50,
                 ),
-	            'value' => $user ? $user->get_full_name() : '',
+                'value' => $user ? $user->get_full_name() : '',
             ),
             'email' => array(
                 'label' => __( 'Email*', 'es' ),
@@ -134,30 +134,30 @@ class Es_Request_Form_Shortcode extends Es_Shortcode {
                     'id' => 'email-' . $uid,
                     'maxlength' => 256,
                 ),
-	            'value' => $user ? $user->get_email() : '',
+                'value' => $user ? $user->get_email() : '',
             ),
             'phone' => array(
-	            'label' => __( 'Phone', 'es' ),
-	            'type' => 'phone',
-	            'is_country_code_disabled' => ests( 'is_tel_code_disabled' ),
-	            'codes' => es_esc_json_attr( ests_values( 'phone_codes' ) ),
-	            'icons' => es_esc_json_attr( ests_values( 'country_icons' ) ),
-	            'code_config' => array(
-	            	'options' => ests_values( 'country' ),
-		            'attributes' => array(
-		            	'id' => 'es-field-code-' . uniqid(),
-		            )
-	            ),
+                'label' => __( 'Phone', 'es' ),
+                'type' => 'phone',
+                'is_country_code_disabled' => ests( 'is_tel_code_disabled' ),
+                'codes' => es_esc_json_attr( ests_values( 'phone_codes' ) ),
+                'icons' => es_esc_json_attr( ests_values( 'country_icons' ) ),
+                'code_config' => array(
+                    'options' => ests_values( 'country' ),
+                    'attributes' => array(
+                        'id' => 'es-field-code-' . uniqid(),
+                    )
+                ),
             ),
             'message' => array(
                 'label' => __( 'Message*', 'es' ),
                 'type' => 'textarea',
                 'attributes' => array(
                     'id' => 'message-' . $uid,
-	                'required' => 'required',
-	                'maxlength' => 500,
+                    'required' => 'required',
+                    'maxlength' => 500,
                 ),
-	            'value' => $this->_attributes['message']
+                'value' => $this->_attributes['message']
             ),
         ), $this );
     }
@@ -231,7 +231,7 @@ class Es_Request_Form_Shortcode extends Es_Shortcode {
      * @return bool
      */
     public static function is_rate_limited() {
-        $limit  = (int) apply_filters( 'es_request_form_rate_limit', static::RATE_LIMIT_MAX );
+        $limit = (int) apply_filters( 'es_request_form_rate_limit', static::RATE_LIMIT_MAX );
         $window = (int) apply_filters( 'es_request_form_rate_limit_window', static::RATE_LIMIT_WINDOW );
 
         if ( $limit < 1 || $window < 1 ) {
@@ -307,27 +307,31 @@ class Es_Request_Form_Shortcode extends Es_Shortcode {
                 if ( ( isset( $_POST['terms_conditions'] ) && ! empty( $_POST['terms_conditions'] ) ) || ! isset( $_POST['terms_conditions'] ) ) {
                     $data = apply_filters( 'es_request_form_submit_data', es_clean( $_POST ) );
                     $instance = new static( $data );
-	                $data['subject'] = $instance->_attributes['subject'];
+                    $data['subject'] = $instance->_attributes['subject'];
                     $instance->set_verified_recipient_emails( $send_to_emails );
                     $emails = $instance->get_emails();
 
-					$email_instance = es_get_email_instance( static::get_email_instance_name( $data ), $data );
+                    $email_instance = es_get_email_instance( static::get_email_instance_name( $data ), $data );
 
                     if ( $email_instance::is_active() && $emails && $email_instance->send( $emails ) ) {
                         $response = es_success_ajax_response(
-                            __( '<span class="es-icon es-icon_check-mark"></span><h4>Thank you!</h4><p>We\'ve sent along your message. The agent will follow up with you soon.</p>', 'es' ) . $btn );
-	                    do_action( 'es_after_request_form_submitted', $data, $emails );
+                            __( '<span class="es-icon es-icon_check-mark"></span><h4>Thank you!</h4><p>We\'ve sent along your message. The agent will follow up with you soon.</p>', 'es' ) . $btn
+                        );
+                        do_action( 'es_after_request_form_submitted', $data, $emails );
                     } else {
                         $response = es_error_ajax_response(
-                            __( '<span class="es-icon es-icon_close"></span><h4>Error!</h4><p>Your message wasn\'t sent. Please, contact support.</p>', 'es' ) . $btn );
+                            __( '<span class="es-icon es-icon_close"></span><h4>Error!</h4><p>Your message wasn\'t sent. Please, contact support.</p>', 'es' ) . $btn
+                        );
                     }
                 } else {
                     $response = es_error_ajax_response(
-                        __( '<span class="es-icon es-icon_close"></span><h4>Error!</h4><p>Please, confirm terms & conditions</p>', 'es' ) . $btn );
+                        __( '<span class="es-icon es-icon_close"></span><h4>Error!</h4><p>Please, confirm terms & conditions</p>', 'es' ) . $btn
+                    );
                 }
             } else {
                 $response = es_error_ajax_response(
-                    __( '<span class="es-icon es-icon_close"></span><h4>Error!</h4><p>Invalid reCAPTCHA. Please, reload the page and try again.</p>', 'es' ) . $btn );
+                    __( '<span class="es-icon es-icon_close"></span><h4>Error!</h4><p>Invalid reCAPTCHA. Please, reload the page and try again.</p>', 'es' ) . $btn
+                );
             }
 
         } else {
@@ -360,26 +364,26 @@ class Es_Request_Form_Shortcode extends Es_Shortcode {
         echo '<input type="hidden" name="send_to_emails_signature" value="' . esc_attr( $signature ) . '">';
     }
 
-	/**
-	 * @param $data
-	 *
-	 * @return string
-	 */
-	public static function get_email_instance_name( $data ) {
-		$result = 'request_property_info';
+    /**
+     * @param $data
+     *
+     * @return string
+     */
+    public static function get_email_instance_name( $data ) {
+        $result = 'request_property_info';
 
-		if ( ! empty( $data['post_id'] ) ) {
-			$entity = es_get_entity_by_id( $data['post_id'] );
-			if ( $entity ) {
-				$email_instance = sprintf( 'request_%s_info', $entity::get_entity_name() );
-				$types = es_get_email_types_list();
+        if ( ! empty( $data['post_id'] ) ) {
+            $entity = es_get_entity_by_id( $data['post_id'] );
+            if ( $entity ) {
+                $email_instance = sprintf( 'request_%s_info', $entity::get_entity_name() );
+                $types = es_get_email_types_list();
 
-				$result = ! empty( $types[ $email_instance ] ) ? $email_instance : $result;
-			}
-		}
+                $result = ! empty( $types[ $email_instance ] ) ? $email_instance : $result;
+            }
+        }
 
-		return $result;
-	}
+        return $result;
+    }
 
     /**
      * Get recipient emails by recipient type.
@@ -405,7 +409,7 @@ class Es_Request_Form_Shortcode extends Es_Shortcode {
 
         return apply_filters( 'es_request_form_get_emails', $emails, $this );
     }
-    
+
 }
 
 add_action( 'wp_ajax_es_submit_request_form', array( 'Es_Request_Form_Shortcode', 'submit_form' ) );

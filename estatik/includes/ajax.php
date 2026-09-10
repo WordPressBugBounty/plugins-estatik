@@ -264,6 +264,25 @@ add_action( 'wp_ajax_es_remove_saved_search', 'es_ajax_remove_saved_search' );
 function es_ajax_get_listings() {
 	$attributes = es_get( 'hash', false ) ? es_get( 'hash', false ) : es_post( 'hash', false );
     $attributes = es_decode( $attributes );
+
+    if ( ! is_array( $attributes ) ) {
+        $attributes = array();
+    }
+
+
+    $attributes = es_clean( $attributes );
+
+    if ( isset( $attributes['loop_uid'] ) ) {
+        $attributes['loop_uid'] = sanitize_text_field( $attributes['loop_uid'] );
+    }
+
+    if ( ! empty( $attributes['template_path'] ) && ! es_is_ajax_listing_template_allowed( $attributes['template_path'] ) ) {
+        wp_die( wp_json_encode( array(
+            'status'  => 'error',
+            'message' => __( 'Invalid template.', 'es' ),
+        ) ) );
+    }
+
     $need_reload_map = es_get( 'reload_map' ) ? es_get( 'reload_map' ) : es_post( 'reload_map' );
     $attributes['_ajax_mode'] = true;
     $attributes['_ignore_coordinates'] = ! $need_reload_map;
@@ -290,10 +309,11 @@ function es_ajax_get_listings() {
 	    $response['coordinates'] = es_properties_get_markers( $query_args );
     }
 
-    $response['loop_uid'] = $attributes['loop_uid'];
+    $response['loop_uid'] = ! empty( $attributes['loop_uid'] ) ? $attributes['loop_uid'] : '';
     $response['reload_map'] = $need_reload_map;
 
-    wp_die( json_encode( $response ) );
+    wp_send_json( $response );
 }
+
 add_action( 'wp_ajax_get_listings', 'es_ajax_get_listings' );
 add_action( 'wp_ajax_nopriv_get_listings', 'es_ajax_get_listings' );
